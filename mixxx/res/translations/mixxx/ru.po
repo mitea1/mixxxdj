@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-03-05 06:50+0200\n"
-"PO-Revision-Date: 2013-02-25 04:13+0000\n"
-"Last-Translator: Oleg Koptev <koptev.oleg@gmail.com>\n"
+"PO-Revision-Date: 2013-04-14 07:51+0000\n"
+"Last-Translator: scientistnik <nozdrin.plotnitsky@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-06 05:12+0000\n"
-"X-Generator: Launchpad (build 16514)\n"
+"X-Launchpad-Export-Date: 2013-04-15 05:09+0000\n"
+"X-Generator: Launchpad (build 16564)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -116,7 +116,7 @@ msgstr "Название списка воспроизведения:"
 #: BasePlaylistFeature#16
 msgctxt "BasePlaylistFeature#16"
 msgid "_copy"
-msgstr ""
+msgstr "_скопировать"
 
 #: BasePlaylistFeature#17
 msgctxt "BasePlaylistFeature#17"
@@ -131,7 +131,7 @@ msgstr "Обнаружена неизвестная ошибка при созд
 #: BasePlaylistFeature#19
 msgctxt "BasePlaylistFeature#19"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Файлы плейлиста (*.m3u *.m3u8 *.pls *.csv)"
 
 #: BasePlaylistFeature#20
 msgctxt "BasePlaylistFeature#20"
@@ -490,7 +490,7 @@ msgstr "Заблокировать"
 #: CrateFeature#5
 msgctxt "CrateFeature#5"
 msgid "_copy"
-msgstr ""
+msgstr "скопировать"
 
 #: CrateFeature#6
 msgctxt "CrateFeature#6"
@@ -511,7 +511,7 @@ msgstr "Экспортировать контейнер."
 
 #: CrateFeature#10
 msgid "Duplicate Crate"
-msgstr ""
+msgstr "дублировать ящик"
 
 #: CrateFeature#11
 msgctxt "CrateFeature#11"
@@ -541,7 +541,7 @@ msgstr "Ошибка переименования контейнера"
 #: CrateFeature#17
 msgctxt "CrateFeature#17"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Файлы прейлиста (*.m3u *.m3u8 *.pls *.csv)"
 
 #: CrateFeature#18
 msgctxt "CrateFeature#18"
@@ -549,6 +549,8 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"M3U плейлист (*.m3u);;M3U8 плейлист (*.m3u8);;PLS плейлист (*.pls);;Text CSV "
+"(*.csv);;Читаемый текст (*.txt)"
 
 #: CrateFeature#19
 msgid ""
@@ -671,6 +673,10 @@ msgid ""
 "automatically shows a beat-grid for them, and allows you to synchronize "
 "tracks using their beat information."
 msgstr ""
+"Когда ударники включены, Mixxx показывает количество ударов в минуту и "
+"ударяет в Вашем треках,\n"
+"автоматически показывая решетку ударов на нем, и позволяет Вас "
+"синхронизировать трэки используя информацию о ударах."
 
 #: DlgBeatsDlg#3
 msgid "Enable BPM and Beat Detection"
@@ -700,6 +706,11 @@ msgid ""
 "This can speed up beat detection on slower computers but may result in lower "
 "quality beatgrids."
 msgstr ""
+"Включено генерация быстрых ударов. \n"
+"Если активирован Mixxx только анализ первой минуты в трэке для информации о "
+"ударах. \n"
+"Это должно ускорить генерацию ударов на медленных компьютерах, но возможено "
+"падение качества в решетки ударов."
 
 #: DlgBeatsDlg#9
 msgid ""
@@ -709,6 +720,11 @@ msgid ""
 "Often results in higher quality beatgrids, but will not do well on tracks "
 "that have tempo shifts."
 msgstr ""
+"Converts beats detected by the analyser into a fixed-tempo beatgrid. \n"
+"Use this setting if your tracks have a constant tempo (e.g. most electronic "
+"music). \n"
+"Often results in higher quality beatgrids, but will not do well on tracks "
+"that have tempo shifts."
 
 #: DlgBeatsDlg#10
 msgid ""

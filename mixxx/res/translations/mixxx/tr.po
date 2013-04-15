@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-03-05 06:50+0200\n"
-"PO-Revision-Date: 2013-04-11 20:21+0000\n"
-"Last-Translator: Muzaffer Tolga <tolga@ozses.net>\n"
+"PO-Revision-Date: 2013-04-14 16:18+0000\n"
+"Last-Translator: sahin <adim.sahin@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-12 05:13+0000\n"
+"X-Launchpad-Export-Date: 2013-04-15 05:09+0000\n"
 "X-Generator: Launchpad (build 16564)\n"
 
 #: AutoDJFeature#1
@@ -83,7 +83,7 @@ msgstr "Çalma Listesini Al"
 
 #: BasePlaylistFeature#8
 msgid "Duplicate Playlist"
-msgstr ""
+msgstr "Çalma Listesi Kopyası"
 
 #: BasePlaylistFeature#9
 msgid "Export Playlist"
@@ -131,7 +131,7 @@ msgstr "Liste oluşturulurken bilinmeyen bir hata oluştu: "
 #: BasePlaylistFeature#19
 msgctxt "BasePlaylistFeature#19"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Çalma Listesi Dosyaları (*.m3u *.m3u8 *.pls *.csv)"
 
 #: BasePlaylistFeature#20
 msgctxt "BasePlaylistFeature#20"
@@ -139,6 +139,8 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"M3U Çalma Listesi (*.m3u);;M3U8 Çalma Listesi (*.m3u8);;PLS Çalma Listesi "
+"(*.pls);;Metin CSV (*.csv);;Okunabilir Metin (*.txt)"
 
 #: BaseSqlTableModel#1
 msgid "Played"
@@ -511,7 +513,7 @@ msgstr ""
 #: CrateFeature#11
 msgctxt "CrateFeature#11"
 msgid "Unlock"
-msgstr ""
+msgstr "Kilidi Kaldır"
 
 #: CrateFeature#12
 msgid "Crate name:"
@@ -536,7 +538,7 @@ msgstr "Kutuyu Yeniden İsimlendirme Başarısız"
 #: CrateFeature#17
 msgctxt "CrateFeature#17"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Çalma Listesi Dosyaları (*.m3u *.m3u8 *.pls *.csv)"
 
 #: CrateFeature#18
 msgctxt "CrateFeature#18"
@@ -544,6 +546,8 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"M3U Çalma Listesi (*.m3u);;M3U8 Çalma Listesi (*.m3u8);;PLS Çalma Listesi "
+"(*.pls);;Metin CSV (*.csv);;Okunabilir Metin (*.txt)"
 
 #: CrateFeature#19
 msgid ""
@@ -594,7 +598,7 @@ msgstr "Oto-DJ"
 
 #: DlgAutoDJ#2
 msgid "One deck must be stopped to enable Auto-DJ mode."
-msgstr ""
+msgstr "Oto-DJ kipine geçebilmek için deklerden birisi durdurulmalıdır."
 
 #: DlgAutoDJ#3
 msgid "Disable Auto DJ"
@@ -622,7 +626,7 @@ msgstr "Sonraki parçaya geçişi sağla."
 
 #: DlgAutoDJ#9
 msgid "Fade Now"
-msgstr ""
+msgstr "Şimdi Geçiş Yap"
 
 #: DlgAutoDJ#10
 msgid "Determines the duration of the transition."
@@ -651,7 +655,7 @@ msgstr "Yönet"
 
 #: DlgBeatsDlg#1
 msgid "Beat Detection Settings"
-msgstr ""
+msgstr "Beat Algılama Ayarları"
 
 #: DlgBeatsDlg#2
 msgid ""
@@ -663,23 +667,23 @@ msgstr ""
 
 #: DlgBeatsDlg#3
 msgid "Enable BPM and Beat Detection"
-msgstr ""
+msgstr "BPM ve Beat Algılamayı Etkinleştir"
 
 #: DlgBeatsDlg#4
 msgid "Choose Analyser"
-msgstr ""
+msgstr "Analizci Seç"
 
 #: DlgBeatsDlg#5
 msgid "Beat Analyser:"
-msgstr ""
+msgstr "Beat Analizci:"
 
 #: DlgBeatsDlg#6
 msgid "Choose between different algorithms to detect beats."
-msgstr ""
+msgstr "Beat algılamak için farklı algoritmalardan birisini seç."
 
 #: DlgBeatsDlg#7
 msgid "Analyser Settings"
-msgstr ""
+msgstr "Analizci Ayarları"
 
 #: DlgBeatsDlg#8
 msgid ""
@@ -689,6 +693,11 @@ msgid ""
 "This can speed up beat detection on slower computers but may result in lower "
 "quality beatgrids."
 msgstr ""
+"Hızlı beat algılamayı etkinleştir. \n"
+"Eğer etkinse beat bilgisini almak için Mixxx sadece izin ilk dakikasını "
+"analiz eder. \n"
+"Bu, yavaş bilgisayarlarda beat algılamayı hızlandırabilir ama daha düşük "
+"kalitede beatgrid'lere yolaçar."
 
 #: DlgBeatsDlg#9
 msgid ""
@@ -710,6 +719,8 @@ msgid ""
 "e.g. from 3rd-party programs or Mixxx versions before 1.11.\n"
 "(Not checked: Analyse only, if no beats exist.)"
 msgstr ""
+"Örneğin 3. parti programlar ya da Mixxx'in 1.11 öncesi sürümleri.\n"
+"(İşaretlenmemişse: Herhangi bir beat yoksa sadece analiz et.)"
 
 #: DlgBeatsDlg#12
 msgid ""
@@ -719,10 +730,12 @@ msgstr ""
 #: DlgBeatsDlg#13
 msgid "Enable Fast Analysis (For slow computers, may be less accurate)"
 msgstr ""
+"Hızlı Analizi Etkinleştir (Yavaş bilgisayarlar içindir, hassaslık düşük "
+"olabilir)"
 
 #: DlgBeatsDlg#14
 msgid "Assume constant tempo (Recommended)"
-msgstr ""
+msgstr "Sabir tempo varsay (Önerilir)"
 
 #: DlgBeatsDlg#15
 msgid "Enable Offset Correction (Recommended)"
@@ -731,7 +744,7 @@ msgstr ""
 #: DlgBeatsDlg#16
 msgctxt "DlgBeatsDlg#16"
 msgid "BPM Range"
-msgstr ""
+msgstr "BPM Aralığı"
 
 #: DlgBeatsDlg#17
 msgid "Min:"
@@ -769,11 +782,11 @@ msgstr "En Düşük"
 
 #: DlgBpmSchemeDlg#6
 msgid "Analyze Entire Track"
-msgstr ""
+msgstr "Tüm İzi Analiz Et"
 
 #: DlgControllerLearning#1
 msgid "Controller Learning Wizard"
-msgstr ""
+msgstr "Kontrol Elemanlarını Öğrenme Sihirbazı"
 
 #: DlgControllerLearning#2
 msgid ""
@@ -781,6 +794,9 @@ msgid ""
 "move a control on your controller to map it. Repeat this as many times as "
 "you wish. When you are finished mapping controls, click Done."
 msgstr ""
+"Mixxx arayüzünde herhangi bir kontrola basın ya da listeden birini seçin. "
+"Sonra bir kontrol elemanını eşleştirmek için panelinize taşıyın. Bunu "
+"istediğiniz kadar tekrarlayın. Eşleştirmeyi bitirdiğinizde Tamam'a basın."
 
 #: DlgControllerLearning#3
 msgid "Done"
@@ -789,27 +805,29 @@ msgstr "Bitti"
 #: DlgControllerLearning#4
 msgid "To map another control click a button or choose from the list."
 msgstr ""
+"Bir başka kontrol elemanı eşleştirmek için bir düğmeye basın ya da listeden "
+"seçin."
 
 #: DlgControllerLearning#5
 msgid "Choose Control"
-msgstr ""
+msgstr "Kontrol Elemanı Seç"
 
 #: DlgControllerLearning#6
 msgid "Deck %1"
-msgstr ""
+msgstr "Dek %1"
 
 #: DlgControllerLearning#7
 msgctxt "DlgControllerLearning#7"
 msgid "Sampler %1"
-msgstr ""
+msgstr "Sampler %1"
 
 #: DlgControllerLearning#8
 msgid "Reset to default"
-msgstr ""
+msgstr "Öntanımlı değere dön"
 
 #: DlgControllerLearning#9
 msgid "Mixer"
-msgstr ""
+msgstr "Karıştırıcı"
 
 #: DlgControllerLearning#10
 msgctxt "DlgControllerLearning#10"
@@ -818,7 +836,7 @@ msgstr ""
 
 #: DlgControllerLearning#11
 msgid "Master volume"
-msgstr ""
+msgstr "Ana ses"
 
 #: DlgControllerLearning#12
 msgid "Master balance"
@@ -826,15 +844,15 @@ msgstr ""
 
 #: DlgControllerLearning#13
 msgid "Headphone volume"
-msgstr ""
+msgstr "Kulaklık sesi"
 
 #: DlgControllerLearning#14
 msgid "Headphone mix (pre/main)"
-msgstr ""
+msgstr "Kulaklık dengesi (pre/ana)"
 
 #: DlgControllerLearning#15
 msgid "Transport"
-msgstr ""
+msgstr "Aktarım"
 
 #: DlgControllerLearning#16
 msgid "Strip-search through track"
@@ -842,7 +860,7 @@ msgstr ""
 
 #: DlgControllerLearning#17
 msgid "Play button"
-msgstr ""
+msgstr "Çal düğmesi"
 
 #: DlgControllerLearning#18
 msgid "Volume fader"
@@ -850,23 +868,23 @@ msgstr ""
 
 #: DlgControllerLearning#19
 msgid "Fast rewind button"
-msgstr ""
+msgstr "Hızlı geri sar düğmesi"
 
 #: DlgControllerLearning#20
 msgid "Fast forward button"
-msgstr ""
+msgstr "Hızlı sar düğmesi"
 
 #: DlgControllerLearning#21
 msgid "Jump to start of track"
-msgstr ""
+msgstr "İzin başına sıçra"
 
 #: DlgControllerLearning#22
 msgid "Jump to end of track"
-msgstr ""
+msgstr "İzin sonuna sıçra"
 
 #: DlgControllerLearning#23
 msgid "Play reverse button"
-msgstr ""
+msgstr "Geriye çal düğmesi"
 
 #: DlgControllerLearning#24
 msgid "Gain knob"
@@ -874,23 +892,23 @@ msgstr ""
 
 #: DlgControllerLearning#25
 msgid "Headphone listen button"
-msgstr ""
+msgstr "Kulaklıktan dinle düğmesi"
 
 #: DlgControllerLearning#26
 msgid "Toggle repeat mode"
-msgstr ""
+msgstr "Tekrar kipini değiştir"
 
 #: DlgControllerLearning#27
 msgid "Eject track"
-msgstr ""
+msgstr "İzi çıkart"
 
 #: DlgControllerLearning#28
 msgid "Mix orientation (e.g. left, right, center)"
-msgstr ""
+msgstr "Karıştırma yönü (örn. sol, sağ, orta)"
 
 #: DlgControllerLearning#29
 msgid "BPM and Sync"
-msgstr ""
+msgstr "BPM ve Sync"
 
 #: DlgControllerLearning#30
 msgid "BPM tap button"
@@ -898,7 +916,7 @@ msgstr ""
 
 #: DlgControllerLearning#31
 msgid "Adjust beatgrid"
-msgstr ""
+msgstr "Beatgrid ayarla"
 
 #: DlgControllerLearning#32
 msgid "Toggle quantize mode"
@@ -906,15 +924,15 @@ msgstr ""
 
 #: DlgControllerLearning#33
 msgid "Beat sync (tempo and phase)"
-msgstr ""
+msgstr "Beat sync (tempo ve faz)"
 
 #: DlgControllerLearning#34
 msgid "Beat sync (tempo only)"
-msgstr ""
+msgstr "Beat sync (sadece tempo)"
 
 #: DlgControllerLearning#35
 msgid "Beat sync (phase only)"
-msgstr ""
+msgstr "Beat sync (sadece faz)"
 
 #: DlgControllerLearning#36
 msgid "Pitch and Rate"
@@ -963,40 +981,40 @@ msgstr ""
 #: DlgControllerLearning#47
 msgctxt "DlgControllerLearning#47"
 msgid "Equalizers"
-msgstr ""
+msgstr "Dengeleyiciler (Ekolayzerler)"
 
 #: DlgControllerLearning#48
 msgid "High EQ knob"
-msgstr ""
+msgstr "Yüksek EQ yuvarla"
 
 #: DlgControllerLearning#49
 msgid "Mid EQ knob"
-msgstr ""
+msgstr "Orta EQ yuvarla"
 
 #: DlgControllerLearning#50
 msgid "Low EQ knob"
-msgstr ""
+msgstr "Düşük EQ yuvarla"
 
 #: DlgControllerLearning#51
 msgid "High EQ kill"
-msgstr ""
+msgstr "Yüksek EQ sil"
 
 #: DlgControllerLearning#52
 msgid "Mid EQ kill"
-msgstr ""
+msgstr "Orta EQ sil"
 
 #: DlgControllerLearning#53
 msgid "Low EQ kill"
-msgstr ""
+msgstr "Düşük EQ sil"
 
 #: DlgControllerLearning#54
 msgctxt "DlgControllerLearning#54"
 msgid "Vinyl Control"
-msgstr ""
+msgstr "Vinil Kontrolu"
 
 #: DlgControllerLearning#55
 msgid "Toggle vinyl-control (ON/OFF)"
-msgstr ""
+msgstr "Vinil-kontrolu değiştir (AÇIK/KAPALI)"
 
 #: DlgControllerLearning#56
 msgid "Toggle vinyl-control cueing mode (OFF/ONE/HOT)"
@@ -4778,11 +4796,11 @@ msgstr ""
 
 #: Tooltips#200
 msgid "Adjusts the wavelength of the flange effect (when active)."
-msgstr ""
+msgstr "Flanj etkisinin dalgaboyunu ayarlar (etkin olduğunda)."
 
 #: TrackCollection#1
 msgid "Cannot open database"
-msgstr ""
+msgstr "Veritabanı açılamadı"
 
 #: TrackCollection#2
 msgid ""
@@ -4792,34 +4810,39 @@ msgid ""
 "\n"
 "Click OK to exit."
 msgstr ""
+"Veritabanı bağlantısı kurulamadı.\n"
+"Mixxx SQLite desteği ile QT gerektirir. Nasıl kurulacağını öğrenmek için "
+"lütfen Qt SQL sürücü belgelerini okuyun.\n"
+"\n"
+"Çıkmak için Tamam'a tıklayın."
 
 #: TrackCollection#3
 msgid "Click OK to exit."
-msgstr ""
+msgstr "Çıkmak için Tamam'a tıklayın."
 
 #: TrackCollection#4
 msgid "Cannot upgrade database schema"
-msgstr ""
+msgstr "Veritabanı şeması yükseltilemedi."
 
 #: TrackCollection#5
 msgid "Unable to upgrade your database schema to version %1"
-msgstr ""
+msgstr "Vertabanı şemanız %1 sürümüne yükseltilemedi."
 
 #: TrackCollection#6
 msgid "Your %1 file may be outdated."
-msgstr ""
+msgstr "%1 dosyanızın tarihi geçmiş olabilir."
 
 #: TrackCollection#7
 msgid "Your mixxxdb.sqlite file may be corrupt."
-msgstr ""
+msgstr "mixxxdb.sqlite dosyanız bozulmuş olabilir."
 
 #: TrackCollection#8
 msgid "Try renaming it and restarting Mixxx."
-msgstr ""
+msgstr "Adını değiştirip Mixxx'i tekrar başlatmayı deneyin."
 
 #: TrackCollection#9
 msgid "Your %1 file may be missing or invalid."
-msgstr ""
+msgstr "%1 dosyanız kayıp ya da geçersiz olabilir."
 
 #: TraktorFeature#1
 msgid "Traktor"
@@ -4841,31 +4864,31 @@ msgstr ""
 
 #: WOverview#1
 msgid "Ready to play, analyzing .."
-msgstr ""
+msgstr "Çalmaya hazır, analiz ediliyor .."
 
 #: WOverview#2
 msgid "Loading track .."
-msgstr ""
+msgstr "İz yükleniyor .."
 
 #: WOverview#3
 msgid "Finalizing .."
-msgstr ""
+msgstr "Bitiriliyor .."
 
 #: WSearchLineEdit#1
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
 #: WSearchLineEdit#2
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: WSearchLineEdit#3
 msgid "Search..."
-msgstr ""
+msgstr "Ara..."
 
 #: WTrackTableView#1
 msgid "Add to Playlist"
-msgstr ""
+msgstr "Çalma Listesine Ekle"
 
 #: WTrackTableView#2
 msgid "Add to Crate"
@@ -4873,81 +4896,81 @@ msgstr ""
 
 #: WTrackTableView#3
 msgid "Load to Sampler"
-msgstr ""
+msgstr "Sampler'a Yükle"
 
 #: WTrackTableView#4
 msgctxt "WTrackTableView#4"
 msgid "Remove"
-msgstr ""
+msgstr "Kaldır"
 
 #: WTrackTableView#5
 msgid "Hide from Library"
-msgstr ""
+msgstr "Kütüphane'den gizle"
 
 #: WTrackTableView#6
 msgid "Unhide from Library"
-msgstr ""
+msgstr "Kütüphane'de göster"
 
 #: WTrackTableView#7
 msgid "Purge from Library"
-msgstr ""
+msgstr "Kütüphane'den kaldır"
 
 #: WTrackTableView#8
 msgid "Properties"
-msgstr ""
+msgstr "Özellikler"
 
 #: WTrackTableView#9
 msgid "Open in File Browser"
-msgstr ""
+msgstr "Dosya Tarayıcıda Aç"
 
 #: WTrackTableView#10
 msgid "Add to Auto-DJ Queue (bottom)"
-msgstr ""
+msgstr "Oto-DJ Kuyruğuna Ekle (en alta)"
 
 #: WTrackTableView#11
 msgid "Add to Auto-DJ Queue (top)"
-msgstr ""
+msgstr "Oto-DJ Kuyruğuna Ekle (tepeye)"
 
 #: WTrackTableView#12
 msgid "Reload Track Metadata"
-msgstr ""
+msgstr "İz Üstverisini Tekrar Yükle"
 
 #: WTrackTableView#13
 msgid "Load to Preview Deck"
-msgstr ""
+msgstr "Önizleme Dekine Yükle"
 
 #: WTrackTableView#14
 msgid "Reset Play Count"
-msgstr ""
+msgstr "Çalma Sayacını Sıfırla"
 
 #: WTrackTableView#15
 msgid "Lock BPM"
-msgstr ""
+msgstr "BPM'yi Kilitle"
 
 #: WTrackTableView#16
 msgid "Unlock BPM"
-msgstr ""
+msgstr "BPM Kilidini Aç"
 
 #: WTrackTableView#17
 msgid "Clear BPM and Beatgrid"
-msgstr ""
+msgstr "BPM ve Beatgrid Temizle"
 
 #: WTrackTableView#18
 msgid "Load to Deck %1"
-msgstr ""
+msgstr "%1 Deke Yükle"
 
 #: WTrackTableView#19
 msgctxt "WTrackTableView#19"
 msgid "Sampler %1"
-msgstr ""
+msgstr "Sampler %1"
 
 #: WTrackTableViewHeader#1
 msgid "Show or hide columns."
-msgstr ""
+msgstr "Sütunları göster/gizle"
 
 #: WaveformWidgetFactory#1
 msgid "(GLSL)"
-msgstr ""
+msgstr "(GLSL)"
 
 #: WaveformWidgetFactory#2
 msgid "(GL)"
