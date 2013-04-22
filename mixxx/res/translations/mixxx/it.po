@@ -6,14 +6,14 @@ msgstr ""
 "Project-Id-Version: Mixxx\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-05 06:50+0200\n"
-"PO-Revision-Date: 2013-03-30 11:12+0000\n"
-"Last-Translator: gippy88 <giuseppepetruzzellis@gmail.com>\n"
+"PO-Revision-Date: 2013-04-22 01:12+0000\n"
+"Last-Translator: Davide Pelella <dave.ltd@live.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-31 05:15+0000\n"
-"X-Generator: Launchpad (build 16546)\n"
+"X-Launchpad-Export-Date: 2013-04-22 05:10+0000\n"
+"X-Generator: Launchpad (build 16567)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -267,6 +267,8 @@ msgid ""
 "Browse lets you navigate, view, and load tracks from folders on your hard "
 "disk and external devices."
 msgstr ""
+"Il Browser ti permette di scegliere e caricare le tracce dalle cartelle "
+"presenti sul tuo hard disk e sui supporti rimovibili"
 
 #: BrowseFeature#7
 msgid "Browse"
@@ -406,6 +408,10 @@ msgid ""
 "erratic behavior</li><li>Try to recover by resetting your "
 "controller</li></ul></html>"
 msgstr ""
+"<html>(Devi correggere il codice dello script.)<br>Adesso tu "
+"puoi:<ul><li>Ignorare questo errore in questa sessione, ma questo puo' "
+"provocare comportamenti errati del software</li><li>Provare a recuperare "
+"resettando il controller</li></ul></html>"
 
 #: ControllerMappingDlg#1
 msgctxt "ControllerMappingDlg#1"
@@ -487,7 +493,7 @@ msgstr ""
 #: CrateFeature#6
 msgctxt "CrateFeature#6"
 msgid "Import Playlist"
-msgstr ""
+msgstr "Importa Playlist"
 
 #: CrateFeature#7
 msgid "Crates"
@@ -503,12 +509,12 @@ msgstr "Esporta il Cesto"
 
 #: CrateFeature#10
 msgid "Duplicate Crate"
-msgstr ""
+msgstr "Duplica Cesto"
 
 #: CrateFeature#11
 msgctxt "CrateFeature#11"
 msgid "Unlock"
-msgstr ""
+msgstr "Sblocca"
 
 #: CrateFeature#12
 msgid "Crate name:"
@@ -534,7 +540,7 @@ msgstr "Impossibile Rinominare il Cesto"
 #: CrateFeature#17
 msgctxt "CrateFeature#17"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "File playlist (*.m3u *.m3u8 *.pls *.csv)"
 
 #: CrateFeature#18
 msgctxt "CrateFeature#18"
@@ -542,6 +548,8 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"Playlist M3U (*.m3u);;Playlist M3U8 (*.m3u8);;Playlist PLS (*.pls);;Testo "
+"CSV (*.csv);;File testuale (*.txt)"
 
 #: CrateFeature#19
 msgid ""
@@ -564,7 +572,7 @@ msgstr ""
 
 #: CrateFeature#22
 msgid "Create new crate"
-msgstr ""
+msgstr "Crea nuovo cesto"
 
 #: CrateFeature#23
 msgid "A crate cannot have a blank name."
@@ -600,7 +608,7 @@ msgstr "Disabilita l'Auto DJ"
 
 #: DlgAutoDJ#4
 msgid "Shuffle the content of the Auto DJ playlist."
-msgstr ""
+msgstr "Ordina casualmente il contenuto della playlist di Auto Dj"
 
 #: DlgAutoDJ#5
 msgid "Shuffle"
@@ -616,7 +624,7 @@ msgstr "Salta la traccia"
 
 #: DlgAutoDJ#8
 msgid "Trigger the transition to the next track."
-msgstr ""
+msgstr "Attiva la transizione alla prossima traccia"
 
 #: DlgAutoDJ#9
 msgid "Fade Now"
@@ -658,6 +666,10 @@ msgid ""
 "automatically shows a beat-grid for them, and allows you to synchronize "
 "tracks using their beat information."
 msgstr ""
+"Quando il rileva battute è abilitato, Mixxx rileva i battiti per minuto "
+"delle tue tracce, \n"
+"automaticamente mostra una griglia per le battute, e ti permette di "
+"sincronizzare le tracce usando le informazioni collezionate"
 
 #: DlgBeatsDlg#3
 msgid "Enable BPM and Beat Detection"
@@ -673,7 +685,7 @@ msgstr "Analizzatore dei battiti:"
 
 #: DlgBeatsDlg#6
 msgid "Choose between different algorithms to detect beats."
-msgstr ""
+msgstr "Scegli tra diversi algoritmi per individuare i battiti."
 
 #: DlgBeatsDlg#7
 msgid "Analyser Settings"
@@ -687,6 +699,11 @@ msgid ""
 "This can speed up beat detection on slower computers but may result in lower "
 "quality beatgrids."
 msgstr ""
+"Abilita individuazione veloce dei battiti. \n"
+"Se attivato Mixxx analizza solo il primo minuto delle tracce per ottenere "
+"informazioni sulle battute. \n"
+"Questo velocizza il rilevamento dei battiti su computer lenti ma può "
+"generare griglie di bassa qualità."
 
 #: DlgBeatsDlg#9
 msgid ""
@@ -713,10 +730,14 @@ msgstr ""
 msgid ""
 "Re-analyse beats when settings change or beat detection data is outdated"
 msgstr ""
+"Rianalizza battute quando le opzioni cambiano o le informazioni sulla "
+"traccia sono obsoleti"
 
 #: DlgBeatsDlg#13
 msgid "Enable Fast Analysis (For slow computers, may be less accurate)"
 msgstr ""
+"Abilita Analisi Veloce (Consigliato per i computer più datati, potrebbe "
+"essere meno preciso)"
 
 #: DlgBeatsDlg#14
 msgid "Assume constant tempo (Recommended)"
