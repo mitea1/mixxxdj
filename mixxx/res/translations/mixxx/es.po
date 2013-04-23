@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-03-05 06:50+0200\n"
-"PO-Revision-Date: 2013-04-07 11:26+0000\n"
-"Last-Translator: jus <Unknown>\n"
+"PO-Revision-Date: 2013-04-22 18:34+0000\n"
+"Last-Translator: Miguel Angel del Olmo <silinio45@gmail.com>\n"
 "Language-Team: Galician <gl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-08 05:13+0000\n"
-"X-Generator: Launchpad (build 16550)\n"
+"X-Launchpad-Export-Date: 2013-04-23 05:17+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -731,6 +731,8 @@ msgid ""
 "e.g. from 3rd-party programs or Mixxx versions before 1.11.\n"
 "(Not checked: Analyse only, if no beats exist.)"
 msgstr ""
+"p.e desde un programa de terceros o versiones anteriores de 1.11 de Mixxx\n"
+"(No comprobado:Analizar solo si no existen golpes.)"
 
 #: DlgBeatsDlg#12
 msgid ""
@@ -1641,7 +1643,7 @@ msgstr "Muestra la tasa de refresco actual"
 
 #: DlgPrefControlsDlg#18
 msgid "Normalize Overview"
-msgstr ""
+msgstr "Normalizar resumen"
 
 #: DlgPrefControlsDlg#19
 msgid "Left click"
@@ -3212,7 +3214,7 @@ msgstr "Filtrado"
 
 #: HSVWaveformWidget#1
 msgid "HSV"
-msgstr ""
+msgstr "HSV"
 
 #: HidController#1
 msgid "Generic HID Mouse"
@@ -3486,7 +3488,7 @@ msgstr "Activar Atajos de &Teclado"
 
 #: MixxxApp#22
 msgid "Show Samplers"
-msgstr ""
+msgstr "Mostrar Muestreadores"
 
 #: MixxxApp#23
 msgid "Ctrl+1"
