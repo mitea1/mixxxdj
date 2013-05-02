@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-04-14 06:50+0200\n"
-"PO-Revision-Date: 2013-04-09 11:08+0000\n"
-"Last-Translator: Konstantinos Vaismenos <kostakis09@gmail.com>\n"
+"PO-Revision-Date: 2013-05-01 19:48+0000\n"
+"Last-Translator: Constantine Mousafiris <Unknown>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-24 04:37+0000\n"
+"X-Launchpad-Export-Date: 2013-05-02 05:10+0000\n"
 "X-Generator: Launchpad (build 16580)\n"
 
 #: AutoDJFeature#1
@@ -729,11 +729,15 @@ msgid ""
 "e.g. from 3rd-party programs or Mixxx versions before 1.11.\n"
 "(Not checked: Analyse only, if no beats exist.)"
 msgstr ""
+"π.χ. από προγράμματα τρίτων ή εκδόσεις του Mixxx πριν την 1.11.\n"
+"(Δεν έχει ελεγχθεί: Μόνο για ανάλυση, αν δεν υπάρχουν beats.)"
 
 #: DlgBeatsDlg#12
 msgid ""
 "Re-analyse beats when settings change or beat detection data is outdated"
 msgstr ""
+"Νέα ανάλυση των beats όταν αλλάξουν οι ρυθμίσεις ή όταν τα δεδομένα "
+"εντόπισης των beat είναι ξεπερασμένα"
 
 #: DlgBeatsDlg#13
 msgid "Enable Fast Analysis (For slow computers, may be less accurate)"
@@ -747,7 +751,7 @@ msgstr "Υποθέτει Σταθερό Μέτρο (Ρυθμό) (Προτείν�
 
 #: DlgBeatsDlg#15
 msgid "Enable Offset Correction (Recommended)"
-msgstr ""
+msgstr "Ενεργοποίηση διόρθωσης Offset (Συστήνεται)"
 
 #: DlgBeatsDlg#16
 msgctxt "DlgBeatsDlg#16"
@@ -858,7 +862,7 @@ msgstr "Ένταση Ακουστικών"
 
 #: DlgControllerLearning#14
 msgid "Headphone mix (pre/main)"
-msgstr ""
+msgstr "Μίξη Ακουστικών (προ/ κύριο)"
 
 #: DlgControllerLearning#15
 msgid "Transport"
@@ -902,7 +906,7 @@ msgstr "Κουμπί ρύθμισης του gain"
 
 #: DlgControllerLearning#25
 msgid "Headphone listen button"
-msgstr ""
+msgstr "Κουμπί για Ακρόαση ακουστικών"
 
 #: DlgControllerLearning#26
 msgid "Toggle repeat mode"
@@ -914,7 +918,7 @@ msgstr "Αποφόρτωση κομματιού"
 
 #: DlgControllerLearning#28
 msgid "Mix orientation (e.g. left, right, center)"
-msgstr ""
+msgstr "Προσανατολισμός μείξης (π.χ. αρ., δεξ., κέντρο)"
 
 #: DlgControllerLearning#29
 msgid "BPM and Sync"
@@ -995,15 +999,15 @@ msgstr "Ισοσταθμιστές"
 
 #: DlgControllerLearning#48
 msgid "High EQ knob"
-msgstr ""
+msgstr "Κουμπί υψηλού EQ"
 
 #: DlgControllerLearning#49
 msgid "Mid EQ knob"
-msgstr ""
+msgstr "Κουμπί Μέσου EQ"
 
 #: DlgControllerLearning#50
 msgid "Low EQ knob"
-msgstr ""
+msgstr "Κουμπί χαμηλού EQ"
 
 #: DlgControllerLearning#51
 msgid "High EQ kill"
@@ -1024,7 +1028,7 @@ msgstr "Έλεγχος Βινυλίου"
 
 #: DlgControllerLearning#55
 msgid "Toggle vinyl-control (ON/OFF)"
-msgstr ""
+msgstr "Διακόπτης ελέγχου-βινυλίου (ΟΝ/OFF)"
 
 #: DlgControllerLearning#56
 msgid "Toggle vinyl-control cueing mode (OFF/ONE/HOT)"
@@ -1032,7 +1036,7 @@ msgstr ""
 
 #: DlgControllerLearning#57
 msgid "Toggle vinyl-control mode (ABS/REL/CONST)"
-msgstr ""
+msgstr "Τρόπος ελέγχου-βινυλίου (ABS/REL/CONST)"
 
 #: DlgControllerLearning#58
 msgid "Cue button"
@@ -1092,11 +1096,11 @@ msgstr ""
 
 #: DlgControllerLearning#72
 msgid "Preview Deck %1"
-msgstr ""
+msgstr "Deck προεπισκόπησης %1"
 
 #: DlgControllerLearning#73
 msgid "Single deck mode - Toggle vinyl control to next deck"
-msgstr ""
+msgstr "Τρόπος με  Μονό deck - Μετάβαση ελέγχου-βινυλίου στο επόμενο deck"
 
 #: DlgControllerLearning#74
 msgid "Cues"
@@ -1112,7 +1116,7 @@ msgstr ""
 
 #: DlgControllerLearning#77
 msgid "Loop Exit button"
-msgstr ""
+msgstr "Κουμπί για έξοδο από τον βρόχο (loop)"
 
 #: DlgControllerLearning#78
 msgid "Beat-Looping"
@@ -1150,6 +1154,7 @@ msgstr "Βιβλιοθήκη"
 #: DlgControllerLearning#86
 msgid "Expand/collapse the selected view (library, playlist..)"
 msgstr ""
+"Μεγέθυνση/ Σύντμηση της επιλεγμένης προβολής (βιβλιοθήκη, playlist, ...)"
 
 #: DlgControllerLearning#87
 msgid "Switch to the next view (library, playlist..)"
@@ -1169,7 +1174,7 @@ msgstr "Μετακίνηση στο προηγούμενο κομμάτι της
 
 #: DlgControllerLearning#91
 msgid "Load selected track into first stopped deck"
-msgstr ""
+msgstr "Φόρτωση επιλεγμένου κομματιού στο πρώτο σταματημένο deck"
 
 #: DlgControllerLearning#92
 msgid "Load selected track"
@@ -1247,15 +1252,15 @@ msgstr ""
 
 #: DlgControllerLearning#110
 msgid "Show/hide the microphone section"
-msgstr ""
+msgstr "Εμφάνιση/ Απόκρυψη ενότητας Μικροφώνου"
 
 #: DlgControllerLearning#111
 msgid "Show/hide the vinyl control section"
-msgstr ""
+msgstr "Εμφάνιση/ Απόκρυψη ενότητας για τον έλεγχο βινυλίου"
 
 #: DlgControllerLearning#112
 msgid "Show/hide the preview deck"
-msgstr ""
+msgstr "Εμφάνιση/ Απόκρυψη του deck προεπισκόπησης"
 
 #: DlgControllerLearning#113
 msgid "Show/hide spinning vinyl widget"
@@ -1409,7 +1414,7 @@ msgstr "Χωρίς Περιγραφή"
 
 #: DlgPrefController#4
 msgid "No support available."
-msgstr ""
+msgstr "Δεν υπάρχει υποστήριξη."
 
 #: DlgPrefControllerDlg#1
 msgctxt "DlgPrefControllerDlg#1"
@@ -1453,11 +1458,11 @@ msgstr "Υποστήριξη:"
 
 #: DlgPrefControllerDlg#10
 msgid "Click to start the Controller Learning wizard."
-msgstr ""
+msgstr "Κάντε κλικ για να αρχίσει ο Μάγος για τον Έλεγχο εκμάθησης."
 
 #: DlgPrefControllerDlg#11
 msgid "Learning Wizard (MIDI Only)"
-msgstr ""
+msgstr "Μάγος για τον Έλεγχο εκμάθησης (Μόνο MIDI)"
 
 #: DlgPrefControls#1
 msgctxt "DlgPrefControls#1"
@@ -1470,7 +1475,7 @@ msgstr "Απομένει"
 
 #: DlgPrefControls#3
 msgid "Don't load tracks into a playing deck"
-msgstr ""
+msgstr "Μη φορτώνετε κομμάτια σε ένα deck που παίζει"
 
 #: DlgPrefControls#4
 msgid "CDJ Mode"
@@ -1511,11 +1516,12 @@ msgstr "10%"
 
 #: DlgPrefControls#13
 msgid "Load tracks into a playing deck"
-msgstr ""
+msgstr "Φορτώστε κομμάτια σε ένα deck που παίζει"
 
 #: DlgPrefControls#14
 msgid "The selected skin is bigger than your screen resolution."
 msgstr ""
+"Το skin που επιλέξατε είναι μεγαλύτερο από τη δυνατότητα ανάλυσης οθόνης."
 
 #: DlgPrefControls#15
 msgid "On (only in Library)"
@@ -1637,7 +1643,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#17
 msgid "Displays the actual frame rate."
-msgstr ""
+msgstr "Εμφανίζει πραγματικό ρυθμό ανανέωσης εικόνας (frame rate)"
 
 #: DlgPrefControlsDlg#18
 msgid "Normalize Overview"
@@ -1670,27 +1676,28 @@ msgstr ""
 #: DlgPrefControlsDlg#25
 msgctxt "DlgPrefControlsDlg#25"
 msgid "Waveform Display"
-msgstr ""
+msgstr "Εμφάνιση κυματομορφής"
 
 #: DlgPrefControlsDlg#26
 msgid "Synchronize zoom level across all waveform displays."
 msgstr ""
+"Συγχρονισμός επιπέδου μεγέθυνσης για όλες τις μορφές εμφάνισης κυματομορφής."
 
 #: DlgPrefControlsDlg#27
 msgid "OpenGl status"
-msgstr ""
+msgstr "Κατάσταση OpenGl"
 
 #: DlgPrefControlsDlg#28
 msgid "Display type"
-msgstr ""
+msgstr "Μορφή εμφάνισης"
 
 #: DlgPrefControlsDlg#29
 msgid "Permanent rate change when left-clicking"
-msgstr ""
+msgstr "Σταθερός ρυθμός αλλαγής με αριστ. κλικ"
 
 #: DlgPrefControlsDlg#30
 msgid "Permanent rate change when right-clicking"
-msgstr ""
+msgstr "Σταθερός ρυθμός αλλαγής με δεξί κλικ"
 
 #: DlgPrefControlsDlg#31
 msgid ""
@@ -1700,7 +1707,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#32
 msgid "Value in milliseconds"
-msgstr ""
+msgstr "Τιμή σε χιλιοστά του δευτερολέπτου (msec)"
 
 #: DlgPrefControlsDlg#33
 msgid "Visual gain of the high frequencies"
@@ -1724,7 +1731,7 @@ msgstr "Ρυθμός καρέ"
 
 #: DlgPrefControlsDlg#38
 msgid "Default zoom"
-msgstr ""
+msgstr "Προεπιλεγμένη μεγέθυνση (zoom)"
 
 #: DlgPrefControlsDlg#39
 msgid "Visual gain"
@@ -1775,7 +1782,7 @@ msgstr ""
 #: DlgPrefCrossfaderDlg#10
 msgctxt "DlgPrefCrossfaderDlg#10"
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Επαναφορά προεπιλεγμένων ρυθμίσεων"
 
 #: DlgPrefEQDlg#1
 msgctxt "DlgPrefEQDlg#1"
@@ -1821,13 +1828,15 @@ msgstr "Επαναφορά Αρχικών Ρυθμίσεων"
 
 #: DlgPrefMappableController#1
 msgid "Apply device settings?"
-msgstr ""
+msgstr "Να γίνει εφαρμογή των ρυθμίσεων της συσκευής;"
 
 #: DlgPrefMappableController#2
 msgid ""
 "Your settings must be applied before starting the learning wizard.\n"
 "Apply settings and continue?"
 msgstr ""
+"Πρέπει να εφαρμοσθούν οι ρυθμίσεις σας πριν εκκινήσετε τον Μάγο εκμάθησης.\n"
+"Να γίνει εφαρμογή ρυθμίσεων και να συνεχίσουμε;"
 
 #: DlgPrefMappableController#3
 msgid "Clear Input Bindings"
@@ -1852,7 +1861,7 @@ msgstr "Φόρμα3"
 
 #: DlgPrefNoControllersDlg#2
 msgid "No controllers available."
-msgstr ""
+msgstr "Δεν υπάρχουν ελεγκτές (controllers)."
 
 #: DlgPrefNoVinylDlg#1
 msgctxt "DlgPrefNoVinylDlg#1"
@@ -1894,7 +1903,7 @@ msgstr ""
 #: DlgPrefNoVinylDlg#5
 msgctxt "DlgPrefNoVinylDlg#5"
 msgid "Turntable Preamp"
-msgstr ""
+msgstr "Προενίσχυση πικάπ"
 
 #: DlgPrefNoVinylDlg#6
 msgctxt "DlgPrefNoVinylDlg#6"
@@ -1939,22 +1948,22 @@ msgstr "Εμφάνιση Ποιότητας Σήματος στο Skin"
 #: DlgPrefNoVinylDlg#14
 msgctxt "DlgPrefNoVinylDlg#14"
 msgid "Control Mode"
-msgstr ""
+msgstr "Τρόπος ελέγχου"
 
 #: DlgPrefNoVinylDlg#15
 msgctxt "DlgPrefNoVinylDlg#15"
 msgid "Absolute Mode"
-msgstr ""
+msgstr "Απόλυτος τρόπος"
 
 #: DlgPrefNoVinylDlg#16
 msgctxt "DlgPrefNoVinylDlg#16"
 msgid "Relative Mode"
-msgstr ""
+msgstr "Σχετικός τρόπος"
 
 #: DlgPrefNoVinylDlg#17
 msgctxt "DlgPrefNoVinylDlg#17"
 msgid "Enable Needle Skip Prevention"
-msgstr ""
+msgstr "Ενεργοποίηση πρόληψης χοροπηδητού βελόνας"
 
 #: DlgPrefNoVinylDlg#18
 msgctxt "DlgPrefNoVinylDlg#18"
@@ -1999,7 +2008,7 @@ msgstr "MP3, Ogg Vorbis, FLAC, WAVe, AIFF"
 
 #: DlgPrefPlaylistDlg#4
 msgid "Loaded Plugins:"
-msgstr ""
+msgstr "Φορτωμένα πρόσθετα:"
 
 #: DlgPrefPlaylistDlg#5
 msgctxt "DlgPrefPlaylistDlg#5"
@@ -2013,7 +2022,7 @@ msgstr ""
 
 #: DlgPrefPlaylistDlg#7
 msgid "Synchronize ID3 tags on track modifications"
-msgstr ""
+msgstr "Συγχρονισμός των ID3 tags με τις τροποποιήσεις των κομματιών"
 
 #: DlgPrefPlaylistDlg#8
 msgid "Rescan library on start-up"
@@ -2021,27 +2030,27 @@ msgstr "Επανεξέταση της συλλογής κατά την εκκί�
 
 #: DlgPrefPlaylistDlg#9
 msgid "Use relative paths for playlist export if possible"
-msgstr ""
+msgstr "Χρήση σχετικών διαδρομών για την εξαγωγή playlists, αν είναι δυνατόν"
 
 #: DlgPrefPlaylistDlg#10
 msgid "Other Libraries"
-msgstr ""
+msgstr "Άλλες βιβλιοθήκες"
 
 #: DlgPrefPlaylistDlg#11
 msgid "Show Rhythmbox Library"
-msgstr ""
+msgstr "Εμφάνιση βιβλιοθήκης Rhythmbox"
 
 #: DlgPrefPlaylistDlg#12
 msgid "Show iTunes Library"
-msgstr ""
+msgstr "Εμφάνιση βιβλιοθήκης iTunes"
 
 #: DlgPrefPlaylistDlg#13
 msgid "Show Traktor Library"
-msgstr ""
+msgstr "Εμφάνιση βιβλιοθήκης Traktor"
 
 #: DlgPrefPlaylistDlg#14
 msgid "    You will need to restart Mixxx for this to take effect"
-msgstr ""
+msgstr "    Για να ισχύσουν αυτά, θα πρέπει να επανεκκινήσετε το Mixxx"
 
 #: DlgPrefPlaylistDlg#15
 msgctxt "DlgPrefPlaylistDlg#15"
