@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-04-14 06:50+0200\n"
-"PO-Revision-Date: 2013-04-26 14:51+0000\n"
+"PO-Revision-Date: 2013-05-03 22:43+0000\n"
 "Last-Translator: Nazar Gerasymchuk <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-27 05:10+0000\n"
-"X-Generator: Launchpad (build 16580)\n"
+"X-Launchpad-Export-Date: 2013-05-04 05:13+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -736,11 +736,11 @@ msgstr ""
 
 #: DlgBeatsDlg#17
 msgid "Min:"
-msgstr ""
+msgstr "Мін:"
 
 #: DlgBeatsDlg#18
 msgid "Max:"
-msgstr ""
+msgstr "Макс:"
 
 #: DlgBeatsDlg#19
 msgctxt "DlgBeatsDlg#19"
@@ -785,7 +785,7 @@ msgstr ""
 
 #: DlgControllerLearning#3
 msgid "Done"
-msgstr ""
+msgstr "Готово"
 
 #: DlgControllerLearning#4
 msgid "To map another control click a button or choose from the list."
@@ -802,7 +802,7 @@ msgstr ""
 #: DlgControllerLearning#7
 msgctxt "DlgControllerLearning#7"
 msgid "Sampler %1"
-msgstr ""
+msgstr "Семплер %1"
 
 #: DlgControllerLearning#8
 msgid "Reset to default"
@@ -810,7 +810,7 @@ msgstr ""
 
 #: DlgControllerLearning#9
 msgid "Mixer"
-msgstr ""
+msgstr "Мікшер"
 
 #: DlgControllerLearning#10
 msgctxt "DlgControllerLearning#10"
@@ -859,11 +859,11 @@ msgstr ""
 
 #: DlgControllerLearning#21
 msgid "Jump to start of track"
-msgstr ""
+msgstr "Стрибок до початку треку"
 
 #: DlgControllerLearning#22
 msgid "Jump to end of track"
-msgstr ""
+msgstr "Стрибок до кінця треку"
 
 #: DlgControllerLearning#23
 msgid "Play reverse button"
@@ -1057,7 +1057,7 @@ msgstr ""
 
 #: DlgControllerLearning#70
 msgid "Double the current loop's length"
-msgstr ""
+msgstr "Подвоїти довжину поточного циклу"
 
 #: DlgControllerLearning#71
 msgid "Toggle slip mode"
@@ -1113,12 +1113,12 @@ msgstr ""
 
 #: DlgControllerLearning#84
 msgid "1/4th"
-msgstr ""
+msgstr "1/4-та"
 
 #: DlgControllerLearning#85
 msgctxt "DlgControllerLearning#85"
 msgid "Library"
-msgstr ""
+msgstr "Збірка"
 
 #: DlgControllerLearning#86
 msgid "Expand/collapse the selected view (library, playlist..)"
@@ -1175,7 +1175,7 @@ msgstr ""
 #: DlgControllerLearning#99
 msgctxt "DlgControllerLearning#99"
 msgid "Microphone"
-msgstr ""
+msgstr "Мікрофон"
 
 #: DlgControllerLearning#100
 msgid "Microphone on/off"
@@ -1192,7 +1192,7 @@ msgstr ""
 #: DlgControllerLearning#103
 msgctxt "DlgControllerLearning#103"
 msgid "Auto DJ"
-msgstr ""
+msgstr "Авто-DJ"
 
 #: DlgControllerLearning#104
 msgid "Shuffle the content of the Auto DJ playlist"
@@ -1265,7 +1265,7 @@ msgstr ""
 #: DlgHidden#5
 msgctxt "DlgHidden#5"
 msgid "Purge"
-msgstr ""
+msgstr "Чищення"
 
 #: DlgHidden#6
 msgid "Unhide selected tracks from the library."
@@ -1273,26 +1273,26 @@ msgstr ""
 
 #: DlgHidden#7
 msgid "Unhide"
-msgstr ""
+msgstr "Показати"
 
 #: DlgHidden#8
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: DlgMissing#1
 msgctxt "DlgMissing#1"
 msgid "Manage"
-msgstr ""
+msgstr "Управління"
 
 #: DlgMissing#2
 msgctxt "DlgMissing#2"
 msgid "Selects all tracks in the table below."
-msgstr ""
+msgstr "Обрати всі треки з таблиці нижче."
 
 #: DlgMissing#3
 msgctxt "DlgMissing#3"
 msgid "Select All"
-msgstr ""
+msgstr "Обрати все"
 
 #: DlgMissing#4
 msgctxt "DlgMissing#4"
@@ -1302,7 +1302,7 @@ msgstr ""
 #: DlgMissing#5
 msgctxt "DlgMissing#5"
 msgid "Purge"
-msgstr ""
+msgstr "Чищення"
 
 #: DlgPluginDownloader#1
 msgid "Missing Audio Plugin Downloader"
@@ -1349,7 +1349,7 @@ msgstr "Додати"
 
 #: DlgPrefBPMDlg#10
 msgid "Edit"
-msgstr ""
+msgstr "Редагування"
 
 #: DlgPrefBPMDlg#11
 msgid "Delete"
@@ -1378,7 +1378,7 @@ msgstr ""
 
 #: DlgPrefController#3
 msgid "No Description"
-msgstr ""
+msgstr "Немає опису"
 
 #: DlgPrefController#4
 msgid "No support available."
@@ -1408,7 +1408,7 @@ msgstr ""
 
 #: DlgPrefControllerDlg#6
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
 #: DlgPrefControllerDlg#7
 msgid "Load Preset:"
@@ -1420,7 +1420,7 @@ msgstr ""
 
 #: DlgPrefControllerDlg#9
 msgid "Support:"
-msgstr ""
+msgstr "Підтримка:"
 
 #: DlgPrefControllerDlg#10
 msgid "Click to start the Controller Learning wizard."
@@ -1433,7 +1433,7 @@ msgstr ""
 #: DlgPrefControls#1
 msgctxt "DlgPrefControls#1"
 msgid "Position"
-msgstr ""
+msgstr "Положення"
 
 #: DlgPrefControls#2
 msgid "Remaining"
@@ -1450,15 +1450,15 @@ msgstr "CDJ Режим"
 #: DlgPrefControls#5
 msgctxt "DlgPrefControls#5"
 msgid "Simple"
-msgstr ""
+msgstr "Спрощено"
 
 #: DlgPrefControls#6
 msgid "On"
-msgstr ""
+msgstr "Вкл"
 
 #: DlgPrefControls#7
 msgid "Off"
-msgstr ""
+msgstr "Вимкн."
 
 #: DlgPrefControls#8
 msgid "This skin does not support schemes"
@@ -1486,7 +1486,7 @@ msgstr ""
 
 #: DlgPrefControls#14
 msgid "The selected skin is bigger than your screen resolution."
-msgstr ""
+msgstr "Обраний скін більший ніж роздільна здатність вашого екрану"
 
 #: DlgPrefControls#15
 msgid "On (only in Library)"
@@ -1531,7 +1531,7 @@ msgstr "Догори збільшення швидкості"
 #: DlgPrefControls#25
 msgctxt "DlgPrefControls#25"
 msgid "Information"
-msgstr ""
+msgstr "Відомості"
 
 #: DlgPrefControls#26
 msgid "Mixxx must be restarted before the changes will take effect."
@@ -1539,7 +1539,7 @@ msgstr "Mixxx повинен бути перезавантажений, щоб �
 
 #: DlgPrefControls#27
 msgid "OpenGL not available"
-msgstr ""
+msgstr "OpenGL не доступно"
 
 #: DlgPrefControlsDlg#1
 msgctxt "DlgPrefControlsDlg#1"
@@ -1649,7 +1649,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#27
 msgid "OpenGl status"
-msgstr ""
+msgstr "Статус OpenGL"
 
 #: DlgPrefControlsDlg#28
 msgid "Display type"
@@ -1671,7 +1671,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#32
 msgid "Value in milliseconds"
-msgstr ""
+msgstr "Значення в мілісекундах"
 
 #: DlgPrefControlsDlg#33
 msgid "Visual gain of the high frequencies"
@@ -1695,7 +1695,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#38
 msgid "Default zoom"
-msgstr ""
+msgstr "Типовий зум"
 
 #: DlgPrefControlsDlg#39
 msgid "Visual gain"
@@ -1991,7 +1991,7 @@ msgstr ""
 #: DlgPrefPlaylistDlg#6
 msgctxt "DlgPrefPlaylistDlg#6"
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Інше"
 
 #: DlgPrefPlaylistDlg#7
 msgid "Synchronize ID3 tags on track modifications"
@@ -2028,12 +2028,12 @@ msgstr ""
 #: DlgPrefPlaylistDlg#15
 msgctxt "DlgPrefPlaylistDlg#15"
 msgid "Browse..."
-msgstr ""
+msgstr "Огляд …"
 
 #: DlgPrefPlaylistDlg#16
 msgctxt "DlgPrefPlaylistDlg#16"
 msgid "Library"
-msgstr ""
+msgstr "Бібліотека"
 
 #: DlgPrefPlaylistDlg#17
 msgid "Music Directory:"
@@ -2077,7 +2077,7 @@ msgstr ""
 
 #: DlgPrefRecordDlg#3
 msgid "Recordings Directory:"
-msgstr ""
+msgstr "Каталог із записами:"
 
 #: DlgPrefRecordDlg#4
 msgctxt "DlgPrefRecordDlg#4"
@@ -2087,7 +2087,7 @@ msgstr ""
 #: DlgPrefRecordDlg#5
 msgctxt "DlgPrefRecordDlg#5"
 msgid "Encoding"
-msgstr ""
+msgstr "Кодування"
 
 #: DlgPrefRecordDlg#6
 msgid "Quality"
@@ -2108,7 +2108,7 @@ msgstr "Теги"
 #: DlgPrefRecordDlg#10
 msgctxt "DlgPrefRecordDlg#10"
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: DlgPrefRecordDlg#11
 msgid "Author"
@@ -2117,12 +2117,12 @@ msgstr "Автор"
 #: DlgPrefRecordDlg#12
 msgctxt "DlgPrefRecordDlg#12"
 msgid "Album"
-msgstr ""
+msgstr "Альбом"
 
 #: DlgPrefRecordDlg#13
 msgctxt "DlgPrefRecordDlg#13"
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Інше"
 
 #: DlgPrefRecordDlg#14
 msgid "Create a CUE file"
@@ -2185,7 +2185,7 @@ msgstr "дБ"
 #: DlgPrefReplayGainDlg#11
 msgctxt "DlgPrefReplayGainDlg#11"
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Відновити типові значення"
 
 #: DlgPrefShoutcast#1
 msgid "Icecast 2"
@@ -2255,7 +2255,7 @@ msgstr "Настройки потоку"
 
 #: DlgPrefShoutcastDlg#11
 msgid "Dynamically update Ogg Vorbis metadata."
-msgstr ""
+msgstr "Динамічно оновлювати мета-дані Ogg Vorbis."
 
 #: DlgPrefShoutcastDlg#12
 msgid ""
@@ -2282,7 +2282,7 @@ msgstr "http://www.mixxx.org"
 
 #: DlgPrefShoutcastDlg#17
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: DlgPrefShoutcastDlg#18
 msgid ""
@@ -2313,7 +2313,7 @@ msgstr ""
 #: DlgPrefShoutcastDlg#19
 msgctxt "DlgPrefShoutcastDlg#19"
 msgid "Genre"
-msgstr ""
+msgstr "Жанр"
 
 #: DlgPrefShoutcastDlg#20
 msgid "Live mix"
@@ -2330,12 +2330,12 @@ msgstr ""
 #: DlgPrefShoutcastDlg#23
 msgctxt "DlgPrefShoutcastDlg#23"
 msgid "Encoding"
-msgstr ""
+msgstr "Кодування"
 
 #: DlgPrefShoutcastDlg#24
 msgctxt "DlgPrefShoutcastDlg#24"
 msgid "Bitrate"
-msgstr ""
+msgstr "Бітрейт"
 
 #: DlgPrefShoutcastDlg#25
 msgid "Format"
@@ -2356,12 +2356,12 @@ msgstr "Активувати метадані користувача"
 #: DlgPrefShoutcastDlg#29
 msgctxt "DlgPrefShoutcastDlg#29"
 msgid "Artist"
-msgstr ""
+msgstr "Виконавець"
 
 #: DlgPrefShoutcastDlg#30
 msgctxt "DlgPrefShoutcastDlg#30"
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: DlgPrefShoutcastDlg#31
 msgid ""
