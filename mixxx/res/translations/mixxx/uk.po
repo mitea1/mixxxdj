@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-04-14 06:50+0200\n"
-"PO-Revision-Date: 2013-05-03 22:43+0000\n"
+"PO-Revision-Date: 2013-05-04 14:11+0000\n"
 "Last-Translator: Nazar Gerasymchuk <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-04 05:13+0000\n"
+"X-Launchpad-Export-Date: 2013-05-05 05:17+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 
 #: AutoDJFeature#1
@@ -2445,12 +2445,12 @@ msgstr ""
 #: DlgPrefSoundDlg#7
 msgctxt "DlgPrefSoundDlg#7"
 msgid "Output"
-msgstr ""
+msgstr "Вихід"
 
 #: DlgPrefSoundDlg#8
 msgctxt "DlgPrefSoundDlg#8"
 msgid "Input"
-msgstr ""
+msgstr "Вхід"
 
 #: DlgPrefSoundDlg#9
 msgid "Query Devices"
@@ -2459,12 +2459,12 @@ msgstr "Пристрої, що надсилають запити"
 #: DlgPrefSoundDlg#10
 msgctxt "DlgPrefSoundDlg#10"
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Відновити типові значення"
 
 #: DlgPrefSoundDlg#11
 msgctxt "DlgPrefSoundDlg#11"
 msgid "Apply"
-msgstr ""
+msgstr "Застосувати"
 
 #: DlgPrefSoundDlg#12
 msgid "Latency"
@@ -2634,12 +2634,12 @@ msgstr "Звукове обладнання"
 
 #: DlgPreferences#3
 msgid "Controllers"
-msgstr ""
+msgstr "Контролери"
 
 #: DlgPreferences#4
 msgctxt "DlgPreferences#4"
 msgid "Library"
-msgstr ""
+msgstr "Бібліотека"
 
 #: DlgPreferences#5
 msgid "Interface"
@@ -2648,7 +2648,7 @@ msgstr "Інтерфейс"
 #: DlgPreferences#6
 msgctxt "DlgPreferences#6"
 msgid "Equalizers"
-msgstr ""
+msgstr "Еквалайзери"
 
 #: DlgPreferences#7
 msgctxt "DlgPreferences#7"
@@ -2706,7 +2706,7 @@ msgstr "Новий"
 
 #: DlgPrepare#4
 msgid "Shows all tracks in the library."
-msgstr ""
+msgstr "Показати всі треки в бібліотеці."
 
 #: DlgPrepare#5
 msgid "All"
@@ -2719,7 +2719,7 @@ msgstr "Прогрес"
 #: DlgPrepare#7
 msgctxt "DlgPrepare#7"
 msgid "Selects all tracks in the table below."
-msgstr ""
+msgstr "Обрати всі треки з таблиці нижче."
 
 #: DlgPrepare#8
 msgctxt "DlgPrepare#8"
@@ -2780,7 +2780,7 @@ msgstr "Редактор треків"
 
 #: DlgTrackInfo#2
 msgid "Summary"
-msgstr ""
+msgstr "Підсумок"
 
 #: DlgTrackInfo#3
 msgid "Title:"
@@ -2804,12 +2804,12 @@ msgstr "Жанр:"
 
 #: DlgTrackInfo#8
 msgid "Composer:"
-msgstr ""
+msgstr "Композитор:"
 
 #: DlgTrackInfo#9
 msgctxt "DlgTrackInfo#9"
 msgid "Year"
-msgstr ""
+msgstr "Рік"
 
 #: DlgTrackInfo#10
 msgctxt "DlgTrackInfo#10"
@@ -2847,7 +2847,7 @@ msgstr ""
 
 #: DlgTrackInfo#18
 msgid "Halve BPM"
-msgstr ""
+msgstr "Навпіл BPM"
 
 #: DlgTrackInfo#19
 msgid "Cuepoints"
@@ -3171,7 +3171,7 @@ msgstr ""
 
 #: HidController#4
 msgid "Generic HID Keyboard"
-msgstr ""
+msgstr "Типова HID клавіатура"
 
 #: HidController#5
 msgid "Generic HID Multiaxis Controller"
@@ -3473,7 +3473,7 @@ msgstr ""
 
 #: MixxxApp#34
 msgid "Developer"
-msgstr ""
+msgstr "Розробник"
 
 #: MixxxApp#35
 msgid "Load track to Deck %1"
@@ -3501,7 +3501,7 @@ msgstr "&Вихід"
 
 #: MixxxApp#41
 msgid "Quits Mixxx"
-msgstr ""
+msgstr "Виходить з Mixxx"
 
 #: MixxxApp#42
 msgid "Ctrl+Q"
@@ -3662,7 +3662,7 @@ msgstr ""
 
 #: MixxxApp#81
 msgid "&Translate This Application"
-msgstr ""
+msgstr "&Перекласти цю програму"
 
 #: MixxxApp#82
 msgid "Enable Live &Broadcasting"
@@ -3798,7 +3798,7 @@ msgstr ""
 #: ParserCsv#3
 msgctxt "ParserCsv#3"
 msgid "Could not create file"
-msgstr ""
+msgstr "Не вдалося створити файл"
 
 #: ParserCsv#4
 msgid "Readable text Export Failed"
@@ -3871,7 +3871,7 @@ msgstr ""
 
 #: PlaylistFeature#8
 msgid "Create new playlist"
-msgstr ""
+msgstr "Створити новий список відтворення"
 
 #: PrepareFeature#1
 msgctxt "PrepareFeature#1"
@@ -4041,7 +4041,7 @@ msgstr ""
 
 #: SoftwareWaveformWidget#2
 msgid "Software"
-msgstr ""
+msgstr "Програмне забезпечення"
 
 #: Tooltips#1
 msgid "Drop tracks from library or external file manager here."
@@ -4158,7 +4158,7 @@ msgstr ""
 
 #: Tooltips#29
 msgid "Volume Control"
-msgstr ""
+msgstr "Регулятор гучності"
 
 #: Tooltips#30
 msgid "Adjusts the volume of the selected channel."
@@ -4166,7 +4166,7 @@ msgstr ""
 
 #: Tooltips#31
 msgid "Master Volume"
-msgstr ""
+msgstr "Головна гучність"
 
 #: Tooltips#32
 msgid "Adjusts the master output volume."
@@ -4175,7 +4175,7 @@ msgstr ""
 #: Tooltips#33
 msgctxt "Tooltips#33"
 msgid "Crossfader"
-msgstr ""
+msgstr "Кроссфейдер"
 
 #: Tooltips#34
 msgid ""
@@ -4184,7 +4184,7 @@ msgstr ""
 
 #: Tooltips#35
 msgid "Balance"
-msgstr ""
+msgstr "Баланс"
 
 #: Tooltips#36
 msgid "Adjusts the left/right channel balance on the master output."
@@ -4235,7 +4235,7 @@ msgstr ""
 
 #: Tooltips#47
 msgid "Show/hide the Sampler section."
-msgstr ""
+msgstr "Показати/Сховати секцію семплера"
 
 #: Tooltips#48
 msgctxt "Tooltips#48"
@@ -4256,11 +4256,11 @@ msgstr ""
 
 #: Tooltips#52
 msgid "Microphone Volume"
-msgstr ""
+msgstr "Гучність мікрофону"
 
 #: Tooltips#53
 msgid "Adjusts the microphone volume."
-msgstr ""
+msgstr "Регулювання гучності мікрофона."
 
 #: Tooltips#54
 msgid "Microphone Talk-Over"
@@ -4340,7 +4340,7 @@ msgstr ""
 
 #: Tooltips#73
 msgid "High EQ"
-msgstr ""
+msgstr "Високі частоти"
 
 #: Tooltips#74
 msgid "Adjusts the gain of the high EQ filter."
@@ -4352,7 +4352,7 @@ msgstr ""
 
 #: Tooltips#76
 msgid "High EQ Kill"
-msgstr ""
+msgstr "Зріз високих частот"
 
 #: Tooltips#77
 msgid "Holds the gain of the high EQ to zero while active."
@@ -4360,7 +4360,7 @@ msgstr ""
 
 #: Tooltips#78
 msgid "Mid EQ Kill"
-msgstr ""
+msgstr "Зріз середніх частот"
 
 #: Tooltips#79
 msgid "Holds the gain of the mid EQ to zero while active."
@@ -4368,7 +4368,7 @@ msgstr ""
 
 #: Tooltips#80
 msgid "Low EQ Kill"
-msgstr ""
+msgstr "Зріз низьких частот"
 
 #: Tooltips#81
 msgid "Holds the gain of the low EQ to zero while active."
@@ -4439,7 +4439,7 @@ msgstr ""
 
 #: Tooltips#97
 msgid "Reverse"
-msgstr ""
+msgstr "У зворотному напрямку"
 
 #: Tooltips#98
 msgid "Reverses track playback during regular playback."
@@ -4451,7 +4451,7 @@ msgstr ""
 
 #: Tooltips#100
 msgid "Toggles playing or pausing the track."
-msgstr ""
+msgstr "Перемикає програвання чи паузу треку."
 
 #: Tooltips#101
 msgid "Jumps to the beginning of the track."
@@ -4487,7 +4487,7 @@ msgstr ""
 
 #: Tooltips#109
 msgid "Headphone"
-msgstr ""
+msgstr "Навушники"
 
 #: Tooltips#110
 msgid "Sends the selected channel's audio to the headphone output."
@@ -4527,7 +4527,7 @@ msgstr ""
 
 #: Tooltips#118
 msgid "Turns the current loop off."
-msgstr ""
+msgstr "Вимикає поточний цикл."
 
 #: Tooltips#119
 msgid "Slip Mode"
@@ -4807,47 +4807,47 @@ msgstr ""
 
 #: Tooltips#184
 msgid "Track Duration"
-msgstr ""
+msgstr "Тривалість треку"
 
 #: Tooltips#185
 msgid "Displays the duration of the loaded track."
-msgstr ""
+msgstr "Показує тривалість завантаженого треку."
 
 #: Tooltips#186
 msgid "Information is loaded from the track's metadata tags."
-msgstr ""
+msgstr "Інформація завантажена з мета-даних треку."
 
 #: Tooltips#187
 msgid "Track Artist"
-msgstr ""
+msgstr "Виконавець треку."
 
 #: Tooltips#188
 msgid "Displays the artist of the loaded track."
-msgstr ""
+msgstr "Показує виконавеця завантаженого треку."
 
 #: Tooltips#189
 msgid "Track Title"
-msgstr ""
+msgstr "Назва треку"
 
 #: Tooltips#190
 msgid "Displays the title of the loaded track."
-msgstr ""
+msgstr "Показує назву завантаженого треку"
 
 #: Tooltips#191
 msgid "Track Album"
-msgstr ""
+msgstr "Альбом треку"
 
 #: Tooltips#192
 msgid "Displays the album name of the loaded track."
-msgstr ""
+msgstr "Показує альбом завантаженого треку"
 
 #: Tooltips#193
 msgid "Track Artist/Title"
-msgstr ""
+msgstr "Виконавець/Заголовок треку"
 
 #: Tooltips#194
 msgid "Displays the artist and title of the loaded track."
-msgstr ""
+msgstr "Показує виконавця/заголовок завантаженого треку"
 
 #: Tooltips#195
 msgid "Flanger"
@@ -4859,7 +4859,7 @@ msgstr ""
 
 #: Tooltips#197
 msgid "Flanger Delay"
-msgstr ""
+msgstr "Затримка Flanger"
 
 #: Tooltips#198
 msgid "Adjusts the phase delay of the flange effect (when active)."
@@ -4867,7 +4867,7 @@ msgstr ""
 
 #: Tooltips#199
 msgid "Flanger Depth"
-msgstr ""
+msgstr "Глибина Flanger"
 
 #: Tooltips#200
 msgid "Adjusts the intensity of the flange effect (when active)."
@@ -4875,7 +4875,7 @@ msgstr ""
 
 #: Tooltips#201
 msgid "Flanger LFO Period"
-msgstr ""
+msgstr "Період LFO Flanger"
 
 #: Tooltips#202
 msgid "Adjusts the wavelength of the flange effect (when active)."
@@ -4902,7 +4902,7 @@ msgstr ""
 
 #: TrackCollection#3
 msgid "Click OK to exit."
-msgstr ""
+msgstr "Натисніть ОК щоб вийти."
 
 #: TrackCollection#4
 msgid "Cannot upgrade database schema"
@@ -4914,19 +4914,19 @@ msgstr ""
 
 #: TrackCollection#6
 msgid "Your %1 file may be outdated."
-msgstr ""
+msgstr "Ваш %1 файл може бути застарілий."
 
 #: TrackCollection#7
 msgid "Your mixxxdb.sqlite file may be corrupt."
-msgstr ""
+msgstr "Ваш файл mixxxdb.sqlite може бути пошкодженим."
 
 #: TrackCollection#8
 msgid "Try renaming it and restarting Mixxx."
-msgstr ""
+msgstr "Спробуйте перейменувати та перезавантажити Mixxx."
 
 #: TrackCollection#9
 msgid "Your %1 file may be missing or invalid."
-msgstr ""
+msgstr "Ваш %1 файл може бути відсутній або недійсний."
 
 #: TraktorFeature#1
 msgid "Traktor"
@@ -4950,15 +4950,15 @@ msgstr ""
 
 #: WOverview#1
 msgid "Ready to play, analyzing .."
-msgstr ""
+msgstr "Готово до програвання, аналіз .."
 
 #: WOverview#2
 msgid "Loading track .."
-msgstr ""
+msgstr "Завантаження треку .."
 
 #: WOverview#3
 msgid "Finalizing .."
-msgstr ""
+msgstr "Завершення .."
 
 #: WSearchLineEdit#1
 msgid "Ctrl+F"
@@ -5007,7 +5007,7 @@ msgstr ""
 
 #: WTrackTableView#9
 msgid "Open in File Browser"
-msgstr ""
+msgstr "Відкрити в файловому менеджері"
 
 #: WTrackTableView#10
 msgid "Add to Auto-DJ Queue (bottom)"
@@ -5031,11 +5031,11 @@ msgstr ""
 
 #: WTrackTableView#15
 msgid "Lock BPM"
-msgstr ""
+msgstr "Замкнути BPM"
 
 #: WTrackTableView#16
 msgid "Unlock BPM"
-msgstr ""
+msgstr "Розімкнути BPM"
 
 #: WTrackTableView#17
 msgid "Clear BPM and Beatgrid"
@@ -5048,7 +5048,7 @@ msgstr "Завантажити у Програвач %1"
 #: WTrackTableView#19
 msgctxt "WTrackTableView#19"
 msgid "Sampler %1"
-msgstr ""
+msgstr "Семплер %1"
 
 #: WTrackTableViewHeader#1
 msgid "Show or hide columns."
