@@ -5,29 +5,24 @@
 #include <QtDebug>
 
 #include "library/schemamanager.h"
-#include "library/dao/settingsdao.h"
-#include "widget/wwidget.h"
+#include "library/queryutil.h"
+#include "xmlparse.h"
+
+const QString SchemaManager::SETTINGS_VERSION_STRING = "mixxx.schema.version";
+const QString SchemaManager::SETTINGS_MINCOMPATIBLE_STRING = "mixxx.schema.min_compatible_version";
 
 // static
-bool SchemaManager::upgradeToSchemaVersion(ConfigObject<ConfigValue>* config,
+int SchemaManager::upgradeToSchemaVersion(const QString& schemaFilename,
                                            QSqlDatabase& db, int targetVersion) {
 
     SettingsDAO settings(db);
-    QString currentSchemaVersion = settings.getValue("mixxx.schema.version");
-
-    // May be a null string if the schema has not been created. We default the
-    // startVersion to 0 so that we automatically try to upgrade to revision 1.
-    int currentVersion = 0;
-    if (!currentSchemaVersion.isNull()) {
-        currentVersion = currentSchemaVersion.toInt();
-    }
-
+    int currentVersion = getCurrentSchemaVersion(settings);
     Q_ASSERT(currentVersion >= 0);
 
     if (currentVersion == targetVersion) {
         qDebug() << "SchemaManager::upgradeToSchemaVersion already at version"
                  << targetVersion;
-        return true;
+        return 0;
     } else if (currentVersion < targetVersion) {
         qDebug() << "SchemaManager::upgradeToSchemaVersion upgrading"
                  << targetVersion-currentVersion << "versions to version"
@@ -38,13 +33,19 @@ bool SchemaManager::upgradeToSchemaVersion(ConfigObject<ConfigValue>* config,
                  << currentVersion << "targetVersion:"
                  << targetVersion;
 
+        if (isBackwardsCompatible(settings, currentVersion, targetVersion)) {
+            qDebug() << "Current schema version is backwards-compatible with" << targetVersion;
+            return 0;
+        }
     }
 
-
-    QString schemaFilename = config->getConfigPath();
-    schemaFilename.append("schema.xml");
     qDebug() << "Loading schema" << schemaFilename;
-    QDomElement schemaRoot = WWidget::openXMLFile(schemaFilename, "schema");
+    QDomElement schemaRoot = XmlParse::openXMLFile(schemaFilename, "schema");
+
+    if (schemaRoot.isNull()) {
+        // Error parsing xml file
+        return -3;
+    }
 
     QDomNodeList revisions = schemaRoot.childNodes();
 
@@ -58,14 +59,14 @@ bool SchemaManager::upgradeToSchemaVersion(ConfigObject<ConfigValue>* config,
         revisionMap[iVersion] = revision;
     }
 
-    bool success = true;
+    int success = 0;
 
     while (currentVersion != targetVersion) {
         int thisTarget;
         if (currentVersion > targetVersion) {
             thisTarget = currentVersion - 1;
             qDebug() << "Downgrade not yet supported.";
-            success = false;
+            success = -1;
             break;
         } else {
             thisTarget = currentVersion + 1;
@@ -75,13 +76,20 @@ bool SchemaManager::upgradeToSchemaVersion(ConfigObject<ConfigValue>* config,
             qDebug() << "SchemaManager::upgradeToSchemaVersion"
                      << "Don't know how to get to"
                      << thisTarget << "from" << currentVersion;
-            success = false;
+            success = -1;
             break;
         }
 
         QDomElement revision = revisionMap[thisTarget];
         QDomElement eDescription = revision.firstChildElement("description");
         QDomElement eSql = revision.firstChildElement("sql");
+        QString minCompatibleVersion = revision.attribute("min_compatible");
+
+        // Default the min-compatible version to the current version string if
+        // it's not in the schema.xml
+        if (minCompatibleVersion.isNull()) {
+            minCompatibleVersion = QString::number(thisTarget);
+        }
 
         Q_ASSERT(!eDescription.isNull() && !eSql.isNull());
 
@@ -92,7 +100,7 @@ bool SchemaManager::upgradeToSchemaVersion(ConfigObject<ConfigValue>* config,
         qDebug() << "Applying version" << thisTarget << ":"
                  << description.trimmed();
 
-        db.transaction();
+        ScopedTransaction transaction(db);
 
         // TODO(XXX) We can't have semicolons in schema.xml for anything other
         // than statement separators.
@@ -117,16 +125,58 @@ bool SchemaManager::upgradeToSchemaVersion(ConfigObject<ConfigValue>* config,
 
         if (result) {
             currentVersion = thisTarget;
-            settings.setValue("mixxx.schema.version", thisTarget);
-            db.commit();
+            settings.setValue(SETTINGS_VERSION_STRING, thisTarget);
+            settings.setValue(SETTINGS_MINCOMPATIBLE_STRING, minCompatibleVersion);
+            transaction.commit();
         } else {
-            success = false;
+            success = -2;
             qDebug() << "Failed to move from version" << currentVersion
                      << "to version" << thisTarget;
-            db.rollback();
+            transaction.rollback();
             break;
         }
     }
 
     return success;
+}
+
+// static
+int SchemaManager::getCurrentSchemaVersion(SettingsDAO& settings) {
+    QString currentSchemaVersion = settings.getValue(SETTINGS_VERSION_STRING);
+    // May be a null string if the schema has not been created. We default the
+    // startVersion to 0 so that we automatically try to upgrade to revision 1.
+    int currentVersion = 0;
+    if (!currentSchemaVersion.isNull()) {
+        currentVersion = currentSchemaVersion.toInt();
+    }
+    return currentVersion;
+}
+
+// static
+bool SchemaManager::isBackwardsCompatible(SettingsDAO& settings,
+                                          int currentVersion,
+                                          int targetVersion) {
+    QString backwardsCompatibleVersion =
+            settings.getValue(SETTINGS_MINCOMPATIBLE_STRING);
+    int iBackwardsCompatibleVersion = -1;
+
+    // If the current backwards compatible schema version is not stored in the
+    // settings table, assume the current schema version is only backwards
+    // compatible with itself.
+    if (backwardsCompatibleVersion.isNull()) {
+        // rryan 11/2010 We just added the backwards compatible flags, and some
+        // people using the Mixxx trunk are already on schema version 7. This
+        // special case is for them. Schema version 7 is backwards compatible
+        // with schema version 3.
+        if (currentVersion == 7) {
+            iBackwardsCompatibleVersion = 3;
+        } else {
+            iBackwardsCompatibleVersion = currentVersion;
+        }
+    }
+
+    // If the target version is greater than the minimum compatible version of
+    // the current schema, then the current schema is backwards compatible with
+    // targetVersion.
+    return iBackwardsCompatibleVersion <= targetVersion;
 }

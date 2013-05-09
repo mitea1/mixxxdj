@@ -26,59 +26,111 @@
 
 WStatusLight::WStatusLight(QWidget * parent) : WWidget(parent)
 {
-    m_pPixmapBack = 0;
-    m_pPixmapSL = 0;
+    m_pPixmapSLs = NULL;
+    m_iNoPos = 0;
+    m_iPos = 0;
+    setNoPos(m_iNoPos);
 }
 
 WStatusLight::~WStatusLight()
 {
-    resetPositions();
+    for (int i = 0; i < m_iNoPos; i++) {
+        WPixmapStore::deletePixmap(m_pPixmapSLs[i]);
+    }
+    delete [] m_pPixmapSLs;
+}
+
+void WStatusLight::setNoPos(int iNoPos)
+{
+    // If pixmap array is already allocated, delete it
+    if (m_pPixmapSLs != NULL) {
+        for (int i = 0; i < m_iNoPos; i++) {
+            WPixmapStore::deletePixmap(m_pPixmapSLs[i]);
+        }
+        delete [] m_pPixmapSLs;
+    }
+
+    if (iNoPos < 2)
+        iNoPos = 2; //values less than 2 make no sense (need at least off, on)
+    m_iNoPos = iNoPos;
+    m_fValue = 0.;
+
+    m_pPixmapSLs = new QPixmap*[m_iNoPos];
+    for (int i = 0; i < m_iNoPos; ++i) {
+        m_pPixmapSLs[i] = NULL;
+    }
 }
 
 void WStatusLight::setup(QDomNode node)
 {
-    WWidget::setup(node);
+    // Number of states. Add one to account for the background
+    setNoPos(selectNodeInt(node, "NumberPos") + 1);
 
     // Set pixmaps
-    bool bHorizontal = false;
-    if (!selectNode(node, "Horizontal").isNull() && selectNodeQString(node, "Horizontal")=="true")
-        bHorizontal = true;
-    setPixmaps(getPath(selectNodeQString(node, "PathBack")), getPath(selectNodeQString(node, "PathStatusLight")), bHorizontal);
-}
-
-void WStatusLight::resetPositions()
-{
-    if (m_pPixmapBack)
-    {
-        WPixmapStore::deletePixmap(m_pPixmapBack);
-        m_pPixmapBack = 0;
-        WPixmapStore::deletePixmap(m_pPixmapSL);
-        m_pPixmapSL = 0;
+    for (int i = 0; i < m_iNoPos; ++i) {
+        // Accept either PathStatusLight or PathStatusLight1 for value 1,
+        QString nodeName = QString("PathStatusLight%1").arg(i);
+        if (!selectNode(node, nodeName).isNull()) {
+            setPixmap(i, getPath(selectNodeQString(node, nodeName)));
+        } else if (i == 0 && !selectNode(node, "PathBack").isNull()) {
+            setPixmap(i, getPath(selectNodeQString(node, "PathBack")));
+        } else if (i == 1 && !selectNode(node, "PathStatusLight").isNull()) {
+            setPixmap(i, getPath(selectNodeQString(node, "PathStatusLight")));
+        } else {
+            m_pPixmapSLs[i] = NULL;
+        }
     }
 }
 
-void WStatusLight::setPixmaps(const QString &backFilename, const QString &vuFilename, bool bHorizontal)
+void WStatusLight::setPixmap(int iState, const QString &filename)
 {
-    m_pPixmapBack = WPixmapStore::getPixmap(backFilename);
-    if (!m_pPixmapBack || m_pPixmapBack->size()==QSize(0,0))
-        qDebug() << "WStatusLight: Error loading back pixmap" << backFilename;
-    m_pPixmapSL = WPixmapStore::getPixmap(vuFilename);
-    if (!m_pPixmapSL || m_pPixmapSL->size()==QSize(0,0))
-        qDebug() << "WStatusLight: Error loading statuslight pixmap" << vuFilename;
+    if (iState < 0 || iState >= m_iNoPos) {
+        return;
+    }
+    int pixIdx = iState;
 
-    setFixedSize(m_pPixmapBack->size());
-    m_bHorizontal = bHorizontal;
+    QPixmap* pPixmap = WPixmapStore::getPixmap(filename);
+
+    if (pPixmap != NULL && !pPixmap->isNull()) {
+        m_pPixmapSLs[pixIdx] = pPixmap;
+
+        // Set size of widget equal to pixmap size
+        setFixedSize(pPixmap->size());
+    } else {
+        qDebug() << "WStatusLight: Error loading pixmap:" << filename << iState;
+        WPixmapStore::deletePixmap(pPixmap);
+        m_pPixmapSLs[pixIdx] = NULL;
+    }
 }
 
-void WStatusLight::paintEvent(QPaintEvent *)
+void WStatusLight::setValue(double v)
 {
-    if (m_pPixmapBack!=0 && m_pPixmapSL!=0)
-    {
-        QPainter p(this);
+    int val = (int)v;
+    if (m_iPos == val)
+        return;
 
-        if(m_fValue == 0)
-            p.drawPixmap(0, 0, *m_pPixmapBack);
-        else
-            p.drawPixmap(0, 0, *m_pPixmapSL);
+    if (m_iNoPos == 2) {
+        //original behavior for two-state lights: any non-zero value is "on"
+        m_iPos = val > 0 ? 1 : 0;
+        update();
+    } else {
+        //multi-state behavior: values must be correct
+        if (val < m_iNoPos && val >= 0) {
+            m_iPos = val;
+            update();
+        } else {
+            qDebug() << "Warning: wstatuslight asked for invalid position:" << val << "max val:" << m_iNoPos-1;
+        }
+    }
+}
+
+void WStatusLight::paintEvent(QPaintEvent *) {
+    if (m_iPos < 0 || m_iPos >= m_iNoPos) {
+        return;
+    }
+
+    QPainter p(this);
+    if (m_pPixmapSLs[m_iPos] != NULL && !m_pPixmapSLs[m_iPos]->isNull()) {
+        p.drawPixmap(0, 0, *m_pPixmapSLs[m_iPos]);
     }
 }

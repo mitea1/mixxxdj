@@ -6,41 +6,78 @@
 #define BPMCONTROL_H
 
 #include "engine/enginecontrol.h"
+#include "tapfilter.h"
 
-class ControlBeat;
 class ControlObject;
 class ControlPushButton;
+class EngineBuffer;
 
 class BpmControl : public EngineControl {
     Q_OBJECT
 
-    public:
+  public:
     BpmControl(const char* _group, ConfigObject<ConfigValue>* _config);
-    ~BpmControl();
+    virtual ~BpmControl();
     double getBpm();
+    double getFileBpm();
 
-public slots:
+  public slots:
 
+    virtual void trackLoaded(TrackPointer pTrack);
+    virtual void trackUnloaded(TrackPointer pTrack);
+
+  private slots:
     void slotSetEngineBpm(double);
-    void slotFileBpmChanged(double);
     void slotControlBeatSync(double);
+    void slotControlBeatSyncPhase(double);
+    void slotControlBeatSyncTempo(double);
+    void slotTapFilter(double,int);
+    void slotBpmTap(double);
+    void slotAdjustBpm();
+    void slotUpdatedTrackBeats();
+    void slotBeatsTranslate(double);
 
-private:
+  private:
+    EngineBuffer* pickSyncTarget();
+    bool syncTempo(EngineBuffer* pOtherEngineBuffer);
+    bool syncPhase(EngineBuffer* pOtherEngineBuffer);
+
+    // ControlObjects that come from PlayerManager
+    ControlObject* m_pNumDecks;
 
     // ControlObjects that come from EngineBuffer
+    ControlObject* m_pPlayButton;
     ControlObject* m_pRateSlider;
     ControlObject* m_pRateRange;
     ControlObject* m_pRateDir;
 
+    // ControlObjects that come from LoopingControl
+    ControlObject* m_pLoopEnabled;
+    ControlObject* m_pLoopStartPosition;
+    ControlObject* m_pLoopEndPosition;
+
     /** The current loaded file's detected BPM */
     ControlObject* m_pFileBpm;
 
-    /** Control used to input desired playback BPM */
-    ControlBeat* m_pEngineBpm;
+    /** The current effective BPM of the engine */
+    ControlObject* m_pEngineBpm;
+
+    // Used for bpm tapping from GUI and MIDI
+    ControlPushButton* m_pButtonTap;
 
     /** Button for sync'ing with the other EngineBuffer */
     ControlPushButton* m_pButtonSync;
+    ControlPushButton* m_pButtonSyncPhase;
+    ControlPushButton* m_pButtonSyncTempo;
 
+    // Button that translates the beats so the nearest beat is on the current
+    // playposition.
+    ControlPushButton* m_pTranslateBeats;
+
+    TapFilter m_tapFilter;
+
+    TrackPointer m_pTrack;
+    BeatsPointer m_pBeats;
 };
 
 

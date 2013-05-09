@@ -19,11 +19,10 @@
 #ifndef MATHSTUFF_H
 #define MATHSTUFF_H
 
-#include "defs.h"
-#include <math.h>
+#include <cmath>
 #include <algorithm>
 
-static CSAMPLE two_pi = (2.f*acos(-1.f));
+#include "defs.h"
 
 CSAMPLE besseli(CSAMPLE);
 int sign(CSAMPLE);
@@ -41,7 +40,22 @@ bool even(long n);
 /** Compute pow(x,n) for positive integer n through repeated
   * squarings */
 double qip(CSAMPLE x, unsigned int n);
+float sigmoid_zero(double t, double max_t);
 
-static CSAMPLE pi     = acos(-1.0f);
+static const CSAMPLE pi     = acos(-1.0f);
+static const CSAMPLE two_pi = (2.f*acos(-1.f));
+
+int nearestSuperiorPowerOfTwo(int v);
+
+#ifdef _MSC_VER
+// VC++ uses _isnan() instead of isnan()
+#include <float.h>
+#define isnan(x) _isnan(x)
+#else
+// for isnan() everywhere else
+#include <cmath>
+using std::isnan;
+#endif
+
 
 #endif

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>582</width>
+    <width>500</width>
     <height>399</height>
    </rect>
   </property>
@@ -43,15 +43,21 @@
      </item>
      <item>
       <widget class="QRadioButton" name="radioButtonRecentlyAdded">
+       <property name="toolTip">
+        <string>Shows tracks added to the library within the last 7 days.</string>
+       </property>
        <property name="text">
-        <string>Recently Added</string>
+        <string>New</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QRadioButton" name="radioButtonAllSongs">
+       <property name="toolTip">
+        <string>Shows all tracks in the library.</string>
+       </property>
        <property name="text">
-        <string>All Songs</string>
+        <string>All</string>
        </property>
       </widget>
      </item>
@@ -77,6 +83,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonSelectAll">
+       <property name="toolTip">
+        <string>Selects all tracks in the table below.</string>
+       </property>
        <property name="text">
         <string>Select All</string>
        </property>
@@ -84,6 +93,10 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonAnalyze">
+       <property name="toolTip">
+        <string>Runs the BPM and beatgrid detection on the selected tracks.
+Waveforms will be generated as part of a analysis as well.</string>
+       </property>
        <property name="text">
         <string>Analyze</string>
        </property>

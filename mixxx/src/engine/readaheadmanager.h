@@ -4,6 +4,7 @@
 #ifndef READAHEADMANGER_H
 #define READAHEADMANGER_H
 
+#include <QLinkedList>
 #include <QList>
 #include <QMutex>
 #include <QPair>
@@ -24,7 +25,7 @@ class CachingReader;
 // call notifySeek to inform the ReadAheadManager to reset itself to the seek
 // point.
 class ReadAheadManager {
-public:
+  public:
     explicit ReadAheadManager(CachingReader* reader);
     virtual ~ReadAheadManager();
 
@@ -33,30 +34,95 @@ public:
     // direction the audio is progressing in. Returns the total number of
     // samples read into buffer. Note that it is very common that the total
     // samples read is less than the requested number of samples.
-    int getNextSamples(double dRate, CSAMPLE* buffer, int requested_samples);
+    virtual int getNextSamples(double dRate, CSAMPLE* buffer, int requested_samples);
 
     // Used to add a new EngineControl that ReadAheadManager will use to decide
     // which samples to return.
-    void addEngineControl(EngineControl* control);
+    virtual void addEngineControl(EngineControl* control);
 
-    // Notify the ReadAheadManager that the current playposition has changed
-    void setNewPlaypos(int iNewPlaypos);
+    // Notify the ReadAheadManager that the current playposition has
+    // changed. Units are stereo samples.
+    virtual void setNewPlaypos(int iNewPlaypos);
 
-    void notifySeek(int iSeekPosition);
+    // Get the current read-ahead position in stereo samples.
+    virtual inline int getPlaypos() const {
+        return m_iCurrentPosition;
+    }
+
+    virtual void notifySeek(int iSeekPosition);
 
     // hintReader allows the ReadAheadManager to provide hints to the reader to
     // indicate that the given portion of a song is about to be read.
-    void hintReader(QList<Hint>& hintList, int iSamplesPerBuffer);
+    virtual void hintReader(double dRate, QList<Hint>& hintList);
 
-private:
-    // A broken method for choosing which EngineControl to trust for determining
-    // when to take loops and jumps. Currently the RAMAN just uses the first
-    // EngineControl.
-    QPair<int, double> getSoonestTrigger(double dRate, int iCurrentSample);
+    virtual int getEffectiveVirtualPlaypositionFromLog(double currentVirtualPlayposition,
+                                                       double numConsumedSamples);
 
+    virtual void setReader(CachingReader* pReader) {
+        m_pReader = pReader;
+    }
+
+  private:
+    // An entry in the read log indicates the virtual playposition the read
+    // began at and the virtual playposition it ended at.
+    struct ReadLogEntry {
+        double virtualPlaypositionStart;
+        double virtualPlaypositionEndNonInclusive;
+
+        ReadLogEntry(double virtualPlaypositionStart,
+                     double virtualPlaypositionEndNonInclusive) {
+            this->virtualPlaypositionStart = virtualPlaypositionStart;
+            this->virtualPlaypositionEndNonInclusive =
+                    virtualPlaypositionEndNonInclusive;
+        }
+
+        bool direction() const {
+            // NOTE(rryan): We try to avoid 0-length ReadLogEntry's when
+            // possible but they have happened in the past. We treat 0-length
+            // ReadLogEntry's as forward reads because this prevents them from
+            // being interpreted as a seek in the common case.
+            return virtualPlaypositionStart <= virtualPlaypositionEndNonInclusive;
+        }
+
+        double length() const {
+            return abs(virtualPlaypositionEndNonInclusive -
+                       virtualPlaypositionStart);
+        }
+
+        // Moves the start position forward or backward (depending on
+        // direction()) by numSamples. Returns the total number of samples
+        // consumed. Caller should check if length() is 0 after consumption in
+        // order to expire the ReadLogEntry.
+        double consume(double numSamples) {
+            double available = math_min(numSamples, length());
+            virtualPlaypositionStart += (direction() ? 1 : -1) * available;
+            return available;
+        }
+
+        bool merge(const ReadLogEntry& other) {
+            // Allow 0-length ReadLogEntry's to merge regardless of their
+            // direction if they have the right start point.
+            if ((other.length() == 0 || direction() == other.direction()) &&
+                virtualPlaypositionEndNonInclusive == other.virtualPlaypositionStart) {
+                virtualPlaypositionEndNonInclusive =
+                        other.virtualPlaypositionEndNonInclusive;
+                return true;
+            }
+            return false;
+        }
+    };
+
+    // virtualPlaypositionEnd is the first sample in the direction that was read
+    // that was NOT read as part of this log entry. This is to simplify the
+    void addReadLogEntry(double virtualPlaypositionStart,
+                         double virtualPlaypositionEndNonInclusive);
+
+    QMutex m_mutex;
     QList<EngineControl*> m_sEngineControls;
+    QLinkedList<ReadLogEntry> m_readAheadLog;
     int m_iCurrentPosition;
     CachingReader* m_pReader;
+    CSAMPLE *m_pCrossFadeBuffer;
 };
 
 #endif // READAHEADMANGER_H

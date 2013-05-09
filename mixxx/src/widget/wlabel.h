@@ -26,19 +26,18 @@
   *@author Tue Haste Andersen
   */
 
-class WLabel : public WWidget
-{
+class WLabel : public WWidget {
     Q_OBJECT
-public:
+  public:
     WLabel(QWidget *parent=0);
-    ~WLabel();
+    virtual ~WLabel();
     void setup(QDomNode node);
-    void move(int, int);
-    void setFixedSize(int, int);
+
     void setAlignment(Qt::Alignment);
     void setConstFactor(double);
+    virtual QWidget* getComposedWidget() { return m_pLabel; }
 
-protected:
+  protected:
     /** Multiplication factor */
     QLabel *m_pLabel;
     QString m_qsText;

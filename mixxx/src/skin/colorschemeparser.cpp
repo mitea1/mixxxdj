@@ -2,6 +2,7 @@
 #include "skin/colorschemeparser.h"
 
 #include "widget/wpixmapstore.h"
+#include "widget/wimagestore.h"
 #include "widget/wskincolor.h"
 #include "widget/wwidget.h"
 
@@ -35,16 +36,20 @@ void ColorSchemeParser::setupLegacyColorSchemes(QDomElement docElem,
         }
 
         if (found) {
-            ImgSource * imsrc = parseFilters(sch.namedItem("Filters"));
+            QSharedPointer<ImgSource> imsrc =
+                    QSharedPointer<ImgSource>(parseFilters(sch.namedItem("Filters")));
             WPixmapStore::setLoader(imsrc);
+            WImageStore::setLoader(imsrc);
             WSkinColor::setLoader(imsrc);
         } else {
-            WPixmapStore::setLoader(NULL);
-            WSkinColor::setLoader(NULL);
+            WPixmapStore::setLoader(QSharedPointer<ImgSource>());
+            WImageStore::setLoader(QSharedPointer<ImgSource>());
+            WSkinColor::setLoader(QSharedPointer<ImgSource>());
         }
     } else {
-        WPixmapStore::setLoader(NULL);
-        WSkinColor::setLoader(NULL);
+        WPixmapStore::setLoader(QSharedPointer<ImgSource>());
+        WImageStore::setLoader(QSharedPointer<ImgSource>());
+        WSkinColor::setLoader(QSharedPointer<ImgSource>());
     }
 }
 
@@ -71,7 +76,7 @@ ImgSource* ColorSchemeParser::parseFilters(QDomNode filt) {
             ret = new ImgScaleWhite(ret, WWidget::selectNodeFloat(f, "Amount"));
         } else if (name == "hsvtweak") {
             int hmin = 0;
-            int hmax = 255;
+            int hmax = 359;
             int smin = 0;
             int smax = 255;
             int vmin = 0;

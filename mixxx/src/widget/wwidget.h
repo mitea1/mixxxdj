@@ -19,7 +19,6 @@
 #define WWIDGET_H
 
 #include <QtGui>
-#include <QtXml>
 
 #include "configobject.h"
 
@@ -37,13 +36,10 @@ class WWidget : public QWidget  {
    Q_OBJECT
 public:
     WWidget(QWidget *parent=0, Qt::WFlags flags=0);
-    ~WWidget();
-    /** Sets pointer to keyboard configuration */
-    static void setKeyboardConfig(ConfigObject<ConfigValueKbd> *pKbdConfigObject);
+    virtual ~WWidget();
+
     /** Sets the path used to find pixmaps */
     static void setPixmapPath(QString qPath);
-    /** Given an XML DOM node, initialize the widget */
-    void setup(QDomNode node);
     static QDomNode selectNode(const QDomNode &nodeHeader, const QString sNode);
     static int selectNodeInt(const QDomNode &nodeHeader, const QString sNode);
     static float selectNodeFloat(const QDomNode &nodeHeader, const QString sNode);
@@ -51,40 +47,38 @@ public:
 
     /** Given a filename of a pixmap, returns its path */
     static const QString getPath(QString location);
-    static QDomElement openXMLFile(QString path, QString name);
     double getValue();
-public slots:
+    // Sometimes WWidget's compose a QWidget (like a label). This is used during
+    // skin parsing to style and size the composed widget.
+    virtual QWidget* getComposedWidget() { return NULL; }
+
+  public slots:
     virtual void setValue(double fValue);
     void updateValue(double fValue);
     void setOnOff(double);
-private slots:
+
+  private slots:
     void slotReEmitValueDown(double);
     void slotReEmitValueUp(double);
-signals:
+
+  signals:
+    void valueReset();
     void valueChangedDown(double);
     void valueChangedUp(double);
     void valueChangedLeftDown(double);
     void valueChangedLeftUp(double);
     void valueChangedRightDown(double);
     void valueChangedRightUp(double);
-protected:
-    bool event(QEvent*);
+
+  protected:
     /** Value/state of widget */
     double m_fValue;
     /** Is true if widget is off */
     bool m_bOff;
-    /** Pointer to keyboard config object */
-    static ConfigObject<ConfigValueKbd> *m_spKbdConfigObject;
 
-    QString getTooltip() {
-        return m_Tooltip;
-    }
-
-private:
+  private:
     /** Variable containing the path to the pixmaps */
     static QString m_qPath;
-    /** stashes the tooltip text **/
-    QString m_Tooltip;
     /** Property used when connecting to ControlObject */
     bool m_bEmitOnDownPress;
 };

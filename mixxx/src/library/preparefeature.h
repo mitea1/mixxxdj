@@ -8,13 +8,16 @@
 #include <QStringListModel>
 #include "library/libraryfeature.h"
 #include "configobject.h"
+#include "treeitemmodel.h"
+#include "dlgprepare.h"
 
+class AnalyserQueue;
 class LibraryTableModel;
 class TrackCollection;
 
 class PrepareFeature : public LibraryFeature {
     Q_OBJECT
-    public:
+  public:
     PrepareFeature(QObject* parent,
                    ConfigObject<ConfigValue>* pConfig,
                    TrackCollection* pTrackCollection);
@@ -23,28 +26,32 @@ class PrepareFeature : public LibraryFeature {
     QVariant title();
     QIcon getIcon();
 
-    bool dropAccept(QUrl url);
-    bool dropAcceptChild(const QModelIndex& index, QUrl url);
-    bool dragMoveAccept(QUrl url);
-    bool dragMoveAcceptChild(const QModelIndex& index, QUrl url);
-
-    void bindWidget(WLibrarySidebar* sidebarWidget,
-                    WLibrary* libraryWidget,
+    void bindWidget(WLibrary* libraryWidget,
                     MixxxKeyboard* keyboard);
 
-    QAbstractItemModel* getChildModel();
+    TreeItemModel* getChildModel();
+    void refreshLibraryModels();
 
-public slots:
+  signals:
+    void analysisActive(bool bActive);
+
+  public slots:
     void activate();
-    void activateChild(const QModelIndex& index);
-    void onRightClick(const QPoint& globalPos);
-    void onRightClickChild(const QPoint& globalPos, QModelIndex index);
 
-private:
+  private slots:
+    void analyzeTracks(QList<int> trackIds);
+    void stopAnalysis();
+    void cleanupAnalyser();
+
+  private:
     ConfigObject<ConfigValue>* m_pConfig;
     TrackCollection* m_pTrackCollection;
-    QStringListModel m_childModel;
+    AnalyserQueue* m_pAnalyserQueue;
+    // Used to temporarily enable BPM detection in the prefs before we analyse
+    int m_iOldBpmEnabled;
+    TreeItemModel m_childModel;
     const static QString m_sPrepareViewName;
+    DlgPrepare* m_pPrepareView;
 };
 
 

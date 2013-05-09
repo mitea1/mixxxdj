@@ -32,7 +32,7 @@
 class WKnob : public WAbstractControl  {
    Q_OBJECT
 public:
-    WKnob(QWidget *parent=0, float defaultValue=63.);
+    WKnob(QWidget *parent=0);
     ~WKnob();
     void setup(QDomNode node);
     void setPositions(int iNoPos, bool bIncludingDisabled=false);
@@ -57,8 +57,8 @@ private:
     QPixmap **m_pPixmaps;
     /** Associated background pixmap */
     QPixmap *m_pPixmapBack;
-    /** Values used when pressing mouse */
-    double m_dStartValue;
+    /** Starting point when left mouse button is pressed */
+    QPoint m_startPos;
     /** True if disabled pixmaps is loaded */
     bool m_bDisabledLoaded;
 };

@@ -25,21 +25,20 @@
 
 #define CONFIG_KEY "[Promo]"
 
-BundledSongsWebView::BundledSongsWebView(QWidget* parent, 
+BundledSongsWebView::BundledSongsWebView(QWidget* parent,
                                          TrackCollection* trackCollection,
-                                         QString promoBundlePath, 
+                                         QString promoBundlePath,
                                          QString localURL, bool firstRun,
-                                         ConfigObject<ConfigValue>* config) : 
-    QWebView(parent), 
-    LibraryView(), 
-    m_pTrackCollection(trackCollection),
+                                         ConfigObject<ConfigValue>* config) :
+    QWebView(parent),
+    LibraryView(),
     m_bFirstRun(firstRun),
-    m_pConfig(config)
-{
+    m_pConfig(config),
+    m_pTrackCollection(trackCollection) {
     m_sPromoBundlePath = promoBundlePath;
     m_sLocalURL = localURL;
     m_statTracking = (int)m_pConfig->getValueString(ConfigKey(CONFIG_KEY,"StatTracking")).toInt();
-    
+
     //Disable right-click
     QWidget::setContextMenuPolicy(Qt::PreventContextMenu);
 
@@ -48,8 +47,8 @@ BundledSongsWebView::BundledSongsWebView(QWidget* parent,
     connect(page()->mainFrame(), SIGNAL(loadStarted()), this, SLOT(attachObjects()));
     attachObjects();
     connect(page()->mainFrame(), SIGNAL(javaScriptWindowObjectCleared()), this, SLOT(attachObjects()) );
-    
-    //Load the promo tracks webpage 
+
+    //Load the promo tracks webpage
     QWebView::load(QUrl(m_sLocalURL));
 
     //Let us manually handle links that are clicked via the linkClicked()
@@ -74,19 +73,13 @@ void BundledSongsWebView::attachObjects()
     page()->mainFrame()->addToJavaScriptWindowObject("mixxx", this);
 }
 
-void BundledSongsWebView::setup(QDomNode node)
-{
-
-}
-
-void BundledSongsWebView::loadFinished(bool ok)
-{
+void BundledSongsWebView::loadFinished(bool ok) {
+    Q_UNUSED(ok);
     if (m_bFirstRun)
         page()->mainFrame()->evaluateJavaScript("splash();");
 }
 
-void BundledSongsWebView::onShow()
-{
+void BundledSongsWebView::onShow() {
     //qDebug() << ">>>>>>BundledSongsWebView::onShow()";
     //Trigger the splash() function that's defined in our HTML page's javascript
     //Qt rocks!
@@ -103,10 +96,9 @@ QString PromoTracksWebView::userAgentForUrl (const QUrl & url) const
     return QCoreApplication::applicationName() + " " + QCoreApplication::applicationVersion();
 } */
 
-void BundledSongsWebView::handleClickedLink(const QUrl& url)
-{
+void BundledSongsWebView::handleClickedLink(const QUrl& url) {
     //qDebug() << "link clicked!" << url;
-   
+
     if (url.scheme().startsWith("deck"))
     {
         QString location = m_sPromoBundlePath + "/" + url.path();
@@ -127,11 +119,11 @@ void BundledSongsWebView::handleClickedLink(const QUrl& url)
 
         if (url.scheme() == "deck1")
         {
-            emit(loadTrackToPlayer(pTrack, 1));
+            emit(loadTrackToPlayer(pTrack, "[Channel1]"));
         }
         else if (url.scheme() == "deck2")
         {
-            emit(loadTrackToPlayer(pTrack, 2));
+            emit(loadTrackToPlayer(pTrack, "[Channel2]"));
         }
     }
     else
@@ -144,31 +136,36 @@ void BundledSongsWebView::handleClickedLink(const QUrl& url)
 }
 
 //TODO: Implement this for MIDI control
-void BundledSongsWebView::keyPressEvent(QKeyEvent* event)
-{
+void BundledSongsWebView::keyPressEvent(QKeyEvent* event) {
+    Q_UNUSED(event);
     //Look at WTrackTableView::keyPressEvent(...) for some
     //code to start with...
 }
 
-bool BundledSongsWebView::statTracking() const 
-{ 
-    return m_statTracking; 
+bool BundledSongsWebView::statTracking() const {
+    return m_statTracking;
 };
 
-void BundledSongsWebView::setStatTracking(bool statTracking) 
-{ 
+void BundledSongsWebView::setStatTracking(bool statTracking) {
     //qDebug() << "setStatTracking" << statTracking;
     m_statTracking = statTracking;
     m_pConfig->set(ConfigKey(CONFIG_KEY,"StatTracking"), ConfigValue(m_statTracking));
 };
 
 
-bool BundledSongsWebView::firstRun() const 
-{ 
-    return m_bFirstRun; 
+bool BundledSongsWebView::firstRun() const {
+    return m_bFirstRun;
 };
 
-void BundledSongsWebView::setFirstRun(bool firstRun) 
-{ 
+void BundledSongsWebView::setFirstRun(bool firstRun) {
     m_bFirstRun = firstRun;
 };
+
+void BundledSongsWebView::loadSelectedTrack() {
+    // Do nothing for now. The web view doesn't have the concept of a selection right now.
+}
+
+void BundledSongsWebView::moveSelection(int delta) {
+    Q_UNUSED(delta);
+    // Do nothing for now. The web view doesn't have the concept of a selection right now.
+}

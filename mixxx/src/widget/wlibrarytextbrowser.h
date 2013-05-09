@@ -8,19 +8,13 @@
 
 #include "library/libraryview.h"
 
-class WLibraryTextBrowser : public QTextBrowser, public virtual LibraryView {
+class WLibraryTextBrowser : public QTextBrowser, public LibraryView {
     Q_OBJECT
   public:
     WLibraryTextBrowser(QWidget* parent = NULL);
     virtual ~WLibraryTextBrowser();
 
-    virtual void setup(QDomNode node);
-    void onSearchStarting();
-    void onSearchCleared();
-    void onSearch(const QString& text);
-    void onShow();
-    QWidget* getWidgetForMIDIControl();
+    virtual void onShow() {};
 };
-
 
 #endif /* WLIBRARYTEXTBROWSER_H */

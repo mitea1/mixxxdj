@@ -27,20 +27,25 @@
 
 #include <QMutex>
 #include "enginebufferscale.h"
-#include "SoundTouch.h"
 
-/** Number of samples to read ahead */
+/**
+  * Number of samples to read ahead
+  *
+  * Setting this too high (10000) causes stuttering
+  */
 const int kiSoundTouchReadAheadLength = 1000;
-using namespace soundtouch;
-
 class ReadAheadManager;
+
+namespace soundtouch {
+class SoundTouch;
+}  // namespace soundtouch
 
 /**
   * Performs time scaling of audio based on the SoundTouch library.
   */
 class EngineBufferScaleST : public EngineBufferScale {
     Q_OBJECT
-public: 
+public:
     EngineBufferScaleST(ReadAheadManager* pReadAheadManager);
     ~EngineBufferScaleST();
 
@@ -49,8 +54,7 @@ public:
     bool getPitchIndpTimeStretch(void);
 
     /** Scale buffer */
-    CSAMPLE* scale(double playpos, unsigned long buf_size,
-                   CSAMPLE* pBase, unsigned long iBaseLength);
+    CSAMPLE* getScaled(unsigned long buf_size);
 
     /** Set tempo */
     double setTempo(double dTempo);
@@ -61,25 +65,25 @@ public:
     /** Flush buffer */
     void clear();
 
-public slots:    
+public slots:
     void slotSetSamplerate(double dSampleRate);
 private:
     /** Holds the playback direction */
     bool m_bBackwards;
 
-    /** Buffer used to reverse output from SoundTouch 
+    /** Buffer used to reverse output from SoundTouch
       * library when playback direction is backwards */
     CSAMPLE *buffer_back;
 
     /** SoundTouch time/pitch scaling lib */
-    SoundTouch *m_pSoundTouch;
+    soundtouch::SoundTouch* m_pSoundTouch;
 
     /** True if in pitch independent time stretch mode */
     bool m_bPitchIndpTimeStretch;
 
     /** Used when clear is called */
     bool m_bClear;
-    
+
     /** Used to protect SoundTouch calls */
     QMutex m_qMutex;
 

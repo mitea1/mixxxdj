@@ -20,12 +20,14 @@
 
 #include "ui_dlgprefcontrolsdlg.h"
 #include "configobject.h"
-#include "mixxx.h"
 
 class QWidget;
 class ControlObjectThreadMain;
 class ControlPotmeter;
 class SkinLoader;
+class PlayerManager;
+class MixxxApp;
+class ControlObject;
 
 /**
   *@author Tue & Ken Haste Andersen
@@ -35,8 +37,10 @@ class DlgPrefControls : public QWidget, public Ui::DlgPrefControlsDlg  {
     Q_OBJECT
 public:
     DlgPrefControls(QWidget *parent, MixxxApp *mixxx,
-                    SkinLoader* pSkinLoader, ConfigObject<ConfigValue> *pConfig);
+                    SkinLoader* pSkinLoader, PlayerManager* pPlayerManager,
+                    ConfigObject<ConfigValue> *pConfig);
     ~DlgPrefControls();
+
 public slots:
     void slotUpdate();
     void slotSetRateRange(int pos);
@@ -45,27 +49,52 @@ public slots:
     void slotSetRateTempRight(double);
     void slotSetRatePermLeft(double);
     void slotSetRatePermRight(double);
-    void slotSetVisuals(int pos);
     void slotSetTooltips(int pos);
     void slotSetSkin(int);
-	void slotSetScheme(int);
-	void slotUpdateSchemes();
+    void slotSetScheme(int);
+    void slotUpdateSchemes();
     void slotSetPositionDisplay(int);
+    void slotSetPositionDisplay(double);
+    void slotSetAllowTrackLoadToPlayingDeck(int);
     void slotSetCueDefault(int);
     void slotSetCueRecall(int);
+    void slotSetAutoDjRequeue(int);
     void slotSetRateRamp(bool);
     void slotSetRateRampSensitivity(int);
+    void slotSetLocale(int);
     void slotApply();
+
+    void slotSetFrameRate(int frameRate);
+    void slotSetWaveformType(int index);
+    void slotSetDefaultZoom(int index);
+    void slotSetZoomSynchronization(bool checked);
+    void slotSetVisualGainAll(double gain);
+    void slotSetVisualGainLow(double gain);
+    void slotSetVisualGainMid(double gain);
+    void slotSetVisualGainHigh(double gain);
+    void slotSetNormalizeOverview( bool normalize);
+
+    virtual void onShow();
+    virtual void onHide();
+
+protected:
+    void timerEvent(QTimerEvent *);
+
+private:
+    void initWaveformControl();
+    void notifyRebootNecessary();
+    bool checkSkinResolution(QString skin);
+
 private:
     /** Pointer to ConfigObject */
     ConfigObject<ConfigValue> *m_pConfig;
-    /** Pointers to ControlObjects associated with rate sliders */
-    ControlObjectThreadMain *m_pControlRate1, *m_pControlRate2, *m_pControlRateRange1, *m_pControlRateRange2;
+    int m_timer;
     ControlObject* m_pControlPositionDisplay;
-    /** Pointer to ControlObjects for controlling direction of rate sliders */
-    ControlObjectThreadMain *m_pControlRateDir1, *m_pControlRateDir2;
-    /** Pointer to ControlObjects for cue behavior */
-    ControlObjectThreadMain *m_pControlCueDefault1, *m_pControlCueDefault2;
+    QList<ControlObjectThreadMain*> m_cueControls;
+    QList<ControlObjectThreadMain*> m_rateControls;
+    QList<ControlObjectThreadMain*> m_rateDirControls;
+    QList<ControlObjectThreadMain*> m_rateRangeControls;
+    PlayerManager* m_pPlayerManager;
     MixxxApp *m_mixxx;
     SkinLoader* m_pSkinLoader;
 };

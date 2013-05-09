@@ -25,27 +25,29 @@
 #include "ui_dlgpreferencesdlg.h"
 #include "configobject.h"
 
-class QListWidget;
-class QListWidgetItem;
-class QStackedWidget;
-
 class MixxxApp;
-class PlayerProxy;
 class SoundManager;
 class DlgPrefSound;
-class DlgPrefMidiBindings;
+class DlgPrefController;
+class DlgPrefNoControllers;
 class DlgPrefPlaylist;
-class DlgPrefNoMidi;
 class DlgPrefControls;
 class DlgPrefEQ;
 class DlgPrefCrossfader;
 class DlgPrefRecord;
 class DlgPrefBpm;
+class DlgPrefBeats;
 class DlgPrefVinyl;
+class DlgPrefNoVinyl;
 class DlgPrefShoutcast;
-class PowerMate;
-class MidiDeviceManager;
+class DlgPrefReplayGain;
+class ControllerManager;
 class SkinLoader;
+class PlayerManager;
+class VinylControlManager;
+#ifdef __MODPLUG__
+class DlgPrefModplug;
+#endif
 
 /**
   *@author Tue & Ken Haste Andersen
@@ -55,53 +57,85 @@ class DlgPreferences : public QDialog, public Ui::DlgPreferencesDlg
 {
     Q_OBJECT
 public:
-    DlgPreferences(MixxxApp *mixxx, SkinLoader* pSkinLoader, SoundManager *soundman,
-                   MidiDeviceManager* midi, ConfigObject<ConfigValue> *config);
+    DlgPreferences(MixxxApp* mixxx, SkinLoader* pSkinLoader, SoundManager* soundman,
+//                    PlayerManager* pPlayerManager, ControllerManager* controllers, MidiDeviceManager* midi,
+                   PlayerManager* pPlayerManager, ControllerManager* controllers,
+                   VinylControlManager* pVCManager, ConfigObject<ConfigValue>* config);
+
     ~DlgPreferences();
     void createIcons();
 public slots:
     void slotShow();
     void slotHide();
-    void rescanMidi();
+    void rescanControllers();
     void slotApply();
-    void changePage(QTreeWidgetItem *current, QTreeWidgetItem *previous);
-    void showVinylControlPage();
-    void slotHighlightDevice(DlgPrefMidiBindings* dialog, bool enabled);
+    void changePage(QTreeWidgetItem* current, QTreeWidgetItem* previous);
+    void showSoundHardwarePage();
+    void slotHighlightDevice(DlgPrefController* dialog, bool enabled);
 signals:
     void closeDlg();
     void showDlg();
 protected:
-    bool eventFilter(QObject *, QEvent *);
+    bool eventFilter(QObject*, QEvent*);
 private:
-    void destroyMidiWidgets();
-    void setupMidiWidgets();
-    DlgPrefSound *wsound;
-    QList<DlgPrefMidiBindings*> wmidiBindingsForDevice;
-    DlgPrefPlaylist *wplaylist;
-    DlgPrefNoMidi *wNoMidi;
-    DlgPrefControls *wcontrols;
-    DlgPrefEQ *weq;
-    DlgPrefCrossfader *wcrossfader;
-    DlgPrefRecord *wrecord;
-    DlgPrefBpm *wbpm;
-    DlgPrefVinyl *wvinylcontrol;
-    DlgPrefShoutcast *wshoutcast;
+    void destroyControllerWidgets();
+    void setupControllerWidgets();
+    int addPageWidget(QWidget* w);
+    QList<DlgPrefController*> m_controllerWindows;
+    
+    DlgPrefSound* m_wsound;
+    DlgPrefPlaylist* m_wplaylist;
+    DlgPrefNoControllers *m_wNoControllers;
+    DlgPrefControls* m_wcontrols;
+    DlgPrefEQ* m_weq;
+    DlgPrefCrossfader* m_wcrossfader;
+    DlgPrefRecord* m_wrecord;
+    DlgPrefBpm* m_wbpm;
+    DlgPrefBeats* m_wbeats;
+    DlgPrefVinyl* m_wvinylcontrol;
+    DlgPrefNoVinyl* m_wnovinylcontrol;
+    DlgPrefShoutcast* m_wshoutcast;
+    DlgPrefReplayGain* m_wreplaygain;
+#ifdef __MODPLUG__
+    DlgPrefModplug* m_wmodplug;
+#endif
 
-	QTreeWidgetItem* m_pSoundButton;
-	QTreeWidgetItem* m_pPlaylistButton;
-	QTreeWidgetItem* m_pControlsButton;
-	QTreeWidgetItem* m_pEqButton;
-	QTreeWidgetItem* m_pCrossfaderButton;
-	QTreeWidgetItem* m_pRecordingButton;
-	QTreeWidgetItem* m_pBPMdetectButton;
-	QTreeWidgetItem* m_pVinylControlButton;
-	QTreeWidgetItem* m_pShoutcastButton;
-    QTreeWidgetItem* m_pMIDITreeItem;
-    QList<QTreeWidgetItem*> m_midiBindingsButtons;
+    /*
+    QScrollArea* m_sasound;
+    QScrollArea* m_saplaylist;
+//     QScrollArea* m_saNoMidi;
+    QScrollArea* m_sacontrols;
+    QScrollArea* m_saeq;
+    QScrollArea* m_sacrossfader;
+    QScrollArea* m_sarecord;
+    QScrollArea* m_sabpm;
+    QScrollArea* m_savinylcontrol;
+    QScrollArea* m_sanovinylcontrol;
+    QScrollArea* m_sashoutcast;
+    QScrollArea* m_sareplaygain;
+	*/
 
-    ConfigObject<ConfigValue> *config;
-    MixxxApp *m_pMixxx;
-    MidiDeviceManager* m_pMidiDeviceManager;
+    QTreeWidgetItem* m_pSoundButton;
+    QTreeWidgetItem* m_pPlaylistButton;
+    QTreeWidgetItem* m_pControlsButton;
+    QTreeWidgetItem* m_pEqButton;
+    QTreeWidgetItem* m_pCrossfaderButton;
+    QTreeWidgetItem* m_pRecordingButton;
+    QTreeWidgetItem* m_pBPMdetectButton;
+    QTreeWidgetItem* m_pAnalysersButton;
+    QTreeWidgetItem* m_pVinylControlButton;
+    QTreeWidgetItem* m_pShoutcastButton;
+    QTreeWidgetItem* m_pReplayGainButton;
+#ifdef __MODPLUG__
+    QTreeWidgetItem* m_pModplugButton;
+#endif
+    QTreeWidgetItem* m_pControllerTreeItem;
+    QList<QTreeWidgetItem*> m_controllerWindowLinks;
+
+    QSize m_pageSizeHint;
+
+    ConfigObject<ConfigValue>* config;
+    ControllerManager* m_pControllerManager;
 };
 
 #endif

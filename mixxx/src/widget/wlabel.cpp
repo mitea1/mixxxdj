@@ -25,6 +25,10 @@
 WLabel::WLabel(QWidget * parent) : WWidget(parent)
 {
     m_pLabel = new QLabel(this);
+    QLayout* pLayout = new QVBoxLayout(this);
+    pLayout->setContentsMargins(0, 0, 0, 0);
+    pLayout->addWidget(m_pLabel);
+    setLayout(pLayout);
     m_qsText = "";
 }
 
@@ -35,67 +39,30 @@ WLabel::~WLabel()
 
 void WLabel::setup(QDomNode node)
 {
-    WWidget::setup(node);
-
     // Colors
     QPalette palette = m_pLabel->palette(); //we have to copy out the palette to edit it since it's const (probably for threadsafety)
-
-    if(!WWidget::selectNode(node, "BgColor").isNull()) {
+    if (!WWidget::selectNode(node, "BgColor").isNull()) {
         m_qBgColor.setNamedColor(WWidget::selectNodeQString(node, "BgColor"));
-        //m_pLabel->setPaletteBackgroundColor(WSkinColor::getCorrectColor(m_qBgColor)); //deprecated
         palette.setColor(this->backgroundRole(), WSkinColor::getCorrectColor(m_qBgColor));
         m_pLabel->setAutoFillBackground(true);
     }
     m_qFgColor.setNamedColor(WWidget::selectNodeQString(node, "FgColor"));
-    //m_pLabel->setPaletteForegroundColor(WSkinColor::getCorrectColor(m_qFgColor)); //deprecated
     palette.setColor(this->foregroundRole(), WSkinColor::getCorrectColor(m_qFgColor));
-
     m_pLabel->setPalette(palette);
-
-    m_pLabel->setToolTip(getTooltip());
 
     // Text
     if (!selectNode(node, "Text").isNull())
         m_qsText = selectNodeQString(node, "Text");
     m_pLabel->setText(m_qsText);
 
-    // Size
-    QString size = selectNodeQString(node, "Size");
-    int x = size.left(size.indexOf(",")).toInt();
-    int y = size.mid(size.indexOf(",")+1).toInt();
-    setFixedSize(x,y);
-
     // Alignment
-    if (!selectNode(node, "Alignment").isNull())
-    {
+    if (!selectNode(node, "Alignment").isNull()) {
         if (selectNodeQString(node, "Alignment")=="right")
             m_pLabel->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
     }
-
-    QString style = selectNodeQString(node, "Style");
-    if (style != "") {
-        m_pLabel->setStyleSheet(style);
-    }
-
-    QString pos = selectNodeQString(node, "Pos");
-    int px = pos.left(pos.indexOf(",")).toInt();
-    int py = pos.mid(pos.indexOf(",")+1).toInt();
-    move(px,py);
-}
-
-void WLabel::setFixedSize(int x,int y)
-{
-    WWidget::setFixedSize(x,y);
-    m_pLabel->setFixedSize(x,y);
-}
-
-void WLabel::move(int x, int y)
-{
-    WWidget::move(x,y);
 }
 
 void WLabel::setAlignment(Qt::Alignment i)
 {
     m_pLabel->setAlignment(i);
 }
-

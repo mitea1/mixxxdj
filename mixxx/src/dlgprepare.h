@@ -6,53 +6,56 @@
 #include "configobject.h"
 #include "library/libraryview.h"
 #include "library/trackcollection.h"
+#include "library/preparelibrarytablemodel.h"
 
 class PrepareLibraryTableModel;
 class WPrepareCratesTableView;
 class WPrepareLibraryTableView;
-class AnalyserQueue;
-class QSqlTableModel;
-class CrateView;
 
 class DlgPrepare : public QWidget, public Ui::DlgPrepare, public virtual LibraryView {
     Q_OBJECT
-public:
-    DlgPrepare(QWidget *parent, ConfigObject<ConfigValue>* pConfig, TrackCollection* pTrackCollection);
+  public:
+    DlgPrepare(QWidget *parent,
+               ConfigObject<ConfigValue>* pConfig,
+               TrackCollection* pTrackCollection);
     virtual ~DlgPrepare();
-    virtual void setup(QDomNode node);
-    virtual void onSearchStarting();
-    virtual void onSearchCleared();
+
     virtual void onSearch(const QString& text);
     virtual void onShow();
-    virtual QWidget* getWidgetForMIDIControl();
-    public slots:
-    void tableSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
+    virtual void loadSelectedTrack();
+    virtual void loadSelectedTrackToGroup(QString group, bool play);
+    virtual void moveSelection(int delta);
+    inline const QString currentSearch() { return m_pPrepareLibraryTableModel->currentSearch(); };
+
+  public slots:
+    void tableSelectionChanged(const QItemSelection& selected,
+                               const QItemSelection& deselected);
     void selectAll();
     void analyze();
-    void trackAnalysisFinished(TrackPointer tio);
-    void trackAnalysisProgress(TrackPointer tio, int progress);
+    void trackAnalysisFinished(int size);
+    void trackAnalysisProgress(int progress);
     void showRecentSongs();
     void showAllSongs();
     void installEventFilter(QObject* pFilter);
+    void analysisActive(bool bActive);
+
   signals:
     void loadTrack(TrackPointer pTrack);
-    void loadTrackToPlayer(TrackPointer pTrack, int player);
-
-  private:
+    void loadTrackToPlayer(TrackPointer pTrack, QString player);
+    void analyzeTracks(QList<int> trackIds);
     void stopAnalysis();
 
+  private:
     //Note m_pTrackTablePlaceholder is defined in the .ui file
     ConfigObject<ConfigValue>* m_pConfig;
     TrackCollection* m_pTrackCollection;
-    AnalyserQueue* m_pAnalyserQueue;
+    bool m_bAnalysisActive;
     QButtonGroup m_songsButtonGroup;
     WPrepareLibraryTableView* m_pPrepareLibraryTableView;
     PrepareLibraryTableModel* m_pPrepareLibraryTableModel;
     WPrepareCratesTableView* m_pPrepareCratesTableView;
-    CrateView* m_pCrateView;
-    QSqlTableModel* m_pCratesTableModel;
-    QModelIndexList m_indexesBeingAnalyzed;
-    int m_iOldBpmEnabled; /** Used to temporarily enable BPM detection in the prefs before we analyse */
+    int m_tracksInQueue;
+    int m_currentTrack;
 };
 
 #endif //DLGTRIAGE_H

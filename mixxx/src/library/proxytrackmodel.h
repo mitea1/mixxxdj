@@ -27,15 +27,18 @@ class ProxyTrackModel : public QSortFilterProxyModel, public virtual TrackModel 
 
     virtual TrackPointer getTrack(const QModelIndex& index) const;
     virtual QString getTrackLocation(const QModelIndex& index) const;
+    virtual int getTrackId(const QModelIndex& index) const;
+    virtual const QLinkedList<int> getTrackRows(int trackId) const;
     virtual void search(const QString& searchText);
-    virtual const QString currentSearch();
+    virtual const QString currentSearch() const;
     virtual bool isColumnInternal(int column);
+    virtual bool isColumnHiddenByDefault(int column);
     virtual void removeTrack(const QModelIndex& index);
     virtual void removeTracks(const QModelIndexList& indices);
     virtual bool addTrack(const QModelIndex& index, QString location);
     virtual void moveTrack(const QModelIndex& sourceIndex,
                            const QModelIndex& destIndex);
-    virtual QItemDelegate* delegateForColumn(const int i);
+    virtual QAbstractItemDelegate* delegateForColumn(const int i, QObject* pParent);
     virtual TrackModel::CapabilitiesFlags getCapabilities() const;
 
     bool filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const;

@@ -7,34 +7,17 @@ const QString RECENT_FILTER = "datetime_added > datetime('now', '-7 days')";
 
 PrepareLibraryTableModel::PrepareLibraryTableModel(QObject* parent,
                                                    TrackCollection* pTrackCollection)
-        : TrackModel(pTrackCollection->getDatabase(),
-                     "mixxx.db.model.prepare"),
-          LibraryTableModel(parent, pTrackCollection) {
-
+        : LibraryTableModel(parent, pTrackCollection,
+                            "mixxx.db.model.prepare") {
     m_bShowRecentSongs = true;
-    slotSearch("");
-    select();
+    setSearch("", RECENT_FILTER);
 
     connect(this, SIGNAL(doSearch(const QString&)),
             this, SLOT(slotSearch(const QString&)));
 }
 
 
-PrepareLibraryTableModel::~PrepareLibraryTableModel()
-{
-
-}
-
-bool PrepareLibraryTableModel::isColumnInternal(int column) {
-    bool result = false;
-
-    if ((column == fieldIndex(LIBRARYTABLE_DATETIMEADDED))) {
-        result = false;
-    }
-    else
-        result = LibraryTableModel::isColumnInternal(column);
-
-    return result;
+PrepareLibraryTableModel::~PrepareLibraryTableModel() {
 }
 
 void PrepareLibraryTableModel::search(const QString& searchText) {
@@ -43,50 +26,17 @@ void PrepareLibraryTableModel::search(const QString& searchText) {
     emit(doSearch(searchText));
 }
 
-void PrepareLibraryTableModel::slotSearch(const QString& searchText)
-{
-    if (!m_currentSearch.isNull() && m_currentSearch == searchText)
-        return;
-    m_currentSearch = searchText;
-    QString baseFilter;
-    if (m_bShowRecentSongs)
-        baseFilter = DEFAULT_LIBRARYFILTER + " AND " + RECENT_FILTER;
-    else
-        baseFilter = DEFAULT_LIBRARYFILTER;
-
-    QString filter;
-    if (searchText == "")
-        filter = baseFilter;
-    else {
-        QSqlField search("search", QVariant::String);
-        search.setValue("%" + searchText + "%");
-        QString escapedText = database().driver()->formatValue(search);
-        filter = "(" + baseFilter + " AND " +
-                "(artist LIKE " + escapedText + " OR " +
-                "album LIKE " + escapedText + " OR " +
-                "title  LIKE " + escapedText + "))";
-    }
-    setFilter(filter);
+void PrepareLibraryTableModel::slotSearch(const QString& searchText) {
+    BaseSqlTableModel::search(searchText,
+                              m_bShowRecentSongs ? RECENT_FILTER : QString());
 }
 
-void PrepareLibraryTableModel::showRecentSongs()
-{
+void PrepareLibraryTableModel::showRecentSongs() {
    m_bShowRecentSongs = true;
-   search(m_currentSearch);
+   search(currentSearch());
 }
 
-void PrepareLibraryTableModel::showAllSongs()
-{
+void PrepareLibraryTableModel::showAllSongs() {
     m_bShowRecentSongs = false;
-    search(m_currentSearch);
-}
-
-
-void PrepareLibraryTableModel::updateTracks(QModelIndexList& indices)
-{
-    QModelIndex current;
-    foreach(current, indices)
-    {
-        emit(dataChanged(current, current));
-    }
+    search(currentSearch());
 }

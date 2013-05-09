@@ -5,50 +5,71 @@
 #include <QThread>
 #include <QQueue>
 #include <QWaitCondition>
+#include <QSemaphore>
 
 #include "configobject.h"
 #include "analyser.h"
 #include "trackinfoobject.h"
 
 class SoundSourceProxy;
+class TrackCollection;
 
 class AnalyserQueue : public QThread {
     Q_OBJECT
 
-    public:
-	AnalyserQueue();
-	virtual ~AnalyserQueue();
-	void stop();
-    int numQueuedTracks();
-
-	static AnalyserQueue* createDefaultAnalyserQueue(ConfigObject<ConfigValue> *_config);
-	static AnalyserQueue* createPrepareViewAnalyserQueue(ConfigObject<ConfigValue> *_config);
-    static AnalyserQueue* createAnalyserQueue(QList<Analyser*> analysers);
-
-public slots:
+  public:
+    AnalyserQueue(TrackCollection* pTrackCollection);
+    virtual ~AnalyserQueue();
+    void stop();
     void queueAnalyseTrack(TrackPointer tio);
 
-signals:
-    void trackProgress(TrackPointer pTrack,int progress);
-    void trackFinished(TrackPointer pTrack);
+    static AnalyserQueue* createDefaultAnalyserQueue(
+            ConfigObject<ConfigValue>* _config, TrackCollection* pTrackCollection);
+    static AnalyserQueue* createPrepareViewAnalyserQueue(
+            ConfigObject<ConfigValue>* _config, TrackCollection* pTrackCollection);
 
-protected:
-	void run();
+  public slots:
+    void slotAnalyseTrack(TrackPointer tio);
+    void slotUpdateProgress();
 
-private:
-	void addAnalyser(Analyser* an);
+  signals:
+    void trackProgress(int progress);
+    void trackDone(TrackPointer track);
+    void trackFinished(int size);
+    // Signals from AnalyserQueue Thread:
+    void queueEmpty();
+    void updateProgress();
 
-	QList<Analyser*> m_aq;
+  protected:
+    void run();
 
-	TrackPointer dequeueNextBlocking();
-	void doAnalysis(TrackPointer tio, SoundSourceProxy *pSoundSource);
+  private:
 
-	bool m_exit;
+    struct progress_info {
+        TrackPointer current_track;
+        int track_progress; // in 0.1 %
+        int queue_size;
+        QSemaphore sema;
+    };
 
-	// The processing queue and associated mutex
-	QQueue<TrackPointer> m_tioq;
-	QMutex m_qm;
-	QWaitCondition m_qwait;
+    void addAnalyser(Analyser* an);
+
+    QList<Analyser*> m_aq;
+
+    bool isLoadedTrackWaiting(TrackPointer tio);
+    TrackPointer dequeueNextBlocking();
+    bool doAnalysis(TrackPointer tio, SoundSourceProxy* pSoundSource);
+    void emitUpdateProgress(TrackPointer tio, int progress);
+
+    bool m_exit;
+    QAtomicInt m_aiCheckPriorities;
+
+    // The processing queue and associated mutex
+    QQueue<TrackPointer> m_tioq;
+    QMutex m_qm;
+    QWaitCondition m_qwait;
+    struct progress_info m_progressInfo;
+    int m_queue_size;
 };
 
 #endif

@@ -5,55 +5,39 @@
 #define PLAYLISTFEATURE_H
 
 #include <QSqlTableModel>
-#include <QAction>
-#include <QList>
 
-#include "library/libraryfeature.h"
-#include "library/dao/playlistdao.h"
-#include "library/dao/trackdao.h"
+#include "library/baseplaylistfeature.h"
+#include "configobject.h"
 
-class PlaylistTableModel;
 class TrackCollection;
+class TreeItem;
 
-class PlaylistFeature : public LibraryFeature {
+class PlaylistFeature : public BasePlaylistFeature {
     Q_OBJECT
-public:
-    PlaylistFeature(QObject* parent, TrackCollection* pTrackCollection);
+  public:
+    PlaylistFeature(QObject* parent, TrackCollection* pTrackCollection,
+                    ConfigObject<ConfigValue>* pConfig);
     virtual ~PlaylistFeature();
 
     QVariant title();
     QIcon getIcon();
 
-    bool dropAccept(QUrl url);
-    bool dropAcceptChild(const QModelIndex& index, QUrl url);
-    bool dragMoveAccept(QUrl url);
+    bool dropAcceptChild(const QModelIndex& index, QList<QUrl> urls, QWidget *pSource);
     bool dragMoveAcceptChild(const QModelIndex& index, QUrl url);
 
-    QAbstractItemModel* getChildModel();
-
-    void bindWidget(WLibrarySidebar* sidebarWidget,
-                    WLibrary* libraryWidget,
-                    MixxxKeyboard* keyboard);
-  signals:
-    void showPage(const QUrl& page);
-
-public slots:
-    void activate();
-    void activateChild(const QModelIndex& index);
+  public slots:
     void onRightClick(const QPoint& globalPos);
     void onRightClickChild(const QPoint& globalPos, QModelIndex index);
 
-    void slotCreatePlaylist();
-    void slotDeletePlaylist();
+  private slots:
+    void slotPlaylistTableChanged(int playlistId);
 
- private:
-    PlaylistTableModel* m_pPlaylistTableModel;
-    PlaylistDAO &m_playlistDao;
-    TrackDAO &m_trackDao;
-    QAction *m_pCreatePlaylistAction;
-    QAction *m_pDeletePlaylistAction;
-    QSqlTableModel m_playlistTableModel;
-    QModelIndex m_lastRightClickedIndex;
+ protected:
+    void buildPlaylistList();
+    void decorateChild(TreeItem *pChild, int playlist_id);
+
+  private:
+    virtual QString getRootViewHtml() const;
 };
 
 #endif /* PLAYLISTFEATURE_H */

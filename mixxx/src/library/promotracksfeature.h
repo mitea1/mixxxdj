@@ -20,11 +20,13 @@
 
 #include <QStringListModel>
 
+#include "treeitemmodel.h"
 #include "trackinfoobject.h"
 #include "library/libraryfeature.h"
 #include "library/dao/playlistdao.h"
 #include "library/cratetablemodel.h"
 #include "configobject.h"
+
 
 class PlaylistTableModel;
 class ProxyTrackModel;
@@ -48,22 +50,14 @@ class PromoTracksFeature : public LibraryFeature {
     QVariant title();
     QIcon getIcon();
 
-    bool dropAccept(QUrl url);
-    bool dropAcceptChild(const QModelIndex& index, QUrl url);
-    bool dragMoveAccept(QUrl url);
-    bool dragMoveAcceptChild(const QModelIndex& index, QUrl url);
-
-    void bindWidget(WLibrarySidebar* sidebarWidget,
-                    WLibrary* libraryWidget,
+    void bindWidget(WLibrary* libraryWidget,
                     MixxxKeyboard* keyboard);
 
-    QAbstractItemModel* getChildModel();
+    TreeItemModel* getChildModel();
 
 public slots:
     void activate();
     void activateChild(const QModelIndex& index);
-    void onRightClick(const QPoint& globalPos);
-    void onRightClickChild(const QPoint& globalPos, QModelIndex index);
 
 private:
     ConfigObject<ConfigValue>* m_pConfig;
@@ -76,7 +70,7 @@ private:
     const static QString m_sFeaturedArtistsViewName;
     const static QString m_sBundledSongsViewName;
     const static QString m_sMyDownloadsViewName;
-    QStringListModel m_childModel;
+    TreeItemModel m_childModel;
     CrateTableModel m_downloadsTableModel;
     SongDownloader* m_pSongDownloader;
     bool m_bFirstRun;

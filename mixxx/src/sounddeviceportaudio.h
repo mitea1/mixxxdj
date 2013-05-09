@@ -21,7 +21,6 @@
 #include <portaudio.h>
 #include "sounddevice.h"
 
-//class SoundDevice;
 class SoundManager;
 
 /** Maximum frame size used with PortAudio. Used to determine no of buffers
@@ -35,21 +34,23 @@ typedef int (*EnableAlsaRT)(PaStream* s, int enable);
 
 class SoundDevicePortAudio;
 
-/** A struct to some stuff we need to pass along to the callback through PortAudio **/
-struct PADeviceCallbackStuff
-{
-	SoundDevicePortAudio* soundDevice;
-	int devIndex;
-};
-
-class SoundDevicePortAudio : SoundDevice
+class SoundDevicePortAudio : public SoundDevice
 {
     public:
-        SoundDevicePortAudio(ConfigObject<ConfigValue> *config, SoundManager* sm, const PaDeviceInfo *deviceInfo, unsigned int devIndex);
+        SoundDevicePortAudio(ConfigObject<ConfigValue> *config,
+                SoundManager *sm, const PaDeviceInfo *deviceInfo,
+                unsigned int devIndex);
         ~SoundDevicePortAudio();
         int open();
         int close();
-        int callbackProcess(unsigned long framesPerBuffer, float *output, short *in, int devIndex);
+        QString getError() const;
+        int callbackProcess(unsigned long framesPerBuffer,
+                float *output, short *in,
+                const PaStreamCallbackTimeInfo *timeInfo,
+                PaStreamCallbackFlags statusFlags);
+        virtual unsigned int getDefaultSampleRate() const {
+            return (unsigned int)m_deviceInfo->defaultSampleRate;
+        }
     private:
         /** PortAudio stream for this device. */
         PaStream *m_pStream;
@@ -57,8 +58,6 @@ class SoundDevicePortAudio : SoundDevice
         PaDeviceIndex m_devId;
         /** Struct containing information about this device. Don't free() it, it belongs to PortAudio.*/
         const PaDeviceInfo *m_deviceInfo;
-        /** A struct to hold some information/pointers we need to pass to our callback function */
-        PADeviceCallbackStuff m_callbackStuff;
         /** Number of buffers */
         int m_iNumberOfBuffers;
         /** Number of active/open soundcards */
@@ -67,9 +66,13 @@ class SoundDevicePortAudio : SoundDevice
         PaStreamParameters m_outputParams;
         /** Description of the input stream coming from the soundcard */
 	    PaStreamParameters m_inputParams;
+        /** A string describing the last PortAudio error to occur */
+        QString m_lastError;
 
-  private:
-    bool m_bSetThreadPriority;
+        bool m_bSetThreadPriority;
+
+        ControlObject* m_pMasterUnderflowCount;
+        int m_undeflowUpdateCount;
 };
 
 
@@ -78,6 +81,6 @@ int paV19Callback(const void *inputBuffer, void *outputBuffer,
                         unsigned long framesPerBuffer,
                         const PaStreamCallbackTimeInfo* timeInfo,
                         PaStreamCallbackFlags statusFlags,
-                        void *_sounddevice);
+                        void *soundDevice);
 
 #endif

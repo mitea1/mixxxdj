@@ -21,18 +21,16 @@
 #include "library/promotracksfeature.h"
 #include "library/bundledsongswebview.h"
 #include "library/featuredartistswebview.h"
-#include "library/proxytrackmodel.h"
 #include "library/trackcollection.h"
 #include "library/dao/cratedao.h"
 #include "trackinfoobject.h"
 #include "defs_promo.h"
 #include "widget/wlibrary.h"
-#include "widget/wlibrarysidebar.h"
 #include "mixxxkeyboard.h"
 
 QString PromoTracksFeature::m_sPromoLocalHTMLLocation;
 QString PromoTracksFeature::m_sPromoRemoteHTMLLocation;
-#define PROMO_BUNDLE_PATH (config->getConfigPath() + "/promo/" + MIXXX_PROMO_VERSION + "/")
+#define PROMO_BUNDLE_PATH (config->getResourcePath() + "promo/" + MIXXX_PROMO_VERSION + "/")
 #define LOCAL_HTML_LOCATION (PROMO_BUNDLE_PATH + "index.html")
 
 const QString PromoTracksFeature::m_sFeaturedArtistsViewName = "Featured Artists";
@@ -53,7 +51,7 @@ PromoTracksFeature::PromoTracksFeature(QObject* parent,
 
     m_sPromoRemoteHTMLLocation = QString("http://promo.mixxx.org/%1/index.html").arg(MIXXX_PROMO_VERSION); //m_pConfig->getConfigPath() + "/promo/promotracks.html";
     m_sPromoLocalHTMLLocation = LOCAL_HTML_LOCATION;
-    m_sPromoAutoloadLocation = m_pConfig->getConfigPath() + "/promo/" + MIXXX_PROMO_VERSION + "/autoload.dat";
+    m_sPromoAutoloadLocation = m_pConfig->getResourcePath() + "/promo/" + MIXXX_PROMO_VERSION + "/autoload.dat";
 
     //Load the extra.dat file so we can peek at some extra information, such
     //as which songs to auto-load into Mixxx's players.
@@ -66,7 +64,7 @@ PromoTracksFeature::PromoTracksFeature(QObject* parent,
         while (!extra.atEnd())
         {
             QString trackPath = extra.readLine();
-            trackPath = m_pConfig->getConfigPath() + "/promo/" + MIXXX_PROMO_VERSION + "/" + trackPath;
+            trackPath = m_pConfig->getResourcePath() + "/promo/" + MIXXX_PROMO_VERSION + "/" + trackPath;
             QFileInfo fileInfo(trackPath);
             trackPath = fileInfo.absoluteFilePath();
             //qDebug() << "PROMO: Auto-loading track" << trackPath;
@@ -132,10 +130,8 @@ QList<TrackPointer> PromoTracksFeature::getTracksToAutoLoad()
     return m_tracksToAutoLoad;
 }
 
-void PromoTracksFeature::bindWidget(WLibrarySidebar* sidebarWidget,
-                                    WLibrary* libraryWidget,
+void PromoTracksFeature::bindWidget(WLibrary* libraryWidget,
                                     MixxxKeyboard* keyboard) {
-
     QString libraryPath = m_pConfig->getValueString(ConfigKey("[Playlist]","Directory"));
 
     ConfigObject<ConfigValue>* config = m_pConfig; //Long story, macros macros macros
@@ -148,20 +144,20 @@ void PromoTracksFeature::bindWidget(WLibrarySidebar* sidebarWidget,
     libraryWidget->registerView(tr(m_sBundledSongsViewName.toUtf8().constData()), m_pBundledSongsView);
     connect(m_pBundledSongsView, SIGNAL(loadTrack(TrackPointer)),
             this, SIGNAL(loadTrack(TrackPointer)));
-    connect(m_pBundledSongsView, SIGNAL(loadTrackToPlayer(TrackPointer, int)),
-            this, SIGNAL(loadTrackToPlayer(TrackPointer, int)));
+    connect(m_pBundledSongsView, SIGNAL(loadTrackToPlayer(TrackPointer, QString)),
+            this, SIGNAL(loadTrackToPlayer(TrackPointer, QString)));
 
 /*  XXX: Re-enable this code for Promo 3.0
     m_pFeaturedArtistsView = new FeaturedArtistsWebView(libraryWidget, libraryPath, m_sPromoRemoteHTMLLocation, new SongDownloader(this));
     libraryWidget->registerView(tr(m_sFeaturedArtistsViewName.toUtf8().constData()), m_pFeaturedArtistsView);
     connect(m_pFeaturedArtistsView, SIGNAL(loadTrack(TrackInfoObject*)),
             this, SIGNAL(loadTrack(TrackInfoObject*)));
-    connect(m_pFeaturedArtistsView, SIGNAL(loadTrackToPlayer(TrackInfoObject*, int)),
-            this, SIGNAL(loadTrackToPlayer(TrackInfoObject*, int)));
+    connect(m_pFeaturedArtistsView, SIGNAL(loadTrackToPlayer(TrackInfoObject*, QString)),
+            this, SIGNAL(loadTrackToPlayer(TrackInfoObject*, QString)));
     */
 }
 
-QAbstractItemModel* PromoTracksFeature::getChildModel() {
+TreeItemModel* PromoTracksFeature::getChildModel() {
     //XXX Promo 3.0:
     //return NULL;
     return &m_childModel;
@@ -175,34 +171,9 @@ void PromoTracksFeature::activate() {
 
 void PromoTracksFeature::activateChild(const QModelIndex& index) {
     QString itemString = m_childModel.data(index, Qt::DisplayRole).toString();
-    if (itemString == tr(m_sMyDownloadsViewName.toUtf8().constData()))
-    {
+    if (itemString == tr(m_sMyDownloadsViewName.toUtf8().constData())) {
         emit(showTrackModel(&m_downloadsTableModel));
-    }
-    else
+    } else {
         emit(switchToView(itemString));
-}
-
-void PromoTracksFeature::onRightClick(const QPoint& globalPos) {
-}
-
-void PromoTracksFeature::onRightClickChild(const QPoint& globalPos,
-                                            QModelIndex index) {
-}
-
-bool PromoTracksFeature::dropAccept(QUrl url) {
-    return false;
-}
-
-bool PromoTracksFeature::dropAcceptChild(const QModelIndex& index, QUrl url) {
-    return false;
-}
-
-bool PromoTracksFeature::dragMoveAccept(QUrl url) {
-    return false;
-}
-
-bool PromoTracksFeature::dragMoveAcceptChild(const QModelIndex& index,
-                                              QUrl url) {
-    return false;
+    }
 }

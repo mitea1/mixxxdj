@@ -1,480 +1,463 @@
-/***************************************************************************
-                          dlgprefsound.cpp  -  description
-                             -------------------
-    begin                : Thu Apr 17 2003
-    copyright            : (C) 2003 by Tue & Ken Haste Andersen
-    email                : haste@diku.dk
-***************************************************************************/
-
-/***************************************************************************
-*                                                                         *
-*   This program is free software; you can redistribute it and/or modify  *
-*   it under the terms of the GNU General Public License as published by  *
-*   the Free Software Foundation; either version 2 of the License, or     *
-*   (at your option) any later version.                                   *
-*                                                                         *
-***************************************************************************/
-
-#include "dlgprefsound.h"
-#include <qcombobox.h>
-#include <QButtonGroup>
-#include <QtDebug>
-#include <QDialog>
-#include <qcheckbox.h>
-#include <qpushbutton.h>
-#include <qslider.h>
-#include <qlabel.h>
-#include <qmessagebox.h>
-#include <qthread.h>
-#include "controlobject.h"
-#include "sounddevice.h"
-#include "soundmanager.h"
-#include <qwidget.h>
-#include <math.h>
-
-#ifdef __C_METRICS__
-#include <cmetrics.h>
-#include "defs_mixxxcmetrics.h"
-#endif
-
-// Calculates log2 of number.  
-// 
-#ifndef log2
-double log2( double n )  
-{  
-    // log(n)/log(2) is log2.  
-    return log( n ) / log( 2.0 );   // MSVC doesn't know how to take logs of ints.
-}
-#endif
-
-DlgPrefSound::DlgPrefSound(QWidget * parent, SoundManager * _soundman,
-                           ConfigObject<ConfigValue> * _config) : QWidget(parent), Ui::DlgPrefSoundDlg()
-{
-    m_bLatencySliderDrag = false;
-    m_pSoundManager = _soundman;
-    config = _config;
-	m_parent = parent;
-    //Check to see if the config file is empty:
-    //First look at the API, and select the default soundcard and API if required.
-    QString selectedAPI = config->getValueString(ConfigKey("[Soundcard]","SoundApi"));
-    if (!m_pSoundManager->getHostAPIList().contains(selectedAPI))
-    {
-        m_pSoundManager->setDefaults(true, true, false);
-    }
-    else
-        qDebug() << "selectedAPI is: " << selectedAPI;
-    //Second, look at the latency, and set the default latency if the latency value was empty or less than zero.
-    int latency = config->getValueString(ConfigKey("[Soundcard]","Latency")).toInt();
-    if (latency <= 0)
-    {
-        m_pSoundManager->setDefaults(false, false, true);
-    }
-
-    setupUi(this);
-    slotUpdate();
-    slotLatency();
-
-    // Update of latency label, when latency slider is updated
-    connect(SliderLatency,                SIGNAL(sliderMoved(int)),  this, SLOT(slotLatency()));
-    connect(SliderLatency,                SIGNAL(sliderReleased()),  this, SLOT(slotLatency()));
-    connect(SliderLatency,                SIGNAL(valueChanged(int)), this, SLOT(slotLatency()));
-
-    //Set up a button group for the pitch behaviour options
-    QButtonGroup pitchMode;
-    pitchMode.addButton(radioButtonVinylEmu);
-    pitchMode.addButton(radioButtonPitchIndp);
-
-    // Set default value for scale mode check box
-    int iPitchIndpTimeStretch = config->getValueString(ConfigKey("[Soundcard]","PitchIndpTimeStretch")).toInt();
-    if (iPitchIndpTimeStretch)
-    {
-        radioButtonPitchIndp->setChecked(true);
-        radioButtonVinylEmu->setChecked(false);
-    }
-    else
-    {
-        radioButtonPitchIndp->setChecked(false);
-        radioButtonVinylEmu->setChecked(true);
-    }
-
-    // Apply changes whenever apply signal is emitted
-    /*
-       connect(ComboBoxSoundcardMasterLeft,  SIGNAL(activated(int)),    this, SLOT(slotApply()));
-       connect(ComboBoxSoundcardMasterRight, SIGNAL(activated(int)),    this, SLOT(slotApply()));
-       connect(ComboBoxSoundcardHeadLeft,    SIGNAL(activated(int)),    this, SLOT(slotApply()));
-       connect(ComboBoxSoundcardHeadRight,   SIGNAL(activated(int)),    this, SLOT(slotApply()));
-       connect(ComboBoxSamplerates,          SIGNAL(activated(int)),    this, SLOT(slotApply()));
-       connect(ComboBoxSoundApi,             SIGNAL(activated(int)),    this, SLOT(slotApplyApi()));
-       connect(checkBoxPitchIndp,            SIGNAL(stateChanged(int)), this, SLOT(slotApply()));
-       connect(SliderLatency,                SIGNAL(sliderPressed()),   this, SLOT(slotLatencySliderClick()));
-       connect(SliderLatency,                SIGNAL(sliderReleased()),  this, SLOT(slotLatencySliderRelease()));
-       connect(SliderLatency,                SIGNAL(valueChanged(int)), this, SLOT(slotLatencySliderChange(int)));
-     */
-
-    connect(SliderLatency,                SIGNAL(sliderReleased()),  this, SLOT(slotLatencySliderRelease()));
-    connect(ComboBoxSoundApi,             SIGNAL(activated(int)),    this, SLOT(slotApplyApi()));
-
-	connect(ComboBoxSoundcardMaster,	SIGNAL(activated(int)),		this,	SLOT(slotComboBoxSoundcardMasterChange()));
-	connect(ComboBoxSoundcardHeadphones,		SIGNAL(activated(int)),		this,	SLOT(slotComboBoxSoundcardHeadphonesChange()));
-	
-	slotComboBoxSoundcardMasterChange();
-	slotComboBoxSoundcardHeadphonesChange();
-	ComboBoxSoundcardMaster->setCurrentIndex(config->getValueString(ConfigKey("[Soundcard]","ChannelMaster")).toInt());
-	connect(ComboBoxChannelMaster, SIGNAL(activated(int)), this, SLOT(slotChannelChange()));
-	connect(ComboBoxChannelHeadphones, SIGNAL(activated(int)), this, SLOT(slotChannelChange()));
-	slotChannelChange();
-}
-
-DlgPrefSound::~DlgPrefSound()
-{
-}
-
-void DlgPrefSound::slotUpdate()
-{
-    // API's
-    ComboBoxSoundApi->clear();
-    ComboBoxSoundApi->insertItem(0, tr("None"));
-    QList<QString> apis = m_pSoundManager->getHostAPIList();
-    QListIterator<QString> api_it(apis);
-    QString api;
-    int j = 1;
-    while (api_it.hasNext())
-    {
-        api = api_it.next();
-        ComboBoxSoundApi->insertItem(j, api);
-        if (api==config->getValueString(ConfigKey("[Soundcard]","SoundApi")))
-            ComboBoxSoundApi->setCurrentIndex(j);
-        ++j;
-    }
-
-    //Get the currently selected API (just like we did above kinda)
-    QString selectedAPI = config->getValueString(ConfigKey("[Soundcard]","SoundApi"));
-
-
-    //Get the list of sound output devices that match the selected API.
-    QList<SoundDevice*> devices = m_pSoundManager->getDeviceList(selectedAPI, true, false);
-    SoundDevice * dev;
-
-    // Master sound card combobox
-    ComboBoxSoundcardMaster->clear();
-    ComboBoxSoundcardMaster->insertItem(0, tr("None"));
-    QListIterator<SoundDevice *> it(devices);
-    //it = devices.begin();
-    j = 1;
-    while (it.hasNext())
-    {
-        dev = it.next();
-        ComboBoxSoundcardMaster->insertItem(j, dev->getDisplayName(), dev->getInternalName());
-        if (dev->getInternalName()==config->getValueString(ConfigKey("[Soundcard]","DeviceMaster")))
-            ComboBoxSoundcardMaster->setCurrentIndex(j);
-        ++j;
-    }
-
-    // Master right sound card info
-/*  ComboBoxSoundcardMasterRight->clear();
-    ComboBoxSoundcardMasterRight->insertItem(0, tr("None"));
-    it.toFront();
-    j = 1;
-    while (it.hasNext())
-    {
-        dev = it.next();
-        ComboBoxSoundcardMasterRight->insertItem(j, dev->getName());
-        if (dev->getName()==config->getValueString(ConfigKey("[Soundcard]","DeviceMasterRight")))
-            ComboBoxSoundcardMasterRight->setCurrentIndex(j);
- ++j;
-    }
+/**
+ * @file dlgprefsound.cpp
+ * @author Bill Good <bkgood at gmail dot com>
+ * @date 20100625
  */
-    // Headphones sound card info
-    ComboBoxSoundcardHeadphones->clear();
-    ComboBoxSoundcardHeadphones->insertItem(0, tr("None"));
-    it.toFront();
-    j = 1;
-    while (it.hasNext())
-    {
-        dev = it.next();
-        ComboBoxSoundcardHeadphones->insertItem(j, dev->getDisplayName(), dev->getInternalName());
-        if (dev->getInternalName()==config->getValueString(ConfigKey("[Soundcard]","DeviceHeadphones")))
-            ComboBoxSoundcardHeadphones->setCurrentIndex(j);
-        ++j;
-    }
 
-    // Sample rate
-    ComboBoxSamplerates->clear();
-    QList<QString> srates = m_pSoundManager->getSamplerateList();
-    QListIterator<QString> srate_it(srates);
-    QString srate;
-    j = 0;
-    while (srate_it.hasNext())
-    {
-        srate = srate_it.next();
-        ComboBoxSamplerates->insertItem(j, srate);
-        if (srate==config->getValueString(ConfigKey("[Soundcard]","Samplerate")))
-            ComboBoxSamplerates->setCurrentIndex(j);
-        ++j;
-    }
+/***************************************************************************
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ ***************************************************************************/
 
-    // Latency. Disconnect slider slot when updating...
-    disconnect(SliderLatency,                SIGNAL(valueChanged(int)), this, SLOT(slotLatencySliderChange(int)));
-    SliderLatency->setValue(getSliderLatencyVal(config->getValueString(ConfigKey("[Soundcard]","Latency")).toInt()));
-    connect(SliderLatency,                SIGNAL(valueChanged(int)), this, SLOT(slotLatencySliderChange(int)));
+#include <QDebug>
+#include <QMessageBox>
+#include "dlgprefsound.h"
+#include "dlgprefsounditem.h"
+#include "engine/enginemaster.h"
+#include "playermanager.h"
+#include "soundmanager.h"
+#include "sounddevice.h"
 
-
-    //If JACK is selected as the current API, disable the latency slider
-    //(We ignore its setting anyways because the JACK daemon determines the latency.)
-    if (selectedAPI == MIXXX_PORTAUDIO_JACK_STRING)
-    {
-        SliderLatency->setEnabled(false);
-        //Set the latency slider to appear as 16 ms, just for the hell of it.
-        SliderLatency->setValue(getSliderLatencyVal(16));
-        TextLabelLatency->setText(tr("JACK"));
-    }
-    else
-        SliderLatency->setEnabled(true);
-    
-}
-
-void DlgPrefSound::slotLatency()
+/**
+ * Construct a new sound preferences pane. Initializes and populates all the
+ * all the controls to the values obtained from SoundManager.
+ */
+DlgPrefSound::DlgPrefSound(QWidget *pParent, SoundManager *pSoundManager,
+                           PlayerManager* pPlayerManager, ConfigObject<ConfigValue> *pConfig)
+        : QWidget(pParent)
+        , m_pSoundManager(pSoundManager)
+        , m_pPlayerManager(pPlayerManager)
+        , m_pConfig(pConfig)
+        , m_settingsModified(false)
+        , m_loading(false)
+        , m_forceApply(false)
 {
-    TextLabelLatency->setText(QString(tr("%1 ms")).arg(getSliderLatencyMsec(SliderLatency->value())));
-}
+    setupUi(this);
 
-/** Converts a slider tick position into a latency in milliseconds */
-int DlgPrefSound::getSliderLatencyMsec(int val)
-{
-    qDebug() << "getSliderLatencyMsec in: " << val;
-    int sampleRate = config->getValueString(ConfigKey("[Soundcard]","Samplerate")).toInt();
-    val = ((float)pow(2, (float)val) / sampleRate) * 1000;
-    qDebug() << "getSliderLatencyMsec out: " << val;
-    return val;
-}
+    connect(m_pSoundManager, SIGNAL(devicesUpdated()),
+            this, SLOT(refreshDevices()));
 
-/** Converts a latency in milliseconds into a slider tick position */
-int DlgPrefSound::getSliderLatencyVal(int val)
-{
-    //The input param "val" is in MSec, and we want to convert to a slider tick position.
-    int sampleRate = config->getValueString(ConfigKey("[Soundcard]","Samplerate")).toInt();
-    int iFramesPerBuffer = ((float)val/1000.0f) * sampleRate;
+    applyButton->setEnabled(false);
+    connect(applyButton, SIGNAL(clicked()),
+            this, SLOT(slotApply()));
 
-    //Round to the nearest power-of-two.
-    unsigned int i;
-    iFramesPerBuffer &= INT_MAX;
-    for (i = 1; iFramesPerBuffer > i; i <<= 1) ;
-    iFramesPerBuffer = i;
+    apiComboBox->clear();
+    apiComboBox->addItem(tr("None"), "None");
+    updateAPIs();
+    connect(apiComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(apiChanged(int)));
 
-    int exponent = log2(iFramesPerBuffer);
-
-    return exponent;
-}
-
-void DlgPrefSound::slotApply()
-{
-    qDebug() << "DlgPrefSound::Apply";
-
-    // Update the config object with parameters from dialog
-
-    config->set(ConfigKey("[Soundcard]","DeviceMaster"), ConfigValue(ComboBoxSoundcardMaster->itemData(ComboBoxSoundcardMaster->currentIndex()).toString()));
-    config->set(ConfigKey("[Soundcard]","ChannelMaster"), ConfigValue(ComboBoxChannelMaster->itemData(ComboBoxChannelMaster->currentIndex()).toString()));
-	qDebug() << "Setting ChannelMaster in config to: " << ComboBoxChannelMaster->itemData(ComboBoxChannelMaster->currentIndex()).toString();
-    config->set(ConfigKey("[Soundcard]","DeviceHeadphones"), ConfigValue(ComboBoxSoundcardHeadphones->itemData(ComboBoxSoundcardHeadphones->currentIndex()).toString()));
-    config->set(ConfigKey("[Soundcard]","ChannelHeadphones"), ConfigValue(ComboBoxChannelHeadphones->itemData(ComboBoxChannelHeadphones->currentIndex()).toString()));
-    config->set(ConfigKey("[Soundcard]","Samplerate"), ConfigValue(ComboBoxSamplerates->currentText()));
-    config->set(ConfigKey("[Soundcard]","Latency"), ConfigValue(getSliderLatencyMsec(SliderLatency->value())));
-
-/*
-    config->set(ConfigKey("[Soundcard]","DeviceMaster"), ConfigValue(ComboBoxSoundcardMaster->currentText()));
-    //config->set(ConfigKey("[Soundcard]","DeviceMasterRight"), ConfigValue(ComboBoxSoundcardMasterRight->currentText()));
-    config->set(ConfigKey("[Soundcard]","DeviceHeadphones"), ConfigValue(ComboBoxSoundcardHeadphones->currentText()));
-    //config->set(ConfigKey("[Soundcard]","DeviceHeadRight"), ConfigValue(ComboBoxSoundcardHeadRight->currentText()));
-    config->set(ConfigKey("[Soundcard]","Samplerate"), ConfigValue(ComboBoxSamplerates->currentText()));
-    config->set(ConfigKey("[Soundcard]","Latency"), ConfigValue(getSliderLatencyMsec(SliderLatency->value())));
-*/
-
-#ifdef __VINYLCONTROL__
-    //Crappy Scratchlib warning hack about the samplerate...
-    if ((config->getValueString(ConfigKey("[VinylControl]","strVinylType")) == MIXXX_VINYL_FINALSCRATCH) && 
-        (config->getValueString(ConfigKey("[Soundcard]","Samplerate")) != "44100"))
-    {
-        QMessageBox::warning( this, tr("Mixxx"),
-                            tr("FinalScratch records currently only work properly with a 44100 Hz samplerate.\n"
-                            "The samplerate has been reset to 44100 Hz."));    
-        config->set(ConfigKey("[Soundcard]","Samplerate"), ConfigValue(44100));
-    }
-#endif
-    
-    if (radioButtonPitchIndp->isChecked())
-        config->set(ConfigKey("[Soundcard]","PitchIndpTimeStretch"), ConfigValue(1));
-    else
-        config->set(ConfigKey("[Soundcard]","PitchIndpTimeStretch"), ConfigValue(0));
-
-    qDebug() << "request msec " << getSliderLatencyMsec(SliderLatency->value());
-
-    // Close devices, and open using config data
-    m_pSoundManager->closeDevices();
-
-    // Not much to do if the API is None...
-    int deviceOpenError = 0;
-	if (config->getValueString(ConfigKey("[Soundcard]","SoundApi"))!="None")
-	{
-	    deviceOpenError = m_pSoundManager->setupDevices();
-	    if (deviceOpenError == MIXXX_ERROR_DUPLICATE_OUTPUT_CHANNEL)
-	        QMessageBox::warning(0, tr("Configuration error"), tr("You cannot send multiple outputs to a single channel"));
-	    else if (deviceOpenError == MIXXX_ERROR_DUPLICATE_INPUT_CHANNEL)
-	        QMessageBox::warning(0, tr("Configuration error"), tr("You cannot use a single pair of channels for both decks"));		
-	    else if (deviceOpenError != 0)
-		    QMessageBox::warning(0, tr("Configuration error"),tr("Audio device could not be opened"));
-		else
-			slotUpdate();
-	}
-	
-#ifdef __C_METRICS__
-        QByteArray baAPI = config->getValueString(ConfigKey("[Soundcard]","SoundApi")).toUtf8();
-        QByteArray baSamplerate = config->getValueString(ConfigKey("[Soundcard]","Samplerate")).toUtf8();
-        QByteArray baLatency = config->getValueString(ConfigKey("[Soundcard]","Latency")).toUtf8();
-        
-	    cm_writemsg_utf8(MIXXXCMETRICS_SOUND_API, baAPI.data());
-	    cm_writemsg_utf8(MIXXXCMETRICS_SOUND_SAMPLERATE, baSamplerate.data());
-	    cm_writemsg_utf8(MIXXXCMETRICS_SOUND_LATENCY, baLatency.data());
-#endif	
-	
-}
-
-void DlgPrefSound::slotApplyApi()
-{
-    qDebug() << "DlgPrefSound::slotApplyApi";
-
-    config->set(ConfigKey("[Soundcard]","SoundApi"), ConfigValue(ComboBoxSoundApi->currentText()));
-
-    m_pSoundManager->closeDevices();
-
-    if (m_pSoundManager->setHostAPI(ComboBoxSoundApi->currentText()) != 0)
-    {
-        // Did they select the null api?
-        if (ComboBoxSoundApi->currentText() != "None") {
-            QMessageBox::warning(0, tr("Configuration problem"),tr("Sound API could not be initialized"));
-            config->set(ConfigKey("[Soundcard]","SoundApi"), ConfigValue("None"));
+    sampleRateComboBox->clear();
+    foreach (unsigned int srate, m_pSoundManager->getSampleRates()) {
+        if (srate > 0) {
+            // no ridiculous sample rate values. prohibiting zero means
+            // avoiding a potential div-by-0 error in ::updateLatencies
+            sampleRateComboBox->addItem(QString(tr("%1 Hz")).arg(srate), srate);
         }
+    }
+    connect(sampleRateComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(sampleRateChanged(int)));
+    connect(sampleRateComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(updateAudioBufferSizes(int)));
+    connect(audioBufferComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(audioBufferChanged(int)));
+
+    initializePaths();
+    loadSettings();
+
+    connect(apiComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(settingChanged()));
+    connect(sampleRateComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(settingChanged()));
+    connect(audioBufferComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(settingChanged()));
+
+    connect(queryButton, SIGNAL(clicked()),
+            this, SLOT(queryClicked()));
+    connect(resetButton, SIGNAL(clicked()),
+            this, SLOT(resetClicked()));
+
+    connect(m_pSoundManager, SIGNAL(outputRegistered(AudioOutput, const AudioSource*)),
+            this, SLOT(addPath(AudioOutput)));
+    connect(m_pSoundManager, SIGNAL(outputRegistered(AudioOutput, const AudioSource*)),
+            this, SLOT(loadSettings()));
+
+    connect(m_pSoundManager, SIGNAL(inputRegistered(AudioInput, AudioDestination*)),
+            this, SLOT(addPath(AudioInput)));
+    connect(m_pSoundManager, SIGNAL(inputRegistered(AudioInput, AudioDestination*)),
+            this, SLOT(loadSettings()));
+
+    m_pMasterUnderflowCount =
+                    new ControlObjectThreadMain(ControlObject::getControl(ConfigKey("[Master]", "underflow_count")));
+    connect(m_pMasterUnderflowCount, SIGNAL(valueChanged(double)),
+            this, SLOT(bufferUnderflow(double)));
+
+    m_pMasterLatency =
+                    new ControlObjectThreadMain(ControlObject::getControl(ConfigKey("[Master]", "latency")));
+    connect(m_pMasterLatency, SIGNAL(valueChanged(double)),
+            this, SLOT(masterLatencyChanged(double)));
+}
+
+DlgPrefSound::~DlgPrefSound() {
+    delete m_pMasterUnderflowCount;
+    delete m_pMasterLatency;
+}
+
+/**
+ * Slot called when the preferences dialog  is opened or this pane is
+ * selected.
+ */
+void DlgPrefSound::slotUpdate() {
+    // this is unfortunate, because slotUpdate is called every time
+    // we change to this pane, we lose changed and unapplied settings
+    // every time. There's no real way around this, just anothe argument
+    // for a prefs rewrite -- bkgood
+    loadSettings();
+    m_settingsModified = false;
+    applyButton->setEnabled(false);
+}
+
+/**
+ * Slot called when the Apply or OK button is pressed.
+ */
+void DlgPrefSound::slotApply() {
+    if (!m_settingsModified && !m_forceApply) {
+        return;
+    }
+    m_forceApply = false;
+    m_config.clearInputs();
+    m_config.clearOutputs();
+    emit(writePaths(&m_config));
+    int err = m_pSoundManager->setConfig(m_config);
+    if (err != OK) {
+        QString error;
+        QString deviceName(tr("a device"));
+        QString detailedError(tr("An unknown error occurred"));
+        SoundDevice *device = m_pSoundManager->getErrorDevice();
+        if (device != NULL) {
+            deviceName = QString(tr("sound device \"%1\"")).arg(device->getDisplayName());
+            detailedError = device->getError();
+        }
+        switch (err) {
+        case SOUNDDEVICE_ERROR_DUPLICATE_OUTPUT_CHANNEL:
+            error = QString(tr("Two outputs cannot share channels on %1")).arg(deviceName);
+            break;
+        default:
+            error = QString(tr("Error opening %1\n%2")).arg(deviceName, detailedError);
+            break;
+        }
+        QMessageBox::warning(NULL, tr("Configuration error"), error);
+    }
+    m_settingsModified = false;
+    applyButton->setEnabled(false);
+    loadSettings(); // in case SM decided to change anything it didn't like
+}
+
+/**
+ * Slot called by DlgPrefVinyl when it needs slotApply here to call setupDevices.
+ * We're graced with this kludge because VC proxies are only initialized in
+ * SoundManager::setupDevices and reinit is the only way to make them reread
+ * their config.
+ */
+void DlgPrefSound::forceApply() {
+    m_forceApply = true;
+}
+
+/**
+ * Initializes (and creates) all the path items. Each path item widget allows
+ * the user to input a sound device name and channel number given a description
+ * of what will be done with that info. Inputs and outputs are grouped by tab,
+ * and each path item has an identifier (Master, Headphones, ...) and an index,
+ * if necessary.
+ */
+void DlgPrefSound::initializePaths() {
+    foreach (AudioOutput out, m_pSoundManager->registeredOutputs()) {
+        addPath(out);
+    }
+    foreach (AudioInput in, m_pSoundManager->registeredInputs()) {
+        addPath(in);
+    }
+}
+
+void DlgPrefSound::addPath(AudioOutput output) {
+    DlgPrefSoundItem *toInsert;
+    // if we already know about this output, don't make a new entry
+    foreach (QObject *obj, outputTab->children()) {
+        DlgPrefSoundItem *item = qobject_cast<DlgPrefSoundItem*>(obj);
+        if (item) {
+            if (item->type() == output.getType()) {
+                if (AudioPath::isIndexed(item->type())) {
+                    if (item->index() == output.getIndex()) {
+                        return;
+                    }
+                } else {
+                    return;
+                }
+            }
+        }
+    }
+    AudioPathType type = output.getType();
+    if (AudioPath::isIndexed(type)) {
+        toInsert = new DlgPrefSoundItem(outputTab, type,
+            m_outputDevices, false, output.getIndex());
     } else {
-        if (m_pSoundManager->setupDevices() != 0)
-        {
-            QMessageBox::warning(0, tr("Configuration error"),tr("Audio device could not be opened"));
-			m_parent->setHidden(false);
+        toInsert = new DlgPrefSoundItem(outputTab, type,
+            m_outputDevices, false);
+    }
+    connect(this, SIGNAL(refreshOutputDevices(const QList<SoundDevice*>&)),
+            toInsert, SLOT(refreshDevices(const QList<SoundDevice*>&)));
+    insertItem(toInsert, outputVLayout);
+    connectSoundItem(toInsert);
+}
+
+void DlgPrefSound::addPath(AudioInput input) {
+    DlgPrefSoundItem *toInsert;
+    // if we already know about this input, don't make a new entry
+    foreach (QObject *obj, inputTab->children()) {
+        DlgPrefSoundItem *item = qobject_cast<DlgPrefSoundItem*>(obj);
+        if (item) {
+            if (item->type() == input.getType()) {
+                if (AudioPath::isIndexed(item->type())) {
+                    if (item->index() == input.getIndex()) {
+                        return;
+                    }
+                } else {
+                    return;
+                }
+            }
         }
     }
-    enableValidComboBoxes();
-    
-    emit(apiUpdated());
-    m_pSoundManager->setDefaults(false, true, true);
-    slotUpdate();
-
-	slotComboBoxSoundcardMasterChange();
-	slotComboBoxSoundcardHeadphonesChange();
-}
-
-void DlgPrefSound::slotLatencySliderClick()
-{
-    m_bLatencySliderDrag = true;
-}
-
-void DlgPrefSound::slotLatencySliderRelease()
-{
-    m_bLatencySliderDrag = false;
-    slotApply();
-}
-
-void DlgPrefSound::slotLatencySliderChange(int)
-{
-    //if (!m_bLatencySliderDrag)
-    //    slotApply();
-}
-
-void DlgPrefSound::slotComboBoxSoundcardMasterChange()
-{
-	QString selectedAPI = config->getValueString(ConfigKey("[Soundcard]","SoundApi"));
-	QList<SoundDevice*> devList = m_pSoundManager->getDeviceList(selectedAPI, true, false);
-	QListIterator<SoundDevice*> devItr(devList);
-	SoundDevice *pdev;
-	ComboBoxChannelMaster->clear();
-	
-	while(devItr.hasNext())
-	{
-		pdev = devItr.next();
-		if(pdev->getInternalName() == ComboBoxSoundcardMaster->itemData(ComboBoxSoundcardMaster->currentIndex()).toString())
-		{
-			for(int chCount=0; chCount < pdev->getNumOutputChannels(); chCount+=2)
-			{
-				QString q = QString("Channels ") + QString::number(chCount+1) + QString("-") + QString::number(chCount+2);
-				ComboBoxChannelMaster->insertItem(chCount+1, q, QString::number(chCount));
-
-				//This nasty if statement is here to set the Channel to whats in the config if we go to the sound device in the config
-				if((ComboBoxSoundcardMaster->itemData(ComboBoxSoundcardMaster->currentIndex()).toString()
-					== config->getValueString(ConfigKey("[Soundcard]","DeviceMaster")))
-					&& (QString::number(chCount) ==  config->getValueString(ConfigKey("[Soundcard]","ChannelMaster"))))
-				{
-						ComboBoxChannelMaster->setCurrentIndex(chCount/2);
-				}
-			}
-			break;
-		} 
-	}
-        enableValidComboBoxes();
-}
-
-void DlgPrefSound::slotComboBoxSoundcardHeadphonesChange()
-{
-	QString selectedAPI = config->getValueString(ConfigKey("[Soundcard]","SoundApi"));
-	QList<SoundDevice*> devList = m_pSoundManager->getDeviceList(selectedAPI, true, false);
-	QListIterator<SoundDevice*> devItr(devList);
-	SoundDevice *pdev;
-	ComboBoxChannelHeadphones->clear();
-
-	while(devItr.hasNext())
-	{
-		pdev = devItr.next();
-		if(pdev->getInternalName() == ComboBoxSoundcardHeadphones->itemData(ComboBoxSoundcardHeadphones->currentIndex()).toString())
-		{
-			for(int chCount=0; chCount < pdev->getNumOutputChannels(); chCount+=2)
-			{
-				QString q = QString("Channels ") + QString::number(chCount+1) + QString("-") + QString::number(chCount+2);
-				ComboBoxChannelHeadphones->insertItem(chCount+1, q, QString::number(chCount));
-
-				//This nasty if statement is here to set the Channel to whats in the config if we go to the sound device in the config
-				if((ComboBoxSoundcardHeadphones->itemData(ComboBoxSoundcardHeadphones->currentIndex()).toString()
-					== config->getValueString(ConfigKey("[Soundcard]","DeviceHeadphones")))
-					&& (QString::number(chCount) ==  config->getValueString(ConfigKey("[Soundcard]","ChannelHeadphones"))))
-				{
-						ComboBoxChannelHeadphones->setCurrentIndex(chCount/2);
-				}
-			}
-			break;
-		} 
-	}
-	enableValidComboBoxes();
-}
-
-void DlgPrefSound::enableValidComboBoxes()
-{
-    int validSoundApi = ComboBoxSoundApi->currentText() != "None";
-    ComboBoxSoundcardMaster->setEnabled(validSoundApi);
-    ComboBoxChannelMaster->setEnabled(validSoundApi && ComboBoxSoundcardMaster->currentText() != "None");
-
-    ComboBoxSoundcardHeadphones->setEnabled(validSoundApi);
-    ComboBoxChannelHeadphones->setEnabled(validSoundApi && ComboBoxSoundcardHeadphones->currentText() != "None");
-
-    ComboBoxSamplerates->setEnabled(validSoundApi && (ComboBoxChannelMaster->isEnabled() || ComboBoxChannelHeadphones->isEnabled()));
-    slotChannelChange();
-}
-
-
-void DlgPrefSound::slotChannelChange(){
-#if 0 //Warning them immediatly when this happens might be annoying.  Consider the situation of swapping headphone/master channels, they will
-		//have to click through this.  I left it in however, in case we decide on this.
-	if (ComboBoxSoundcardMaster->currentText() != "None" && 
-         ComboBoxSoundcardMaster->isEnabled() && ComboBoxSoundcardHeadphones->isEnabled() && 
-         ComboBoxSoundcardMaster->currentText() == ComboBoxSoundcardHeadphones->currentText() && 
-         ComboBoxChannelMaster->currentText() == ComboBoxChannelHeadphones->currentText()) {
-           QMessageBox::warning(this, tr("Mixxx - Master and Headphones sharing the same channels"), 
-             tr("Having the Headphone share the same sound card output channels as Master\nwill result in Mixxx playing back at full volume irespective of the volume\ncontrols (this is because Headphone channels do not repect Master volume).\n\nThis configuration is NOT recommended because of that.\n\nIf your sound card has only two channels set the 'Headphones' channel to 'None'."));
+    AudioPathType type = input.getType();
+    if (AudioPath::isIndexed(type)) {
+        toInsert = new DlgPrefSoundItem(inputTab, type,
+            m_inputDevices, true, input.getIndex());
+    } else {
+        toInsert = new DlgPrefSoundItem(inputTab, type,
+            m_inputDevices, true);
     }
-#endif
+    connect(this, SIGNAL(refreshInputDevices(const QList<SoundDevice*>&)),
+            toInsert, SLOT(refreshDevices(const QList<SoundDevice*>&)));
+    insertItem(toInsert, inputVLayout);
+    connectSoundItem(toInsert);
+}
+
+void DlgPrefSound::connectSoundItem(DlgPrefSoundItem *item) {
+    connect(item, SIGNAL(settingChanged()),
+            this, SLOT(settingChanged()));
+    connect(this, SIGNAL(loadPaths(const SoundManagerConfig&)),
+            item, SLOT(loadPath(const SoundManagerConfig&)));
+    connect(this, SIGNAL(writePaths(SoundManagerConfig*)),
+            item, SLOT(writePath(SoundManagerConfig*)));
+    connect(this, SIGNAL(updatingAPI()),
+            item, SLOT(save()));
+    connect(this, SIGNAL(updatedAPI()),
+            item, SLOT(reload()));
+}
+
+void DlgPrefSound::insertItem(DlgPrefSoundItem *pItem, QVBoxLayout *pLayout) {
+    int pos;
+    for (pos = 0; pos < pLayout->count() - 1; ++pos) {
+        DlgPrefSoundItem *pOther(qobject_cast<DlgPrefSoundItem*>(
+            pLayout->itemAt(pos)->widget()));
+        if (!pOther) continue;
+        if (pItem->type() < pOther->type()) {
+            break;
+        } else if (pItem->type() == pOther->type()
+            && AudioPath::isIndexed(pItem->type())
+            && pItem->index() < pOther->index()) {
+            break;
+        }
+    }
+    pLayout->insertWidget(pos, pItem);
+}
+
+/**
+ * Convenience overload to load settings from the SoundManagerConfig owned by
+ * SoundManager.
+ */
+void DlgPrefSound::loadSettings() {
+    loadSettings(m_pSoundManager->getConfig());
+}
+
+/**
+ * Loads the settings in the given SoundManagerConfig into the dialog.
+ */
+void DlgPrefSound::loadSettings(const SoundManagerConfig &config) {
+    m_loading = true; // so settingsChanged ignores all our modifications here
+    m_config = config;
+    int apiIndex = apiComboBox->findData(m_config.getAPI());
+    if (apiIndex != -1) {
+        apiComboBox->setCurrentIndex(apiIndex);
+    }
+    int sampleRateIndex = sampleRateComboBox->findData(m_config.getSampleRate());
+    if (sampleRateIndex != -1) {
+        sampleRateComboBox->setCurrentIndex(sampleRateIndex);
+        if (audioBufferComboBox->count() <= 0) {
+            updateAudioBufferSizes(sampleRateIndex); // so the latency combo box is
+            // sure to be populated, if setCurrentIndex is called with the
+            // currentIndex, the currentIndexChanged signal won't fire and
+            // the updateLatencies slot won't run -- bkgood lp bug 689373
+        }
+    }
+    int sizeIndex = audioBufferComboBox->findData(m_config.getAudioBufferSizeIndex());
+    if (sizeIndex != -1) {
+        audioBufferComboBox->setCurrentIndex(sizeIndex);
+    }
+    emit(loadPaths(m_config));
+    m_loading = false;
+}
+
+/**
+ * Slot called when the user selects a different API, or the
+ * software changes it programatically (for instance, when it
+ * loads a value from SoundManager). Refreshes the device lists
+ * for the new API and pushes those to the path items.
+ */
+void DlgPrefSound::apiChanged(int index) {
+    m_config.setAPI(apiComboBox->itemData(index).toString());
+    refreshDevices();
+    // JACK sets its own latency
+    if (m_config.getAPI() == MIXXX_PORTAUDIO_JACK_STRING) {
+        latencyLabel->setEnabled(false);
+        audioBufferComboBox->setEnabled(false);
+    } else {
+        latencyLabel->setEnabled(true);
+        audioBufferComboBox->setEnabled(true);
+    }
+}
+
+/**
+ * Updates the list of APIs, trying to keep the API and device selections
+ * constant if possible.
+ */
+void DlgPrefSound::updateAPIs() {
+    QString currentAPI(apiComboBox->itemData(apiComboBox->currentIndex()).toString());
+    emit(updatingAPI());
+    while (apiComboBox->count() > 1) {
+        apiComboBox->removeItem(apiComboBox->count() - 1);
+    }
+    foreach (QString api, m_pSoundManager->getHostAPIList()) {
+        apiComboBox->addItem(api, api);
+    }
+    int newIndex = apiComboBox->findData(currentAPI);
+    if (newIndex > -1) {
+        apiComboBox->setCurrentIndex(newIndex);
+    }
+    emit(updatedAPI());
+}
+
+/**
+ * Slot called when the sample rate combo box changes to update the
+ * sample rate in the config.
+ */
+void DlgPrefSound::sampleRateChanged(int index) {
+    m_config.setSampleRate(
+            sampleRateComboBox->itemData(index).toUInt());
+}
+
+/**
+ * Slot called when the latency combo box is changed to update the
+ * latency in the config.
+ */
+void DlgPrefSound::audioBufferChanged(int index) {
+    m_config.setAudioBufferSizeIndex(
+            audioBufferComboBox->itemData(index).toUInt());
+}
+
+
+// Slot called whenever the selected sample rate is changed. Populates the
+// audio buffer input box with SMConfig::kMaxLatency values, starting at 1ms,
+// representing a number of frames per buffer, which will always be a power
+// of 2 (so the values displayed in ms won't be constant between sample rates,
+// but they'll be close).
+void DlgPrefSound::updateAudioBufferSizes(int sampleRateIndex) {
+    double sampleRate = sampleRateComboBox->itemData(sampleRateIndex).toDouble();
+    int oldSizeIndex = audioBufferComboBox->currentIndex();
+    unsigned int framesPerBuffer = 1; // start this at 0 and inf loop happens
+    // we don't want to display any sub-1ms buffer sizes (well maybe we do but I
+    // don't right now!), so we iterate over all the buffer sizes until we
+    // find the first that gives us a buffer size >= 1 ms -- bkgood
+    // no div-by-0 in the next line because we don't allow srates of 0 in our
+    // srate list when we construct it in the ctor -- bkgood
+    for (; framesPerBuffer / sampleRate * 1000 < 1.0; framesPerBuffer *= 2) {
+    }    
+    audioBufferComboBox->clear();
+    for (unsigned int i = 0; i < SoundManagerConfig::kMaxAudioBufferSizeIndex; ++i) {
+        float latency = framesPerBuffer / sampleRate * 1000;
+        // i + 1 in the next line is a latency index as described in SSConfig
+        audioBufferComboBox->addItem(QString(tr("%1 ms")).arg(latency,0,'g',3), i + 1);
+        framesPerBuffer <<= 1; // *= 2
+    }
+    if (oldSizeIndex < audioBufferComboBox->count() && oldSizeIndex >= 0) {
+        audioBufferComboBox->setCurrentIndex(oldSizeIndex);
+    } else {
+        // set it to the max, let the user dig if they need better latency. better
+        // than having a user get the pops on first use and thinking poorly of mixxx
+        // because of it -- bkgood
+        audioBufferComboBox->setCurrentIndex(audioBufferComboBox->count() - 1);
+    }
+}
+
+/**
+ * Slot called when device lists go bad to refresh them, or the API
+ * just changes and we need to display new devices.
+ */
+void DlgPrefSound::refreshDevices() {
+    if (m_config.getAPI() == "None") {
+        m_outputDevices.clear();
+        m_inputDevices.clear();
+    } else {
+        m_outputDevices =
+            m_pSoundManager->getDeviceList(m_config.getAPI(), true, false);
+        m_inputDevices =
+            m_pSoundManager->getDeviceList(m_config.getAPI(), false, true);
+    }
+    emit(refreshOutputDevices(m_outputDevices));
+    emit(refreshInputDevices(m_inputDevices));
+}
+
+/**
+ * Called when any of the combo boxes in this dialog are changed. Enables the
+ * apply button and marks that settings have been changed so that
+ * DlgPrefSound::slotApply knows to apply them.
+ */
+void DlgPrefSound::settingChanged() {
+    if (m_loading) return; // doesn't count if we're just loading prefs
+    m_settingsModified = true;
+    if (!applyButton->isEnabled()) {
+        applyButton->setEnabled(true);
+    }
+}
+
+/**
+ * Slot called when the "Query Devices" button is clicked.
+ */
+void DlgPrefSound::queryClicked() {
+    m_pSoundManager->queryDevices();
+    updateAPIs();
+}
+
+/**
+ * Slot called when the "Reset to Defaults" button is clicked.
+ */
+void DlgPrefSound::resetClicked() {
+    SoundManagerConfig newConfig;
+    newConfig.loadDefaults(m_pSoundManager, SoundManagerConfig::ALL);
+    loadSettings(newConfig);
+    settingChanged(); // force the apply button to enable
+}
+
+void DlgPrefSound::bufferUnderflow(double count) {
+    bufferUnderflowCount->setText(QString::number(count));
+    update();
+}
+
+void DlgPrefSound::masterLatencyChanged(double latency) {
+    currentLatency->setText(QString("%1 ms").arg(latency));
+    update();
 }
 

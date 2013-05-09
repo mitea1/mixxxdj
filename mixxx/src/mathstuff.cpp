@@ -206,3 +206,16 @@ bool even(long n)
         return true;
 }
 
+float sigmoid_zero(double t, double max_t)
+{
+    //generates a sigmoid function but goes from 0 - t instead of
+    //-t to +t.
+    //furthermore we map t to a range of 0-5
+    //center t around the half-way point
+    double t1 = 10.0 * (t / max_t) - 5.0;
+    return 1.0 / (1 + exp(0 - t1));
+}
+
+int nearestSuperiorPowerOfTwo(int v) {
+    return (int)pow(2.0,ceil(log((double)v)/log(2.0)));
+}

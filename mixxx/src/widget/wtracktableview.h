@@ -11,7 +11,7 @@
 #include "library/trackmodel.h" // Can't forward declare enums
 #include "widget/wlibrarytableview.h"
 
-
+class ControlObjectThreadMain;
 class DlgTrackInfo;
 class TrackCollection;
 
@@ -19,43 +19,58 @@ const QString WTRACKTABLEVIEW_VSCROLLBARPOS_KEY = "VScrollBarPos"; /** ConfigVal
 const QString LIBRARY_CONFIGVALUE = "[Library]"; /** ConfigValue "value" (wtf) for library stuff */
 
 
-class WTrackTableView : public WLibraryTableView
-{
+class WTrackTableView : public WLibraryTableView {
     Q_OBJECT
- 	public:
+  public:
     WTrackTableView(QWidget* parent, ConfigObject<ConfigValue>* pConfig,
-                    TrackCollection* pTrackCollection);
+                    TrackCollection* pTrackCollection, bool sorting = true);
     virtual ~WTrackTableView();
     void contextMenuEvent(QContextMenuEvent * event);
     void onSearchStarting();
     void onSearchCleared();
     void onSearch(const QString& text);
     void onShow();
-    QWidget* getWidgetForMIDIControl();
     virtual void keyPressEvent(QKeyEvent* event);
-public slots:
+    virtual void loadSelectedTrack();
+    virtual void loadSelectedTrackToGroup(QString group, bool play);
+
+  public slots:
     void loadTrackModel(QAbstractItemModel* model);
     void slotMouseDoubleClicked(const QModelIndex &);
-    void slotLoadPlayer1();
-    void slotLoadPlayer2();
-private slots:
+    void slotUnhide();
+    void slotPurge();
+
+  private slots:
     void slotRemove();
+    void slotHide();
+    void slotOpenInFileBrowser();
     void slotShowTrackInfo();
     void slotNextTrackInfo();
     void slotPrevTrackInfo();
     void slotSendToAutoDJ();
+    void slotSendToAutoDJTop();
+    void slotReloadTrackMetadata();
+    void slotResetPlayed();
     void addSelectionToPlaylist(int iPlaylistId);
     void addSelectionToCrate(int iCrateId);
-signals:
-    void loadTrack(TrackPointer pTrack);
-    void loadTrackToPlayer(TrackPointer pTrack, int player);
+    void loadSelectionToGroup(QString group, bool play = false);
+    void doSortByColumn(int headerSection);
+    void slotLockBpm();
+    void slotUnlockBpm();
+    void slotClearBeats();
 
-private:
+  private:
+    void sendToAutoDJ(bool bTop);
     void showTrackInfo(QModelIndex index);
     void createActions();
     void dragMoveEvent(QDragMoveEvent * event);
     void dragEnterEvent(QDragEnterEvent * event);
     void dropEvent(QDropEvent * event);
+    void lockBpm(bool lock);
+
+    // Mouse move event, implemented to hide the text and show an icon instead
+    // when dragging.
+    void mouseMoveEvent(QMouseEvent *pEvent);
 
     // Returns the current TrackModel, or returns NULL if none is set.
     TrackModel* getTrackModel();
@@ -63,28 +78,53 @@ private:
 
     ConfigObject<ConfigValue> * m_pConfig;
     TrackCollection* m_pTrackCollection;
-    //QList<QString> m_selectedTrackLocations;
-    QModelIndexList m_selectedIndices;
 
-    DlgTrackInfo* pTrackInfo;
+    QSignalMapper m_loadTrackMapper;
+
+    DlgTrackInfo* m_pTrackInfo;
     QModelIndex currentTrackInfoIndex;
 
     SearchThread m_searchThread;
 
-    //Used for right-click operations
-    /** Right-click menu */
-    QMenu *m_pMenu, *m_pPlaylistMenu, *m_pCrateMenu;
-    QSignalMapper m_playlistMapper, m_crateMapper;
-    /**Send to AutoDJ Action**/
+    ControlObjectThreadMain* m_pNumSamplers;
+    ControlObjectThreadMain* m_pNumDecks;
+    ControlObjectThreadMain* m_pNumPreviewDecks;
+
+    // Context menu machinery
+    QMenu *m_pMenu, *m_pPlaylistMenu, *m_pCrateMenu, *m_pSamplerMenu;
+    QSignalMapper m_playlistMapper, m_crateMapper, m_deckMapper, m_samplerMapper;
+
+    // Reload Track Metadata Action:
+    QAction *m_pReloadMetadataAct;
+
+    // Load Track to PreviewDeck
+    QAction* m_pAddToPreviewDeck;
+
+    // Send to Auto-DJ Action
     QAction *m_pAutoDJAct;
-    /**Send to Player 1 Action**/
-    QAction *m_pPlayer1Act;
-    /**Send to Player 2 Action**/
-    QAction *m_pPlayer2Act;
-    /**Remove from Table Action**/
+    QAction *m_pAutoDJTopAct;
+
+    // Remove from table
     QAction *m_pRemoveAct;
-    /**Shows track editor/BPM tap**/
+    QAction *m_pHideAct;
+    QAction *m_pUnhideAct;
+    QAction *m_pPurgeAct;
+
+    // Reset the played count of selected track or tracks
+    QAction* m_pResetPlayedAct;
+
+    // Show track-editor action
     QAction *m_pPropertiesAct;
+    QAction *m_pFileBrowserAct;
+
+    // BPM Lock feature
+    QAction *m_pBpmLockAction;
+    QAction *m_pBpmUnlockAction;
+
+    // Clear track beats
+    QAction* m_pClearBeatsAction;
+
+    bool m_sorting;
 };
 
 #endif

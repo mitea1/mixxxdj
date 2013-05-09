@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>607</width>
-    <height>464</height>
+    <width>709</width>
+    <height>458</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,75 +30,123 @@
       <string>Server connection</string>
      </property>
      <layout class="QGridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Type</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBoxServerType">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <item>
-         <property name="text">
-          <string>Icecast 2</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Shoutcast</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Icecast 1</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>Mount</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3" colspan="3">
-       <widget class="QLineEdit" name="mountpoint">
-        <property name="text">
-         <string>/mixxx.ogg</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Host</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboBoxServerType">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Type</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Host</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="host">
+          <property name="text">
+           <string notr="true">192.168.123.8</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Login</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="login">
+          <property name="text">
+           <string notr="true">source</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Mount</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLineEdit" name="mountpoint">
+          <property name="text">
+           <string notr="true">/mixxx.ogg</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Port</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="port">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string notr="true">8000</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Password</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QLineEdit" name="password">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-      <item row="1" column="1" colspan="3">
-       <widget class="QLineEdit" name="host">
-        <property name="text">
-         <string>192.168.123.8</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="4">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Port</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="5">
-       <widget class="QLineEdit" name="port">
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" rowspan="2">
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Stream settings</string>
+     </property>
+     <layout class="QGridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="stream_public">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -106,51 +154,34 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>8000</string>
+         <string>Public stream</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_6">
+      <item row="1" column="0" colspan="2">
+       <widget class="QCheckBox" name="enableUtf8Metadata">
         <property name="text">
-         <string>Login</string>
+         <string>Use UTF-8 encoding for metadata.</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1" colspan="2">
-       <widget class="QLineEdit" name="login">
+      <item row="2" column="0" colspan="2">
+       <widget class="QCheckBox" name="ogg_dynamicupdate">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>source</string>
+         <string>Dynamically update Ogg Vorbis metadata.</string>
+        </property>
+        <property name="toolTip">
+         <string>Due to flaws in some streaming clients, updating Ogg Vorbis metadata dynamically can cause listener glitches and disconnections. Check this box to update the metadata anyway.</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="3">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Password</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="4" colspan="2">
-       <widget class="QLineEdit" name="password">
-        <property name="text">
-         <string>test1234</string>
-        </property>
-        <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="0" rowspan="2">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>Stream settings</string>
-     </property>
-     <layout class="QGridLayout">
-      <item row="1" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_10">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -161,9 +192,12 @@
         <property name="text">
          <string>Stream name</string>
         </property>
+        <property name="buddy">
+         <cstring>comboBoxServerType</cstring>
+        </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="3" column="1">
        <widget class="QLineEdit" name="stream_name">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -176,7 +210,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="label_11">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -187,9 +221,12 @@
         <property name="text">
          <string>Website</string>
         </property>
+        <property name="buddy">
+         <cstring>mountpoint</cstring>
+        </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="4" column="1">
        <widget class="QLineEdit" name="stream_website">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -202,7 +239,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="5" column="0">
        <widget class="QLabel" name="label_12">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -213,9 +250,12 @@
         <property name="text">
          <string>Description</string>
         </property>
+        <property name="buddy">
+         <cstring>stream_desc</cstring>
+        </property>
        </widget>
       </item>
-      <item row="3" column="1" rowspan="2">
+      <item row="5" column="1" rowspan="2">
        <widget class="QTextEdit" name="stream_desc">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -235,16 +275,19 @@
           <height>50</height>
          </size>
         </property>
+        <property name="tabChangesFocus">
+         <bool>true</bool>
+        </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lucida Grande'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'DejaVu Sans'; font-size:9pt; font-style:italic;&quot;&gt;This stream is on line for testing purposes!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
+      <item row="6" column="0">
        <spacer>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -257,7 +300,7 @@ p, li { white-space: pre-wrap; }
         </property>
        </spacer>
       </item>
-      <item row="5" column="0">
+      <item row="7" column="0">
        <widget class="QLabel" name="label_13">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -268,9 +311,12 @@ p, li { white-space: pre-wrap; }
         <property name="text">
          <string>Genre</string>
         </property>
+        <property name="buddy">
+         <cstring>stream_genre</cstring>
+        </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="7" column="1">
        <widget class="QLineEdit" name="stream_genre">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -280,19 +326,6 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>Live mix</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0" colspan="2">
-       <widget class="QCheckBox" name="stream_public">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Public stream</string>
         </property>
        </widget>
       </item>
@@ -328,61 +361,6 @@ p, li { white-space: pre-wrap; }
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <item>
-           <property name="text">
-            <string>320 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>256 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>224 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>192 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>160 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>128 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>112 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>96 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>80 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>64 kbps</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>48 kbps</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>
@@ -394,6 +372,9 @@ p, li { white-space: pre-wrap; }
           <property name="text">
            <string>Format</string>
           </property>
+          <property name="buddy">
+           <cstring>comboBoxEncodingFormat</cstring>
+          </property>
          </widget>
         </item>
         <item>
@@ -404,16 +385,6 @@ p, li { white-space: pre-wrap; }
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <item>
-           <property name="text">
-            <string>Ogg Vorbis</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>MP3</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>
@@ -425,6 +396,9 @@ p, li { white-space: pre-wrap; }
           <property name="text">
            <string>Channels</string>
           </property>
+          <property name="buddy">
+           <cstring>comboBoxEncodingChannels</cstring>
+          </property>
          </widget>
         </item>
         <item>
@@ -435,11 +409,12 @@ p, li { white-space: pre-wrap; }
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <item>
-           <property name="text">
-            <string>Stereo</string>
-           </property>
-          </item>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
          </widget>
         </item>
        </layout>
@@ -470,12 +445,15 @@ p, li { white-space: pre-wrap; }
           <property name="text">
            <string>Artist</string>
           </property>
+          <property name="buddy">
+           <cstring>custom_artist</cstring>
+          </property>
          </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLineEdit" name="custom_artist">
           <property name="text">
-           <string>%mainartist</string>
+           <string notr="true">%mainartist</string>
           </property>
          </widget>
         </item>
@@ -484,12 +462,15 @@ p, li { white-space: pre-wrap; }
           <property name="text">
            <string>Title</string>
           </property>
+          <property name="buddy">
+           <cstring>custom_title</cstring>
+          </property>
          </widget>
         </item>
         <item row="1" column="1">
          <widget class="QLineEdit" name="custom_title">
           <property name="text">
-           <string>%maintitle</string>
+           <string notr="true">%maintitle</string>
           </property>
          </widget>
         </item>
@@ -513,6 +494,11 @@ p, li { white-space: pre-wrap; }
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QLabel" name="label_16">
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="text">
       <string>Please note that for technical reasons changing any shoutcast settings will cause an established connection to disconnect and reconnect. </string>
      </property>
@@ -524,7 +510,6 @@ p, li { white-space: pre-wrap; }
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <resources/>
  <connections/>
 </ui>

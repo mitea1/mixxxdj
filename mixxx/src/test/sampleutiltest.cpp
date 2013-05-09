@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <QDebug>
+#include <QtDebug>
 #include <QList>
 #include <QPair>
 
@@ -9,12 +9,10 @@ namespace {
 
 class SampleUtilTest : public testing::Test {
   protected:
-    SampleUtilTest() {
-    }
     virtual void SetUp() {
         SampleUtil::setOptimizations(false);
 #ifdef __SSE__
-        sseAvailable = 1;
+        sseAvailable = SampleUtil::m_sOptimizationsOn ? 1 : 0;
 #else
         sseAvailable = 0;
 #endif
@@ -63,7 +61,6 @@ class SampleUtilTest : public testing::Test {
     QList<int> evenBuffers;
 
     int sseAvailable;
-
 };
 
 TEST_F(SampleUtilTest, applyGain1DoesNothing) {
@@ -349,15 +346,16 @@ TEST_F(SampleUtilTest, convert) {
             }
             SampleUtil::convert(buffer, s16, size);
             for (int j = 0; j < size; ++j) {
-                EXPECT_FLOAT_EQ(buffer[j], j);
+                EXPECT_FLOAT_EQ(j, buffer[j]);
             }
+            delete [] s16;
         }
         SampleUtil::setOptimizations(true);
     }
 }
 
 TEST_F(SampleUtilTest, sumAbsPerChannel) {
-   while (sseAvailable-- >= 0) {
+    while (sseAvailable-- >= 0) {
         for (int i = 0; i < evenBuffers.size(); ++i) {
             int j = evenBuffers[i];
             CSAMPLE* buffer = buffers[j];
@@ -374,7 +372,7 @@ TEST_F(SampleUtilTest, sumAbsPerChannel) {
 }
 
 TEST_F(SampleUtilTest, interleaveBuffer) {
-   while (sseAvailable-- >= 0) {
+    while (sseAvailable-- >= 0) {
         for (int i = 0; i < buffers.size(); ++i) {
             CSAMPLE* buffer = buffers[i];
             int size = sizes[i];
@@ -399,7 +397,7 @@ TEST_F(SampleUtilTest, interleaveBuffer) {
 }
 
 TEST_F(SampleUtilTest, deinterleaveBuffer) {
-   while (sseAvailable-- >= 0) {
+    while (sseAvailable-- >= 0) {
         for (int i = 0; i < buffers.size(); ++i) {
             CSAMPLE* buffer = buffers[i];
             int size = sizes[i];
@@ -442,7 +440,5 @@ TEST_F(SampleUtilTest, testBitwiseFabs) {
         EXPECT_FLOAT_EQ(val, fabs(float(i)/10000.0));
     }
 }
-
-
 
 }

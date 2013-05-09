@@ -21,7 +21,6 @@
 #include "controlobject.h"
 #include "configobject.h"
 #include "defs.h"
-#include "midi/midimessage.h"
 #include <qdatetime.h>
 
 /**
@@ -39,22 +38,22 @@ const int maxInterval = (int)(1000.*(60./(CSAMPLE)minBPM));
 /** Filter length */
 const int filterLength = 5;
 
-class ControlBeat : public ControlObject
-{
-public:
+class ControlBeat : public ControlObject {
+  public:
     ControlBeat(ConfigKey key, bool bMidiSimulateLatching=false);
-    ~ControlBeat();
+    virtual ~ControlBeat();
 
-protected:
-    void setValueFromMidi(MidiCategory c, double v);
-private:
-    void setValue(double dValue);
+  protected:
+    void setValueFromMidi(MidiOpCode o, double v);
+    void setValueFromThread(double dValue);
+  private:
+    void beatTap();
 
     QTime time;
     CSAMPLE *buffer;
     bool m_bMidiSimulateLatching;
     bool m_bPressed;
-
+    int m_iValidPresses;
 };
 
 #endif

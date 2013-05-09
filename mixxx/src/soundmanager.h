@@ -1,10 +1,9 @@
-/***************************************************************************
-                          soundmanager.h
-                             -------------------
-    begin                : Sun Aug 15, 2007
-    copyright            : (C) 2007 Albert Santoni
-    email                : gamegod \a\t users.sf.net
- ***************************************************************************/
+/**
+ * @file soundmanager.h
+ * @author Albert Santoni <gamegod at users dot sf dot net>
+ * @author Bill Good <bkgood at gmail dot com>
+ * @date 20070815
+ */
 
 /***************************************************************************
  *                                                                         *
@@ -18,16 +17,18 @@
 #ifndef SOUNDMANAGER_H
 #define SOUNDMANAGER_H
 
-#include "configobject.h"
-#include "controlobject.h"
+#include <QObject>
 #include "defs.h"
-#ifdef __VINYLCONTROL__
-#include "vinylcontrolproxy.h"
-#endif
-#include <QTimer>
+#include "configobject.h"
+#include "soundmanagerconfig.h"
+#include "controlobjectthreadmain.h"
 
 class SoundDevice;
 class EngineMaster;
+class AudioOutput;
+class AudioInput;
+class AudioSource;
+class AudioDestination;
 
 #define MIXXX_PORTAUDIO_JACK_STRING "JACK Audio Connection Kit"
 #define MIXXX_PORTAUDIO_ALSA_STRING "ALSA"
@@ -36,73 +37,108 @@ class EngineMaster;
 #define MIXXX_PORTAUDIO_DIRECTSOUND_STRING "Windows DirectSound"
 #define MIXXX_PORTAUDIO_COREAUDIO_STRING "Core Audio"
 
-#define MAX_AUDIOSOURCE_TYPES 4	//Keep this up to date with the enum below... I don't know how to do this automagically
-enum AudioSourceType { 
-    SOURCE_MASTER = 0,
-    SOURCE_HEADPHONES = 1,
-	SOURCE_PLAYER1 = 2,
-	SOURCE_PLAYER2 = 3
-};
+#define SOUNDMANAGER_DISCONNECTED 0
+#define SOUNDMANAGER_CONNECTING 1
+#define SOUNDMANAGER_CONNECTED 2
 
-typedef struct _AudioSource {
-	AudioSourceType type;
-	int channelBase;	//Base channel on the audio device
-	int channels;		//total channels (e.g. 2 for stereo)
-} AudioSource;
-
-#define MAX_AUDIORECEIVER_TYPES 3	//Keep this up to date with the enum below... I don't know how to do this automagically
-enum AudioReceiverType {
-    RECEIVER_VINYLCONTROL_ONE = 0,
-    RECEIVER_VINYLCONTROL_TWO = 1,
-    RECEIVER_MICROPHONE = 2
-};
-
-typedef struct _AudioReceiver {
-	AudioReceiverType type;
-	int channelBase;	//Base channel on the audio device
-	int channels;		//total channels (e.g. 2 for stereo)
-} AudioReceiver;
-
-class SoundManager : public QObject
-{
+class SoundManager : public QObject {
     Q_OBJECT
-    
-    public:
-        SoundManager(ConfigObject<ConfigValue> *pConfig, EngineMaster *_master);
-        ~SoundManager();
-        QList<SoundDevice*> getDeviceList(QString filterAPI, bool bOutputDevices, bool bInputDevices);
-        void closeDevices();
-        void clearDeviceList();
-        void queryDevices();
-        int setupDevices();
-        void setDefaults(bool api=true, bool devices=true, bool other=true);
-        QList<QString> getSamplerateList();
-        QList<QString> getHostAPIList();
-        int setHostAPI(QString api);
-        QString getHostAPI();
-        CSAMPLE** requestBuffer(QList<AudioSource> srcs, unsigned long iFramesPerBuffer);
-        CSAMPLE* pushBuffer(QList<AudioReceiver> recvs, short *inputBuffer, 
-                            unsigned long iFramesPerBuffer, unsigned int iFrameSize);
-    public slots:
-        void sync();
-    private:
-        EngineMaster *m_pMaster;
-        ConfigObject<ConfigValue> *m_pConfig;
-        QList<SoundDevice*> m_devices;
-        QList<QString> m_samplerates;
-        QString m_hostAPI;
-        //CSAMPLE *m_pMasterBuffer;
-        //CSAMPLE *m_pHeadphonesBuffer;
-        CSAMPLE *m_pStreamBuffers[MAX_AUDIOSOURCE_TYPES];
-        short *m_pReceiverBuffers[MAX_AUDIORECEIVER_TYPES]; /** Audio received from input */
-#ifdef __VINYLCONTROL__
-        VinylControlProxy *m_VinylControl[2];
-#endif        
-        unsigned int iNumDevicesOpenedForOutput;
-        unsigned int iNumDevicesOpenedForInput;
-        unsigned int iNumDevicesHaveRequestedBuffer;
-        QMutex requestBufferMutex;
-        QTimer m_controlObjSyncTimer;
+  public:
+    SoundManager(ConfigObject<ConfigValue> *pConfig, EngineMaster *_master);
+    virtual ~SoundManager();
+
+    // Returns a pointer to the EngineMaster instance used by this SoundManager.
+    //
+    // NOTE(XXX): This is only here so that preferences can find out how many
+    // channels there are.
+    const EngineMaster* getEngine() const;
+
+    // Returns a list of all devices we've enumerated that match the provided
+    // filterApi, and have at least one output or input channel if the
+    // bOutputDevices or bInputDevices are set, respectively.
+    QList<SoundDevice*> getDeviceList(QString filterAPI, bool bOutputDevices, bool bInputDevices);
+
+    // Closes all the open sound devices. Because multiple soundcards might be
+    // open, this method simply runs through the list of all known soundcards
+    // (from PortAudio) and attempts to close them all. Closing a soundcard that
+    // isn't open is safe.
+    void closeDevices();
+
+    // Closes all the devices and empties the list of devices we have.
+    void clearDeviceList();
+
+    // Creates a list of sound devices that PortAudio sees.
+    void queryDevices();
+
+    // Opens all the devices chosen by the user in the preferences dialog, and
+    // establishes the proper connections between them and the mixing engine.
+    int setupDevices();
+
+    SoundDevice* getErrorDevice() const;
+
+    // Returns a list of samplerates we will attempt to support for a given API.
+    QList<unsigned int> getSampleRates(QString api) const;
+
+    // Convenience overload for SoundManager::getSampleRates(QString)
+    QList<unsigned int> getSampleRates() const;
+
+    // Get a list of host APIs supported by PortAudio.
+    QList<QString> getHostAPIList() const;
+    SoundManagerConfig getConfig() const;
+    int setConfig(SoundManagerConfig config);
+    void checkConfig();
+
+    // Requests a buffer in the proper format, if we're prepared to give one.
+    QHash<AudioOutput, const CSAMPLE*> requestBuffer(
+        const QList<AudioOutput>& outputs, unsigned long iFramesPerBuffer,
+        SoundDevice *device, double streamTime = 0);
+
+    // Used by SoundDevices to "push" any audio from their inputs that they have
+    // into the mixing engine.
+    void pushBuffer(const QList<AudioInput>& inputs, short *inputBuffer,
+                    unsigned long iFramesPerBuffer, unsigned int iFrameSize);
+
+    void registerOutput(AudioOutput output, const AudioSource *src);
+    void registerInput(AudioInput input, AudioDestination *dest);
+    QList<AudioOutput> registeredOutputs() const;
+    QList<AudioInput> registeredInputs() const;
+
+  signals:
+    void devicesUpdated(); // emitted when pointers to SoundDevices go stale
+    void devicesSetup(); // emitted when the sound devices have been set up
+    void outputRegistered(AudioOutput output, const AudioSource *src);
+    void inputRegistered(AudioInput input, AudioDestination *dest);
+
+  private:
+    void setJACKName() const;
+
+    EngineMaster *m_pMaster;
+    ConfigObject<ConfigValue> *m_pConfig;
+#ifdef __PORTAUDIO__
+    bool m_paInitialized;
+    unsigned int m_jackSampleRate;
+#endif
+    QList<SoundDevice*> m_devices;
+    QList<unsigned int> m_samplerates;
+    QString m_hostAPI;
+    QHash<AudioOutput, const CSAMPLE*> m_outputBuffers;
+    QHash<AudioInput, short*> m_inputBuffers;
+    QHash<SoundDevice*, long> m_deviceFrameCount; // used in dead code
+    // Clock reference, used to make sure the same device triggers buffer
+    // refresh every $latency-ms period
+    SoundDevice* m_pClkRefDevice;
+    int m_outputDevicesOpened;
+    int m_inputDevicesOpened;
+    QMutex requestBufferMutex;
+    SoundManagerConfig m_config;
+    SoundDevice* m_pErrorDevice;
+    QHash<AudioOutput, const AudioSource*> m_registeredSources;
+    QHash<AudioInput, AudioDestination*> m_registeredDestinations;
+
+    ControlObject* m_pControlObjectSoundStatus;
+    ControlObjectThreadMain* m_pControlObjectVinylControlMode1;
+    ControlObjectThreadMain* m_pControlObjectVinylControlMode2;
+    ControlObjectThreadMain* m_pControlObjectVinylControlGain;
 };
 
 #endif

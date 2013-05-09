@@ -29,6 +29,8 @@
 #include "encoder.h"
 #include "errordialoghandler.h"
 
+#include "trackinfoobject.h"
+
 #define THRESHOLD_REC 2. //high enough that its not triggered by white noise
 
 class ControlLogpotmeter;
@@ -49,25 +51,48 @@ class EngineRecord : public EngineAbstractRecord {
     void closeFile();
     void updateFromPreferences();
     bool fileOpen();
+    bool openCueFile();
+    void closeCueFile();
+
+  signals:
+    // emitted to notify RecordingManager
+    void bytesRecorded(int);
+    void isRecording(bool);
 
   private:
+    int getActiveTracks();
+    bool metaDataHasChanged();
+    void writeCueLine();
+
     ConfigObject<ConfigValue> *m_config;
     Encoder *m_encoder;
     QByteArray m_OGGquality;
     QByteArray m_MP3quality;
     QByteArray m_Encoding;
-    QByteArray m_filename;
+    QString m_filename;
     QByteArray m_baTitle;
     QByteArray m_baAuthor;
     QByteArray m_baAlbum;
 
     QFile m_file;
+    QFile m_cuefile;
     QDataStream m_datastream;
     SNDFILE *m_sndfile;
     SF_INFO m_sfInfo;
 
     ControlObjectThread* m_recReady;
-    ControlObject* m_recReadyCO;
+
+    ControlObjectThread* m_samplerate;
+
+    int m_iMetaDataLife;
+    TrackPointer m_pCurrentTrack;
+    int m_iNumChannels;
+    double m_dLatency;
+
+    QByteArray m_cuefilename;
+    quint64 m_cuesamplepos;
+    quint64 m_cuetrack;
+    bool m_bCueIsEnabled;
 };
 
 #endif

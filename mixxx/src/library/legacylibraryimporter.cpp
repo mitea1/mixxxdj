@@ -38,7 +38,10 @@ LegacyLibraryImporter::LegacyLibraryImporter(TrackDAO& trackDao,
 /** Upgrade from <= 1.7 library to 1.8 DB format */
 void LegacyLibraryImporter::import()
 {
-    QString trackXML = QDir::homePath().append("/").append(SETTINGS_PATH).append("mixxxtrack.xml");
+    // TODO(XXX) SETTINGS_PATH may change in new Mixxx Versions. Here we need
+    // the SETTINGS_PATH from Mixxx V <= 1.7
+    QString settingPath17 = QDir::homePath().append("/").append(SETTINGS_PATH);
+    QString trackXML = settingPath17.append("mixxxtrack.xml");
     QFile file(trackXML);
 
     QDomDocument doc("TrackList");
@@ -113,6 +116,7 @@ void LegacyLibraryImporter::import()
                 trackInfo17.setYear(trackInfoNew.getYear());
                 trackInfo17.setType(trackInfoNew.getType());
                 trackInfo17.setTrackNumber(trackInfoNew.getTrackNumber());
+                trackInfo17.setKey(trackInfoNew.getKey());
                 trackInfo17.setHeaderParsed(true);
 
                 // Import the track's saved cue point if it is non-zero.
@@ -147,8 +151,7 @@ void LegacyLibraryImporter::import()
 
             //Create the playlist with the imported name.
             //qDebug() << "Importing playlist:" << current.name;
-            m_playlistDao.createPlaylist(current.name, false);
-            int playlistId = m_playlistDao.getPlaylistIdFromName(current.name);
+            int playlistId = m_playlistDao.createPlaylist(current.name);
 
             //For each track ID in the XML...
             QList<int> trackIDs = current.indexes;
@@ -174,9 +177,16 @@ void LegacyLibraryImporter::import()
             }
         }
 
-        //now change the file to mixxxtrack.bak so that its not readded next time program loads
-        file.copy(QDir::homePath().append("/").append(SETTINGS_PATH).append("mixxxtrack.bak"));
-        file.remove();
+        QString upgrade_filename = settingPath17.append("DBUPGRADED");
+        //now create stub so that the library is not readded next time program loads
+        QFile upgradefile(upgrade_filename);
+        if (!upgradefile.open(QIODevice::WriteOnly | QIODevice::Text))
+            qDebug() << "Couldn't open" << upgrade_filename << "for writing";
+        else
+        {
+            file.write("",0);
+            file.close();
+        }
     } else {
         qDebug() << errorMsg << " line: " << errorLine << " column: " << errorColumn;
     }

@@ -22,8 +22,12 @@
 
 #define LOAD_TIMEOUT 10000
 
-FeaturedArtistsWebView::FeaturedArtistsWebView(QWidget* parent, QString libraryPath, QString remoteURL, SongDownloader* downloader) : QWebView(parent), LibraryView()
-{
+FeaturedArtistsWebView::FeaturedArtistsWebView(QWidget* parent,
+                                               QString libraryPath,
+                                               QString remoteURL,
+                                               SongDownloader* downloader)
+                       : QWebView(parent),
+                         LibraryView() {
     m_sLibraryPath = libraryPath;
     m_sRemoteURL = remoteURL;
     m_sLocalErrorURL = "about:qt";
@@ -36,8 +40,8 @@ FeaturedArtistsWebView::FeaturedArtistsWebView(QWidget* parent, QString libraryP
     //fails, and display a local copy instead.
     connect(this, SIGNAL(loadFinished(bool)),
             this, SLOT(handleLoadFinished(bool)));
-    
-    //Load the promo tracks webpage 
+
+    //Load the promo tracks webpage
     QWebView::load(QUrl(m_sRemoteURL));
 
     //Let us manually handle links that are clicked via the linkClicked()
@@ -45,11 +49,11 @@ FeaturedArtistsWebView::FeaturedArtistsWebView(QWidget* parent, QString libraryP
     QWebPage* page = QWebView::page();
     page->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
 
-    connect(this, SIGNAL(linkClicked(const QUrl&)), 
+    connect(this, SIGNAL(linkClicked(const QUrl&)),
             this, SLOT(handleClickedLink(const QUrl&)));
 
     QTimer* loadingTimer = new QTimer(this);
-    connect(loadingTimer, SIGNAL(timeout()), 
+    connect(loadingTimer, SIGNAL(timeout()),
             this, SLOT(checkWebpageLoadingProgress()));
     loadingTimer->start(LOAD_TIMEOUT);
 }
@@ -62,8 +66,7 @@ QString FeaturedArtistsWebView::userAgentForUrl (const QUrl & url) const
     return QCoreApplication::applicationName() + " " + QCoreApplication::applicationVersion();
 } */
 
-void FeaturedArtistsWebView::handleLoadFinished(bool ok)
-{
+void FeaturedArtistsWebView::handleLoadFinished(bool ok) {
     //If the remote webpage failed to load, show the
     //local copy of it.
     if (!ok)
@@ -77,8 +80,7 @@ void FeaturedArtistsWebView::handleLoadFinished(bool ok)
     }
 }
 
-void FeaturedArtistsWebView::checkWebpageLoadingProgress()
-{
+void FeaturedArtistsWebView::checkWebpageLoadingProgress() {
     if (QWebView::page()->bytesReceived() == 0) {
         qDebug() << "PROMO: Load timed out, loading local page";
         QWebView::stop();
@@ -87,30 +89,22 @@ void FeaturedArtistsWebView::checkWebpageLoadingProgress()
     }
 }
 
-FeaturedArtistsWebView::~FeaturedArtistsWebView()
-{
-
+FeaturedArtistsWebView::~FeaturedArtistsWebView() {
 }
 
-void FeaturedArtistsWebView::setup(QDomNode node)
-{
-
-}
-
-void FeaturedArtistsWebView::handleClickedLink(const QUrl& url)
-{
-    qDebug() << "link clicked!" << url; 
+void FeaturedArtistsWebView::handleClickedLink(const QUrl& url) {
+    qDebug() << "link clicked!" << url;
 
     /*
     if (url.scheme() == "deck1")
     {
         TrackInfoObject* track = new TrackInfoObject(m_sMixxxPath + "/" + url.path());
-        emit(loadTrackToPlayer(track, 1));
+        emit(loadTrackToPlayer(track, "[Channel1]"));
     }
     else if (url.scheme() == "deck2")
     {
         TrackInfoObject* track = new TrackInfoObject(m_sMixxxPath + "/" + url.path());
-        emit(loadTrackToPlayer(track, 2));
+        emit(loadTrackToPlayer(track, "[Channel2]"));
     }
     */
     if (url.host().contains("mixxx.org")) {
@@ -124,8 +118,8 @@ void FeaturedArtistsWebView::handleClickedLink(const QUrl& url)
 }
 
 //TODO: Implement this for MIDI control
-void FeaturedArtistsWebView::keyPressEvent(QKeyEvent* event)
-{
+void FeaturedArtistsWebView::keyPressEvent(QKeyEvent* event) {
+    Q_UNUSED(event);
     //Look at WTrackTableView::keyPressEvent(...) for some
     //code to start with...
 }

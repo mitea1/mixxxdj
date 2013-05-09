@@ -1,15 +1,15 @@
-/* 
- * Copyright (C) 2008 Mark Hills <mark@pogo.org.uk>
+/*
+ * Copyright (C) 2012 Mark Hills <mark@pogo.org.uk>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * version 2, as published by the Free Software Foundation.
- * 
+ *
  * This program is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License version 2 for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * version 2 along with this program; if not, write to the Free
  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
@@ -20,80 +20,126 @@
 #ifndef TIMECODER_H
 #define TIMECODER_H
 
+#ifndef _MSC_VER
+#include <stdbool.h>
+#endif
+
+#include "lut.h"
+#include "pitch.h"
+
 #define TIMECODER_CHANNELS 2
-#define TIMECODER_RATE 44100 //Default rate - Albert
 
-#define MAX_BITS 32 /* bits in an int */
+typedef unsigned int bits_t;
 
-struct timecode_def_t {
+struct timecode_def {
     char *name, *desc;
     int bits, /* number of bits in string */
         resolution, /* wave cycles per second */
-        tap[MAX_BITS], ntaps, /* LFSR taps */
-        polarity; /* cycle begins POLARITY_POSITIVE or POLARITY_NEGATIVE */
-    unsigned int seed, /* LFSR value at timecode zero */
-        length, /* in cycles */
+        flags;
+    bits_t seed, /* LFSR value at timecode zero */
+        taps; /* central LFSR taps, excluding end taps */
+    unsigned int length, /* in cycles */
         safe; /* last 'safe' timecode number (for auto disconnect) */
-    signed int *lookup; /* pointer to built lookup table */
+    bool lookup; /* true if lut has been generated */
+    struct lut lut;
 };
 
-struct timecoder_channel_t {
-    int positive; /* wave is in positive part of cycle */
+struct timecoder_channel {
+    bool positive, /* wave is in positive part of cycle */
+	swapped; /* wave recently swapped polarity */
     signed int zero;
-    int crossing_ticker; /* samples since we last crossed zero */
+    unsigned int crossing_ticker; /* samples since we last crossed zero */
 };
 
+struct timecoder {
+    struct timecode_def *def;
+    double speed;
 
-struct timecoder_t {
-    int forwards, rate;
+    /* Precomputed values */
 
-    /* Signal levels */
-
-    signed int signal_level, half_peak, wave_peak, ref_level;
-    struct timecoder_channel_t mono, channel[TIMECODER_CHANNELS];
+    double dt, zero_alpha;
 
     /* Pitch information */
 
-    int crossings, /* number of zero crossings */
-        pitch_ticker, /* number of samples from which crossings counted */
-        crossing_ticker; /* stored for incrementing pitch_ticker */
+    bool forwards;
+    struct timecoder_channel primary, secondary;
+    struct pitch pitch;
 
     /* Numerical timecode */
 
-    unsigned int bitstream, /* actual bits from the record */
+    signed int ref_level;
+    bits_t bitstream, /* actual bits from the record */
         timecode; /* corrected timecode */
-    int valid_counter, /* number of successful error checks */
+    unsigned int valid_counter, /* number of successful error checks */
         timecode_ticker; /* samples since valid timecode was read */
 
     /* Feedback */
 
     unsigned char *mon; /* x-y array */
-    int mon_size, mon_counter, mon_scale,
-        log_fd; /* optional file descriptor to log to, or -1 for none */
-        
-    struct timecode_def_t *tc_table;
+    int mon_size, mon_counter;
 };
 
+struct timecode_def* timecoder_find_definition(const char *name);
+void timecoder_free_lookup(void);
 
-/* Building the lookup table is global. Need a good way to share
- * lookup tables soon, so we can use a different timecode on 
- * each timecoder, and switch between them. */
+void timecoder_init(struct timecoder *tc, struct timecode_def *def,
+                    double speed, unsigned int sample_rate);
+void timecoder_clear(struct timecoder *tc);
 
-int timecoder_build_lookup(char *timecode_name, struct timecoder_t *timecoder);
-void timecoder_free_lookup(struct timecoder_t *timecoder);
+int timecoder_monitor_init(struct timecoder *tc, int size);
+void timecoder_monitor_clear(struct timecoder *tc);
 
-void timecoder_init(struct timecoder_t *tc);
-void timecoder_clear(struct timecoder_t *tc);
+void timecoder_cycle_definition(struct timecoder *tc);
+void timecoder_submit(struct timecoder *tc, const signed short *pcm, size_t npcm);
+signed int timecoder_get_position(struct timecoder *tc, double *when);
 
-void timecoder_monitor_init(struct timecoder_t *tc, int size, int scale);
-void timecoder_monitor_clear(struct timecoder_t *tc);
+/*
+ * The timecode definition currently in use by this decoder
+ */
 
-int timecoder_submit(struct timecoder_t *tc, signed short *aud, int samples);
+static inline struct timecode_def* timecoder_get_definition(struct timecoder *tc)
+{
+    return tc->def;
+}
 
-int timecoder_get_pitch(struct timecoder_t *tc, float *pitch);
-signed int timecoder_get_position(struct timecoder_t *tc, int *when);
-int timecoder_get_alive(struct timecoder_t *tc);
-unsigned int timecoder_get_safe(struct timecoder_t *tc);
-int timecoder_get_resolution(struct timecoder_t *tc);
+/*
+ * Return the pitch relative to reference playback speed
+ */
+
+static inline double timecoder_get_pitch(struct timecoder *tc)
+{
+    return pitch_current(&tc->pitch) / tc->speed;
+}
+
+/*
+ * The last 'safe' timecode value on the record. Beyond this value, we
+ * probably want to ignore the timecode values, as we will hit the
+ * label of the record.
+ */
+
+static inline unsigned int timecoder_get_safe(struct timecoder *tc)
+{
+    return tc->def->safe;
+}
+
+/*
+ * The resolution of the timecode. This is the number of bits per
+ * second at reference playback speed
+ */
+
+static inline double timecoder_get_resolution(struct timecoder *tc)
+{
+    return tc->def->resolution * tc->speed;
+}
+
+/*
+ * The number of revolutions per second of the timecode vinyl,
+ * used only for visual display
+ */
+
+static inline double timecoder_revs_per_sec(struct timecoder *tc)
+{
+    return (33.0 + 1.0 / 3) * tc->speed / 60;
+}
 
 #endif

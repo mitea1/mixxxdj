@@ -21,6 +21,7 @@
 #include "ui_dlgprefeqdlg.h"
 #include "configobject.h"
 #include "engine/enginefilterblock.h"
+#include "controlobject.h"
 
 class QWidget;
 /**
@@ -29,30 +30,37 @@ class QWidget;
 
 class DlgPrefEQ : public QWidget, public Ui::DlgPrefEQDlg  {
     Q_OBJECT
-public: 
+public:
     DlgPrefEQ(QWidget *parent, ConfigObject<ConfigValue> *_config);
     ~DlgPrefEQ();
 public slots:
-	void slotLoFiChanged();
+    void slotLoFiChanged();
     /** Update Hi EQ **/
     void slotUpdateHiEQ();
     /** Update Lo EQ **/
     void slotUpdateLoEQ();
     /** Apply changes to widget */
     void slotApply();
-	void slotUpdate();
-	void setDefaults();
+    void slotUpdate();
 signals:
     void apply(const QString &);
+private slots:
+    void reset();
 private:
-	void loadSettings();
-	int getEqFreq(int);
-    int getSliderPosition(int eqFreq);
+    void loadSettings();
+    void setDefaultShelves();
+    double getEqFreq(int value, int minimum, int maximum);
+    int getSliderPosition(double eqFreq, int minimum, int maximum);
     void validate_levels();
-    
-	int m_lowEqFreq, m_highEqFreq;
+
+    double m_lowEqFreq, m_highEqFreq;
     /** Pointer to config object */
-    ConfigObject<ConfigValue> *config;
+    ConfigObject<ConfigValue> *m_pConfig;
+#ifndef __LOFI__
+    ControlObjectThread m_COTLoFreq;
+    ControlObjectThread m_COTHiFreq;
+    ControlObjectThread m_COTLoFi;
+#endif
 
 };
 

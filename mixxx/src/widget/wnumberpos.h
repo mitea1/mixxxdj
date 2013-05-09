@@ -1,14 +1,5 @@
-//
-// C++ Interface: wnumberpos
-//
-// Description:
-//
-//
-// Author: Tue Haste Andersen <haste@diku.dk>, (C) 2003
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+// Tue Haste Andersen <haste@diku.dk>, (C) 2003
+
 #ifndef WNUMBERPOS_H
 #define WNUMBERPOS_H
 
@@ -21,29 +12,35 @@ class ControlObjectThreadMain;
 @author Tue Haste Andersen
 */
 
-class WNumberPos : public WNumber
-{
+class WNumberPos : public WNumber {
     Q_OBJECT
-public:
+  public:
     WNumberPos(const char *group, QWidget *parent=0);
-    ~WNumberPos();
+    virtual ~WNumberPos();
+
     void setValue(double dValue);
     /** Set if the display shows remaining time (true) or position (false) */
     void setRemain(bool bRemain);
-public slots:
-    void slotSetDuration(double dDuration);
+
+  protected:
+    void mousePressEvent(QMouseEvent* pEvent);
+
   private slots:
     void slotSetRemain(double dRemain);
-private:
-    /** Duration in seconds */
-    double m_dDuration;
+    void slotSetTrackSampleRate(double dSampleRate);
+    void slotSetTrackSamples(double dSamples);
+
+  private:
     /** Old value set */
     double m_dOldValue;
+    double m_dTrackSamples;
+    double m_dTrackSampleRate;
     /** True if remaining content is being shown */
     bool m_bRemain;
-    ControlObjectThreadMain* m_pShowDurationRemaining;
-    /** Pointer to control object for rate and duration*/
-    ControlObjectThreadWidget *m_pRateControl, *m_pRateDirControl, *m_pDurationControl;
+    ControlObjectThreadMain* m_pShowTrackTimeRemaining;
+    // Pointer to control object for rate and track info
+    ControlObjectThreadWidget* m_pTrackSamples; 
+    ControlObjectThreadWidget* m_pTrackSampleRate;
 };
 
 #endif

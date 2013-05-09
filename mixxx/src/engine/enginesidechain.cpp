@@ -30,6 +30,7 @@
 #include "engine/enginesidechain.h"
 #include "engine/enginebuffer.h"
 #include "recording/enginerecord.h"
+#include "util/timer.h"
 
 #ifdef __SHOUTCAST__
 #include "engine/engineshoutcast.h"
@@ -51,6 +52,11 @@ EngineSideChain::EngineSideChain(ConfigObject<ConfigValue> * pConfig) {
 #endif
 
     m_rec = new EngineRecord(m_pConfig);
+    connect(m_rec, SIGNAL(bytesRecorded(int)),
+            this, SIGNAL(bytesRecorded(int)));
+    connect(m_rec, SIGNAL(isRecording(bool)),
+            this, SIGNAL(isRecording(bool)));
+
 
    	start(QThread::LowPriority);    //Starts the thread and goes to the "run()" function below.
 }
@@ -58,11 +64,8 @@ EngineSideChain::EngineSideChain(ConfigObject<ConfigValue> * pConfig) {
 EngineSideChain::~EngineSideChain() {
     m_backBufferLock.lock();
 
-    m_stopLock.lock();
-    m_bStopThread = true;
-    m_stopLock.unlock();
-
     m_waitLock.lock();
+    m_bStopThread = true;
     m_waitForFullBuffer.wakeAll();
     m_waitLock.unlock();
 
@@ -89,6 +92,7 @@ EngineSideChain::~EngineSideChain() {
 /** Submit a buffer of samples to be processed in the sidechain*/
 void EngineSideChain::submitSamples(CSAMPLE* newBuffer, int buffer_size)
 {
+    ScopedTimer t("EngineSideChain:submitSamples");
     //Copy samples into m_buffer.
     if (m_iBufferEnd + buffer_size <= SIDECHAIN_BUFFER_SIZE)    //FIXME: is <= correct?
     {
@@ -109,9 +113,7 @@ void EngineSideChain::submitSamples(CSAMPLE* newBuffer, int buffer_size)
         m_backBufferLock.unlock();
 
         //Since we swapped buffers, we now have a full buffer that needs processing.
-        m_waitLock.lock();
         m_waitForFullBuffer.wakeAll(); //... so wake the thread up and get processing. :)
-        m_waitLock.unlock();
 
         //Calculate how many leftover samples need to be written to the other buffer.
         int iNumSamplesStillToWrite = buffer_size - iNumSamplesWritten;
@@ -153,18 +155,18 @@ void EngineSideChain::run()
     while (true)
     {
         m_waitLock.lock();
-        m_waitForFullBuffer.wait(&m_waitLock);  //Sleep until the buffer has been filled.
-        m_waitLock.unlock();
-
-        //Check to see if we're supposed to exit/stop this thread.
-        m_stopLock.lock();
-        if (m_bStopThread)
-        {
-            m_stopLock.unlock();
+        // Check to see if we're supposed to exit/stop this thread.
+        if (m_bStopThread) {
+            m_waitLock.unlock();
             return;
         }
-        m_stopLock.unlock();
-
+        m_waitForFullBuffer.wait(&m_waitLock);  //Sleep until the buffer has been filled.
+        // Check to see if we're supposed to exit/stop this thread.
+        if (m_bStopThread) {
+            m_waitLock.unlock();
+            return;
+        }
+        m_waitLock.unlock();
 
         //This portion of the code should be able to touch the buffer without having to use
         //the m_bufferLock mutex, because the buffers should have been swapped.

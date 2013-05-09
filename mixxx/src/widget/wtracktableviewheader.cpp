@@ -6,18 +6,13 @@
 #include "widget/wtracktableviewheader.h"
 #include "library/trackmodel.h"
 
+#define WTTVH_MINIMUM_SECTION_SIZE 20
+
 WTrackTableViewHeader::WTrackTableViewHeader(Qt::Orientation orientation,
                                              QWidget* parent)
         : QHeaderView(orientation, parent),
           m_menu(tr("Show or hide columns."), this),
           m_signalMapper(this) {
-
-    // Show the sort indicator (technically redundant since setSortingEnabled()
-    // on a View will handle this)
-    setSortIndicatorShown(true);
-    //Allow the columns to be reordered.
-    setMovable(true);
-
     connect(&m_signalMapper, SIGNAL(mapped(int)),
             this, SLOT(showOrHideColumn(int)));
 }
@@ -60,15 +55,36 @@ void WTrackTableViewHeader::setModel(QAbstractItemModel* model) {
     // Restore saved header state to get sizes, column positioning, etc. back.
     restoreHeaderState();
 
+    // Here we can override values to prevent restoring corrupt values from database
+    setMovable(true);
+
+    // Setting true in the next line causes Bug #925619 at least with Qt 4.6.1
+    setCascadingSectionResizes(false);
+
+    setMinimumSectionSize(WTTVH_MINIMUM_SECTION_SIZE);
+
     int columns = model->columnCount();
     for (int i = 0; i < columns; ++i) {
-        if (trackModel->isColumnInternal(i))
+        if (trackModel->isColumnInternal(i)) {
             continue;
+        }
 
         QString title = model->headerData(i, orientation()).toString();
         QAction* action = new QAction(title, &m_menu);
         action->setCheckable(true);
-        action->setChecked(!isSectionHidden(i));
+
+        /* If Mixxx starts the first time or the header states have been cleared
+         * due to database schema evolution we gonna hide all columns that may
+         * contain a potential large number of NULL values.  Here we uncheck
+         * item in the context menu that are hidden by defualt (e.g., key
+         * column)
+         */
+        if (!hasPersistedHeaderState() &&
+            trackModel->isColumnHiddenByDefault(i)) {
+            action->setChecked(false);
+        } else {
+            action->setChecked(!isSectionHidden(i));
+        }
 
         // Map this action's signals via our QSignalMapper
         m_signalMapper.setMapping(action, i);
@@ -76,6 +92,13 @@ void WTrackTableViewHeader::setModel(QAbstractItemModel* model) {
         connect(action, SIGNAL(triggered()),
                 &m_signalMapper, SLOT(map()));
         m_menu.addAction(action);
+
+        // force the section size to be a least WTTVH_MINIMUM_SECTION_SIZE
+        if (sectionSize(i) <  WTTVH_MINIMUM_SECTION_SIZE) {
+            // This might happen if  WTTVH_MINIMUM_SECTION_SIZ has changed or
+            // the header state from database was corrupt
+            resizeSection(i,WTTVH_MINIMUM_SECTION_SIZE);
+        }
     }
 
     // Safety check against someone getting stuck with all columns hidden
@@ -94,7 +117,8 @@ void WTrackTableViewHeader::saveHeaderState() {
     }
     // Convert the QByteArray to a Base64 string and save it.
     QString headerState = QString(saveState().toBase64());
-    bool result = track_model->setModelSetting("header_state", headerState);
+    //bool result =
+    track_model->setModelSetting("header_state", headerState);
     //qDebug() << "Saving old header state:" << result << headerState;
 }
 
@@ -116,6 +140,17 @@ void WTrackTableViewHeader::restoreHeaderState() {
     }
 }
 
+bool WTrackTableViewHeader::hasPersistedHeaderState() {
+    TrackModel* track_model = getTrackModel();
+    if (!track_model) {
+        return false;
+    }
+    QString headerStateString = track_model->getModelSetting("header_state");
+
+    if (!headerStateString.isNull()) return true;
+    return false;
+
+}
 void WTrackTableViewHeader::clearActions() {
     // The QActions are parented to the menu, so clearing deletes them. Since
     // they are deleted we don't have to disconnect their signals from the

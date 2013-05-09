@@ -11,6 +11,7 @@ ProxyTrackModel::ProxyTrackModel(QAbstractItemModel* pTrackModel,
         // ProxyTrackModel proxies settings requests to the composed TrackModel,
         // don't initialize its TrackModel with valid parameters.
         : TrackModel(QSqlDatabase(), ""),
+          m_currentSearch(""),
           m_bHandleSearches(bHandleSearches) {
     m_pTrackModel = dynamic_cast<TrackModel*>(pTrackModel);
     Q_ASSERT(m_pTrackModel && pTrackModel);
@@ -18,6 +19,15 @@ ProxyTrackModel::ProxyTrackModel(QAbstractItemModel* pTrackModel,
 }
 
 ProxyTrackModel::~ProxyTrackModel() {
+}
+
+int ProxyTrackModel::getTrackId(const QModelIndex& index) const {
+    QModelIndex indexSource = mapToSource(index);
+    return m_pTrackModel->getTrackId(indexSource);
+}
+
+const QLinkedList<int> ProxyTrackModel::getTrackRows(int trackId) const {
+    return m_pTrackModel->getTrackRows(trackId);
 }
 
 TrackPointer ProxyTrackModel::getTrack(const QModelIndex& index) const {
@@ -39,7 +49,7 @@ void ProxyTrackModel::search(const QString& searchText) {
     }
 }
 
-const QString ProxyTrackModel::currentSearch() {
+const QString ProxyTrackModel::currentSearch() const {
     if (m_bHandleSearches) {
         return m_currentSearch;
     }
@@ -48,6 +58,10 @@ const QString ProxyTrackModel::currentSearch() {
 
 bool ProxyTrackModel::isColumnInternal(int column) {
     return m_pTrackModel->isColumnInternal(column);
+}
+
+bool ProxyTrackModel::isColumnHiddenByDefault(int column) {
+    return m_pTrackModel->isColumnHiddenByDefault(column);
 }
 
 void ProxyTrackModel::removeTrack(const QModelIndex& index) {
@@ -76,8 +90,8 @@ void ProxyTrackModel::moveTrack(const QModelIndex& sourceIndex,
     m_pTrackModel->moveTrack(sourceIndexSource, destIndexSource);
 }
 
-QItemDelegate* ProxyTrackModel::delegateForColumn(const int i) {
-    return m_pTrackModel->delegateForColumn(i);
+QAbstractItemDelegate* ProxyTrackModel::delegateForColumn(const int i, QObject* pParent) {
+    return m_pTrackModel->delegateForColumn(i, pParent);
 }
 
 TrackModel::CapabilitiesFlags ProxyTrackModel::getCapabilities() const {
@@ -86,7 +100,6 @@ TrackModel::CapabilitiesFlags ProxyTrackModel::getCapabilities() const {
 
 bool ProxyTrackModel::filterAcceptsRow(int sourceRow,
                                        const QModelIndex& sourceParent) const {
-
     if (!m_bHandleSearches)
         return QSortFilterProxyModel::filterAcceptsRow(sourceRow, sourceParent);
 
