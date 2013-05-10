@@ -3,15 +3,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-14 06:50+0200\n"
-"PO-Revision-Date: 2013-04-23 18:23+0000\n"
+"POT-Creation-Date: 2013-05-09 15:12+0200\n"
+"PO-Revision-Date: 2013-05-09 19:59+0000\n"
 "Last-Translator: jus <Unknown>\n"
 "Language-Team: Hello\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-24 04:37+0000\n"
-"X-Generator: Launchpad (build 16580)\n"
+"X-Launchpad-Export-Date: 2013-05-10 05:13+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
 "Language: de\n"
 
 #: AutoDJFeature#1
@@ -1860,6 +1860,151 @@ msgstr "Ausgangs-Belegungen löschen"
 msgid "Are you sure you want to clear all output bindings?"
 msgstr "Wollen Sie wirklich alle Ausgangs-Belegungen löschen?"
 
+#: DlgPrefModplug#1
+msgid "Modplug Preferences"
+msgstr "Modplug-Einstellungen"
+
+#: DlgPrefModplug#2
+msgid "Show advanced settings"
+msgstr "Erweiterte Einstellungen anzeigen"
+
+#: DlgPrefModplug#3
+msgid ""
+"Decoding options for libmodplug. Module files are decoded at once and kept "
+"in RAM to allow for seeking and smooth operation in Mixxx. About 10MB of RAM "
+"are required for 1 minute of audio."
+msgstr ""
+"Dekodieroptionen für libmodplug. Modul-Dateien werden auf auf einmal "
+"dekodiert und im RAM-Speicher gehalten um die Suche und das reibungslose "
+"Funktionieren in Mixxx zu ermöglichen. Circa 10MB RAM sind für 1 Minute "
+"Audio erforderlich."
+
+#: DlgPrefModplug#4
+msgid ""
+"All settings take effect on next track load. Currently loaded tracks are not "
+"affected. For an explanation of these settings, see the <a "
+"href=\"http://wiki.openmpt.org/Manual:_Setup/Player\">OpenMPT manual</a>."
+msgstr ""
+"Alle Einstellungen werden beim Laden des nächsten Titels wirksam. Derzeit "
+"geladene Titel sind nicht betroffen. Eine Erläuterung dieser Einstellungen "
+"finden Sie im <a "
+"href=\"http://wiki.openmpt.org/Manual:_Setup/Player\">OpenMPT Handbuch</ a>."
+
+#: DlgPrefModplug#5
+msgid "Maximum Number of Mixing Channels:"
+msgstr "Maximale Anzahl der Mischkanäle:"
+
+#: DlgPrefModplug#6
+msgctxt "DlgPrefModplug#6"
+msgid "Low"
+msgstr "Niedrig"
+
+#: DlgPrefModplug#7
+msgid "Reverb Delay:"
+msgstr "Hall-Verzögerung:"
+
+#: DlgPrefModplug#8
+msgctxt "DlgPrefModplug#8"
+msgid "High"
+msgstr "Hoch"
+
+#: DlgPrefModplug#9
+msgctxt "DlgPrefModplug#9"
+msgid "None"
+msgstr "Keine"
+
+#: DlgPrefModplug#10
+msgid "Bass Expansion"
+msgstr "Bassverstärkung"
+
+#: DlgPrefModplug#11
+msgid "Bass Range:"
+msgstr "Bass-Frequenzbereich:"
+
+#: DlgPrefModplug#12
+msgid "16"
+msgstr "16"
+
+#: DlgPrefModplug#13
+msgid "Front/Rear Delay:"
+msgstr "Front/Rück-Verzögerung:"
+
+#: DlgPrefModplug#14
+msgid "Pro-Logic Surround"
+msgstr "Pro-Logic Raumklang"
+
+#: DlgPrefModplug#15
+msgid "Full"
+msgstr "Voll"
+
+#: DlgPrefModplug#16
+msgid "Reverb"
+msgstr "Hall"
+
+#: DlgPrefModplug#17
+msgid "Stereo separation"
+msgstr "Stereo-Kanaltrennung"
+
+#: DlgPrefModplug#18
+msgid "10Hz"
+msgstr "10Hz"
+
+#: DlgPrefModplug#19
+msgid "10ms"
+msgstr "10ms"
+
+#: DlgPrefModplug#20
+msgid "256"
+msgstr "256"
+
+#: DlgPrefModplug#21
+msgid "5ms"
+msgstr "5ms"
+
+#: DlgPrefModplug#22
+msgid "100Hz"
+msgstr "100Hz"
+
+#: DlgPrefModplug#23
+msgid "250ms"
+msgstr "250ms"
+
+#: DlgPrefModplug#24
+msgid "50ms"
+msgstr "50ms"
+
+#: DlgPrefModplug#25
+msgid "Noise reduction"
+msgstr "Rauschunterdrückung"
+
+#: DlgPrefModplug#26
+msgid "Resampling mode (interpolation)"
+msgstr "Resampling Modus (Interpolation)"
+
+#: DlgPrefModplug#27
+msgid "Enable oversampling"
+msgstr "Oversampling aktivieren"
+
+#: DlgPrefModplug#28
+msgid "Nearest (very fast, extremely bad quality)"
+msgstr "Nächster (Sehr schnell, sehr schlechte Qualität)"
+
+#: DlgPrefModplug#29
+msgid "Linear (fast, good quality)"
+msgstr "Linear (Schnell, gute Quality)"
+
+#: DlgPrefModplug#30
+msgid "Cubic Spline (high quality)"
+msgstr "Kubischer Spline (Hohe Qualität)"
+
+#: DlgPrefModplug#31
+msgid "8-tap FIR (extremely high quality)"
+msgstr "8-Tap FIR (Extrem hohe Qualität)"
+
+#: DlgPrefModplug#32
+msgid "Memory limit for single track (MB)"
+msgstr "Speicherlimit für einzelnen Titel (MB)"
+
 #: DlgPrefNoControllersDlg#1
 msgctxt "DlgPrefNoControllersDlg#1"
 msgid "Form3"
@@ -2143,10 +2288,12 @@ msgid "Quality"
 msgstr "Qualität"
 
 #: DlgPrefRecordDlg#7
+msgctxt "DlgPrefRecordDlg#7"
 msgid "High"
 msgstr "Hoch"
 
 #: DlgPrefRecordDlg#8
+msgctxt "DlgPrefRecordDlg#8"
 msgid "Low"
 msgstr "Niedrig"
 
@@ -2480,59 +2627,61 @@ msgid "Sample Rate"
 msgstr "Abtastrate"
 
 #: DlgPrefSoundDlg#3
+msgid "Audio Buffer"
+msgstr "Audio-Puffer"
+
+#: DlgPrefSoundDlg#4
+msgid "Known Latency"
+msgstr "Erkannte Latenz"
+
+#: DlgPrefSoundDlg#5
+msgid "20 ms"
+msgstr "20 ms"
+
+#: DlgPrefSoundDlg#6
 msgid "Buffer Underflow Count"
 msgstr "Pufferunterlauf-Zähler"
 
-#: DlgPrefSoundDlg#4
+#: DlgPrefSoundDlg#7
 msgid "0"
 msgstr "0"
 
-#: DlgPrefSoundDlg#5
+#: DlgPrefSoundDlg#8
 msgid "Latency Tips"
 msgstr "Hinweise zur Latenz"
 
-#: DlgPrefSoundDlg#6
+#: DlgPrefSoundDlg#9
 msgid ""
 "<ul>\n"
-"<li>Increase your latency if the underflow counter is increasing or you hear "
-"pops during playback</li>\n"
-"<li>Reduce your latency to improve Mixxx's responsiveness</li>\n"
+"<li>Enlarge your audio buffer if the underflow counter is increasing or you "
+"hear pops during playback</li>\n"
+"<li>Downsize your audio buffer to improve Mixxx's responsiveness</li>\n"
 "</ul>"
 msgstr ""
-"<ul>\n"
-"<li>Erhöhen Sie die Latenz wenn der Unterlaufzähler ansteigt oder Aussetzer "
-"während der Wiedergabe zu hören sind.</li>\n"
-"<li>Verringern Sie die Latenz um Mixxx's Reaktionsgeschwindigkeit zu "
-"verbessern.</li>\n"
-"</ul>"
-
-#: DlgPrefSoundDlg#7
-msgctxt "DlgPrefSoundDlg#7"
-msgid "Output"
-msgstr "Ausgang"
-
-#: DlgPrefSoundDlg#8
-msgctxt "DlgPrefSoundDlg#8"
-msgid "Input"
-msgstr "Eingang"
-
-#: DlgPrefSoundDlg#9
-msgid "Query Devices"
-msgstr "Geräte abfragen"
 
 #: DlgPrefSoundDlg#10
 msgctxt "DlgPrefSoundDlg#10"
-msgid "Reset to Defaults"
-msgstr "Zurücksetzen"
+msgid "Output"
+msgstr "Ausgang"
 
 #: DlgPrefSoundDlg#11
 msgctxt "DlgPrefSoundDlg#11"
-msgid "Apply"
-msgstr "Anwenden"
+msgid "Input"
+msgstr "Eingang"
 
 #: DlgPrefSoundDlg#12
-msgid "Latency"
-msgstr "Latenz"
+msgid "Query Devices"
+msgstr "Geräte abfragen"
+
+#: DlgPrefSoundDlg#13
+msgctxt "DlgPrefSoundDlg#13"
+msgid "Reset to Defaults"
+msgstr "Zurücksetzen"
+
+#: DlgPrefSoundDlg#14
+msgctxt "DlgPrefSoundDlg#14"
+msgid "Apply"
+msgstr "Anwenden"
 
 #: DlgPrefSoundItem#1
 msgctxt "DlgPrefSoundItem#1"
@@ -2745,6 +2894,10 @@ msgstr "Vinyl-Steuerung"
 #: DlgPreferences#13
 msgid "Live Broadcasting"
 msgstr "Liveübertragung"
+
+#: DlgPreferences#14
+msgid "Modplug Decoder"
+msgstr "Modplug Dekodierer"
 
 #: DlgPreferencesDlg#1
 msgctxt "DlgPreferencesDlg#1"
@@ -3378,39 +3531,30 @@ msgid "Scanning: "
 msgstr "Scannen: "
 
 #: MidiController#1
-msgid "MixxxControl not found"
-msgstr "MixxxControl wurde nicht gefunden"
+msgid "MixxxControl(s) not found"
+msgstr ""
 
 #: MidiController#2
-msgid "The MixxxControl '%1, %2' specified in the loaded mapping is invalid."
+msgid ""
+"One or more MixxxControls specified in the outputs section of the loaded "
+"preset were invalid."
 msgstr ""
-"Die MixxxControl '%1, %2' welche in dem geladenen Mapping angegeben wurde "
-"ist ungülting."
 
 #: MidiController#3
-msgid ""
-"The MIDI output message 0x%1 0x%2 will not be bound.\n"
-"(Click Show Details for hints.)"
+msgid "Some LEDs or other feedback may not work correctly."
 msgstr ""
-"Die augehende MIDI-Nachricht 0x%1 0x%2 wird nicht eingebunden.\n"
-"(Für Hinweise klicken Sie auf Details.)"
 
 #: MidiController#4
 msgid ""
-"* Check to see that the MixxxControl name is spelled correctly in the "
+"* Check to see that the MixxxControl names are spelled correctly in the "
 "mapping file (.xml)\n"
 msgstr ""
-"* Überprüfen Sie ob der Name der MixxxControl in der Mappingdatei (.xml) "
-"richtig geschrieben ist\n"
 
 #: MidiController#5
 msgid ""
-"* Make sure the MixxxControl you're trying to use actually exists. Visit "
-"this wiki page for a complete list:"
+"* Make sure the MixxxControls in question actually exist. Visit this wiki "
+"page for a complete list: "
 msgstr ""
-"* Stellen Sie sicher das die MixxxControl welche Sie benutzen wollen "
-"tatsächlich existiert. Besuchen Sie diese Wiki Seite für eine komplette "
-"Liste:"
 
 #: MixxxApp#1
 msgid "Mixxx "
@@ -5487,6 +5631,9 @@ msgstr "(GL)"
 #~ msgid "48 kbps"
 #~ msgstr "48 kbps"
 
+#~ msgid "Latency"
+#~ msgstr "Latenz"
+
 #~ msgid ""
 #~ "<a "
 #~ "href=\"http://www.mixxx.org/wiki/doku.php/vinyl_control#troubleshooting\">Tro"
@@ -6257,6 +6404,12 @@ msgstr "(GL)"
 
 #~ msgid "Miscellaneous"
 #~ msgstr "Diverses"
+
+#~ msgid "Low"
+#~ msgstr "Niedrig"
+
+#~ msgid "High"
+#~ msgstr "Hoch"
 
 #~ msgid "Rescans the song library"
 #~ msgstr "Musikbibliothek neu einlesen"
@@ -7127,9 +7280,69 @@ msgstr "(GL)"
 #~ msgid "&Translate this application"
 #~ msgstr "Diese Anwendung &übersetzen"
 
+#~ msgid "MixxxControl not found"
+#~ msgstr "MixxxControl wurde nicht gefunden"
+
+#~ msgid "The MixxxControl '%1, %2' specified in the loaded mapping is invalid."
+#~ msgstr ""
+#~ "Die MixxxControl '%1, %2' welche in dem geladenen Mapping angegeben wurde "
+#~ "ist ungülting."
+
+#~ msgid ""
+#~ "The MIDI output message 0x%1 0x%2 will not be bound.\n"
+#~ "(Click Show Details for hints.)"
+#~ msgstr ""
+#~ "Die augehende MIDI-Nachricht 0x%1 0x%2 wird nicht eingebunden.\n"
+#~ "(Für Hinweise klicken Sie auf Details.)"
+
+#~ msgid ""
+#~ "* Check to see that the MixxxControl name is spelled correctly in the "
+#~ "mapping file (.xml)\n"
+#~ msgstr ""
+#~ "* Überprüfen Sie ob der Name der MixxxControl in der Mappingdatei (.xml) "
+#~ "richtig geschrieben ist\n"
+
+#~ msgid ""
+#~ "* Make sure the MixxxControl you're trying to use actually exists. Visit "
+#~ "this wiki page for a complete list:"
+#~ msgstr ""
+#~ "* Stellen Sie sicher das die MixxxControl welche Sie benutzen wollen "
+#~ "tatsächlich existiert. Besuchen Sie diese Wiki Seite für eine komplette "
+#~ "Liste:"
+
 #~ msgctxt "DlgPrefRecordDlg#10"
 #~ msgid "Miscellaneous"
 #~ msgstr "Verschiedenes"
 
 #~ msgid "An unknown error occurred while creating playlist: "
 #~ msgstr "Beim Erstellen der Wiedergabeliste ist ein Fehler aufgetreten: "
+
+#~ msgid ""
+#~ "<ul>\n"
+#~ "<li>Increase your latency if the underflow counter is increasing or you hear "
+#~ "pops during playback</li>\n"
+#~ "<li>Reduce your latency to improve Mixxx's responsiveness</li>\n"
+#~ "</ul>"
+#~ msgstr ""
+#~ "<ul>\n"
+#~ "<li>Erhöhen Sie die Latenz wenn der Unterlaufzähler ansteigt oder Aussetzer "
+#~ "während der Wiedergabe zu hören sind.</li>\n"
+#~ "<li>Verringern Sie die Latenz um Mixxx's Reaktionsgeschwindigkeit zu "
+#~ "verbessern.</li>\n"
+#~ "</ul>"
+
+#~ msgctxt "DlgPrefSoundDlg#7"
+#~ msgid "Output"
+#~ msgstr "Ausgang"
+
+#~ msgctxt "DlgPrefSoundDlg#8"
+#~ msgid "Input"
+#~ msgstr "Eingang"
+
+#~ msgctxt "DlgPrefSoundDlg#10"
+#~ msgid "Reset to Defaults"
+#~ msgstr "Zurücksetzen"
+
+#~ msgctxt "DlgPrefSoundDlg#11"
+#~ msgid "Apply"
+#~ msgstr "Anwenden"
