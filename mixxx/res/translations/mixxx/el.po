@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-03-05 06:50+0200\n"
-"PO-Revision-Date: 2013-04-09 11:08+0000\n"
+"POT-Creation-Date: 2013-04-14 06:50+0200\n"
+"PO-Revision-Date: 2013-05-09 11:20+0000\n"
 "Last-Translator: Konstantinos Vaismenos <kostakis09@gmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-04-10 05:10+0000\n"
-"X-Generator: Launchpad (build 16550)\n"
+"X-Launchpad-Export-Date: 2013-05-10 06:15+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -729,11 +729,15 @@ msgid ""
 "e.g. from 3rd-party programs or Mixxx versions before 1.11.\n"
 "(Not checked: Analyse only, if no beats exist.)"
 msgstr ""
+"π.χ. από προγράμματα τρίτων ή εκδόσεις του Mixxx πριν την 1.11.\n"
+"(Δεν έχει ελεγχθεί: Μόνο για ανάλυση, αν δεν υπάρχουν beats.)"
 
 #: DlgBeatsDlg#12
 msgid ""
 "Re-analyse beats when settings change or beat detection data is outdated"
 msgstr ""
+"Νέα ανάλυση των beats όταν αλλάξουν οι ρυθμίσεις ή όταν τα δεδομένα "
+"εντόπισης των beat είναι ξεπερασμένα"
 
 #: DlgBeatsDlg#13
 msgid "Enable Fast Analysis (For slow computers, may be less accurate)"
@@ -747,7 +751,7 @@ msgstr "Υποθέτει Σταθερό Μέτρο (Ρυθμό) (Προτείν�
 
 #: DlgBeatsDlg#15
 msgid "Enable Offset Correction (Recommended)"
-msgstr ""
+msgstr "Ενεργοποίηση διόρθωσης Offset (Συστήνεται)"
 
 #: DlgBeatsDlg#16
 msgctxt "DlgBeatsDlg#16"
@@ -858,7 +862,7 @@ msgstr "Ένταση Ακουστικών"
 
 #: DlgControllerLearning#14
 msgid "Headphone mix (pre/main)"
-msgstr ""
+msgstr "Μίξη Ακουστικών (προ/ κύριο)"
 
 #: DlgControllerLearning#15
 msgid "Transport"
@@ -902,7 +906,7 @@ msgstr "Κουμπί ρύθμισης του gain"
 
 #: DlgControllerLearning#25
 msgid "Headphone listen button"
-msgstr ""
+msgstr "Κουμπί για Ακρόαση ακουστικών"
 
 #: DlgControllerLearning#26
 msgid "Toggle repeat mode"
@@ -914,7 +918,7 @@ msgstr "Αποφόρτωση κομματιού"
 
 #: DlgControllerLearning#28
 msgid "Mix orientation (e.g. left, right, center)"
-msgstr ""
+msgstr "Προσανατολισμός μείξης (π.χ. αρ., δεξ., κέντρο)"
 
 #: DlgControllerLearning#29
 msgid "BPM and Sync"
@@ -995,15 +999,15 @@ msgstr "Ισοσταθμιστές"
 
 #: DlgControllerLearning#48
 msgid "High EQ knob"
-msgstr ""
+msgstr "Κουμπί υψηλού EQ"
 
 #: DlgControllerLearning#49
 msgid "Mid EQ knob"
-msgstr ""
+msgstr "Κουμπί Μέσου EQ"
 
 #: DlgControllerLearning#50
 msgid "Low EQ knob"
-msgstr ""
+msgstr "Κουμπί χαμηλού EQ"
 
 #: DlgControllerLearning#51
 msgid "High EQ kill"
@@ -1024,7 +1028,7 @@ msgstr "Έλεγχος Βινυλίου"
 
 #: DlgControllerLearning#55
 msgid "Toggle vinyl-control (ON/OFF)"
-msgstr ""
+msgstr "Διακόπτης ελέγχου-βινυλίου (ΟΝ/OFF)"
 
 #: DlgControllerLearning#56
 msgid "Toggle vinyl-control cueing mode (OFF/ONE/HOT)"
@@ -1032,7 +1036,7 @@ msgstr ""
 
 #: DlgControllerLearning#57
 msgid "Toggle vinyl-control mode (ABS/REL/CONST)"
-msgstr ""
+msgstr "Τρόπος ελέγχου-βινυλίου (ABS/REL/CONST)"
 
 #: DlgControllerLearning#58
 msgid "Cue button"
@@ -1092,11 +1096,11 @@ msgstr ""
 
 #: DlgControllerLearning#72
 msgid "Preview Deck %1"
-msgstr ""
+msgstr "Deck προεπισκόπησης %1"
 
 #: DlgControllerLearning#73
 msgid "Single deck mode - Toggle vinyl control to next deck"
-msgstr ""
+msgstr "Τρόπος με  Μονό deck - Μετάβαση ελέγχου-βινυλίου στο επόμενο deck"
 
 #: DlgControllerLearning#74
 msgid "Cues"
@@ -1112,7 +1116,7 @@ msgstr ""
 
 #: DlgControllerLearning#77
 msgid "Loop Exit button"
-msgstr ""
+msgstr "Κουμπί για έξοδο από τον βρόχο (loop)"
 
 #: DlgControllerLearning#78
 msgid "Beat-Looping"
@@ -1150,6 +1154,7 @@ msgstr "Βιβλιοθήκη"
 #: DlgControllerLearning#86
 msgid "Expand/collapse the selected view (library, playlist..)"
 msgstr ""
+"Μεγέθυνση/ Σύντμηση της επιλεγμένης προβολής (βιβλιοθήκη, playlist, ...)"
 
 #: DlgControllerLearning#87
 msgid "Switch to the next view (library, playlist..)"
@@ -1169,7 +1174,7 @@ msgstr "Μετακίνηση στο προηγούμενο κομμάτι της
 
 #: DlgControllerLearning#91
 msgid "Load selected track into first stopped deck"
-msgstr ""
+msgstr "Φόρτωση επιλεγμένου κομματιού στο πρώτο σταματημένο deck"
 
 #: DlgControllerLearning#92
 msgid "Load selected track"
@@ -1247,15 +1252,15 @@ msgstr ""
 
 #: DlgControllerLearning#110
 msgid "Show/hide the microphone section"
-msgstr ""
+msgstr "Εμφάνιση/ Απόκρυψη ενότητας Μικροφώνου"
 
 #: DlgControllerLearning#111
 msgid "Show/hide the vinyl control section"
-msgstr ""
+msgstr "Εμφάνιση/ Απόκρυψη ενότητας για τον έλεγχο βινυλίου"
 
 #: DlgControllerLearning#112
 msgid "Show/hide the preview deck"
-msgstr ""
+msgstr "Εμφάνιση/ Απόκρυψη του deck προεπισκόπησης"
 
 #: DlgControllerLearning#113
 msgid "Show/hide spinning vinyl widget"
@@ -1409,7 +1414,7 @@ msgstr "Χωρίς Περιγραφή"
 
 #: DlgPrefController#4
 msgid "No support available."
-msgstr ""
+msgstr "Δεν υπάρχει υποστήριξη."
 
 #: DlgPrefControllerDlg#1
 msgctxt "DlgPrefControllerDlg#1"
@@ -1453,11 +1458,11 @@ msgstr "Υποστήριξη:"
 
 #: DlgPrefControllerDlg#10
 msgid "Click to start the Controller Learning wizard."
-msgstr ""
+msgstr "Κάντε κλικ για να αρχίσει ο Μάγος για τον Έλεγχο εκμάθησης."
 
 #: DlgPrefControllerDlg#11
 msgid "Learning Wizard (MIDI Only)"
-msgstr ""
+msgstr "Μάγος για τον Έλεγχο εκμάθησης (Μόνο MIDI)"
 
 #: DlgPrefControls#1
 msgctxt "DlgPrefControls#1"
@@ -1470,7 +1475,7 @@ msgstr "Απομένει"
 
 #: DlgPrefControls#3
 msgid "Don't load tracks into a playing deck"
-msgstr ""
+msgstr "Μη φορτώνετε κομμάτια σε ένα deck που παίζει"
 
 #: DlgPrefControls#4
 msgid "CDJ Mode"
@@ -1511,11 +1516,12 @@ msgstr "10%"
 
 #: DlgPrefControls#13
 msgid "Load tracks into a playing deck"
-msgstr ""
+msgstr "Φορτώστε κομμάτια σε ένα deck που παίζει"
 
 #: DlgPrefControls#14
 msgid "The selected skin is bigger than your screen resolution."
 msgstr ""
+"Το skin που επιλέξατε είναι μεγαλύτερο από τη δυνατότητα ανάλυσης οθόνης."
 
 #: DlgPrefControls#15
 msgid "On (only in Library)"
@@ -1637,7 +1643,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#17
 msgid "Displays the actual frame rate."
-msgstr ""
+msgstr "Εμφανίζει πραγματικό ρυθμό ανανέωσης εικόνας (frame rate)"
 
 #: DlgPrefControlsDlg#18
 msgid "Normalize Overview"
@@ -1670,27 +1676,28 @@ msgstr ""
 #: DlgPrefControlsDlg#25
 msgctxt "DlgPrefControlsDlg#25"
 msgid "Waveform Display"
-msgstr ""
+msgstr "Εμφάνιση κυματομορφής"
 
 #: DlgPrefControlsDlg#26
 msgid "Synchronize zoom level across all waveform displays."
 msgstr ""
+"Συγχρονισμός επιπέδου μεγέθυνσης για όλες τις μορφές εμφάνισης κυματομορφής."
 
 #: DlgPrefControlsDlg#27
 msgid "OpenGl status"
-msgstr ""
+msgstr "Κατάσταση OpenGl"
 
 #: DlgPrefControlsDlg#28
 msgid "Display type"
-msgstr ""
+msgstr "Μορφή εμφάνισης"
 
 #: DlgPrefControlsDlg#29
 msgid "Permanent rate change when left-clicking"
-msgstr ""
+msgstr "Σταθερός ρυθμός αλλαγής με αριστ. κλικ"
 
 #: DlgPrefControlsDlg#30
 msgid "Permanent rate change when right-clicking"
-msgstr ""
+msgstr "Σταθερός ρυθμός αλλαγής με δεξί κλικ"
 
 #: DlgPrefControlsDlg#31
 msgid ""
@@ -1700,7 +1707,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#32
 msgid "Value in milliseconds"
-msgstr ""
+msgstr "Τιμή σε χιλιοστά του δευτερολέπτου (msec)"
 
 #: DlgPrefControlsDlg#33
 msgid "Visual gain of the high frequencies"
@@ -1724,7 +1731,7 @@ msgstr "Ρυθμός καρέ"
 
 #: DlgPrefControlsDlg#38
 msgid "Default zoom"
-msgstr ""
+msgstr "Προεπιλεγμένη μεγέθυνση (zoom)"
 
 #: DlgPrefControlsDlg#39
 msgid "Visual gain"
@@ -1775,7 +1782,7 @@ msgstr ""
 #: DlgPrefCrossfaderDlg#10
 msgctxt "DlgPrefCrossfaderDlg#10"
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Επαναφορά προεπιλεγμένων ρυθμίσεων"
 
 #: DlgPrefEQDlg#1
 msgctxt "DlgPrefEQDlg#1"
@@ -1821,13 +1828,15 @@ msgstr "Επαναφορά Αρχικών Ρυθμίσεων"
 
 #: DlgPrefMappableController#1
 msgid "Apply device settings?"
-msgstr ""
+msgstr "Να γίνει εφαρμογή των ρυθμίσεων της συσκευής;"
 
 #: DlgPrefMappableController#2
 msgid ""
 "Your settings must be applied before starting the learning wizard.\n"
 "Apply settings and continue?"
 msgstr ""
+"Πρέπει να εφαρμοσθούν οι ρυθμίσεις σας πριν εκκινήσετε τον Μάγο εκμάθησης.\n"
+"Να γίνει εφαρμογή ρυθμίσεων και να συνεχίσουμε;"
 
 #: DlgPrefMappableController#3
 msgid "Clear Input Bindings"
@@ -1852,7 +1861,7 @@ msgstr "Φόρμα3"
 
 #: DlgPrefNoControllersDlg#2
 msgid "No controllers available."
-msgstr ""
+msgstr "Δεν υπάρχουν ελεγκτές (controllers)."
 
 #: DlgPrefNoVinylDlg#1
 msgctxt "DlgPrefNoVinylDlg#1"
@@ -1894,7 +1903,7 @@ msgstr ""
 #: DlgPrefNoVinylDlg#5
 msgctxt "DlgPrefNoVinylDlg#5"
 msgid "Turntable Preamp"
-msgstr ""
+msgstr "Προενίσχυση πικάπ"
 
 #: DlgPrefNoVinylDlg#6
 msgctxt "DlgPrefNoVinylDlg#6"
@@ -1939,22 +1948,22 @@ msgstr "Εμφάνιση Ποιότητας Σήματος στο Skin"
 #: DlgPrefNoVinylDlg#14
 msgctxt "DlgPrefNoVinylDlg#14"
 msgid "Control Mode"
-msgstr ""
+msgstr "Τρόπος ελέγχου"
 
 #: DlgPrefNoVinylDlg#15
 msgctxt "DlgPrefNoVinylDlg#15"
 msgid "Absolute Mode"
-msgstr ""
+msgstr "Απόλυτος τρόπος"
 
 #: DlgPrefNoVinylDlg#16
 msgctxt "DlgPrefNoVinylDlg#16"
 msgid "Relative Mode"
-msgstr ""
+msgstr "Σχετικός τρόπος"
 
 #: DlgPrefNoVinylDlg#17
 msgctxt "DlgPrefNoVinylDlg#17"
 msgid "Enable Needle Skip Prevention"
-msgstr ""
+msgstr "Ενεργοποίηση πρόληψης χοροπηδητού βελόνας"
 
 #: DlgPrefNoVinylDlg#18
 msgctxt "DlgPrefNoVinylDlg#18"
@@ -1999,7 +2008,7 @@ msgstr "MP3, Ogg Vorbis, FLAC, WAVe, AIFF"
 
 #: DlgPrefPlaylistDlg#4
 msgid "Loaded Plugins:"
-msgstr ""
+msgstr "Φορτωμένα πρόσθετα:"
 
 #: DlgPrefPlaylistDlg#5
 msgctxt "DlgPrefPlaylistDlg#5"
@@ -2013,7 +2022,7 @@ msgstr ""
 
 #: DlgPrefPlaylistDlg#7
 msgid "Synchronize ID3 tags on track modifications"
-msgstr ""
+msgstr "Συγχρονισμός των ID3 tags με τις τροποποιήσεις των κομματιών"
 
 #: DlgPrefPlaylistDlg#8
 msgid "Rescan library on start-up"
@@ -2021,27 +2030,27 @@ msgstr "Επανεξέταση της συλλογής κατά την εκκί�
 
 #: DlgPrefPlaylistDlg#9
 msgid "Use relative paths for playlist export if possible"
-msgstr ""
+msgstr "Χρήση σχετικών διαδρομών για την εξαγωγή playlists, αν είναι δυνατόν"
 
 #: DlgPrefPlaylistDlg#10
 msgid "Other Libraries"
-msgstr ""
+msgstr "Άλλες βιβλιοθήκες"
 
 #: DlgPrefPlaylistDlg#11
 msgid "Show Rhythmbox Library"
-msgstr ""
+msgstr "Εμφάνιση βιβλιοθήκης Rhythmbox"
 
 #: DlgPrefPlaylistDlg#12
 msgid "Show iTunes Library"
-msgstr ""
+msgstr "Εμφάνιση βιβλιοθήκης iTunes"
 
 #: DlgPrefPlaylistDlg#13
 msgid "Show Traktor Library"
-msgstr ""
+msgstr "Εμφάνιση βιβλιοθήκης Traktor"
 
 #: DlgPrefPlaylistDlg#14
 msgid "    You will need to restart Mixxx for this to take effect"
-msgstr ""
+msgstr "    Για να ισχύσουν αυτά, θα πρέπει να επανεκκινήσετε το Mixxx"
 
 #: DlgPrefPlaylistDlg#15
 msgctxt "DlgPrefPlaylistDlg#15"
@@ -2426,15 +2435,15 @@ msgstr "API Ήχου"
 msgid "Sample Rate"
 msgstr "Ρυθμός Δειγματοληψίας"
 
-#: DlgPrefSoundDlg#3
+#: DlgPrefSoundDlg#6
 msgid "Buffer Underflow Count"
 msgstr ""
 
-#: DlgPrefSoundDlg#4
+#: DlgPrefSoundDlg#7
 msgid "0"
 msgstr ""
 
-#: DlgPrefSoundDlg#5
+#: DlgPrefSoundDlg#8
 msgid "Latency Tips"
 msgstr "Τρικ Καθυστέρησης"
 
@@ -2457,7 +2466,7 @@ msgctxt "DlgPrefSoundDlg#8"
 msgid "Input"
 msgstr ""
 
-#: DlgPrefSoundDlg#9
+#: DlgPrefSoundDlg#12
 msgid "Query Devices"
 msgstr "Εντοπισμός Συσκευών"
 
@@ -3202,46 +3211,52 @@ msgid "Drag a preset from the list & drop it here"
 msgstr ""
 
 #: LegacySkinParser#1
-msgid "activate"
+msgid ""
+"No OpenGL\n"
+"support."
 msgstr ""
 
 #: LegacySkinParser#2
-msgid "toggle"
+msgid "activate"
 msgstr ""
 
 #: LegacySkinParser#3
-msgid "right"
+msgid "toggle"
 msgstr ""
 
 #: LegacySkinParser#4
-msgid "left"
+msgid "right"
 msgstr ""
 
 #: LegacySkinParser#5
-msgid "right small"
+msgid "left"
 msgstr ""
 
 #: LegacySkinParser#6
-msgid "left small"
+msgid "right small"
 msgstr ""
 
 #: LegacySkinParser#7
-msgid "up"
+msgid "left small"
 msgstr ""
 
 #: LegacySkinParser#8
-msgid "down"
+msgid "up"
 msgstr ""
 
 #: LegacySkinParser#9
-msgid "up small"
+msgid "down"
 msgstr ""
 
 #: LegacySkinParser#10
-msgid "down small"
+msgid "up small"
 msgstr ""
 
 #: LegacySkinParser#11
+msgid "down small"
+msgstr ""
+
+#: LegacySkinParser#12
 msgid "Shortcut"
 msgstr ""
 
@@ -4500,330 +4515,338 @@ msgid ""
 msgstr ""
 
 #: Tooltips#122
-msgid "Clock"
+msgid "Track Key"
 msgstr ""
 
 #: Tooltips#123
-msgid "Displays the current time."
+msgid "Displays the musical key of the loaded track."
 msgstr ""
 
 #: Tooltips#124
+msgid "Clock"
+msgstr ""
+
+#: Tooltips#125
+msgid "Displays the current time."
+msgstr ""
+
+#: Tooltips#126
 msgid ""
 "If Vinyl control is enabled, displays time-coded vinyl signal quality (see "
 "Preferences -> Vinyl Control)."
 msgstr ""
 
-#: Tooltips#125
+#: Tooltips#127
 msgid "Shows the current master volume for the right channel."
 msgstr ""
 
-#: Tooltips#126
+#: Tooltips#128
 msgid "Change the crossfader curve in Preferences -> Crossfader"
 msgstr ""
 
-#: Tooltips#127
+#: Tooltips#129
 msgid "Activate Vinyl Control from the Menu -> Options."
 msgstr ""
 
-#: Tooltips#128
+#: Tooltips#130
 msgid "Change the step-size in the Preferences -> Interface menu."
 msgstr ""
 
-#: Tooltips#129
+#: Tooltips#131
 msgid "Change the default cue behavior in Preferences -> Interface."
 msgstr ""
 
-#: Tooltips#130
+#: Tooltips#132
 msgid "selected in Preferences -> Sound Hardware."
 msgstr ""
 
-#: Tooltips#131
+#: Tooltips#133
 msgid "Fast Rewind"
 msgstr ""
 
-#: Tooltips#132
+#: Tooltips#134
 msgid "Fast rewind through the track."
 msgstr ""
 
-#: Tooltips#133
+#: Tooltips#135
 msgid "Fast Forward"
 msgstr ""
 
-#: Tooltips#134
+#: Tooltips#136
 msgid "Fast forward through the track."
 msgstr ""
 
-#: Tooltips#135
+#: Tooltips#137
 msgid "Jumps to the end of the track."
 msgstr ""
 
-#: Tooltips#136
-msgctxt "Tooltips#136"
+#: Tooltips#138
+msgctxt "Tooltips#138"
 msgid "Synchronize"
 msgstr ""
 
-#: Tooltips#137
+#: Tooltips#139
 msgid "Syncs the tempo (BPM) and phase to that of the other track, "
 msgstr ""
 
-#: Tooltips#138
+#: Tooltips#140
 msgid "if BPM is detected on both."
 msgstr ""
 
-#: Tooltips#139
+#: Tooltips#141
 msgid "Syncs the tempo (BPM) to that of the other track,"
 msgstr ""
 
-#: Tooltips#140
+#: Tooltips#142
 msgid "Pitch Control"
 msgstr ""
 
-#: Tooltips#141
+#: Tooltips#143
 msgid "Changes the track playback rate."
 msgstr ""
 
-#: Tooltips#142
+#: Tooltips#144
 msgid "Pitch Rate"
 msgstr ""
 
-#: Tooltips#143
+#: Tooltips#145
 msgid "Displays the current playback rate of the track."
 msgstr ""
 
-#: Tooltips#144
+#: Tooltips#146
 msgid "Repeat"
 msgstr "Επανάληψη"
 
-#: Tooltips#145
+#: Tooltips#147
 msgid ""
 "When active the track will repeat if you go past the end or reverse before "
 "the start."
 msgstr ""
 
-#: Tooltips#146
+#: Tooltips#148
 msgid "Eject"
 msgstr "Αποβολή"
 
-#: Tooltips#147
+#: Tooltips#149
 msgid "Ejects track from the player."
 msgstr ""
 
-#: Tooltips#148
-msgctxt "Tooltips#148"
+#: Tooltips#150
+msgctxt "Tooltips#150"
 msgid "Hotcue"
 msgstr ""
 
-#: Tooltips#149
+#: Tooltips#151
 msgid "If hotcue is set, jumps to the hotcue."
 msgstr ""
 
-#: Tooltips#150
+#: Tooltips#152
 msgid "If hotcue is not set, sets the hotcue to the current play position."
 msgstr ""
 
-#: Tooltips#151
+#: Tooltips#153
 msgid "If hotcue is set, clears the hotcue."
 msgstr ""
 
-#: Tooltips#152
+#: Tooltips#154
 msgid "Vinyl Control Mode"
 msgstr ""
 
-#: Tooltips#153
+#: Tooltips#155
 msgid "Absolute mode - track position equals needle position and speed."
 msgstr ""
 
-#: Tooltips#154
+#: Tooltips#156
 msgid ""
 "Relative mode - track speed equals needle speed regardless of needle "
 "position."
 msgstr ""
 
-#: Tooltips#155
+#: Tooltips#157
 msgid ""
 "Constant mode - track speed equals last known-steady speed regardless of "
 "needle input."
 msgstr ""
 
-#: Tooltips#156
+#: Tooltips#158
 msgid "Vinyl Status"
 msgstr ""
 
-#: Tooltips#157
+#: Tooltips#159
 msgid "Provides visual feedback for vinyl control status:"
 msgstr ""
 
-#: Tooltips#158
+#: Tooltips#160
 msgid "Green for control enabled."
 msgstr ""
 
-#: Tooltips#159
+#: Tooltips#161
 msgid "Blinking yellow for when the needle reaches the end of the record."
 msgstr ""
 
-#: Tooltips#160
+#: Tooltips#162
 msgid "Red for needle skip detected."
 msgstr ""
 
-#: Tooltips#161
+#: Tooltips#163
 msgid "Loop-In Marker"
 msgstr ""
 
-#: Tooltips#162
+#: Tooltips#164
 msgid "Sets the deck loop-in position to the current play position."
 msgstr ""
 
-#: Tooltips#163
+#: Tooltips#165
 msgid "Loop-Out Marker"
 msgstr ""
 
-#: Tooltips#164
+#: Tooltips#166
 msgid "Sets the deck loop-out position to the current play position."
 msgstr ""
 
-#: Tooltips#165
+#: Tooltips#167
 msgid "Loop Halve"
 msgstr ""
 
-#: Tooltips#166
+#: Tooltips#168
 msgid "Halves the current loop's length by moving the end marker."
 msgstr ""
 
-#: Tooltips#167
+#: Tooltips#169
 msgid "Deck immediately loops if past the new endpoint."
 msgstr ""
 
-#: Tooltips#168
+#: Tooltips#170
 msgid "Loop Double"
 msgstr ""
 
-#: Tooltips#169
+#: Tooltips#171
 msgid "Doubles the current loop's length by moving the end marker."
 msgstr ""
 
-#: Tooltips#170
+#: Tooltips#172
 msgid "Beatloop"
 msgstr ""
 
-#: Tooltips#171
+#: Tooltips#173
 msgid "Reloop/Exit"
 msgstr ""
 
-#: Tooltips#172
+#: Tooltips#174
 msgid "Toggles the current loop on or off."
 msgstr ""
 
-#: Tooltips#173
+#: Tooltips#175
 msgid "Works only if Loop-In and Loop-Out marker are set."
 msgstr ""
 
-#: Tooltips#174
+#: Tooltips#176
 msgid "Vinyl Cueing Mode"
 msgstr ""
 
-#: Tooltips#175
+#: Tooltips#177
 msgid "Determines how cue points are treated in vinyl control Relative mode:"
 msgstr ""
 
-#: Tooltips#176
+#: Tooltips#178
 msgid "Off - Cue points ignored."
 msgstr ""
 
-#: Tooltips#177
+#: Tooltips#179
 msgid ""
 "One Cue - If needle is dropped after the cue point, track will seek to that "
 "cue point."
 msgstr ""
 
-#: Tooltips#178
+#: Tooltips#180
 msgid "Hot Cue - Track will seek to nearest previous hot cue point."
 msgstr ""
 
-#: Tooltips#179
+#: Tooltips#181
 msgid "Track Time"
 msgstr "Χρόνος κομματιού"
 
-#: Tooltips#180
+#: Tooltips#182
 msgid "Displays the elapsed or remaining time of the track loaded."
 msgstr ""
 
-#: Tooltips#181
+#: Tooltips#183
 msgid "Click to toggle between time elapsed/remaining time."
 msgstr ""
 
-#: Tooltips#182
+#: Tooltips#184
 msgid "Track Duration"
 msgstr "Διάρκεια κομματιού"
 
-#: Tooltips#183
+#: Tooltips#185
 msgid "Displays the duration of the loaded track."
 msgstr ""
 
-#: Tooltips#184
+#: Tooltips#186
 msgid "Information is loaded from the track's metadata tags."
 msgstr ""
 
-#: Tooltips#185
+#: Tooltips#187
 msgid "Track Artist"
 msgstr "Καλλιτέχνης κομματιού"
 
-#: Tooltips#186
+#: Tooltips#188
 msgid "Displays the artist of the loaded track."
 msgstr ""
 
-#: Tooltips#187
+#: Tooltips#189
 msgid "Track Title"
 msgstr "Τίτλος Κομματιού"
 
-#: Tooltips#188
+#: Tooltips#190
 msgid "Displays the title of the loaded track."
 msgstr ""
 
-#: Tooltips#189
+#: Tooltips#191
 msgid "Track Album"
 msgstr "Τίτλος Δίσκου"
 
-#: Tooltips#190
+#: Tooltips#192
 msgid "Displays the album name of the loaded track."
 msgstr ""
 
-#: Tooltips#191
+#: Tooltips#193
 msgid "Track Artist/Title"
 msgstr ""
 
-#: Tooltips#192
+#: Tooltips#194
 msgid "Displays the artist and title of the loaded track."
 msgstr ""
 
-#: Tooltips#193
+#: Tooltips#195
 msgid "Flanger"
 msgstr ""
 
-#: Tooltips#194
+#: Tooltips#196
 msgid "Toggles the flange effect. Use the depth/delay/lfo knobs to adjust."
 msgstr ""
 
-#: Tooltips#195
+#: Tooltips#197
 msgid "Flanger Delay"
 msgstr ""
 
-#: Tooltips#196
+#: Tooltips#198
 msgid "Adjusts the phase delay of the flange effect (when active)."
 msgstr ""
 
-#: Tooltips#197
+#: Tooltips#199
 msgid "Flanger Depth"
 msgstr ""
 
-#: Tooltips#198
+#: Tooltips#200
 msgid "Adjusts the intensity of the flange effect (when active)."
 msgstr ""
 
-#: Tooltips#199
+#: Tooltips#201
 msgid "Flanger LFO Period"
 msgstr ""
 
-#: Tooltips#200
+#: Tooltips#202
 msgid "Adjusts the wavelength of the flange effect (when active)."
 msgstr ""
 
@@ -5006,902 +5029,3 @@ msgstr "(GLSL)"
 #: WaveformWidgetFactory#2
 msgid "(GL)"
 msgstr "(GL)"
-
-#~ msgid "Auto DJ"
-#~ msgstr "Αυτόματος DJ"
-
-#~ msgctxt "BaseSqlTableModel#9"
-#~ msgid "Comment"
-#~ msgstr "Σχόλιο"
-
-#~ msgctxt "BaseSqlTableModel#8"
-#~ msgid "Location"
-#~ msgstr "Τοποθεσία"
-
-#~ msgctxt "BaseSqlTableModel#7"
-#~ msgid "Type"
-#~ msgstr "Τύπος"
-
-#~ msgctxt "BaseSqlTableModel#6"
-#~ msgid "Year"
-#~ msgstr "Έτος"
-
-#~ msgctxt "BaseSqlTableModel#13"
-#~ msgid "BPM"
-#~ msgstr "BPM"
-
-#~ msgctxt "BaseSqlTableModel#14"
-#~ msgid "Track #"
-#~ msgstr "Κομμάτι #"
-
-#~ msgctxt "BaseSqlTableModel#10"
-#~ msgid "Duration"
-#~ msgstr "Διάρκεια"
-
-#~ msgctxt "BrowseFeature#4"
-#~ msgid "Mixxx Library"
-#~ msgstr "Βιβλιοθήκη του Mixxx"
-
-#~ msgid "Desktop"
-#~ msgstr "Επιφάνεια Εργασίας"
-
-#~ msgid "Home"
-#~ msgstr "Αρχική"
-
-#~ msgid "Music"
-#~ msgstr "Μουσική"
-
-#~ msgid "Documents"
-#~ msgstr "Έγγραφα"
-
-#~ msgctxt "BrowseTableModel#9"
-#~ msgid "Duration"
-#~ msgstr "Διάρκεια"
-
-#~ msgctxt "BrowseTableModel#8"
-#~ msgid "Comment"
-#~ msgstr "Σχόλιο"
-
-#~ msgctxt "BrowseTableModel#10"
-#~ msgid "BPM"
-#~ msgstr "BPM"
-
-#~ msgctxt "BrowseTableModel#11"
-#~ msgid "Key"
-#~ msgstr "Κλειδί"
-
-#~ msgctxt "BrowseTableModel#12"
-#~ msgid "Type"
-#~ msgstr "Τύπος"
-
-#~ msgctxt "BrowseTableModel#15"
-#~ msgid "Mixxx Library"
-#~ msgstr "Βιβλιοθήκη του Mixxx"
-
-#~ msgctxt "BrowseTableModel#13"
-#~ msgid "Bitrate"
-#~ msgstr "Ρυθμός Bit"
-
-#~ msgctxt "BrowseTableModel#14"
-#~ msgid "Location"
-#~ msgstr "Τοποθεσία"
-
-#~ msgctxt "BaseSqlTableModel#17"
-#~ msgid "Key"
-#~ msgstr "Κλειδί"
-
-#~ msgctxt "BaseSqlTableModel#12"
-#~ msgid "Bitrate"
-#~ msgstr "Ρυθμός Bit"
-
-#~ msgctxt "CrateFeature#5"
-#~ msgid "Import Playlist"
-#~ msgstr "Εισαγωγή λίστας αναπαραγωγής"
-
-#~ msgctxt "CrateFeature#9"
-#~ msgid "Unlock"
-#~ msgstr "Ξεκλείδωμα"
-
-#~ msgid "1.x.x"
-#~ msgstr "1.x.x"
-
-#~ msgid "Shuffle playlist"
-#~ msgstr "Ανακάτεμα λίστας"
-
-#~ msgctxt "DlgBpmSchemeDlg#6"
-#~ msgid "Analyze Entire Song"
-#~ msgstr "Ανάλυση Ολόκληρου του Κομματιού"
-
-#~ msgctxt "DlgAutoDJ#3"
-#~ msgid "Manage"
-#~ msgstr "Διαχείριση"
-
-#~ msgid "Add tracks to the queue below..."
-#~ msgstr "Προσθήκη κομματιών στην παρακάτω λίστα..."
-
-#~ msgid "BPM Range"
-#~ msgstr "Πεδίο BPM"
-
-#~ msgid "BPM Scheme:"
-#~ msgstr "Σχήμα BPM:"
-
-#~ msgid "Next >>"
-#~ msgstr "Επόμενο >>"
-
-#~ msgid "<< Prev"
-#~ msgstr "<< Προηγούμενο"
-
-#~ msgctxt "DlgBpmTapDlg#3"
-#~ msgid "Alt+O"
-#~ msgstr "Alt+O"
-
-#~ msgctxt "DlgBpmTapDlg#4"
-#~ msgid "Song:"
-#~ msgstr "Τραγούδι:"
-
-#~ msgctxt "DlgBpmTapDlg#1"
-#~ msgid "Track Editor"
-#~ msgstr "Επεξεργασία Κομματιών"
-
-#~ msgid "&Close"
-#~ msgstr "&Κλείσιμο"
-
-#~ msgid "BPM Editor (Click to Expand)"
-#~ msgstr "Επεξεργασία BPM (Κλίκ για Ανάπτυξη)"
-
-#~ msgctxt "DlgBpmTapDlg#8"
-#~ msgid "BPM Detection"
-#~ msgstr "Εντοπισμός BPM"
-
-#~ msgctxt "DlgBpmTapDlg#18"
-#~ msgid "Track Information (Click to Expand)"
-#~ msgstr "Πληροφορίες Κομματιού (Κλίκ για Ανάπτυξη)"
-
-#~ msgid "Alt+P"
-#~ msgstr "Alt+P"
-
-#~ msgid "to"
-#~ msgstr "σε"
-
-#~ msgid "&Go"
-#~ msgstr "Μ&ετάβαση"
-
-#~ msgid "BPM Range:"
-#~ msgstr "Πεδίο BPM:"
-
-#~ msgctxt "DlgBpmTapDlg#14"
-#~ msgid "Analyze Entire Song"
-#~ msgstr "Ανάλυση Ολόκληρου του Τραγουδιού"
-
-#~ msgid "Alt+G"
-#~ msgstr "Alt+G"
-
-#~ msgid "&Push to tap tempo"
-#~ msgstr "&Πατήστε για να δώσετε τον ρυθμό"
-
-#~ msgctxt "DlgBpmTapDlg#19"
-#~ msgid "Title:"
-#~ msgstr "Τίτλος:"
-
-#~ msgid "Skip"
-#~ msgstr "Παράκαμψη"
-
-#~ msgid "Successfully mapped to: "
-#~ msgstr "Χαρτογραφήθηκε επιτυχώς στο: "
-
-#~ msgid "Next"
-#~ msgstr "Επόμενο"
-
-#~ msgctxt "DlgBpmTapDlg#20"
-#~ msgid "Artist:"
-#~ msgstr "Καλλιτέχνης:"
-
-#~ msgctxt "DlgBpmTapDlg#22"
-#~ msgid "Filename:"
-#~ msgstr "Όνομα Αρχείου:"
-
-#~ msgctxt "DlgBpmTapDlg#21"
-#~ msgid "Comments:"
-#~ msgstr "Σχόλια:"
-
-#~ msgid "Play Time:"
-#~ msgstr "Χρόνος Αναπαραγωγής:"
-
-#~ msgctxt "DlgBpmTapDlg#23"
-#~ msgid "3:00"
-#~ msgstr "3:00"
-
-#~ msgctxt "DlgBpmTapDlg#26"
-#~ msgid "77"
-#~ msgstr "77"
-
-#~ msgctxt "DlgBpmTapDlg#25"
-#~ msgid "File Type:"
-#~ msgstr "Τύπος Αρχείου:"
-
-#~ msgctxt "DlgMidiLearning#4"
-#~ msgid "MIDI Learning Wizard"
-#~ msgstr "Οδηγός Εκμάθησης MIDI"
-
-#~ msgid "Welcome to the MIDI Learning Wizard"
-#~ msgstr "Καλωσήρθατε στον Οδηγό Εκμάθησης MIDI"
-
-#~ msgid ""
-#~ "This wizard allows you to easily map the controls on your MIDI controller to "
-#~ "Mixxx's controls."
-#~ msgstr ""
-#~ "Αυτός ο οδηγός σας επιτρέπει να χαρτογραφήσετε εύκολα τα στοιχεία ελέγχου "
-#~ "του Mixxx στα στοιχεία ελέγχου του MIDI ελεγκτή σας."
-
-#~ msgid "Begin"
-#~ msgstr "Έναρξη"
-
-#~ msgid "Please tweak the control for:"
-#~ msgstr "Παρακαλώ ρυθμίστε το στοιχείο ελέγχου για το:"
-
-#~ msgid "Mixxx Control"
-#~ msgstr "Έλεγχος του Mixxx"
-
-#~ msgid "Previous"
-#~ msgstr "Προηγούμενο"
-
-#~ msgid "Press spacebar to proceed or skip."
-#~ msgstr "Πατήστε το space για να συνεχίσετε ή να παρακάμψετε το τρέχον."
-
-#~ msgid "MIDI learning complete!"
-#~ msgstr "Η Εκμάθηση MIDI Ολοκληρώθηκε!"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Lucida Grande'; font-size:13pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This "
-#~ "wizard can be re-run at any time.</p>\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Now "
-#~ "go spin some beats!</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Lucida Grande'; font-size:13pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Μπορείτε "
-#~ "να ξανά εκτελέσετε αυτόν οδηγό οποιαδήποτε στιγμή.</p>\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br "
-#~ "/>Τώρα άντε παίξε μερικά μπιτάκια!</p></body></html>"
-
-#~ msgid "Finito!"
-#~ msgstr "Φινίτο!"
-
-#~ msgid "Detect Song BPM on Import"
-#~ msgstr "Εντοπισμός του BPM του Τραγουδιού κατά την Εισαγωγή"
-
-#~ msgctxt "DlgPrefBPMDlg#10"
-#~ msgid "Edit"
-#~ msgstr "Επεξεργασία"
-
-#~ msgid "8% (Technics SL1210)"
-#~ msgstr "8% (Technics SL1210)"
-
-#~ msgid "Down increases speed (Technics SL1210)"
-#~ msgstr "Προς τα κάτω αυξάνει την ταχύτητα (Technics SL1210)"
-
-#~ msgctxt "DlgPrefControls#14"
-#~ msgid "Information"
-#~ msgstr "Πληροφορίες"
-
-#~ msgctxt "DlgPrefControlsDlg#8"
-#~ msgid "Off"
-#~ msgstr "Κλειστό"
-
-#~ msgid "Waveform display"
-#~ msgstr "Προβολή κυματομορφής"
-
-#~ msgctxt "DlgPrefControlsDlg#7"
-#~ msgid "On"
-#~ msgstr "Ανοικτό"
-
-#~ msgctxt "DlgPrefCrossfaderDlg#10"
-#~ msgid "Reset"
-#~ msgstr "Επαναφορά"
-
-#~ msgid "2.045 kHz"
-#~ msgstr "2.045 kHz"
-
-#~ msgctxt "DlgPrefMidiBindings#1"
-#~ msgid "None"
-#~ msgstr "Κανένα"
-
-#~ msgid "Apply MIDI device settings?"
-#~ msgstr "Εφαρμογή ρυθμίσεων συσκευής MIDI;"
-
-#~ msgctxt "DlgPrefEQDlg#10"
-#~ msgid "Reset"
-#~ msgstr "Επαναφορά"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#1"
-#~ msgid "Dialog"
-#~ msgstr "Πλαίσιο Διαλόγου"
-
-#~ msgid "Preset Files (*.midi.xml)"
-#~ msgstr "Αρχεία Ρυθμίσεων (*.midi.xml)"
-
-#~ msgid "Your Device Name"
-#~ msgstr "Όνομα της Συσκευής σας"
-
-#~ msgid "Output:"
-#~ msgstr "Έξοδος:"
-
-#~ msgid "Export"
-#~ msgstr "Εξαγωγή"
-
-#~ msgid ""
-#~ "<a "
-#~ "href=\"http://mixxx.org/wiki/doku.php/midi_controller_mapping_file_format\">T"
-#~ "roubleshooting</a>"
-#~ msgstr ""
-#~ "<a "
-#~ "href=\"http://mixxx.org/wiki/doku.php/midi_controller_mapping_file_format\">Ε"
-#~ "πίλυση Προβλημάτων</a>"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#8"
-#~ msgid "Add"
-#~ msgstr "Προσθήκη"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#9"
-#~ msgid "Remove"
-#~ msgstr "Αφαίρεση"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#10"
-#~ msgid "MIDI Learning Wizard"
-#~ msgstr "Οδηγός Εκμάθησης MIDI"
-
-#~ msgid "MIDI Input"
-#~ msgstr "Είσοδος MIDI"
-
-#~ msgid "MIDI Output"
-#~ msgstr "Έξοδος MIDI"
-
-#~ msgctxt "DlgPrefNoMidiDlg#1"
-#~ msgid "Form3"
-#~ msgstr "Φόρμα3"
-
-#~ msgid "Choose Yes to use the newly found iPod @ "
-#~ msgstr "Επιλέξτε Ναι για να χρησιμοποιήσετε το καινούριο iPod @ "
-
-#~ msgid ""
-#~ "Mixxx has detected another iPod. \n"
-#~ "\n"
-#~ msgstr ""
-#~ "Το Mixxx εντόπισε ένα άλλο iPod \n"
-#~ "\n"
-
-#~ msgid "Multiple iPods Detected"
-#~ msgstr "Εντοπίστηκαν Πολαπλά iPod"
-
-#~ msgctxt "DlgPrefPlaylistDlg#6"
-#~ msgid "None"
-#~ msgstr "Κανένα"
-
-#~ msgctxt "DlgPrefPlaylistDlg#1"
-#~ msgid "Form3"
-#~ msgstr "Φόρμα3"
-
-#~ msgid " or to continue to search for other iPods. \n"
-#~ msgstr " ή συνέχισε την αναζήτηση για άλλα iPod. \n"
-
-#~ msgctxt "DlgPrefPlaylistDlg#15"
-#~ msgid "Library"
-#~ msgstr "Βιβλιοθήκη"
-
-#~ msgid "Browse..."
-#~ msgstr "Εξερεύνηση…"
-
-#~ msgid "iPod"
-#~ msgstr "iPod"
-
-#~ msgctxt "DlgPrefPlaylistDlg#7"
-#~ msgid "Miscellaneous"
-#~ msgstr "Διάφορα"
-
-#~ msgid "Detect"
-#~ msgstr "Εντοπισμός"
-
-#~ msgctxt "DlgPrefRecordDlg#2"
-#~ msgid "Encoding"
-#~ msgstr "Κωδικοποίηση"
-
-#~ msgid "kbps"
-#~ msgstr "kbps"
-
-#~ msgctxt "DlgPrefRecordDlg#7"
-#~ msgid "Title"
-#~ msgstr "Τίτλος"
-
-#~ msgctxt "DlgPrefRecordDlg#10"
-#~ msgid "Miscellaneous"
-#~ msgstr "Διάφορα"
-
-#~ msgctxt "DlgPrefRecordDlg#9"
-#~ msgid "Album"
-#~ msgstr "Άλμπουμ"
-
-#~ msgctxt "DlgPrefReplayGainDlg#11"
-#~ msgid "Reset"
-#~ msgstr "Επαναφορά"
-
-#~ msgid "192.168.123.8"
-#~ msgstr "192.168.123.8"
-
-#~ msgid "/mixxx.ogg"
-#~ msgstr "/mixxx.ogg"
-
-#~ msgid "source"
-#~ msgstr "Πηγή"
-
-#~ msgid "8000"
-#~ msgstr "8000"
-
-#~ msgid "test1234"
-#~ msgstr "test1234"
-
-#~ msgctxt "DlgPrefShoutcastDlg#29"
-#~ msgid "Bitrate"
-#~ msgstr "Ρυθμός Bit"
-
-#~ msgid "320 kbps"
-#~ msgstr "320 kbps"
-
-#~ msgid "256 kbps"
-#~ msgstr "256 kbps"
-
-#~ msgctxt "DlgPrefShoutcastDlg#25"
-#~ msgid "Genre"
-#~ msgstr "Είδος"
-
-#~ msgctxt "DlgPrefShoutcastDlg#28"
-#~ msgid "Encoding"
-#~ msgstr "Κωδικοποίηση"
-
-#~ msgid "64 kbps"
-#~ msgstr "64 kbps"
-
-#~ msgid "96 kbps"
-#~ msgstr "96 kbps"
-
-#~ msgid "224 kbps"
-#~ msgstr "224 kbps"
-
-#~ msgid "192 kbps"
-#~ msgstr "192 kbps"
-
-#~ msgid "160 kbps"
-#~ msgstr "160 kbps"
-
-#~ msgid "128 kbps"
-#~ msgstr "128 kbps"
-
-#~ msgid "112 kbps"
-#~ msgstr "112 kbps"
-
-#~ msgid "48 kbps"
-#~ msgstr "48 kbps"
-
-#~ msgid "%maintitle"
-#~ msgstr "%maintitle"
-
-#~ msgid "%mainartist"
-#~ msgstr "%mainartist"
-
-#~ msgctxt "DlgPrefShoutcastDlg#50"
-#~ msgid "Title"
-#~ msgstr "Τίτλος"
-
-#~ msgctxt "DlgPrefShoutcastDlg#48"
-#~ msgid "Artist"
-#~ msgstr "Καλλιτέχνης"
-
-#~ msgctxt "DlgPrefSoundDlg#9"
-#~ msgid "Apply"
-#~ msgstr "Εφαρμογή"
-
-#~ msgid "Reset to Defaults"
-#~ msgstr "Επαναφορά Αρχικών Ρυθμίσεων"
-
-#~ msgctxt "DlgPrefSoundDlg#6"
-#~ msgid "Input"
-#~ msgstr "Είσοδος"
-
-#~ msgid "Output"
-#~ msgstr "Έξοδος"
-
-#~ msgid ""
-#~ "<ul>\n"
-#~ "<li>Increase your latency if you hear pops during playback</li>\n"
-#~ "<li>Reduce your latency to improve Mixxx's responsiveness</li>\n"
-#~ "</ul>"
-#~ msgstr ""
-#~ "<ul>\n"
-#~ "<li>Μεγαλώστε την καθυστέρηση αν ακούτε πηδήματα κατά την αναπαραγωγή</li>\n"
-#~ "<li>Μειώστε την καθυστέρηση για να βελτιώσετε την ταχύτητα αντίδρασης του "
-#~ "Mixxx</li>\n"
-#~ "</ul>"
-
-#~ msgctxt "DlgPreferences#3"
-#~ msgid "Library"
-#~ msgstr "Βιβλιοθήκη"
-
-#~ msgid "MIDI Controllers"
-#~ msgstr "Ελεγκτές MIDI"
-
-#~ msgctxt "DlgPreferences#10"
-#~ msgid "Vinyl Control"
-#~ msgstr "Έλεγχος Βινιλίου"
-
-#~ msgid "Recently Added"
-#~ msgstr "Πρόσφατες Προσθήκες"
-
-#~ msgid "All Songs"
-#~ msgstr "Όλα τα Τραγούδια"
-
-#~ msgctxt "DlgPreferences#7"
-#~ msgid "Recording"
-#~ msgstr "Ηχογράφηση"
-
-#~ msgctxt "DlgPreferences#8"
-#~ msgid "BPM Detection"
-#~ msgstr "Εντοπισμός BPM"
-
-#~ msgctxt "DlgPrepare#6"
-#~ msgid "Analyze"
-#~ msgstr "Ανάλυση"
-
-#~ msgid "Select All"
-#~ msgstr "Επιλογή Όλων"
-
-#~ msgctxt "DlgTrackInfo#2"
-#~ msgid "Song:"
-#~ msgstr "Τραγούδι:"
-
-#~ msgctxt "DlgTrackInfo#1"
-#~ msgid "Track Editor"
-#~ msgstr "Επεξεργασία Κομματιών"
-
-#~ msgctxt "DlgTrackInfo#4"
-#~ msgid "Artist:"
-#~ msgstr "Καλλιτέχνης:"
-
-#~ msgctxt "DlgTrackInfo#3"
-#~ msgid "Title:"
-#~ msgstr "Τίτλος:"
-
-#~ msgid "Date:"
-#~ msgstr "Ημ/νία:"
-
-#~ msgctxt "DlgTrackInfo#9"
-#~ msgid "Filename:"
-#~ msgstr "Όνομα Αρχείου:"
-
-#~ msgctxt "DlgTrackInfo#14"
-#~ msgid "Comments:"
-#~ msgstr "Σχόλια:"
-
-#~ msgctxt "DlgTrackInfo#16"
-#~ msgid "Track Information (Click to Expand)"
-#~ msgstr "Πληροφορίες Κομματιού (Κλίκ για Ανάπτυξη)"
-
-#~ msgid "/2"
-#~ msgstr "/2"
-
-#~ msgid "x2"
-#~ msgstr "x2"
-
-#~ msgctxt "DlgTrackInfo#11"
-#~ msgid "3:00"
-#~ msgstr "3:00"
-
-#~ msgctxt "DlgTrackInfo#13"
-#~ msgid "77"
-#~ msgstr "77"
-
-#~ msgctxt "DlgTrackInfo#12"
-#~ msgid "File Type:"
-#~ msgstr "Τύπος Αρχείου:"
-
-#~ msgid "Track BPM"
-#~ msgstr "BPM Κομματιού"
-
-#~ msgctxt "DlgTrackInfo#24"
-#~ msgid "Position"
-#~ msgstr "Θέση"
-
-#~ msgid "<< &Prev"
-#~ msgstr "<< &Προηγ"
-
-#~ msgctxt "DlgTrackInfo#33"
-#~ msgid "Alt+O"
-#~ msgstr "Alt+O"
-
-#~ msgid "&Next >>"
-#~ msgstr "&Επόμενο >>"
-
-#~ msgid "Yes"
-#~ msgstr "Ναι"
-
-#~ msgid "No"
-#~ msgstr "Όχι"
-
-#~ msgid "Start Recording your Mix"
-#~ msgstr "Εκκινήστε την ηχογράδηση της μίξης σας"
-
-#~ msgid "Quit..."
-#~ msgstr "Έξοδος"
-
-#~ msgid "Do your really want to quit?"
-#~ msgstr "Θέλετε πραγματικά να κλείσετε το πρόγραμμα;"
-
-#~ msgctxt "PlaylistFeature#3"
-#~ msgid "Remove"
-#~ msgstr "Διαγραφή"
-
-#~ msgctxt "PlaylistFeature#4"
-#~ msgid "Rename"
-#~ msgstr "Μετονομασία"
-
-#~ msgctxt "PlaylistFeature#5"
-#~ msgid "Lock"
-#~ msgstr "Κλείδωμα"
-
-#~ msgctxt "PlaylistFeature#9"
-#~ msgid "Unlock"
-#~ msgstr "Ξεκλείδωμα"
-
-#~ msgid "Microphone"
-#~ msgstr "Μικρόφωνο"
-
-#~ msgid "File"
-#~ msgstr "Αρχείο"
-
-#~ msgctxt "ScriptStudio#3"
-#~ msgid "Edit"
-#~ msgstr "Επεξεργασία"
-
-#~ msgid "Close"
-#~ msgstr "Κλείσιμο"
-
-#~ msgid "Import..."
-#~ msgstr "Εισαγωγή"
-
-#~ msgid "Export..."
-#~ msgstr "Εξαγωγή"
-
-#~ msgid ""
-#~ "Unable to upgrade your database schema to version %1.\n"
-#~ "Your mixxx.db file may be corrupt.\n"
-#~ "Try renaming it and restarting Mixxx.\n"
-#~ "\n"
-#~ "Click OK to exit."
-#~ msgstr "Πατήστε ΟΚ για έξοδο"
-
-#~ msgctxt "Ui#3"
-#~ msgid "On"
-#~ msgstr "Ανοιχτό"
-
-#~ msgctxt "Ui#4"
-#~ msgid "Off"
-#~ msgstr "Κλειστό"
-
-#~ msgctxt "Ui#12"
-#~ msgid "Preferences"
-#~ msgstr "Επιλογές"
-
-#~ msgid "Headphones volume"
-#~ msgstr "Ένταση ακουστικών"
-
-#~ msgid "Headphones mix (pre/main)"
-#~ msgstr "Μίξη ακουστικών"
-
-#~ msgid "Properties..."
-#~ msgstr "Ρυθμίσεις"
-
-#~ msgid "No MIDI devices available"
-#~ msgstr "Δεν υπάρχουν διαθέσιμες συσκευές MIDI"
-
-#~ msgid "Analyze Entire Song"
-#~ msgstr "Ανάλυση Ολόκληρου του Τραγουδιού"
-
-#~ msgid ""
-#~ "Your settings must be applied before starting the MIDI learning wizard.\n"
-#~ "Apply settings and continue?"
-#~ msgstr ""
-#~ "Οι ρυθμίσεις σας πρέπει να αποθηκευτούν πρίν αρχίσει ο οδηγός εκμάθησης "
-#~ "MIDI.\n"
-#~ "Εφαρμογή των ρυθμίσεων και συνέχεια;"
-
-#~ msgid "80 kbps"
-#~ msgstr "80 kbps"
-
-#~ msgctxt "DlgPrefShoutcastDlg#23"
-#~ msgid "Description"
-#~ msgstr "Περιγραφή"
-
-#~ msgid "Analyzing %1%"
-#~ msgstr "Ανάλυση %1%"
-
-#~ msgid "Song:"
-#~ msgstr "Τραγούδι:"
-
-#~ msgid "Track Information (Click to Expand)"
-#~ msgstr "Πληροφορίες Κομματιού (Κλίκ για Ανάπτυξη)"
-
-#~ msgid "77"
-#~ msgstr "77"
-
-#~ msgid "File Type:"
-#~ msgstr "Τύπος Αρχείου:"
-
-#~ msgid "3:00"
-#~ msgstr "3:00"
-
-#~ msgid "Alt+O"
-#~ msgstr "Alt+O"
-
-#~ msgctxt "MidiInputMappingTableModel#6"
-#~ msgid "Description"
-#~ msgstr "Περιγραφή"
-
-#~ msgctxt "MidiOutputMappingTableModel#6"
-#~ msgid "Description"
-#~ msgstr "Περιγραφή"
-
-#~ msgid "Privacy Policy"
-#~ msgstr "Πολιτική Προστασίας Προσωπικών Δεδομένων"
-
-#~ msgid "Mixxx: Privacy Policy"
-#~ msgstr "Mixxx: Πολιτική Προστασίας Προσωπικών Δεδομένων"
-
-#~ msgctxt "MixxxApp#9"
-#~ msgid "Choose music library directory"
-#~ msgstr "Επιλογή φακέλου μουσικής βιβλιοθήκης"
-
-#~ msgid "Unknown"
-#~ msgstr "Άγνωστο"
-
-#~ msgid "Ctrl+I"
-#~ msgstr "Ctrl+I"
-
-#~ msgid "Ctrl+C"
-#~ msgstr "Ctrl+C"
-
-#~ msgid "Quits the application"
-#~ msgstr "Έξοδος από την εφαρμογή"
-
-#~ msgid "Full Screen"
-#~ msgstr "Πλήρης Οθόνη"
-
-#~ msgid "&Macro"
-#~ msgstr "&Μακροεντολή"
-
-#~ msgctxt "MixxxLibraryFeature#1"
-#~ msgid "Library"
-#~ msgstr "Βιβλιοθήκη"
-
-#~ msgctxt "PlaylistFeature#6"
-#~ msgid "Import Playlist"
-#~ msgstr "Εισαγωγή Λίστας Αναπαραγωγής"
-
-#~ msgid "Playlist Creation Failed"
-#~ msgstr "Η Δημιουργία Λίστας Απέτυχε"
-
-#~ msgid "An unknown error occurred while creating playlist: "
-#~ msgstr "Προκλήθηκε άγνωστο σφάλμα κατά την δημιουργία λίστας: "
-
-#~ msgid "New Macro..."
-#~ msgstr "Νέα Μακροεντολή..."
-
-#~ msgid "Delete Macro"
-#~ msgstr "Διαγραφή Μακροεντολής"
-
-#~ msgid "Mixxx Script Studio"
-#~ msgstr "Mixxx Script Studio"
-
-#~ msgid "Run Macro"
-#~ msgstr "Εκτέλεση Μακροεντολής"
-
-#~ msgctxt "Ui#1"
-#~ msgid "Position"
-#~ msgstr "Θέση"
-
-#~ msgid "Mixxx Detected a WVGA Screen"
-#~ msgstr "Το Mixxx Εντόπισε μια Οθόνη WVGA"
-
-#~ msgid "Mixxx has detected that your screen has a resolution of "
-#~ msgstr "Το Mixxx εντόπισε ότι η οθόνη σας έχει ανάλυση "
-
-#~ msgid "Simple"
-#~ msgstr "Απλή"
-
-#~ msgid "Add to Auto DJ Queue"
-#~ msgstr "Προσθήκη στη Λίστα Αυτόματου DJ"
-
-#~ msgid "Export Mixxx MIDI Bindings"
-#~ msgstr "Εξαγωγή Δεσμεύσεων MIDI του Mixxx"
-
-#~ msgid "Choose iPod mount point"
-#~ msgstr "Επιλέξτε σημείο προσάρτησης του iPod"
-
-#~ msgid "Choose No to use the existing iPod @ "
-#~ msgstr "Επιλέξτε Όχι για να χρησιμοποιήσετε το υπάρχον iPod στο "
-
-#~ msgid "iPod mountpoint"
-#~ msgstr "σημείο προσάρτησης του iPod"
-
-#~ msgctxt "DlgPrefShoutcastDlg#2"
-#~ msgid "Enable live broadcasting"
-#~ msgstr "Ενεργοποίηση ζωντανής εκπομπής"
-
-#~ msgctxt "CrateFeature#15"
-#~ msgid "Playlist Files (*.m3u *.m3u8 *.pls)"
-#~ msgstr "Αρχεία Λίστας Αναπαραγωγής (*.m3u *.m3u8 *.pls)"
-
-#~ msgctxt "CrateFeature#16"
-#~ msgid "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls)"
-#~ msgstr ""
-#~ "Λίστα Αναπαραγωγής M3U (*.m3u);;Λίστα Αναπαραγωγής M3U8  (*.m3u8);;Λίστα "
-#~ "Αναπαραγωγής PLS(*.pls)"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-"
-#~ "size:8.25pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif'; font-size:9pt;\">Credits go here</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-#~ "family:'Sans Serif'; font-size:9pt;\"></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-"
-#~ "size:8.25pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "family:'Sans Serif'; font-size:9pt;\">Credits go here</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-#~ "family:'Sans Serif'; font-size:9pt;\"></p></body></html>"
-
-#~ msgid "Slow fade"
-#~ msgstr "Αργή εξασθένιση"
-
-#~ msgid "Fast cut"
-#~ msgstr "Γρήγορο κόψιμο"
-
-#~ msgid "Select Control Group"
-#~ msgstr "Επιλογή ομάδας ελέγχου"
-
-#~ msgctxt "DlgPrefPlaylistDlg#14"
-#~ msgid "Library"
-#~ msgstr "Συλλογή"
-
-#~ msgctxt "MixxxLibraryFeature#2"
-#~ msgid "Library"
-#~ msgstr "Συλλογή"

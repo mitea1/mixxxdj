@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-03-05 06:50+0200\n"
-"PO-Revision-Date: 2012-07-06 11:40+0000\n"
+"POT-Creation-Date: 2013-04-14 06:50+0200\n"
+"PO-Revision-Date: 2013-05-09 11:20+0000\n"
 "Last-Translator: Sergey Koptev <Unknown>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-06 05:12+0000\n"
-"X-Generator: Launchpad (build 16514)\n"
+"X-Launchpad-Export-Date: 2013-05-10 06:17+0000\n"
+"X-Generator: Launchpad (build 16598)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -59,7 +59,7 @@ msgstr ""
 #: BasePlaylistFeature#3
 msgctxt "BasePlaylistFeature#3"
 msgid "Add to Auto DJ Queue (top)"
-msgstr ""
+msgstr "Додати до черги Авто-DJ (наверх)"
 
 #: BasePlaylistFeature#4
 msgctxt "BasePlaylistFeature#4"
@@ -736,11 +736,11 @@ msgstr ""
 
 #: DlgBeatsDlg#17
 msgid "Min:"
-msgstr ""
+msgstr "Мін:"
 
 #: DlgBeatsDlg#18
 msgid "Max:"
-msgstr ""
+msgstr "Макс:"
 
 #: DlgBeatsDlg#19
 msgctxt "DlgBeatsDlg#19"
@@ -785,7 +785,7 @@ msgstr ""
 
 #: DlgControllerLearning#3
 msgid "Done"
-msgstr ""
+msgstr "Готово"
 
 #: DlgControllerLearning#4
 msgid "To map another control click a button or choose from the list."
@@ -802,7 +802,7 @@ msgstr ""
 #: DlgControllerLearning#7
 msgctxt "DlgControllerLearning#7"
 msgid "Sampler %1"
-msgstr ""
+msgstr "Семплер %1"
 
 #: DlgControllerLearning#8
 msgid "Reset to default"
@@ -810,7 +810,7 @@ msgstr ""
 
 #: DlgControllerLearning#9
 msgid "Mixer"
-msgstr ""
+msgstr "Мікшер"
 
 #: DlgControllerLearning#10
 msgctxt "DlgControllerLearning#10"
@@ -859,11 +859,11 @@ msgstr ""
 
 #: DlgControllerLearning#21
 msgid "Jump to start of track"
-msgstr ""
+msgstr "Стрибок до початку треку"
 
 #: DlgControllerLearning#22
 msgid "Jump to end of track"
-msgstr ""
+msgstr "Стрибок до кінця треку"
 
 #: DlgControllerLearning#23
 msgid "Play reverse button"
@@ -1057,7 +1057,7 @@ msgstr ""
 
 #: DlgControllerLearning#70
 msgid "Double the current loop's length"
-msgstr ""
+msgstr "Подвоїти довжину поточного циклу"
 
 #: DlgControllerLearning#71
 msgid "Toggle slip mode"
@@ -1113,12 +1113,12 @@ msgstr ""
 
 #: DlgControllerLearning#84
 msgid "1/4th"
-msgstr ""
+msgstr "1/4-та"
 
 #: DlgControllerLearning#85
 msgctxt "DlgControllerLearning#85"
 msgid "Library"
-msgstr ""
+msgstr "Збірка"
 
 #: DlgControllerLearning#86
 msgid "Expand/collapse the selected view (library, playlist..)"
@@ -1175,7 +1175,7 @@ msgstr ""
 #: DlgControllerLearning#99
 msgctxt "DlgControllerLearning#99"
 msgid "Microphone"
-msgstr ""
+msgstr "Мікрофон"
 
 #: DlgControllerLearning#100
 msgid "Microphone on/off"
@@ -1192,7 +1192,7 @@ msgstr ""
 #: DlgControllerLearning#103
 msgctxt "DlgControllerLearning#103"
 msgid "Auto DJ"
-msgstr ""
+msgstr "Авто-DJ"
 
 #: DlgControllerLearning#104
 msgid "Shuffle the content of the Auto DJ playlist"
@@ -1265,7 +1265,7 @@ msgstr ""
 #: DlgHidden#5
 msgctxt "DlgHidden#5"
 msgid "Purge"
-msgstr ""
+msgstr "Чищення"
 
 #: DlgHidden#6
 msgid "Unhide selected tracks from the library."
@@ -1273,26 +1273,26 @@ msgstr ""
 
 #: DlgHidden#7
 msgid "Unhide"
-msgstr ""
+msgstr "Показати"
 
 #: DlgHidden#8
 msgid "Ctrl+S"
-msgstr ""
+msgstr "Ctrl+S"
 
 #: DlgMissing#1
 msgctxt "DlgMissing#1"
 msgid "Manage"
-msgstr ""
+msgstr "Управління"
 
 #: DlgMissing#2
 msgctxt "DlgMissing#2"
 msgid "Selects all tracks in the table below."
-msgstr ""
+msgstr "Обрати всі треки з таблиці нижче."
 
 #: DlgMissing#3
 msgctxt "DlgMissing#3"
 msgid "Select All"
-msgstr ""
+msgstr "Обрати все"
 
 #: DlgMissing#4
 msgctxt "DlgMissing#4"
@@ -1302,7 +1302,7 @@ msgstr ""
 #: DlgMissing#5
 msgctxt "DlgMissing#5"
 msgid "Purge"
-msgstr ""
+msgstr "Чищення"
 
 #: DlgPluginDownloader#1
 msgid "Missing Audio Plugin Downloader"
@@ -1349,7 +1349,7 @@ msgstr "Додати"
 
 #: DlgPrefBPMDlg#10
 msgid "Edit"
-msgstr ""
+msgstr "Редагування"
 
 #: DlgPrefBPMDlg#11
 msgid "Delete"
@@ -1378,7 +1378,7 @@ msgstr ""
 
 #: DlgPrefController#3
 msgid "No Description"
-msgstr ""
+msgstr "Немає опису"
 
 #: DlgPrefController#4
 msgid "No support available."
@@ -1408,7 +1408,7 @@ msgstr ""
 
 #: DlgPrefControllerDlg#6
 msgid "Description:"
-msgstr ""
+msgstr "Опис:"
 
 #: DlgPrefControllerDlg#7
 msgid "Load Preset:"
@@ -1420,7 +1420,7 @@ msgstr ""
 
 #: DlgPrefControllerDlg#9
 msgid "Support:"
-msgstr ""
+msgstr "Підтримка:"
 
 #: DlgPrefControllerDlg#10
 msgid "Click to start the Controller Learning wizard."
@@ -1433,7 +1433,7 @@ msgstr ""
 #: DlgPrefControls#1
 msgctxt "DlgPrefControls#1"
 msgid "Position"
-msgstr ""
+msgstr "Положення"
 
 #: DlgPrefControls#2
 msgid "Remaining"
@@ -1450,15 +1450,15 @@ msgstr "CDJ Режим"
 #: DlgPrefControls#5
 msgctxt "DlgPrefControls#5"
 msgid "Simple"
-msgstr ""
+msgstr "Спрощено"
 
 #: DlgPrefControls#6
 msgid "On"
-msgstr ""
+msgstr "Вкл"
 
 #: DlgPrefControls#7
 msgid "Off"
-msgstr ""
+msgstr "Вимкн."
 
 #: DlgPrefControls#8
 msgid "This skin does not support schemes"
@@ -1486,7 +1486,7 @@ msgstr ""
 
 #: DlgPrefControls#14
 msgid "The selected skin is bigger than your screen resolution."
-msgstr ""
+msgstr "Обраний скін більший ніж роздільна здатність вашого екрану"
 
 #: DlgPrefControls#15
 msgid "On (only in Library)"
@@ -1531,7 +1531,7 @@ msgstr "Догори збільшення швидкості"
 #: DlgPrefControls#25
 msgctxt "DlgPrefControls#25"
 msgid "Information"
-msgstr ""
+msgstr "Відомості"
 
 #: DlgPrefControls#26
 msgid "Mixxx must be restarted before the changes will take effect."
@@ -1539,7 +1539,7 @@ msgstr "Mixxx повинен бути перезавантажений, щоб �
 
 #: DlgPrefControls#27
 msgid "OpenGL not available"
-msgstr ""
+msgstr "OpenGL не доступно"
 
 #: DlgPrefControlsDlg#1
 msgctxt "DlgPrefControlsDlg#1"
@@ -1649,7 +1649,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#27
 msgid "OpenGl status"
-msgstr ""
+msgstr "Статус OpenGL"
 
 #: DlgPrefControlsDlg#28
 msgid "Display type"
@@ -1671,7 +1671,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#32
 msgid "Value in milliseconds"
-msgstr ""
+msgstr "Значення в мілісекундах"
 
 #: DlgPrefControlsDlg#33
 msgid "Visual gain of the high frequencies"
@@ -1695,7 +1695,7 @@ msgstr ""
 
 #: DlgPrefControlsDlg#38
 msgid "Default zoom"
-msgstr ""
+msgstr "Типовий зум"
 
 #: DlgPrefControlsDlg#39
 msgid "Visual gain"
@@ -1991,7 +1991,7 @@ msgstr ""
 #: DlgPrefPlaylistDlg#6
 msgctxt "DlgPrefPlaylistDlg#6"
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Інше"
 
 #: DlgPrefPlaylistDlg#7
 msgid "Synchronize ID3 tags on track modifications"
@@ -2028,12 +2028,12 @@ msgstr ""
 #: DlgPrefPlaylistDlg#15
 msgctxt "DlgPrefPlaylistDlg#15"
 msgid "Browse..."
-msgstr ""
+msgstr "Огляд …"
 
 #: DlgPrefPlaylistDlg#16
 msgctxt "DlgPrefPlaylistDlg#16"
 msgid "Library"
-msgstr ""
+msgstr "Бібліотека"
 
 #: DlgPrefPlaylistDlg#17
 msgid "Music Directory:"
@@ -2077,7 +2077,7 @@ msgstr ""
 
 #: DlgPrefRecordDlg#3
 msgid "Recordings Directory:"
-msgstr ""
+msgstr "Каталог із записами:"
 
 #: DlgPrefRecordDlg#4
 msgctxt "DlgPrefRecordDlg#4"
@@ -2087,7 +2087,7 @@ msgstr ""
 #: DlgPrefRecordDlg#5
 msgctxt "DlgPrefRecordDlg#5"
 msgid "Encoding"
-msgstr ""
+msgstr "Кодування"
 
 #: DlgPrefRecordDlg#6
 msgid "Quality"
@@ -2108,7 +2108,7 @@ msgstr "Теги"
 #: DlgPrefRecordDlg#10
 msgctxt "DlgPrefRecordDlg#10"
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: DlgPrefRecordDlg#11
 msgid "Author"
@@ -2117,12 +2117,12 @@ msgstr "Автор"
 #: DlgPrefRecordDlg#12
 msgctxt "DlgPrefRecordDlg#12"
 msgid "Album"
-msgstr ""
+msgstr "Альбом"
 
 #: DlgPrefRecordDlg#13
 msgctxt "DlgPrefRecordDlg#13"
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Інше"
 
 #: DlgPrefRecordDlg#14
 msgid "Create a CUE file"
@@ -2185,7 +2185,7 @@ msgstr "дБ"
 #: DlgPrefReplayGainDlg#11
 msgctxt "DlgPrefReplayGainDlg#11"
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Відновити типові значення"
 
 #: DlgPrefShoutcast#1
 msgid "Icecast 2"
@@ -2255,7 +2255,7 @@ msgstr "Настройки потоку"
 
 #: DlgPrefShoutcastDlg#11
 msgid "Dynamically update Ogg Vorbis metadata."
-msgstr ""
+msgstr "Динамічно оновлювати мета-дані Ogg Vorbis."
 
 #: DlgPrefShoutcastDlg#12
 msgid ""
@@ -2282,7 +2282,7 @@ msgstr "http://www.mixxx.org"
 
 #: DlgPrefShoutcastDlg#17
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: DlgPrefShoutcastDlg#18
 msgid ""
@@ -2313,7 +2313,7 @@ msgstr ""
 #: DlgPrefShoutcastDlg#19
 msgctxt "DlgPrefShoutcastDlg#19"
 msgid "Genre"
-msgstr ""
+msgstr "Жанр"
 
 #: DlgPrefShoutcastDlg#20
 msgid "Live mix"
@@ -2330,12 +2330,12 @@ msgstr ""
 #: DlgPrefShoutcastDlg#23
 msgctxt "DlgPrefShoutcastDlg#23"
 msgid "Encoding"
-msgstr ""
+msgstr "Кодування"
 
 #: DlgPrefShoutcastDlg#24
 msgctxt "DlgPrefShoutcastDlg#24"
 msgid "Bitrate"
-msgstr ""
+msgstr "Бітрейт"
 
 #: DlgPrefShoutcastDlg#25
 msgid "Format"
@@ -2356,12 +2356,12 @@ msgstr "Активувати метадані користувача"
 #: DlgPrefShoutcastDlg#29
 msgctxt "DlgPrefShoutcastDlg#29"
 msgid "Artist"
-msgstr ""
+msgstr "Виконавець"
 
 #: DlgPrefShoutcastDlg#30
 msgctxt "DlgPrefShoutcastDlg#30"
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: DlgPrefShoutcastDlg#31
 msgid ""
@@ -2421,15 +2421,15 @@ msgstr "Звукове API"
 msgid "Sample Rate"
 msgstr "Частота дискретизації"
 
-#: DlgPrefSoundDlg#3
+#: DlgPrefSoundDlg#6
 msgid "Buffer Underflow Count"
 msgstr ""
 
-#: DlgPrefSoundDlg#4
+#: DlgPrefSoundDlg#7
 msgid "0"
 msgstr ""
 
-#: DlgPrefSoundDlg#5
+#: DlgPrefSoundDlg#8
 msgid "Latency Tips"
 msgstr "Поради затримки"
 
@@ -2445,26 +2445,26 @@ msgstr ""
 #: DlgPrefSoundDlg#7
 msgctxt "DlgPrefSoundDlg#7"
 msgid "Output"
-msgstr ""
+msgstr "Вихід"
 
 #: DlgPrefSoundDlg#8
 msgctxt "DlgPrefSoundDlg#8"
 msgid "Input"
-msgstr ""
+msgstr "Вхід"
 
-#: DlgPrefSoundDlg#9
+#: DlgPrefSoundDlg#12
 msgid "Query Devices"
 msgstr "Пристрої, що надсилають запити"
 
 #: DlgPrefSoundDlg#10
 msgctxt "DlgPrefSoundDlg#10"
 msgid "Reset to Defaults"
-msgstr ""
+msgstr "Відновити типові значення"
 
 #: DlgPrefSoundDlg#11
 msgctxt "DlgPrefSoundDlg#11"
 msgid "Apply"
-msgstr ""
+msgstr "Застосувати"
 
 #: DlgPrefSoundDlg#12
 msgid "Latency"
@@ -2634,12 +2634,12 @@ msgstr "Звукове обладнання"
 
 #: DlgPreferences#3
 msgid "Controllers"
-msgstr ""
+msgstr "Контролери"
 
 #: DlgPreferences#4
 msgctxt "DlgPreferences#4"
 msgid "Library"
-msgstr ""
+msgstr "Бібліотека"
 
 #: DlgPreferences#5
 msgid "Interface"
@@ -2648,7 +2648,7 @@ msgstr "Інтерфейс"
 #: DlgPreferences#6
 msgctxt "DlgPreferences#6"
 msgid "Equalizers"
-msgstr ""
+msgstr "Еквалайзери"
 
 #: DlgPreferences#7
 msgctxt "DlgPreferences#7"
@@ -2706,7 +2706,7 @@ msgstr "Новий"
 
 #: DlgPrepare#4
 msgid "Shows all tracks in the library."
-msgstr ""
+msgstr "Показати всі треки в бібліотеці."
 
 #: DlgPrepare#5
 msgid "All"
@@ -2719,7 +2719,7 @@ msgstr "Прогрес"
 #: DlgPrepare#7
 msgctxt "DlgPrepare#7"
 msgid "Selects all tracks in the table below."
-msgstr ""
+msgstr "Обрати всі треки з таблиці нижче."
 
 #: DlgPrepare#8
 msgctxt "DlgPrepare#8"
@@ -2780,7 +2780,7 @@ msgstr "Редактор треків"
 
 #: DlgTrackInfo#2
 msgid "Summary"
-msgstr ""
+msgstr "Підсумок"
 
 #: DlgTrackInfo#3
 msgid "Title:"
@@ -2804,12 +2804,12 @@ msgstr "Жанр:"
 
 #: DlgTrackInfo#8
 msgid "Composer:"
-msgstr ""
+msgstr "Композитор:"
 
 #: DlgTrackInfo#9
 msgctxt "DlgTrackInfo#9"
 msgid "Year"
-msgstr ""
+msgstr "Рік"
 
 #: DlgTrackInfo#10
 msgctxt "DlgTrackInfo#10"
@@ -2847,7 +2847,7 @@ msgstr ""
 
 #: DlgTrackInfo#18
 msgid "Halve BPM"
-msgstr ""
+msgstr "Навпіл BPM"
 
 #: DlgTrackInfo#19
 msgid "Cuepoints"
@@ -3171,7 +3171,7 @@ msgstr ""
 
 #: HidController#4
 msgid "Generic HID Keyboard"
-msgstr ""
+msgstr "Типова HID клавіатура"
 
 #: HidController#5
 msgid "Generic HID Multiaxis Controller"
@@ -3234,46 +3234,52 @@ msgid "Drag a preset from the list & drop it here"
 msgstr "Перетягніть пресет зі списку і помістіть його тут"
 
 #: LegacySkinParser#1
-msgid "activate"
+msgid ""
+"No OpenGL\n"
+"support."
 msgstr ""
 
 #: LegacySkinParser#2
-msgid "toggle"
+msgid "activate"
 msgstr ""
 
 #: LegacySkinParser#3
-msgid "right"
+msgid "toggle"
 msgstr ""
 
 #: LegacySkinParser#4
-msgid "left"
+msgid "right"
 msgstr ""
 
 #: LegacySkinParser#5
-msgid "right small"
+msgid "left"
 msgstr ""
 
 #: LegacySkinParser#6
-msgid "left small"
+msgid "right small"
 msgstr ""
 
 #: LegacySkinParser#7
-msgid "up"
+msgid "left small"
 msgstr ""
 
 #: LegacySkinParser#8
-msgid "down"
+msgid "up"
 msgstr ""
 
 #: LegacySkinParser#9
-msgid "up small"
+msgid "down"
 msgstr ""
 
 #: LegacySkinParser#10
-msgid "down small"
+msgid "up small"
 msgstr ""
 
 #: LegacySkinParser#11
+msgid "down small"
+msgstr ""
+
+#: LegacySkinParser#12
 msgid "Shortcut"
 msgstr ""
 
@@ -3467,7 +3473,7 @@ msgstr ""
 
 #: MixxxApp#34
 msgid "Developer"
-msgstr ""
+msgstr "Розробник"
 
 #: MixxxApp#35
 msgid "Load track to Deck %1"
@@ -3495,7 +3501,7 @@ msgstr "&Вихід"
 
 #: MixxxApp#41
 msgid "Quits Mixxx"
-msgstr ""
+msgstr "Виходить з Mixxx"
 
 #: MixxxApp#42
 msgid "Ctrl+Q"
@@ -3656,7 +3662,7 @@ msgstr ""
 
 #: MixxxApp#81
 msgid "&Translate This Application"
-msgstr ""
+msgstr "&Перекласти цю програму"
 
 #: MixxxApp#82
 msgid "Enable Live &Broadcasting"
@@ -3792,7 +3798,7 @@ msgstr ""
 #: ParserCsv#3
 msgctxt "ParserCsv#3"
 msgid "Could not create file"
-msgstr ""
+msgstr "Не вдалося створити файл"
 
 #: ParserCsv#4
 msgid "Readable text Export Failed"
@@ -3865,7 +3871,7 @@ msgstr ""
 
 #: PlaylistFeature#8
 msgid "Create new playlist"
-msgstr ""
+msgstr "Створити новий список відтворення"
 
 #: PrepareFeature#1
 msgctxt "PrepareFeature#1"
@@ -4035,7 +4041,7 @@ msgstr ""
 
 #: SoftwareWaveformWidget#2
 msgid "Software"
-msgstr ""
+msgstr "Програмне забезпечення"
 
 #: Tooltips#1
 msgid "Drop tracks from library or external file manager here."
@@ -4152,7 +4158,7 @@ msgstr ""
 
 #: Tooltips#29
 msgid "Volume Control"
-msgstr ""
+msgstr "Регулятор гучності"
 
 #: Tooltips#30
 msgid "Adjusts the volume of the selected channel."
@@ -4160,7 +4166,7 @@ msgstr ""
 
 #: Tooltips#31
 msgid "Master Volume"
-msgstr ""
+msgstr "Головна гучність"
 
 #: Tooltips#32
 msgid "Adjusts the master output volume."
@@ -4169,7 +4175,7 @@ msgstr ""
 #: Tooltips#33
 msgctxt "Tooltips#33"
 msgid "Crossfader"
-msgstr ""
+msgstr "Кроссфейдер"
 
 #: Tooltips#34
 msgid ""
@@ -4178,7 +4184,7 @@ msgstr ""
 
 #: Tooltips#35
 msgid "Balance"
-msgstr ""
+msgstr "Баланс"
 
 #: Tooltips#36
 msgid "Adjusts the left/right channel balance on the master output."
@@ -4229,7 +4235,7 @@ msgstr ""
 
 #: Tooltips#47
 msgid "Show/hide the Sampler section."
-msgstr ""
+msgstr "Показати/Сховати секцію семплера"
 
 #: Tooltips#48
 msgctxt "Tooltips#48"
@@ -4250,11 +4256,11 @@ msgstr ""
 
 #: Tooltips#52
 msgid "Microphone Volume"
-msgstr ""
+msgstr "Гучність мікрофону"
 
 #: Tooltips#53
 msgid "Adjusts the microphone volume."
-msgstr ""
+msgstr "Регулювання гучності мікрофона."
 
 #: Tooltips#54
 msgid "Microphone Talk-Over"
@@ -4334,7 +4340,7 @@ msgstr ""
 
 #: Tooltips#73
 msgid "High EQ"
-msgstr ""
+msgstr "Високі частоти"
 
 #: Tooltips#74
 msgid "Adjusts the gain of the high EQ filter."
@@ -4346,7 +4352,7 @@ msgstr ""
 
 #: Tooltips#76
 msgid "High EQ Kill"
-msgstr ""
+msgstr "Зріз високих частот"
 
 #: Tooltips#77
 msgid "Holds the gain of the high EQ to zero while active."
@@ -4354,7 +4360,7 @@ msgstr ""
 
 #: Tooltips#78
 msgid "Mid EQ Kill"
-msgstr ""
+msgstr "Зріз середніх частот"
 
 #: Tooltips#79
 msgid "Holds the gain of the mid EQ to zero while active."
@@ -4362,7 +4368,7 @@ msgstr ""
 
 #: Tooltips#80
 msgid "Low EQ Kill"
-msgstr ""
+msgstr "Зріз низьких частот"
 
 #: Tooltips#81
 msgid "Holds the gain of the low EQ to zero while active."
@@ -4433,7 +4439,7 @@ msgstr ""
 
 #: Tooltips#97
 msgid "Reverse"
-msgstr ""
+msgstr "У зворотному напрямку"
 
 #: Tooltips#98
 msgid "Reverses track playback during regular playback."
@@ -4445,7 +4451,7 @@ msgstr ""
 
 #: Tooltips#100
 msgid "Toggles playing or pausing the track."
-msgstr ""
+msgstr "Перемикає програвання чи паузу треку."
 
 #: Tooltips#101
 msgid "Jumps to the beginning of the track."
@@ -4481,7 +4487,7 @@ msgstr ""
 
 #: Tooltips#109
 msgid "Headphone"
-msgstr ""
+msgstr "Навушники"
 
 #: Tooltips#110
 msgid "Sends the selected channel's audio to the headphone output."
@@ -4521,7 +4527,7 @@ msgstr ""
 
 #: Tooltips#118
 msgid "Turns the current loop off."
-msgstr ""
+msgstr "Вимикає поточний цикл."
 
 #: Tooltips#119
 msgid "Slip Mode"
@@ -4540,330 +4546,338 @@ msgid ""
 msgstr ""
 
 #: Tooltips#122
-msgid "Clock"
+msgid "Track Key"
 msgstr ""
 
 #: Tooltips#123
-msgid "Displays the current time."
+msgid "Displays the musical key of the loaded track."
 msgstr ""
 
 #: Tooltips#124
+msgid "Clock"
+msgstr ""
+
+#: Tooltips#125
+msgid "Displays the current time."
+msgstr ""
+
+#: Tooltips#126
 msgid ""
 "If Vinyl control is enabled, displays time-coded vinyl signal quality (see "
 "Preferences -> Vinyl Control)."
 msgstr ""
 
-#: Tooltips#125
+#: Tooltips#127
 msgid "Shows the current master volume for the right channel."
 msgstr ""
 
-#: Tooltips#126
+#: Tooltips#128
 msgid "Change the crossfader curve in Preferences -> Crossfader"
 msgstr ""
 
-#: Tooltips#127
+#: Tooltips#129
 msgid "Activate Vinyl Control from the Menu -> Options."
 msgstr ""
 
-#: Tooltips#128
+#: Tooltips#130
 msgid "Change the step-size in the Preferences -> Interface menu."
 msgstr ""
 
-#: Tooltips#129
+#: Tooltips#131
 msgid "Change the default cue behavior in Preferences -> Interface."
 msgstr ""
 
-#: Tooltips#130
+#: Tooltips#132
 msgid "selected in Preferences -> Sound Hardware."
 msgstr ""
 
-#: Tooltips#131
+#: Tooltips#133
 msgid "Fast Rewind"
 msgstr ""
 
-#: Tooltips#132
+#: Tooltips#134
 msgid "Fast rewind through the track."
 msgstr ""
 
-#: Tooltips#133
+#: Tooltips#135
 msgid "Fast Forward"
 msgstr ""
 
-#: Tooltips#134
+#: Tooltips#136
 msgid "Fast forward through the track."
 msgstr ""
 
-#: Tooltips#135
+#: Tooltips#137
 msgid "Jumps to the end of the track."
 msgstr ""
 
-#: Tooltips#136
-msgctxt "Tooltips#136"
+#: Tooltips#138
+msgctxt "Tooltips#138"
 msgid "Synchronize"
 msgstr ""
 
-#: Tooltips#137
+#: Tooltips#139
 msgid "Syncs the tempo (BPM) and phase to that of the other track, "
 msgstr ""
 
-#: Tooltips#138
+#: Tooltips#140
 msgid "if BPM is detected on both."
 msgstr ""
 
-#: Tooltips#139
+#: Tooltips#141
 msgid "Syncs the tempo (BPM) to that of the other track,"
 msgstr ""
 
-#: Tooltips#140
+#: Tooltips#142
 msgid "Pitch Control"
 msgstr ""
 
-#: Tooltips#141
+#: Tooltips#143
 msgid "Changes the track playback rate."
 msgstr ""
 
-#: Tooltips#142
+#: Tooltips#144
 msgid "Pitch Rate"
 msgstr ""
 
-#: Tooltips#143
+#: Tooltips#145
 msgid "Displays the current playback rate of the track."
 msgstr ""
 
-#: Tooltips#144
+#: Tooltips#146
 msgid "Repeat"
 msgstr ""
 
-#: Tooltips#145
+#: Tooltips#147
 msgid ""
 "When active the track will repeat if you go past the end or reverse before "
 "the start."
 msgstr ""
 
-#: Tooltips#146
+#: Tooltips#148
 msgid "Eject"
 msgstr ""
 
-#: Tooltips#147
+#: Tooltips#149
 msgid "Ejects track from the player."
 msgstr ""
 
-#: Tooltips#148
-msgctxt "Tooltips#148"
+#: Tooltips#150
+msgctxt "Tooltips#150"
 msgid "Hotcue"
 msgstr ""
 
-#: Tooltips#149
+#: Tooltips#151
 msgid "If hotcue is set, jumps to the hotcue."
 msgstr ""
 
-#: Tooltips#150
+#: Tooltips#152
 msgid "If hotcue is not set, sets the hotcue to the current play position."
 msgstr ""
 
-#: Tooltips#151
+#: Tooltips#153
 msgid "If hotcue is set, clears the hotcue."
 msgstr ""
 
-#: Tooltips#152
+#: Tooltips#154
 msgid "Vinyl Control Mode"
 msgstr ""
 
-#: Tooltips#153
+#: Tooltips#155
 msgid "Absolute mode - track position equals needle position and speed."
 msgstr ""
 
-#: Tooltips#154
+#: Tooltips#156
 msgid ""
 "Relative mode - track speed equals needle speed regardless of needle "
 "position."
 msgstr ""
 
-#: Tooltips#155
+#: Tooltips#157
 msgid ""
 "Constant mode - track speed equals last known-steady speed regardless of "
 "needle input."
 msgstr ""
 
-#: Tooltips#156
+#: Tooltips#158
 msgid "Vinyl Status"
 msgstr ""
 
-#: Tooltips#157
+#: Tooltips#159
 msgid "Provides visual feedback for vinyl control status:"
 msgstr ""
 
-#: Tooltips#158
+#: Tooltips#160
 msgid "Green for control enabled."
 msgstr ""
 
-#: Tooltips#159
+#: Tooltips#161
 msgid "Blinking yellow for when the needle reaches the end of the record."
 msgstr ""
 
-#: Tooltips#160
+#: Tooltips#162
 msgid "Red for needle skip detected."
 msgstr ""
 
-#: Tooltips#161
+#: Tooltips#163
 msgid "Loop-In Marker"
 msgstr ""
 
-#: Tooltips#162
+#: Tooltips#164
 msgid "Sets the deck loop-in position to the current play position."
 msgstr ""
 
-#: Tooltips#163
+#: Tooltips#165
 msgid "Loop-Out Marker"
 msgstr ""
 
-#: Tooltips#164
+#: Tooltips#166
 msgid "Sets the deck loop-out position to the current play position."
 msgstr ""
 
-#: Tooltips#165
+#: Tooltips#167
 msgid "Loop Halve"
 msgstr ""
 
-#: Tooltips#166
+#: Tooltips#168
 msgid "Halves the current loop's length by moving the end marker."
 msgstr ""
 
-#: Tooltips#167
+#: Tooltips#169
 msgid "Deck immediately loops if past the new endpoint."
 msgstr ""
 
-#: Tooltips#168
+#: Tooltips#170
 msgid "Loop Double"
 msgstr ""
 
-#: Tooltips#169
+#: Tooltips#171
 msgid "Doubles the current loop's length by moving the end marker."
 msgstr ""
 
-#: Tooltips#170
+#: Tooltips#172
 msgid "Beatloop"
 msgstr ""
 
-#: Tooltips#171
+#: Tooltips#173
 msgid "Reloop/Exit"
 msgstr ""
 
-#: Tooltips#172
+#: Tooltips#174
 msgid "Toggles the current loop on or off."
 msgstr ""
 
-#: Tooltips#173
+#: Tooltips#175
 msgid "Works only if Loop-In and Loop-Out marker are set."
 msgstr ""
 
-#: Tooltips#174
+#: Tooltips#176
 msgid "Vinyl Cueing Mode"
 msgstr ""
 
-#: Tooltips#175
+#: Tooltips#177
 msgid "Determines how cue points are treated in vinyl control Relative mode:"
 msgstr ""
 
-#: Tooltips#176
+#: Tooltips#178
 msgid "Off - Cue points ignored."
 msgstr ""
 
-#: Tooltips#177
+#: Tooltips#179
 msgid ""
 "One Cue - If needle is dropped after the cue point, track will seek to that "
 "cue point."
 msgstr ""
 
-#: Tooltips#178
+#: Tooltips#180
 msgid "Hot Cue - Track will seek to nearest previous hot cue point."
 msgstr ""
 
-#: Tooltips#179
+#: Tooltips#181
 msgid "Track Time"
 msgstr ""
 
-#: Tooltips#180
+#: Tooltips#182
 msgid "Displays the elapsed or remaining time of the track loaded."
 msgstr ""
 
-#: Tooltips#181
+#: Tooltips#183
 msgid "Click to toggle between time elapsed/remaining time."
 msgstr ""
 
-#: Tooltips#182
-msgid "Track Duration"
-msgstr ""
-
-#: Tooltips#183
-msgid "Displays the duration of the loaded track."
-msgstr ""
-
 #: Tooltips#184
-msgid "Information is loaded from the track's metadata tags."
-msgstr ""
+msgid "Track Duration"
+msgstr "Тривалість треку"
 
 #: Tooltips#185
-msgid "Track Artist"
-msgstr ""
+msgid "Displays the duration of the loaded track."
+msgstr "Показує тривалість завантаженого треку."
 
 #: Tooltips#186
-msgid "Displays the artist of the loaded track."
-msgstr ""
+msgid "Information is loaded from the track's metadata tags."
+msgstr "Інформація завантажена з мета-даних треку."
 
 #: Tooltips#187
-msgid "Track Title"
-msgstr ""
+msgid "Track Artist"
+msgstr "Виконавець треку."
 
 #: Tooltips#188
-msgid "Displays the title of the loaded track."
-msgstr ""
+msgid "Displays the artist of the loaded track."
+msgstr "Показує виконавеця завантаженого треку."
 
 #: Tooltips#189
-msgid "Track Album"
-msgstr ""
+msgid "Track Title"
+msgstr "Назва треку"
 
 #: Tooltips#190
-msgid "Displays the album name of the loaded track."
-msgstr ""
+msgid "Displays the title of the loaded track."
+msgstr "Показує назву завантаженого треку"
 
 #: Tooltips#191
-msgid "Track Artist/Title"
-msgstr ""
+msgid "Track Album"
+msgstr "Альбом треку"
 
 #: Tooltips#192
-msgid "Displays the artist and title of the loaded track."
-msgstr ""
+msgid "Displays the album name of the loaded track."
+msgstr "Показує альбом завантаженого треку"
 
 #: Tooltips#193
+msgid "Track Artist/Title"
+msgstr "Виконавець/Заголовок треку"
+
+#: Tooltips#194
+msgid "Displays the artist and title of the loaded track."
+msgstr "Показує виконавця/заголовок завантаженого треку"
+
+#: Tooltips#195
 msgid "Flanger"
 msgstr ""
 
-#: Tooltips#194
+#: Tooltips#196
 msgid "Toggles the flange effect. Use the depth/delay/lfo knobs to adjust."
 msgstr ""
 
-#: Tooltips#195
+#: Tooltips#197
 msgid "Flanger Delay"
-msgstr ""
+msgstr "Затримка Flanger"
 
-#: Tooltips#196
+#: Tooltips#198
 msgid "Adjusts the phase delay of the flange effect (when active)."
 msgstr ""
 
-#: Tooltips#197
+#: Tooltips#199
 msgid "Flanger Depth"
-msgstr ""
+msgstr "Глибина Flanger"
 
-#: Tooltips#198
+#: Tooltips#200
 msgid "Adjusts the intensity of the flange effect (when active)."
 msgstr ""
 
-#: Tooltips#199
+#: Tooltips#201
 msgid "Flanger LFO Period"
-msgstr ""
+msgstr "Період LFO Flanger"
 
-#: Tooltips#200
+#: Tooltips#202
 msgid "Adjusts the wavelength of the flange effect (when active)."
 msgstr ""
 
@@ -4888,7 +4902,7 @@ msgstr ""
 
 #: TrackCollection#3
 msgid "Click OK to exit."
-msgstr ""
+msgstr "Натисніть ОК щоб вийти."
 
 #: TrackCollection#4
 msgid "Cannot upgrade database schema"
@@ -4900,19 +4914,19 @@ msgstr ""
 
 #: TrackCollection#6
 msgid "Your %1 file may be outdated."
-msgstr ""
+msgstr "Ваш %1 файл може бути застарілий."
 
 #: TrackCollection#7
 msgid "Your mixxxdb.sqlite file may be corrupt."
-msgstr ""
+msgstr "Ваш файл mixxxdb.sqlite може бути пошкодженим."
 
 #: TrackCollection#8
 msgid "Try renaming it and restarting Mixxx."
-msgstr ""
+msgstr "Спробуйте перейменувати та перезавантажити Mixxx."
 
 #: TrackCollection#9
 msgid "Your %1 file may be missing or invalid."
-msgstr ""
+msgstr "Ваш %1 файл може бути відсутній або недійсний."
 
 #: TraktorFeature#1
 msgid "Traktor"
@@ -4936,15 +4950,15 @@ msgstr ""
 
 #: WOverview#1
 msgid "Ready to play, analyzing .."
-msgstr ""
+msgstr "Готово до програвання, аналіз .."
 
 #: WOverview#2
 msgid "Loading track .."
-msgstr ""
+msgstr "Завантаження треку .."
 
 #: WOverview#3
 msgid "Finalizing .."
-msgstr ""
+msgstr "Завершення .."
 
 #: WSearchLineEdit#1
 msgid "Ctrl+F"
@@ -4993,7 +5007,7 @@ msgstr ""
 
 #: WTrackTableView#9
 msgid "Open in File Browser"
-msgstr ""
+msgstr "Відкрити в файловому менеджері"
 
 #: WTrackTableView#10
 msgid "Add to Auto-DJ Queue (bottom)"
@@ -5017,11 +5031,11 @@ msgstr ""
 
 #: WTrackTableView#15
 msgid "Lock BPM"
-msgstr ""
+msgstr "Замкнути BPM"
 
 #: WTrackTableView#16
 msgid "Unlock BPM"
-msgstr ""
+msgstr "Розімкнути BPM"
 
 #: WTrackTableView#17
 msgid "Clear BPM and Beatgrid"
@@ -5034,7 +5048,7 @@ msgstr "Завантажити у Програвач %1"
 #: WTrackTableView#19
 msgctxt "WTrackTableView#19"
 msgid "Sampler %1"
-msgstr ""
+msgstr "Семплер %1"
 
 #: WTrackTableViewHeader#1
 msgid "Show or hide columns."
@@ -5047,1323 +5061,3 @@ msgstr ""
 #: WaveformWidgetFactory#2
 msgid "(GL)"
 msgstr ""
-
-#~ msgid "Auto DJ"
-#~ msgstr "Авто-DJ"
-
-#~ msgctxt "BaseSqlTableModel#9"
-#~ msgid "Comment"
-#~ msgstr "Коментар"
-
-#~ msgctxt "BaseSqlTableModel#7"
-#~ msgid "Type"
-#~ msgstr "Тип"
-
-#~ msgctxt "BaseSqlTableModel#6"
-#~ msgid "Year"
-#~ msgstr "Рік"
-
-#~ msgctxt "BaseSqlTableModel#12"
-#~ msgid "Bitrate"
-#~ msgstr "Бітрейт"
-
-#~ msgctxt "BaseSqlTableModel#10"
-#~ msgid "Duration"
-#~ msgstr "Тривалість"
-
-#~ msgctxt "BrowseFeature#4"
-#~ msgid "Mixxx Library"
-#~ msgstr "Mixxx бібліотека"
-
-#~ msgid "Music"
-#~ msgstr "Музика"
-
-#~ msgid "Documents"
-#~ msgstr "Документи"
-
-#~ msgid "Home"
-#~ msgstr "Домівка"
-
-#~ msgctxt "BrowseTableModel#9"
-#~ msgid "Duration"
-#~ msgstr "Тривалість"
-
-#~ msgctxt "BrowseTableModel#8"
-#~ msgid "Comment"
-#~ msgstr "Коментар"
-
-#~ msgctxt "BrowseTableModel#12"
-#~ msgid "Type"
-#~ msgstr "Тип"
-
-#~ msgctxt "BrowseTableModel#15"
-#~ msgid "Mixxx Library"
-#~ msgstr "Mixxx бібліотека"
-
-#~ msgctxt "BrowseTableModel#13"
-#~ msgid "Bitrate"
-#~ msgstr "Бітрейт"
-
-#~ msgctxt "CrateFeature#9"
-#~ msgid "Unlock"
-#~ msgstr "Розблокувати"
-
-#~ msgctxt "DlgAutoDJ#3"
-#~ msgid "Manage"
-#~ msgstr "Управління"
-
-#~ msgid "1.x.x"
-#~ msgstr "1.x.x"
-
-#~ msgid "Add tracks to the queue below..."
-#~ msgstr "Додати трек в кінець черги..."
-
-#~ msgid "Skip"
-#~ msgstr "Пропустити"
-
-#~ msgid "Begin"
-#~ msgstr "Початок"
-
-#~ msgid "Previous"
-#~ msgstr "Попередній"
-
-#~ msgctxt "DlgMidiLearning#4"
-#~ msgid "MIDI Learning Wizard"
-#~ msgstr "Майстер вивчення MIDI"
-
-#~ msgctxt "BaseSqlTableModel#8"
-#~ msgid "Location"
-#~ msgstr "Місце розташування"
-
-#~ msgctxt "BrowseTableModel#14"
-#~ msgid "Location"
-#~ msgstr "Місце розташування"
-
-#~ msgctxt "CrateFeature#15"
-#~ msgid "Playlist Files (*.m3u *.m3u8 *.pls)"
-#~ msgstr "Файли списку програвання (*.m3u *.m3u8 *.pls)"
-
-#~ msgid "Analyze Entire Song"
-#~ msgstr "Аналiзувати всю пiсню"
-
-#~ msgid "Welcome to the MIDI Learning Wizard"
-#~ msgstr "Ласкаво просимо до майстра вивчення MIDI"
-
-#~ msgid "Press spacebar to proceed or skip."
-#~ msgstr "Для продовження чи пропуску натиснiть пробiл"
-
-#~ msgid "MIDI learning complete!"
-#~ msgstr "Вивчення MIDI закiнчено"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Lucida Grande'; font-size:13pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This "
-#~ "wizard can be re-run at any time.</p>\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Now "
-#~ "go spin some beats!</p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
-#~ "\"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style "
-#~ "type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Lucida Grande'; font-size:13pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This "
-#~ "wizard can be re-run at any time.</p>\n"
-#~ "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-"
-#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />Now "
-#~ "go spin some beats!</p></body></html>"
-
-#~ msgid "Finito!"
-#~ msgstr "Кiнець"
-
-#~ msgctxt "DlgPrefControls#14"
-#~ msgid "Information"
-#~ msgstr "Інформація"
-
-#~ msgctxt "DlgPrefControlsDlg#8"
-#~ msgid "Off"
-#~ msgstr "Вимкнути"
-
-#~ msgctxt "DlgPrefControlsDlg#7"
-#~ msgid "On"
-#~ msgstr "Увімкнути"
-
-#~ msgctxt "DlgPrefCrossfaderDlg#10"
-#~ msgid "Reset"
-#~ msgstr "Скинути"
-
-#~ msgctxt "DlgPrefEQDlg#10"
-#~ msgid "Reset"
-#~ msgstr "Скинути"
-
-#~ msgid "Your Device Name"
-#~ msgstr "Назва вашого пристрою"
-
-#~ msgid "Output:"
-#~ msgstr "Виведення:"
-
-#~ msgid "Export"
-#~ msgstr "Експортувати"
-
-#~ msgid ""
-#~ "<a "
-#~ "href=\"http://mixxx.org/wiki/doku.php/midi_controller_mapping_file_format\">T"
-#~ "roubleshooting</a>"
-#~ msgstr ""
-#~ "<a "
-#~ "href=\"http://mixxx.org/wiki/doku.php/midi_controller_mapping_file_format\">T"
-#~ "roubleshooting</a>"
-
-#~ msgctxt "DlgPrefNoMidiDlg#1"
-#~ msgid "Form3"
-#~ msgstr "Форма3"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#10"
-#~ msgid "MIDI Learning Wizard"
-#~ msgstr "Майстер вивчення MIDI"
-
-#~ msgctxt "DlgPrefPlaylistDlg#1"
-#~ msgid "Form3"
-#~ msgstr "Форма3"
-
-#~ msgid ""
-#~ "Mixxx has detected another iPod. \n"
-#~ "\n"
-#~ msgstr ""
-#~ "Пiдключений iнший iPod. \n"
-#~ "\n"
-
-#~ msgid "Choose Yes to use the newly found iPod @ "
-#~ msgstr "Для подальшого використання новопiдключеного iPod виберiть Так @ "
-
-#~ msgctxt "DlgPrefPlaylistDlg#15"
-#~ msgid "Library"
-#~ msgstr "Бібліотека"
-
-#~ msgid "kbps"
-#~ msgstr "кбіт/с"
-
-#~ msgctxt "DlgPrefRecordDlg#7"
-#~ msgid "Title"
-#~ msgstr "Назва"
-
-#~ msgctxt "DlgPrefRecordDlg#2"
-#~ msgid "Encoding"
-#~ msgstr "Кодування"
-
-#~ msgctxt "DlgPrefRecordDlg#9"
-#~ msgid "Album"
-#~ msgstr "Альбом"
-
-#~ msgctxt "DlgPrefReplayGainDlg#11"
-#~ msgid "Reset"
-#~ msgstr "Скинути"
-
-#~ msgid "192.168.123.8"
-#~ msgstr "192.168.123.8"
-
-#~ msgid "/mixxx.ogg"
-#~ msgstr "/mixxx.ogg"
-
-#~ msgid "8000"
-#~ msgstr "8000"
-
-#~ msgid "source"
-#~ msgstr "джерело"
-
-#~ msgid "test1234"
-#~ msgstr "тест1234"
-
-#~ msgctxt "DlgPrefShoutcastDlg#23"
-#~ msgid "Description"
-#~ msgstr "Опис"
-
-#~ msgid "112 kbps"
-#~ msgstr "112 кбіт/с"
-
-#~ msgid "256 kbps"
-#~ msgstr "256 кбіт/с"
-
-#~ msgid "224 kbps"
-#~ msgstr "224 кбіт/с"
-
-#~ msgid "192 kbps"
-#~ msgstr "192 кбіт/с"
-
-#~ msgid "160 kbps"
-#~ msgstr "160 кбіт/с"
-
-#~ msgid "128 kbps"
-#~ msgstr "128 кбіт/с"
-
-#~ msgctxt "BaseSqlTableModel#17"
-#~ msgid "Key"
-#~ msgstr "Тональність"
-
-#~ msgctxt "BaseSqlTableModel#13"
-#~ msgid "BPM"
-#~ msgstr "Удар./хв."
-
-#~ msgctxt "BaseSqlTableModel#14"
-#~ msgid "Track #"
-#~ msgstr "Доріжка №"
-
-#~ msgid "Desktop"
-#~ msgstr "Робочий стіл"
-
-#~ msgctxt "BrowseTableModel#10"
-#~ msgid "BPM"
-#~ msgstr "Удар./хв."
-
-#~ msgctxt "BrowseTableModel#11"
-#~ msgid "Key"
-#~ msgstr "Тональність"
-
-#~ msgctxt "CrateFeature#5"
-#~ msgid "Import Playlist"
-#~ msgstr "Імпортувати плейлист"
-
-#~ msgctxt "CrateFeature#16"
-#~ msgid "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls)"
-#~ msgstr "M3U Плейлист (*.m3u);;M3U8 Плейлист (*.m3u8);;PLS Плейлист (*.pls)"
-
-#~ msgid "Shuffle playlist"
-#~ msgstr "Перемішати плейлист"
-
-#~ msgid "BPM Range"
-#~ msgstr "Діапазон ударів за хвилину"
-
-#~ msgid "Successfully mapped to: "
-#~ msgstr "Успішно відображена на: "
-
-#~ msgid ""
-#~ "This wizard allows you to easily map the controls on your MIDI controller to "
-#~ "Mixxx's controls."
-#~ msgstr ""
-#~ "Цей майстер допоможе Вам легко налаштувати Ваш MIDI-контроллер для "
-#~ "управління елементами Mixxx"
-
-#~ msgid "Please tweak the control for:"
-#~ msgstr "Будь ласка, налаштуйте управління для:"
-
-#~ msgid "Mixxx Control"
-#~ msgstr "Управління Mixxx"
-
-#~ msgid "Detect Song BPM on Import"
-#~ msgstr "Визначати темп треку при завантаженні"
-
-#~ msgctxt "DlgPrefBPMDlg#10"
-#~ msgid "Edit"
-#~ msgstr "Редагувати"
-
-#~ msgid "Next"
-#~ msgstr "Наступний"
-
-#~ msgid "8% (Technics SL1210)"
-#~ msgstr "8% (Technics SL1210)"
-
-#~ msgid "Down increases speed (Technics SL1210)"
-#~ msgstr "Вниз збільшення швидкості (Technics SL1210)"
-
-#~ msgid "Waveform display"
-#~ msgstr "Осцилограми"
-
-#~ msgid "Permanent rate change (between 1 and 8000) when right clicking"
-#~ msgstr ""
-#~ "Зміна постійного темпу (від 1 до 8000) при натисканні правою кнопкою миші"
-
-#~ msgid "Permanent rate change (between 1 and 8000) when left clicking"
-#~ msgstr ""
-#~ "Зміна постійного темпу (від 1 до 8000) при натисканні лівою кнопкою миші"
-
-#~ msgid "Temporary rate change (between 1 and 8000) when left clicking"
-#~ msgstr ""
-#~ "Тимчасова зміна темпу (від 1 до 8000) при натисканні лівою кнопкою миші"
-
-#~ msgid "Temporary rate change (between 1 and 8000) when right clicking"
-#~ msgstr ""
-#~ "Тимчасова зміна темпу (від 1 до 8000) при натисканні правою кнопкою миші"
-
-#~ msgid "Slow fade"
-#~ msgstr "Повільне затихання"
-
-#~ msgid "Fast cut"
-#~ msgstr "Шфидке затихання"
-
-#~ msgid "Select Control Group"
-#~ msgstr "Вибір контрольної групи"
-
-#~ msgid "Select Control"
-#~ msgstr "Вибір елемента контролю"
-
-#~ msgid "Preset Files (*.midi.xml)"
-#~ msgstr "Файли налаштувань (*.midi.xml)"
-
-#~ msgid "Export Mixxx MIDI Bindings"
-#~ msgstr "Експортувати MIDI-налаштування Mixxx"
-
-#~ msgid ""
-#~ "Are you sure you'd like to load the %1 mapping?\n"
-#~ "This will overwrite your existing MIDI mapping."
-#~ msgstr ""
-#~ "Ви впевнені, що хочете завантажити %1 налаштування?\n"
-#~ "Це замінить існуючі MIDI налаштування."
-
-#~ msgid ""
-#~ "Your settings must be applied before starting the MIDI learning wizard.\n"
-#~ "Apply settings and continue?"
-#~ msgstr ""
-#~ "Налаштування повинні бути застосовані, перш ніж почати роботу Майстра MIDI "
-#~ "навчання.\n"
-#~ "Застосувати налаштування і продовжити?"
-
-#~ msgid "Overwrite existing mapping?"
-#~ msgstr "Замінити існуючі налаштування?"
-
-#~ msgctxt "DlgPrefMidiBindings#1"
-#~ msgid "None"
-#~ msgstr "Не призначено"
-
-#~ msgid "Apply MIDI device settings?"
-#~ msgstr "Застосувати налаштування MIDI-пристрою?"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#1"
-#~ msgid "Dialog"
-#~ msgstr "Діалог"
-
-#~ msgid "No MIDI devices available"
-#~ msgstr "Не знайдено доступних MIDI пристроiв"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#8"
-#~ msgid "Add"
-#~ msgstr "Додати"
-
-#~ msgctxt "DlgPrefMidiBindingsDlg#9"
-#~ msgid "Remove"
-#~ msgstr "Видалити"
-
-#~ msgid "MIDI Input"
-#~ msgstr "MIDI Вхід"
-
-#~ msgid "MIDI Output"
-#~ msgstr "MIDI Вихід"
-
-#~ msgid "Choose iPod mount point"
-#~ msgstr "Виберіть каталог підключення плеєра"
-
-#~ msgid " and end detection. \n"
-#~ msgstr " та завершення пошуку. \n"
-
-#~ msgid "Choose No to use the existing iPod @ "
-#~ msgstr "Виберіть Ні для використання існуючого iPod @ "
-
-#~ msgid " or to continue to search for other iPods. \n"
-#~ msgstr " або для продовження пошуку інших плеєрів. \n"
-
-#~ msgid "Multiple iPods Detected"
-#~ msgstr "Виявлено кілька плеєрів"
-
-#~ msgctxt "DlgPrefPlaylistDlg#6"
-#~ msgid "None"
-#~ msgstr "Не призначено"
-
-#~ msgid "iPod"
-#~ msgstr "iPod/Плеєр"
-
-#~ msgctxt "DlgPrefPlaylistDlg#7"
-#~ msgid "Miscellaneous"
-#~ msgstr "Різні"
-
-#~ msgid "Browse..."
-#~ msgstr "Вибрати..."
-
-#~ msgid "iPod mountpoint"
-#~ msgstr "Папка підключення плеєра"
-
-#~ msgid "Detect"
-#~ msgstr "Виявити"
-
-#~ msgctxt "DlgPrefRecordDlg#10"
-#~ msgid "Miscellaneous"
-#~ msgstr "Додатково"
-
-#~ msgid ""
-#~ "Calculate ReplayGain normalization for songs which are missing ReplayGain "
-#~ "metadata."
-#~ msgstr ""
-#~ "Розрахувати нормалізацію вирівнювання гучності для треків, які не мають "
-#~ "відповідних метаданих."
-
-#~ msgid ""
-#~ "On older computers, it may take a few seconds before volume normalization is "
-#~ "applied to a new song. You may wish to wait before adjusting the pregain and "
-#~ "volume."
-#~ msgstr ""
-#~ "На старих комп'ютерах може пройти кілька секунд, перш ніж нормалізація "
-#~ "гучності буде застосована до нового трека. Ви можете зачекати, поки будуь "
-#~ "скореговані попередне підсилення та гучність."
-
-#~ msgid "Apply volume normalization to loaded songs."
-#~ msgstr "Застосувати нормалiзацiю гучності до завантажених треків"
-
-#~ msgctxt "DlgPrefShoutcastDlg#25"
-#~ msgid "Genre"
-#~ msgstr "Жанр"
-
-#~ msgctxt "DlgPrefShoutcastDlg#29"
-#~ msgid "Bitrate"
-#~ msgstr "Бітрейт"
-
-#~ msgid "320 kbps"
-#~ msgstr "320 кбіт/с"
-
-#~ msgctxt "DlgPrefShoutcastDlg#28"
-#~ msgid "Encoding"
-#~ msgstr "Розкодування"
-
-#~ msgid "64 kbps"
-#~ msgstr "64 кбіт/с"
-
-#~ msgid "96 kbps"
-#~ msgstr "96 кбіт/с"
-
-#~ msgid "80 kbps"
-#~ msgstr "80 кбіт/с"
-
-#~ msgid "48 kbps"
-#~ msgstr "48 кбіт/с"
-
-#~ msgctxt "DlgPrefShoutcastDlg#50"
-#~ msgid "Title"
-#~ msgstr "Назва"
-
-#~ msgid "%maintitle"
-#~ msgstr "%головна назва"
-
-#~ msgid "%mainartist"
-#~ msgstr "%головний виконавець"
-
-#~ msgctxt "DlgPrefShoutcastDlg#48"
-#~ msgid "Artist"
-#~ msgstr "Виконавець"
-
-#~ msgid ""
-#~ "<ul>\n"
-#~ "<li>Increase your latency if you hear pops during playback</li>\n"
-#~ "<li>Reduce your latency to improve Mixxx's responsiveness</li>\n"
-#~ "</ul>"
-#~ msgstr ""
-#~ "<ul>\n"
-#~ "<li>Збільшіть затримку, якщо ви чуєте тріск під час відтворення</li>\n"
-#~ "<li>Зменшіть затримку для поліпшення реагування Mixxx</li>\n"
-#~ "</ul>"
-
-#~ msgctxt "DlgPrefSoundDlg#9"
-#~ msgid "Apply"
-#~ msgstr "Застосувати"
-
-#~ msgid "Reset to Defaults"
-#~ msgstr "Відновити значення за замовчуванням"
-
-#~ msgid ""
-#~ "The only skin compatiable with this size display is Outline800x480-WVGA.  "
-#~ "Would you like to use that skin?"
-#~ msgstr ""
-#~ "Єдина графічна оболонка сумісна з таким розміром дисплея Outline800x480-"
-#~ "WVGA. Ви хотіли б використовувати цю оболонку?"
-
-#~ msgctxt "DlgPreferences#6"
-#~ msgid "Crossfader"
-#~ msgstr "Кроссфейдер"
-
-#~ msgctxt "DlgPreferences#3"
-#~ msgid "Library"
-#~ msgstr "Бібліотека"
-
-#~ msgid "MIDI Controllers"
-#~ msgstr "MIDI Контролери"
-
-#~ msgctxt "DlgPreferences#7"
-#~ msgid "Recording"
-#~ msgstr "Запис"
-
-#~ msgctxt "DlgPreferences#8"
-#~ msgid "BPM Detection"
-#~ msgstr "Визначення темпу"
-
-#~ msgid "Equalizers"
-#~ msgstr "Еквалайзери"
-
-#~ msgctxt "DlgPreferences#10"
-#~ msgid "Vinyl Control"
-#~ msgstr "Контроль вінілу"
-
-#~ msgctxt "DlgPrepare#6"
-#~ msgid "Analyze"
-#~ msgstr "Аналізувати"
-
-#~ msgid "Select All"
-#~ msgstr "Вибрати все"
-
-#~ msgid "Song:"
-#~ msgstr "Трек"
-
-#~ msgid "Analyzing %1%"
-#~ msgstr "Проаналізовано %1%"
-
-#~ msgid "Date:"
-#~ msgstr "Дата:"
-
-#~ msgid "File Type:"
-#~ msgstr "Тип файлу:"
-
-#~ msgid "77"
-#~ msgstr "77"
-
-#~ msgid "3:00"
-#~ msgstr "3:00"
-
-#~ msgid "Track BPM"
-#~ msgstr "Темп треку"
-
-#~ msgid "/2"
-#~ msgstr "/2"
-
-#~ msgid "x2"
-#~ msgstr "x2"
-
-#~ msgid "Track Information (Click to Expand)"
-#~ msgstr "Інформація про трек (Натисніть, щоб розгорнути)"
-
-#~ msgid "Hotcue"
-#~ msgstr "Гаряча мітка"
-
-#~ msgctxt "DlgTrackInfo#24"
-#~ msgid "Position"
-#~ msgstr "Позиція"
-
-#~ msgid "Track Cuepoints"
-#~ msgstr "Мітки треку"
-
-#~ msgid "Alt+O"
-#~ msgstr "Alt+O"
-
-#~ msgid "<< &Prev"
-#~ msgstr "<< &Попередній"
-
-#~ msgid "&Next >>"
-#~ msgstr "&Наступний >>"
-
-#~ msgctxt "MidiInputMappingTableModel#4"
-#~ msgid "Control Group"
-#~ msgstr "Контрольна група"
-
-#~ msgctxt "MidiInputMappingTableModel#6"
-#~ msgid "Description"
-#~ msgstr "Опис"
-
-#~ msgctxt "MidiInputMappingTableModel#2"
-#~ msgid "Midi Note"
-#~ msgstr "Midi Нота"
-
-#~ msgid "Midi Status Type"
-#~ msgstr "Тип статусу Midi"
-
-#~ msgctxt "MidiInputMappingTableModel#3"
-#~ msgid "Midi Channel"
-#~ msgstr "Midi Канал"
-
-#~ msgctxt "MidiInputMappingTableModel#5"
-#~ msgid "Control Value"
-#~ msgstr "Контроль значення"
-
-#~ msgctxt "MidiOutputMappingTableModel#4"
-#~ msgid "Control Group"
-#~ msgstr "Контрольна група"
-
-#~ msgctxt "MidiOutputMappingTableModel#3"
-#~ msgid "Midi Channel"
-#~ msgstr "Midi Канал"
-
-#~ msgid "Midi Status"
-#~ msgstr "Midi Статус"
-
-#~ msgctxt "MidiOutputMappingTableModel#2"
-#~ msgid "Midi Note"
-#~ msgstr "Midi Нота"
-
-#~ msgid ""
-#~ "* Check to see that the function name is spelled correctly in the mapping "
-#~ "file (.xml) and script file (.js)\n"
-#~ msgstr ""
-#~ "* Переконайтеся, що ім'я функції  записано правильно у файлі налаштувань "
-#~ "(.xml) і у срипт-файлі (.js)\n"
-
-#~ msgid ""
-#~ "* Check to see that the script file name (.js) is spelled correctly in the "
-#~ "mapping file (.xml)"
-#~ msgstr ""
-#~ "* Переконайтеся, що ім'я срипт-файлу (.js) записано правильно у файлі "
-#~ "налаштувань (.xml)"
-
-#~ msgid "The MIDI script function '%1' was not found in loaded scripts."
-#~ msgstr "MIDI-скрипт функцію '%1' не знайдено у завантажених скриптах."
-
-#~ msgid ""
-#~ "The MIDI message %1 %2 will not be bound.\n"
-#~ "(Click Show Details for hints.)"
-#~ msgstr ""
-#~ "MIDI-повідомлення %1 %2 не буде пов'язано.\n"
-#~ "(Натисніть Показати деталі для підказки.)"
-
-#~ msgctxt "MidiOutputMappingTableModel#5"
-#~ msgid "Control Value"
-#~ msgstr "Контроль значення"
-
-#~ msgid "MIDI script function not found"
-#~ msgstr "MIDI-скрипт функції не знайдено"
-
-#~ msgctxt "MidiOutputMappingTableModel#6"
-#~ msgid "Description"
-#~ msgstr "Опис"
-
-#~ msgid "Threshold Max"
-#~ msgstr "Максимальний поріг"
-
-#~ msgid "Threshold Min"
-#~ msgstr "Мінімальний поріг"
-
-#~ msgid "Unknown"
-#~ msgstr "Невідомо"
-
-#~ msgid ""
-#~ "<html>(The MIDI script code needs to be fixed.)<br>For now, you "
-#~ "can:<ul><li>Ignore this error for this session but you may experience "
-#~ "erratic behavior</li><li>Try to recover by resetting your "
-#~ "controller</li></ul></html>"
-#~ msgstr ""
-#~ "<html>(Код MIDI-сценарію потрыбно виправити.)<br>На даний момент, ви "
-#~ "можете:<ul><li>Ігнорувати цю помилку в даній сесії, але робота може бути "
-#~ "нестійкою</li><li>Спробуйте відновити працездатність шляхом скидання "
-#~ "налаштувань контролера</li></ul></html>"
-
-#~ msgid "A MIDI control you just used is not working properly."
-#~ msgstr ""
-#~ "MIDI-управлыння, яке щойно було використано, не працює належним чином."
-
-#~ msgid "MIDI script error"
-#~ msgstr "Помилка MIDI-срипта"
-
-#~ msgid "Privacy Policy"
-#~ msgstr "Політика конфіденційності"
-
-#~ msgid "No"
-#~ msgstr "Ні"
-
-#~ msgid "Yes"
-#~ msgstr "Так"
-
-#~ msgid "Mixxx: Privacy Policy"
-#~ msgstr "Mixxx: Політика конфіденційності"
-
-#~ msgctxt "MixxxApp#9"
-#~ msgid "Choose music library directory"
-#~ msgstr "Виберіть каталог музичної бібліотеки"
-
-#~ msgid "Ctrl+I"
-#~ msgstr "Ctrl+I"
-
-#~ msgid "Add &new playlist"
-#~ msgstr "Додати &новий плейлист"
-
-#~ msgid "Ctrl+C"
-#~ msgstr "Ctrl+C"
-
-#~ msgid "&Import playlist"
-#~ msgstr "&Імпортувати плейлист"
-
-#~ msgid "&Translate this application"
-#~ msgstr "&Перекласти цю програму"
-
-#~ msgid "&Audio Beat Marks"
-#~ msgstr "&Позначки аудіо ритму"
-
-#~ msgid "Load Song (Player &1)..."
-#~ msgstr "Завантажити трек (Плеєр &1)..."
-
-#~ msgid "Load Song (Player &2)..."
-#~ msgstr "Завантажити трек (Плеєр &2)..."
-
-#~ msgid "Enable live &broadcasting"
-#~ msgstr "Активувати пряму &трансляцію"
-
-#~ msgid ""
-#~ "Rescan library\n"
-#~ "\n"
-#~ "Rescans the song library"
-#~ msgstr ""
-#~ "Пересканувати бібліотеку\n"
-#~ "\n"
-#~ "Повторно сканує бібліотеку треків"
-
-#~ msgid ""
-#~ "Open\n"
-#~ "\n"
-#~ "Opens a song in player 1"
-#~ msgstr ""
-#~ "Відкрити\n"
-#~ "\n"
-#~ "Відкриває трек в плеєрі 1"
-
-#~ msgid "Opens a song in player 2"
-#~ msgstr "Відкриває трек в плеєрі 2"
-
-#~ msgid ""
-#~ "Open\n"
-#~ "\n"
-#~ "Opens a song in player 2"
-#~ msgstr ""
-#~ "Відкрити\n"
-#~ "\n"
-#~ "Відкриває трек в плеєрі 2"
-
-#~ msgid "Quits the application"
-#~ msgstr "Закриває програму"
-
-#~ msgid "Show Studio"
-#~ msgstr "Показати студію"
-
-#~ msgid "Opens a song in player 1"
-#~ msgstr "Відкриває трек в плеєрі 1"
-
-#~ msgid ""
-#~ "Exit\n"
-#~ "\n"
-#~ "Quits the application"
-#~ msgstr ""
-#~ "Вихід\n"
-#~ "\n"
-#~ "Закриває програму"
-
-#~ msgid "Rescans the song library"
-#~ msgstr "Повторно сканує бібліотеку треків"
-
-#~ msgid "Activate Vinyl Control"
-#~ msgstr "Активувати контроль вінілу"
-
-#~ msgid "Import playlist"
-#~ msgstr "Імпортувати плейлист"
-
-#~ msgid ""
-#~ "New crate\n"
-#~ "\n"
-#~ "Create a new crate."
-#~ msgstr ""
-#~ "Нова збірка\n"
-#~ "\n"
-#~ "Створює нову збірку."
-
-#~ msgid ""
-#~ "Audio Beat Marks\n"
-#~ "Mark beats by audio clicks"
-#~ msgstr ""
-#~ "Позначки аудіо ритму\n"
-#~ "Позначає ритм за ударами в аудіо"
-
-#~ msgid "Audio Beat Marks"
-#~ msgstr "Позначки аудіо ритму"
-
-#~ msgid ""
-#~ "New playlist\n"
-#~ "\n"
-#~ "Create a new playlist"
-#~ msgstr ""
-#~ "Новий плейлист\n"
-#~ "\n"
-#~ "Створює новий плейлист"
-
-#~ msgid "Activate live broadcasting"
-#~ msgstr "Активувати прямий ефір"
-
-#~ msgid "Support..."
-#~ msgstr "Підтримка..."
-
-#~ msgctxt "MixxxApp#77"
-#~ msgid "Preferences"
-#~ msgstr "Параметри"
-
-#~ msgid ""
-#~ "Support\n"
-#~ "\n"
-#~ "Get help with Mixxx"
-#~ msgstr ""
-#~ "Підтримка\n"
-#~ "\n"
-#~ "Отримайте допомогу по Mixxx"
-
-#~ msgid ""
-#~ "Preferences\n"
-#~ "Playback and MIDI preferences"
-#~ msgstr ""
-#~ "Параметри\n"
-#~ "Параметри відтворення та MIDI"
-
-#~ msgid "Full Screen"
-#~ msgstr "На весь екран"
-
-#~ msgid "Start Recording your Mix"
-#~ msgstr "Почати запис Вашого Міксу"
-
-#~ msgid ""
-#~ "Support\n"
-#~ "\n"
-#~ "Send feedback to the Mixxx team."
-#~ msgstr ""
-#~ "Підтримка\n"
-#~ "\n"
-#~ "Відправити відгук до команди розробників Mixxx."
-
-#~ msgid ""
-#~ "Show Studio\n"
-#~ "\n"
-#~ "Makes the macro studio visible"
-#~ msgstr ""
-#~ "Показати Студію\n"
-#~ "\n"
-#~ "Робить видимими макро студію"
-
-#~ msgid ""
-#~ "Support\n"
-#~ "\n"
-#~ "Read the Mixxx user manual."
-#~ msgstr ""
-#~ "Підтримка\n"
-#~ "\n"
-#~ "Читати інструкцію по Mixxx."
-
-#~ msgid ""
-#~ "Support\n"
-#~ "\n"
-#~ "Help translate this application into your language."
-#~ msgstr ""
-#~ "Підтримка\n"
-#~ "\n"
-#~ "Домопогти перекладати цю програму на Вашу мову."
-
-#~ msgid ""
-#~ "About\n"
-#~ "\n"
-#~ "About the application"
-#~ msgstr ""
-#~ "Про\n"
-#~ "\n"
-#~ "Про цю програму"
-
-#~ msgid "Shows the macro studio window"
-#~ msgstr "Показує вікно макро студії"
-
-#~ msgid ""
-#~ "Mixxx's development is driven by community feedback.  At your discretion, "
-#~ "Mixxx can automatically send data on your user experience back to the "
-#~ "developers. Would you like to help us make Mixxx better by enabling this "
-#~ "feature?"
-#~ msgstr ""
-#~ "Розвиток Mixxx управляється відгуками співтовариства. На Ваш розсуд, Mixxx "
-#~ "може автоматично відправляти дані про зручність роботи користувача до "
-#~ "розробників. Хотіли б Ви допомогти нам зробити Mixxx краще, включивши дану "
-#~ "функцію?"
-
-#~ msgid "Do your really want to quit?"
-#~ msgstr "Ви дійсно бажаєте вийти?"
-
-#~ msgid "Quit..."
-#~ msgstr "Вийти..."
-
-#~ msgid ""
-#~ "Player 1 is currently playing a song.\n"
-#~ "Are you sure you want to load a new song?"
-#~ msgstr ""
-#~ "Плеєр 1 в даний час програває трек.\n"
-#~ "Ви впевнені, що хочете завантажити новий трек?"
-
-#~ msgid "Load Song into Player 1"
-#~ msgstr "Завантаження треку в Плеєр 1"
-
-#~ msgid "&Macro"
-#~ msgstr "&Макро"
-
-#~ msgid ""
-#~ "Player 2 is currently playing a song.\n"
-#~ "Are you sure you want to load a new song?"
-#~ msgstr ""
-#~ "Плеєр 2 в даний час програває трек.\n"
-#~ "Ви впевнені, що хочете завантажити новий трек?"
-
-#~ msgid "Load Song into Player 2"
-#~ msgstr "Завантаження треку в Плеєр 2"
-
-#~ msgctxt "MixxxLibraryFeature#1"
-#~ msgid "Library"
-#~ msgstr "Бібліотека"
-
-#~ msgid "Add to Auto-DJ Queue"
-#~ msgstr "Додати до Авто-DJ черги"
-
-#~ msgid "Playlist Creation Failed"
-#~ msgstr "Не вдалося створити плейлист"
-
-#~ msgctxt "PlaylistFeature#3"
-#~ msgid "Remove"
-#~ msgstr "Видалити"
-
-#~ msgctxt "PlaylistFeature#5"
-#~ msgid "Lock"
-#~ msgstr "Заблокувати"
-
-#~ msgctxt "PlaylistFeature#6"
-#~ msgid "Import Playlist"
-#~ msgstr "Імпортувати плейлист"
-
-#~ msgctxt "PlaylistFeature#4"
-#~ msgid "Rename"
-#~ msgstr "Переіменувати"
-
-#~ msgctxt "PlaylistFeature#9"
-#~ msgid "Unlock"
-#~ msgstr "Розблокувати"
-
-#~ msgid "An unknown error occurred while creating playlist: "
-#~ msgstr "Виникла невідома помилка при створенні плейлиста: "
-
-#~ msgctxt "PlaylistFeature#17"
-#~ msgid "Playlist Files (*.m3u *.m3u8 *.pls)"
-#~ msgstr "Файли плейлистів (*.m3u *.m3u8 *.pls)"
-
-#~ msgctxt "PlaylistFeature#18"
-#~ msgid "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls)"
-#~ msgstr "M3U Плейлист (*.m3u);;M3U8 Плейлист (*.m3u8);;PLS Плейлист (*.pls)"
-
-#~ msgid "Microphone"
-#~ msgstr "Мікрофон"
-
-#~ msgid "File"
-#~ msgstr "Файл"
-
-#~ msgid "Mixxx Script Studio"
-#~ msgstr "Скриптова Студія Mixxx"
-
-#~ msgid "Run"
-#~ msgstr "Запуск"
-
-#~ msgid "Close"
-#~ msgstr "Закрити"
-
-#~ msgctxt "ScriptStudio#3"
-#~ msgid "Edit"
-#~ msgstr "Редагувати"
-
-#~ msgid ""
-#~ "Unable to upgrade your database schema to version %1.\n"
-#~ "Your mixxx.db file may be corrupt.\n"
-#~ "Try renaming it and restarting Mixxx.\n"
-#~ "\n"
-#~ "Click OK to exit."
-#~ msgstr ""
-#~ "Не вдалося обновити схему Вашої бази даних до версії %1.\n"
-#~ "Ваш файл mixxx.db може бути пожкоджений.\n"
-#~ "Спробуйте перейменувати його і перезапустити Mixxx.\n"
-#~ "\n"
-#~ "Натисніть OK для виходу."
-
-#~ msgid "Run Macro"
-#~ msgstr "Запустити макрос"
-
-#~ msgid "New Macro..."
-#~ msgstr "Новий макрос..."
-
-#~ msgid "Delete Macro"
-#~ msgstr "Вилучити макрос"
-
-#~ msgid "Export..."
-#~ msgstr "Експортувати…"
-
-#~ msgid "Import..."
-#~ msgstr "Імпортувати..."
-
-#~ msgctxt "Ui#3"
-#~ msgid "On"
-#~ msgstr "Увімкнути"
-
-#~ msgctxt "Ui#1"
-#~ msgid "Position"
-#~ msgstr "Позиція"
-
-#~ msgid "Load tracks into playing decks"
-#~ msgstr "Завантажувати треки в плеєр, що грає"
-
-#~ msgctxt "Ui#4"
-#~ msgid "Off"
-#~ msgstr "Вимкнути"
-
-#~ msgid "Headphones mix (pre/main)"
-#~ msgstr "Прослуховування у навушниках (монітор/мастер)"
-
-#~ msgid "Headphones volume"
-#~ msgstr "Гучність навушників"
-
-#~ msgid "Mixxx Detected a WVGA Screen"
-#~ msgstr "Mixxx виявив екран WVGA"
-
-#~ msgctxt "Ui#13"
-#~ msgid "Crossfader"
-#~ msgstr "Кроссфейдер"
-
-#~ msgid "Mixxx has detected that your screen has a resolution of "
-#~ msgstr "Mixxx виявив, ща Ваш екран має роздільну здатність "
-
-#~ msgid "Simple"
-#~ msgstr "Простий"
-
-#~ msgctxt "Ui#12"
-#~ msgid "Preferences"
-#~ msgstr "Параметри"
-
-#~ msgid "Keylock button for Player %1"
-#~ msgstr "Кнопка блокування клавіш для Плеєра%1"
-
-#~ msgid "Pitch control slider for Player %1"
-#~ msgstr "Повзунок зміни темпу для Плеєра %1"
-
-#~ msgid "Fast rewind button for Player %1"
-#~ msgstr "Кнопка перемотування назад для Плеєра %1"
-
-#~ msgid "Fast forward button for Player %1"
-#~ msgstr "Кнопка перемотування вперед для Плеєра %1"
-
-#~ msgid "Cue button for Player %1"
-#~ msgstr "Кнопка мітки для Плеєра %1"
-
-#~ msgid "Play button for Player %1"
-#~ msgstr "Кнопка запуску для Плеєра %1"
-
-#~ msgid "Beat sync button for Player %1"
-#~ msgstr "Кнопка синхронізації темпу для Плеєра %1"
-
-#~ msgid "BPM tap button for Player %1"
-#~ msgstr "Кнопка настукування темпу для Плеєра %1"
-
-#~ msgid "Play reverse button for Player %1"
-#~ msgstr "Кнопка зворотнього програвання для Плеєра %1"
-
-#~ msgid "Headphone listen button for Player %1"
-#~ msgstr "Кнопка прослуговування у навушниках для Плеєра %1"
-
-#~ msgid "Reloop / Exit button for Player %1"
-#~ msgstr "Кнопка повтору / виходу з петлі для Плеєра %1"
-
-#~ msgid "Loop Out button for Player %1"
-#~ msgstr "Кнопка кінця Петлі для Плеєра %1"
-
-#~ msgid "Loop In button for Player %1"
-#~ msgstr "Кнопка початку Петлі для Плеєра %1"
-
-#~ msgid "Flanger effect button for Player %1"
-#~ msgstr "Кнопка Флєнджер-ефекту для Плеєра %1"
-
-#~ msgid "Mid EQ knob for Channel %1"
-#~ msgstr "Ручка середньочастотного еквалайзера для Каналу %1"
-
-#~ msgid "Low EQ knob for Channel %1"
-#~ msgstr "Ручка низькочастотного еквалайзера для Каналу%1"
-
-#~ msgid "Channel %1 volume fader"
-#~ msgstr "Канал %1 фейдер гучності"
-
-#~ msgid "Gain knob for Channel %1"
-#~ msgstr "Ручка підсилювача для Каналу %1"
-
-#~ msgid "High EQ knob for Channel %1"
-#~ msgstr "Ручка високочастотного еквалайзера для Каналу %1"
-
-#~ msgid "Setup a loop over 4 beats for Player %1"
-#~ msgstr "Встановити петлю на 4 такта для Плеєра %1"
-
-#~ msgid "Hotcue 1 button for Player %1"
-#~ msgstr "Кнопка гарячої мітки 1 для Плеєра %1"
-
-#~ msgid "Hotcue 2 delete button for Player %1"
-#~ msgstr "Кнопка видалення гарячої мітки 2 для Плеєра %1"
-
-#~ msgid "Hotcue 3 delete button for Player %1"
-#~ msgstr "Кнопка видалення гарячої мітки 3 для Плеєра %1"
-
-#~ msgid "Hotcue 4 delete button for Player %1"
-#~ msgstr "Кнопка видалення гарячої мітки 4 для Плеєра %1"
-
-#~ msgid "Hotcue 2 button for Player %1"
-#~ msgstr "Кнопка гарячої мітки 2 для Плеєра %1"
-
-#~ msgid "Hotcue 3 button for Player %1"
-#~ msgstr "Кнопка гарячої мітки 3 для Плеєра %1"
-
-#~ msgid "Hotcue 4 button for Player %1"
-#~ msgstr "Кнопка гарячої мітки 4 для Плеєра %1"
-
-#~ msgid "Hotcue 1 delete button for Player %1"
-#~ msgstr "Кнопка видалення гарячої мітки 1 для Плеєра %1"
-
-#~ msgid "Doubles the current loop's length for Player %1"
-#~ msgstr "Подвоює довжину петлі для Плеєра %1"
-
-#~ msgid "Halves the current loop's length for Player %1"
-#~ msgstr "Зменшує довжину петлі вдвічі для Плеєра %1"
-
-#~ msgid "Hotcue 2 button for Sampler %1"
-#~ msgstr "Кнопка гарячої мітки 2 для Семплера %1"
-
-#~ msgid "Hotcue 1 button for Sampler %1"
-#~ msgstr "Кнопка гарячої мітки 1 для Семплера %1"
-
-#~ msgid "Pitch control slider for Sampler %1"
-#~ msgstr "Повзунок зміни темпу дляСемплера %1"
-
-#~ msgid "Hotcue 4 button for Sampler %1"
-#~ msgstr "Кнопка гарячої мітки 4 для Семплера %1"
-
-#~ msgid "Hotcue 3 button for Sampler %1"
-#~ msgstr "Кнопка гарячої мітки 3 для Семплера %1"
-
-#~ msgid "Headphone listen button for Sampler %1"
-#~ msgstr "Кнопка прослуховування у навушниках для Семплера %1"
-
-#~ msgid "BPM tap button for Sampler %1"
-#~ msgstr "Кнопка настукування темпу для Семплера %1"
-
-#~ msgid "Keylock button for Sampler %1"
-#~ msgstr "Кнопка блокуання клавіш для Семплера %1"
-
-#~ msgid "Gain knob for Sampler %1"
-#~ msgstr "Ручка підсилення Семплера %1"
-
-#~ msgid "Play button for Sampler %1"
-#~ msgstr "Кнопка запуску Семплера %1"
-
-#~ msgid "Load selected track into Player %1"
-#~ msgstr "Завантажити вибраний трек у Плеєр %1"
-
-#~ msgid "Load selected track into first stopped player"
-#~ msgstr "Завантажити вибраний трек у плеєр, що зупиниться першим"
-
-#~ msgid "Hotcue 4 delete button for Sampler %1"
-#~ msgstr "Кнопка видалення гарячої мітки 4 для Семплера %1"
-
-#~ msgid "Hotcue 3 delete button for Sampler %1"
-#~ msgstr "Кнопка видалення гарячої мітки 3 для Семплера %1"
-
-#~ msgid "Hotcue 2 delete button for Sampler %1"
-#~ msgstr "Кнопка видалення гарячої мітки 2 для Семплера %1"
-
-#~ msgid "Hotcue 1 delete button for Sampler %1"
-#~ msgstr "Кнопка видалення гарячої мітки 1 для Семплера %1"
-
-#~ msgid "Adjusts the wavelength of the flange effect"
-#~ msgstr "Регулювання довжини хвилі фленджер-ефекту"
-
-#~ msgid "Adjusts the intensity of the flange effect"
-#~ msgstr "Регулювання інтенсивності фленджер-ефекту"
-
-#~ msgid "Adjusts the phase delay of the flange effect"
-#~ msgstr "Регулювання затримки фази фленджер-ефекту"
-
-#~ msgid "Sampler %1"
-#~ msgstr "Семплер %1"
-
-#~ msgid "Add to Auto DJ Queue"
-#~ msgstr "Додадти до Авто-DJ черги"
-
-#~ msgid "Properties..."
-#~ msgstr "Властивості…"
-
-#~ msgid ""
-#~ "Reloading track metadata on a loaded track may cause abrupt volume changes. "
-#~ "Are you sure?"
-#~ msgstr ""
-#~ "Перезавантаження метаданих завантаженого треку може привести до різких змін "
-#~ "гучності. Ви впевнені?"
-
-#~ msgctxt "DlgPrefSoundDlg#6"
-#~ msgid "Input"
-#~ msgstr "Вхід"
-
-#~ msgid "Output"
-#~ msgstr "Вихід"
-
-#~ msgid "Add new &crate"
-#~ msgstr "Додати нову &збірку"
-
-#~ msgid ""
-#~ "Mixxx's development is driven by community feedback. In order to help "
-#~ "improve future versions Mixxx will with your permission collect information "
-#~ "on your hardware and usage of Mixxx.  This information will primarily be "
-#~ "used to fix bugs, improve features, and determine the system requirements of "
-#~ "later versions.  Additionally this information may be used in aggregate for "
-#~ "statistical purposes.\n"
-#~ "\n"
-#~ "The hardware information will include:\n"
-#~ "\t- CPU model and features\n"
-#~ "\t- Total/Available Amount of RAM\n"
-#~ "\t- Available disk space\n"
-#~ "\t- OS version\n"
-#~ "\n"
-#~ "Your usage information will include:\n"
-#~ "\t- Settings/Preferences\n"
-#~ "\t- Internal errors\n"
-#~ "\t- Internal debugging messages\n"
-#~ "\t- Performance statistics (average latency, CPU usage)\n"
-#~ "\n"
-#~ "This information will not be used to personally identify you, contact you, "
-#~ "advertise to you, or otherwise bother you in any way.\n"
-#~ msgstr ""
-#~ "Розробка Mixxx's регулюється відгуками співтовариства. Для того, щоб "
-#~ "поліпшити майбутні версії Mixxx буде з вашого дозволу збирати інформацію про "
-#~ "ваше обладнання та використання Mixxx.  Ця інформація буде в основному "
-#~ "використовуватися для виправлення помилок, поліпшення функцій і визначає "
-#~ "вимог до системи в наступних версіях.  Крім того, ця інформація в сукупності "
-#~ "може бути використана  для статистичних цілей.\n"
-#~ "\n"
-#~ "Інформація про обладнання буде включати в себе:\n"
-#~ "\t- Модель та особливості процесора\n"
-#~ "\t- Загальний/Доступний об'єм оперативної пам'яті\n"
-#~ "\t- Доступне місце на диску\n"
-#~ "\t- Версія операційної системи\n"
-#~ "\n"
-#~ "Інформація про  Ваше використання  буде включати в себе:\n"
-#~ "\t- Настройки/Параметри\n"
-#~ "\t- Внутрішні помилки\n"
-#~ "\t- Внутрішні повідомлення налагодження\n"
-#~ "\t- Статистика продуктивності (збільшення затримки, використання процесору)\n"
-#~ "\n"
-#~ "Ця інформація не буде використовуватися для ідентифікації вашої особи, "
-#~ "зв'язку з Вами, надсилання Вам реклами або іншим чином турбувати Вас в будь-"
-#~ "якому випадку.\n"
-
-#~ msgid "&Load Song (Player 2)..."
-#~ msgstr "&Завантажити трек (Плеєр 2)..."
-
-#~ msgctxt "DlgPrefShoutcastDlg#2"
-#~ msgid "Enable live broadcasting"
-#~ msgstr "Активувати прямий ефір"
-
-#~ msgid "&Load Song (Player 1)..."
-#~ msgstr "&Завантажити трек (Плеєр 1)..."
