@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
-"POT-Creation-Date: 2013-04-14 06:50+0200\n"
+"POT-Creation-Date: 2013-05-10 08:29+0200\n"
 "PO-Revision-Date: 2013-05-09 11:20+0000\n"
 "Last-Translator: Osoitz <Unknown>\n"
 "Language-Team: Basque <eu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 06:14+0000\n"
+"X-Launchpad-Export-Date: 2013-05-11 05:46+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 
 #: AutoDJFeature#1
@@ -83,7 +83,7 @@ msgstr "Inportatu erreprodukzio-zerrenda"
 
 #: BasePlaylistFeature#8
 msgid "Duplicate Playlist"
-msgstr ""
+msgstr "Bikoiztu erreprodukzio-zerrenda"
 
 #: BasePlaylistFeature#9
 msgid "Export Playlist"
@@ -121,17 +121,17 @@ msgstr ""
 #: BasePlaylistFeature#17
 msgctxt "BasePlaylistFeature#17"
 msgid "Playlist Creation Failed"
-msgstr ""
+msgstr "Ezin izan da erreprodukzio-zerrenda sortu"
 
 #: BasePlaylistFeature#18
 msgctxt "BasePlaylistFeature#18"
 msgid "An unknown error occurred while creating playlist: "
-msgstr ""
+msgstr "Errore ezezagun bat gertatu da erreprodukzio zerrenda sortzean: "
 
 #: BasePlaylistFeature#19
 msgctxt "BasePlaylistFeature#19"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Erreprodukzio-zerrenda fitxategiak (*.m3u *.m3u8 *.pls *.csv)"
 
 #: BasePlaylistFeature#20
 msgctxt "BasePlaylistFeature#20"
@@ -139,6 +139,9 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"M3U erreprodukzio-zerrenda (*.m3u);;M3U8 erreprodukzio-zerrenda "
+"(*.m3u8);;PLS erreprodukzio-zerrenda (*.pls);;CSV testua (*.csv);;Testu "
+"hutsa (*.txt)"
 
 #: BaseSqlTableModel#1
 msgid "Played"
@@ -387,7 +390,7 @@ msgstr "USB Kontrolagailua"
 
 #: ControllerEngine#1
 msgid "Uncaught exception at line %1 in file %2: %3"
-msgstr ""
+msgstr "Jaso gabeko salbuespena %1 lerroan %2 fitxategian: %3"
 
 #: ControllerEngine#2
 msgid "Uncaught exception at line %1 in passed code: %2"
@@ -446,7 +449,7 @@ msgstr "Kendu"
 
 #: ControllerMappingDlg#7
 msgid "Learning Wizard"
-msgstr ""
+msgstr "Ikasketa Aztia"
 
 #: ControllerMappingDlg#8
 msgid "Clear all"
@@ -492,7 +495,7 @@ msgstr ""
 #: CrateFeature#6
 msgctxt "CrateFeature#6"
 msgid "Import Playlist"
-msgstr ""
+msgstr "Inportatu erreprodukzio-zerrenda"
 
 #: CrateFeature#7
 msgid "Crates"
@@ -513,7 +516,7 @@ msgstr ""
 #: CrateFeature#11
 msgctxt "CrateFeature#11"
 msgid "Unlock"
-msgstr ""
+msgstr "Desblokeatu"
 
 #: CrateFeature#12
 msgid "Crate name:"
@@ -538,7 +541,7 @@ msgstr "Ezin inan da kaxa berrizendatu"
 #: CrateFeature#17
 msgctxt "CrateFeature#17"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Erreprodukzio-zerrenda fitxategiak (*.m3u *.m3u8 *.pls *.csv)"
 
 #: CrateFeature#18
 msgctxt "CrateFeature#18"
@@ -546,6 +549,9 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"M3U erreprodukzio-zerrenda (*.m3u);;M3U8 erreprodukzio-zerrenda "
+"(*.m3u8);;PLS erreprodukzio-zerrenda (*.pls);;CSV testua (*.csv);;Testu "
+"hutsa (*.txt)"
 
 #: CrateFeature#19
 msgid ""
@@ -774,7 +780,7 @@ msgstr "Aztertu pista osoa"
 
 #: DlgControllerLearning#1
 msgid "Controller Learning Wizard"
-msgstr ""
+msgstr "Kontrolatzaile Ikasketa Aztia"
 
 #: DlgControllerLearning#2
 msgid ""
@@ -868,7 +874,7 @@ msgstr ""
 
 #: DlgControllerLearning#22
 msgid "Jump to end of track"
-msgstr ""
+msgstr "Saltatu pistaren bukaerara"
 
 #: DlgControllerLearning#23
 msgid "Play reverse button"
@@ -888,7 +894,7 @@ msgstr ""
 
 #: DlgControllerLearning#27
 msgid "Eject track"
-msgstr ""
+msgstr "Egotzi pista"
 
 #: DlgControllerLearning#28
 msgid "Mix orientation (e.g. left, right, center)"
@@ -969,7 +975,7 @@ msgstr ""
 #: DlgControllerLearning#47
 msgctxt "DlgControllerLearning#47"
 msgid "Equalizers"
-msgstr ""
+msgstr "Ekualizadoreak"
 
 #: DlgControllerLearning#48
 msgid "High EQ knob"
@@ -1151,11 +1157,11 @@ msgstr ""
 
 #: DlgControllerLearning#92
 msgid "Load selected track"
-msgstr ""
+msgstr "Kargatu aukeratutako pista"
 
 #: DlgControllerLearning#93
 msgid "Load selected track and play"
-msgstr ""
+msgstr "Kargatu aukeratutako pista eta erreproduzitu"
 
 #: DlgControllerLearning#94
 msgid "Effects"
@@ -1180,7 +1186,7 @@ msgstr ""
 #: DlgControllerLearning#99
 msgctxt "DlgControllerLearning#99"
 msgid "Microphone"
-msgstr ""
+msgstr "Mikrofonoa"
 
 #: DlgControllerLearning#100
 msgid "Microphone on/off"
@@ -1197,7 +1203,7 @@ msgstr ""
 #: DlgControllerLearning#103
 msgctxt "DlgControllerLearning#103"
 msgid "Auto DJ"
-msgstr ""
+msgstr "Auto DJ"
 
 #: DlgControllerLearning#104
 msgid "Shuffle the content of the Auto DJ playlist"
@@ -1205,7 +1211,7 @@ msgstr "Nahastu Auto DJ erreprodukzio zerrendako edukia"
 
 #: DlgControllerLearning#105
 msgid "Skip the next track in the Auto DJ playlist"
-msgstr ""
+msgstr "Saltatu hurrengo pista Auto DJ erreproduzkzio-zerrendan"
 
 #: DlgControllerLearning#106
 msgid "Trigger the transition to the next track"
@@ -1250,7 +1256,7 @@ msgstr ""
 #: DlgHidden#1
 msgctxt "DlgHidden#1"
 msgid "Manage"
-msgstr ""
+msgstr "Kudeatu"
 
 #: DlgHidden#2
 msgctxt "DlgHidden#2"
@@ -1265,12 +1271,12 @@ msgstr ""
 #: DlgHidden#4
 msgctxt "DlgHidden#4"
 msgid "Purge selected tracks from the library."
-msgstr ""
+msgstr "Ezabatu aukeratutako pistak liburutegitik"
 
 #: DlgHidden#5
 msgctxt "DlgHidden#5"
 msgid "Purge"
-msgstr ""
+msgstr "Ezabatu"
 
 #: DlgHidden#6
 msgid "Unhide selected tracks from the library."
@@ -2420,15 +2426,15 @@ msgstr ""
 msgid "Sample Rate"
 msgstr "Lagintze-maiztasuna"
 
-#: DlgPrefSoundDlg#6
+#: DlgPrefSoundDlg#3
 msgid "Buffer Underflow Count"
 msgstr ""
 
-#: DlgPrefSoundDlg#7
+#: DlgPrefSoundDlg#4
 msgid "0"
 msgstr ""
 
-#: DlgPrefSoundDlg#8
+#: DlgPrefSoundDlg#5
 msgid "Latency Tips"
 msgstr "Latentzia gomendioak"
 
@@ -2451,7 +2457,7 @@ msgctxt "DlgPrefSoundDlg#8"
 msgid "Input"
 msgstr "Sarrera"
 
-#: DlgPrefSoundDlg#12
+#: DlgPrefSoundDlg#9
 msgid "Query Devices"
 msgstr ""
 
@@ -3276,29 +3282,29 @@ msgid "Scanning: "
 msgstr ""
 
 #: MidiController#1
-msgid "MixxxControl not found"
+msgid "MixxxControl(s) not found"
 msgstr ""
 
 #: MidiController#2
-msgid "The MixxxControl '%1, %2' specified in the loaded mapping is invalid."
+msgid ""
+"One or more MixxxControls specified in the outputs section of the loaded "
+"preset were invalid."
 msgstr ""
 
 #: MidiController#3
-msgid ""
-"The MIDI output message 0x%1 0x%2 will not be bound.\n"
-"(Click Show Details for hints.)"
+msgid "Some LEDs or other feedback may not work correctly."
 msgstr ""
 
 #: MidiController#4
 msgid ""
-"* Check to see that the MixxxControl name is spelled correctly in the "
+"* Check to see that the MixxxControl names are spelled correctly in the "
 "mapping file (.xml)\n"
 msgstr ""
 
 #: MidiController#5
 msgid ""
-"* Make sure the MixxxControl you're trying to use actually exists. Visit "
-"this wiki page for a complete list:"
+"* Make sure the MixxxControls in question actually exist. Visit this wiki "
+"page for a complete list: "
 msgstr ""
 
 #: MixxxApp#1

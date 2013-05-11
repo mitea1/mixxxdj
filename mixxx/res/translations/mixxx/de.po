@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-14 06:50+0200\n"
+"POT-Creation-Date: 2013-05-10 08:29+0200\n"
 "PO-Revision-Date: 2013-05-09 18:44+0000\n"
 "Last-Translator: RJ Ryan <Unknown>\n"
 "Language-Team: Hello\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 06:15+0000\n"
+"X-Launchpad-Export-Date: 2013-05-11 05:47+0000\n"
 "X-Generator: Launchpad (build 16598)\n"
 "Language: de\n"
 
@@ -2479,15 +2479,15 @@ msgstr "Sound API"
 msgid "Sample Rate"
 msgstr "Abtastrate"
 
-#: DlgPrefSoundDlg#6
+#: DlgPrefSoundDlg#3
 msgid "Buffer Underflow Count"
 msgstr "Pufferunterlauf-Zähler"
 
-#: DlgPrefSoundDlg#7
+#: DlgPrefSoundDlg#4
 msgid "0"
 msgstr "0"
 
-#: DlgPrefSoundDlg#8
+#: DlgPrefSoundDlg#5
 msgid "Latency Tips"
 msgstr "Hinweise zur Latenz"
 
@@ -2516,7 +2516,7 @@ msgctxt "DlgPrefSoundDlg#8"
 msgid "Input"
 msgstr "Eingang"
 
-#: DlgPrefSoundDlg#12
+#: DlgPrefSoundDlg#9
 msgid "Query Devices"
 msgstr "Geräte abfragen"
 
@@ -3378,39 +3378,38 @@ msgid "Scanning: "
 msgstr "Scannen: "
 
 #: MidiController#1
-msgid "MixxxControl not found"
+msgid "MixxxControl(s) not found"
 msgstr "MixxxControl wurde nicht gefunden"
 
 #: MidiController#2
-msgid "The MixxxControl '%1, %2' specified in the loaded mapping is invalid."
+msgid ""
+"One or more MixxxControls specified in the outputs section of the loaded "
+"preset were invalid."
 msgstr ""
-"Die MixxxControl '%1, %2' welche in dem geladenen Mapping angegeben wurde "
-"ist ungülting."
+"Eine oder mehrere der in der Ausgabe-Sektion der geladenenen Voreinstellung "
+"angegebenen MixxxControls waren ungültig."
 
 #: MidiController#3
-msgid ""
-"The MIDI output message 0x%1 0x%2 will not be bound.\n"
-"(Click Show Details for hints.)"
+msgid "Some LEDs or other feedback may not work correctly."
 msgstr ""
-"Die augehende MIDI-Nachricht 0x%1 0x%2 wird nicht eingebunden.\n"
-"(Für Hinweise klicken Sie auf Details.)"
+"Einige LEDs oder andere Rückmeldungen funktionieren möglicherweise nicht "
+"korrekt."
 
 #: MidiController#4
 msgid ""
-"* Check to see that the MixxxControl name is spelled correctly in the "
+"* Check to see that the MixxxControl names are spelled correctly in the "
 "mapping file (.xml)\n"
 msgstr ""
-"* Überprüfen Sie ob der Name der MixxxControl in der Mappingdatei (.xml) "
-"richtig geschrieben ist\n"
+"* Überprüfen Sie ob die Namen der MixxxControls in der Mappingdatei (.xml) "
+"richtig geschrieben sind\n"
 
 #: MidiController#5
 msgid ""
-"* Make sure the MixxxControl you're trying to use actually exists. Visit "
-"this wiki page for a complete list:"
+"* Make sure the MixxxControls in question actually exist. Visit this wiki "
+"page for a complete list: "
 msgstr ""
-"* Stellen Sie sicher das die MixxxControl welche Sie benutzen wollen "
-"tatsächlich existiert. Besuchen Sie diese Wiki Seite für eine komplette "
-"Liste:"
+"* Überprüfen Sie das die fraglichen MixxxControls tatsächlich existieren. "
+"Besuchen Sie folgende Wiki Seite für eine komplette Liste: "
 
 #: MixxxApp#1
 msgid "Mixxx "
