@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-09 15:12+0200\n"
-"PO-Revision-Date: 2013-04-14 00:28+0000\n"
-"Last-Translator: João Reys Santos <l29634@alunos.uevora.pt>\n"
+"PO-Revision-Date: 2013-05-15 22:38+0000\n"
+"Last-Translator: Sérgio Marques <Unknown>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 05:15+0000\n"
-"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-16 05:10+0000\n"
+"X-Generator: Launchpad (build 16626)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
@@ -35,17 +35,17 @@ msgstr "Adicionar à fila Auto DJ (em cima)"
 #: BaseExternalLibraryFeature#3
 msgctxt "BaseExternalLibraryFeature#3"
 msgid "Import Playlist"
-msgstr "Importar Lista de reprodução"
+msgstr "Importar lista de reprodução"
 
 #: BaseExternalLibraryFeature#4
 msgctxt "BaseExternalLibraryFeature#4"
 msgid "Playlist Creation Failed"
-msgstr "A criação da Lista de reprodução falhou"
+msgstr "Falha ao criar a lista de reprodução"
 
 #: BaseExternalLibraryFeature#5
 msgctxt "BaseExternalLibraryFeature#5"
 msgid "An unknown error occurred while creating playlist: "
-msgstr "Ocorreu um erro desconhecido ao criar a Lista de reprodução : "
+msgstr "Ocorreu um erro desconhecido ao criar a lista de reprodução: "
 
 #: BasePlaylistFeature#1
 msgid "New Playlist"
@@ -54,12 +54,12 @@ msgstr "Nova lista de reprodução"
 #: BasePlaylistFeature#2
 msgctxt "BasePlaylistFeature#2"
 msgid "Add to Auto DJ Queue (bottom)"
-msgstr "Juntar à fila Auto DJ (em baixo)"
+msgstr "Adicionar à fila Auto DJ (em baixo)"
 
 #: BasePlaylistFeature#3
 msgctxt "BasePlaylistFeature#3"
 msgid "Add to Auto DJ Queue (top)"
-msgstr "Juntar à fila Auto DJ (em cima)"
+msgstr "Adicionar à fila Auto DJ (em cima)"
 
 #: BasePlaylistFeature#4
 msgctxt "BasePlaylistFeature#4"
@@ -69,7 +69,7 @@ msgstr "Remover"
 #: BasePlaylistFeature#5
 msgctxt "BasePlaylistFeature#5"
 msgid "Rename"
-msgstr "Renomear"
+msgstr "Mudar nome"
 
 #: BasePlaylistFeature#6
 msgctxt "BasePlaylistFeature#6"
@@ -79,44 +79,44 @@ msgstr "Bloquear"
 #: BasePlaylistFeature#7
 msgctxt "BasePlaylistFeature#7"
 msgid "Import Playlist"
-msgstr "Importar Playlist"
+msgstr "Importar lista de reprodução"
 
 #: BasePlaylistFeature#8
 msgid "Duplicate Playlist"
-msgstr "Duplicar Playlist"
+msgstr "Duplicar lista de reprodução"
 
 #: BasePlaylistFeature#9
 msgid "Export Playlist"
-msgstr "Exportar Playlist"
+msgstr "Exportar lista de reprodução"
 
 #: BasePlaylistFeature#10
 msgid "Rename Playlist"
-msgstr "Renomear Playlist"
+msgstr "Mudar nome da lista de reprodução"
 
 #: BasePlaylistFeature#11
 msgid "New playlist name:"
-msgstr "Novo nome da Playlist"
+msgstr "Nome da lista de reprodução:"
 
 #: BasePlaylistFeature#12
 msgid "Renaming Playlist Failed"
-msgstr "A mudança de nome da Playlist falhou"
+msgstr "Falha ao mudar o nome da lista"
 
 #: BasePlaylistFeature#13
 msgid "A playlist by that name already exists."
-msgstr "Já existe uma Playlist com este nome"
+msgstr "Já existe uma lista de reprodução com este nome."
 
 #: BasePlaylistFeature#14
 msgid "A playlist cannot have a blank name."
-msgstr "A Playlist não pode ter um nome vazio"
+msgstr "Não pode criar uma lista de reprodução com o nome vazio."
 
 #: BasePlaylistFeature#15
 msgid "Playlist name:"
-msgstr "Nome da Playlist"
+msgstr "Nome da lista de reprodução:"
 
 #: BasePlaylistFeature#16
 msgctxt "BasePlaylistFeature#16"
 msgid "_copy"
-msgstr ""
+msgstr "_copiar"
 
 #: BasePlaylistFeature#17
 msgctxt "BasePlaylistFeature#17"
@@ -126,12 +126,13 @@ msgstr "A criação da Lista de reprodução falhou"
 #: BasePlaylistFeature#18
 msgctxt "BasePlaylistFeature#18"
 msgid "An unknown error occurred while creating playlist: "
-msgstr "Ocorreu um erro desconhecido ao criar a Playlist "
+msgstr ""
+"Um erro desconhecido ocorreu enquanto se criava a lista de reprodução "
 
 #: BasePlaylistFeature#19
 msgctxt "BasePlaylistFeature#19"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Listas de reprodução (*.m3u *.m3u8 *.pls *.csv)"
 
 #: BasePlaylistFeature#20
 msgctxt "BasePlaylistFeature#20"
@@ -139,6 +140,8 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"Lista M3U (*.m3u);;Lista M3U8 (*.m3u8);;Lista PLS (*.pls);;Texto CSV "
+"(*.csv);;Texto (*.txt)"
 
 #: BaseSqlTableModel#1
 msgid "Played"
@@ -147,22 +150,24 @@ msgstr "Reproduzido"
 #: BaseSqlTableModel#2
 msgctxt "BaseSqlTableModel#2"
 msgid "Artist"
-msgstr "Artist"
+msgstr ""
+"_: Ilustrador da BD\n"
+"Artista"
 
 #: BaseSqlTableModel#3
 msgctxt "BaseSqlTableModel#3"
 msgid "Title"
-msgstr "Titulo"
+msgstr "Título em português"
 
 #: BaseSqlTableModel#4
 msgctxt "BaseSqlTableModel#4"
 msgid "Album"
-msgstr "Album"
+msgstr "Álbum"
 
 #: BaseSqlTableModel#5
 msgctxt "BaseSqlTableModel#5"
 msgid "Genre"
-msgstr "Gênero"
+msgstr "Género"
 
 #: BaseSqlTableModel#6
 msgctxt "BaseSqlTableModel#6"
@@ -182,7 +187,7 @@ msgstr "Tipo"
 #: BaseSqlTableModel#9
 msgctxt "BaseSqlTableModel#9"
 msgid "Location"
-msgstr "LOCALIZAÇÃO"
+msgstr "Localização"
 
 #: BaseSqlTableModel#10
 msgctxt "BaseSqlTableModel#10"
@@ -196,12 +201,12 @@ msgstr "Duração"
 
 #: BaseSqlTableModel#12
 msgid "Rating"
-msgstr "classificação"
+msgstr "Avaliação"
 
 #: BaseSqlTableModel#13
 msgctxt "BaseSqlTableModel#13"
 msgid "Bitrate"
-msgstr "Bit rate"
+msgstr "Taxa de dados"
 
 #: BaseSqlTableModel#14
 msgctxt "BaseSqlTableModel#14"
@@ -215,11 +220,11 @@ msgstr "Faixa #"
 
 #: BaseSqlTableModel#16
 msgid "Date Added"
-msgstr "Data Adicionada"
+msgstr "Data de adição"
 
 #: BaseSqlTableModel#17
 msgid "#"
-msgstr "nº"
+msgstr "#"
 
 #: BaseSqlTableModel#18
 msgid "Timestamp"
@@ -228,7 +233,7 @@ msgstr "Data/Hora"
 #: BaseSqlTableModel#19
 msgctxt "BaseSqlTableModel#19"
 msgid "Key"
-msgstr "Key"
+msgstr "Chave"
 
 #: BaseSqlTableModel#20
 msgid "BPM Lock"
@@ -236,23 +241,23 @@ msgstr "Bloquear BPM"
 
 #: BaseSqlTableModel#21
 msgid "Preview"
-msgstr "Prévia"
+msgstr "Antevisão"
 
 #: BaseTrackPlayer#1
 msgid "Couldn't load track."
-msgstr "NAO FOI Possível carregar a Faixa"
+msgstr "Não foi possível carregar a faixa."
 
 #: BrowseFeature#1
 msgid "Add to Quick Links"
-msgstr "Adicionar AOS Ligações"
+msgstr "Adicionar à ligação rápida"
 
 #: BrowseFeature#2
 msgid "Remove from Quick Links"
-msgstr "Retirar dos links"
+msgstr "Remover da ligação rápida"
 
 #: BrowseFeature#3
 msgid "Quick Links"
-msgstr "Links Rápidos"
+msgstr "Ligação rápida"
 
 #: BrowseFeature#4
 msgid "Devices"
@@ -260,15 +265,15 @@ msgstr "Dispositivos"
 
 #: BrowseFeature#5
 msgid "Removable Devices"
-msgstr "Dispositivos Removíveis"
+msgstr "Dispositivos amovíveis"
 
 #: BrowseFeature#6
 msgid ""
 "Browse lets you navigate, view, and load tracks from folders on your hard "
 "disk and external devices."
 msgstr ""
-"Procurar permite que você navegue, visualizar e carregar faixas de pastas em "
-"seu disco rígido e dispositivos externos"
+"Procurar permite navegar, ver e carregar faixas no seu disco rígido e nos "
+"dispositivos externos."
 
 #: BrowseFeature#7
 msgid "Browse"
@@ -276,7 +281,7 @@ msgstr "Procurar"
 
 #: BrowseTableModel#1
 msgid "Filename"
-msgstr "Nome do arquivo"
+msgstr "Nome do ficheiro"
 
 #: BrowseTableModel#2
 msgctxt "BrowseTableModel#2"
@@ -341,7 +346,7 @@ msgstr "Tipo"
 #: BrowseTableModel#14
 msgctxt "BrowseTableModel#14"
 msgid "Bitrate"
-msgstr "Taxa"
+msgstr "Taxa de dados"
 
 #: BrowseTableModel#15
 msgctxt "BrowseTableModel#15"
@@ -350,35 +355,35 @@ msgstr "Localização"
 
 #: BrowseTableModel#16
 msgid "Mixxx Library"
-msgstr "Biblioteca Mixxx"
+msgstr "Coleção do Mixxx"
 
 #: BrowseTableModel#17
 msgid ""
 "Could not load the following file because it is in use by Mixxx or another "
 "application."
 msgstr ""
-"Não foi possível carregar o arquivo a seguir, porque está em uso por Mixxx "
-"ou outro aplicativo."
+"Não foi possível carregar o ficheiro seguinte, porque está a ser utilizado "
+"pelo Mixxx ou por outra aplicação."
 
 #: BrowseTableModel#18
 msgid "Warning: This will permanently delete the following files:"
-msgstr "Aviso: Esta Operação irá apagar permanentemente os arquivos:"
+msgstr "Aviso: esta operação irá apagar permanentemente estes ficheiros:"
 
 #: BrowseTableModel#19
 msgid "Are you sure you want to delete these files from your computer?"
-msgstr "Tem certeza de que deseja excluir esses arquivos do seu computador?"
+msgstr "Tem a certeza de que deseja eliminar os ficheiros do seu computador?"
 
 #: BrowseTableModel#20
 msgid ""
 "Could not delete the following file because it is in use by Mixxx or another "
 "application:"
 msgstr ""
-"Não foi possível excluir o seguinte arquivo, por estar em uso por Mixx ou "
-"outro aplicativo:"
+"Não foi possível este ficheiro porque está a ser utilizado pelo Mixxx ou "
+"outra aplicação."
 
 #: BrowseTableModel#21
 msgid "Could not update file metadata."
-msgstr "Não foi possível atualizar os metadados do arquivo."
+msgstr "Não foi possível atualizar os dados do ficheiro."
 
 #: BulkController#1
 msgid "USB Controller"
@@ -386,20 +391,19 @@ msgstr "Controlador USB"
 
 #: ControllerEngine#1
 msgid "Uncaught exception at line %1 in file %2: %3"
-msgstr "Exceção não detectada na linha 1% no arquivo 2%: 3%"
+msgstr "Exceção na linha 1% do ficheiro 2%: 3%"
 
 #: ControllerEngine#2
 msgid "Uncaught exception at line %1 in passed code: %2"
-msgstr "Exceção não detectada Linha 1% em Código Passado: 2%"
+msgstr "Exceção na linha 1% do código: 2%"
 
 #: ControllerEngine#3
 msgid "Controller script error"
-msgstr "Controlador de Erro de roteiro"
+msgstr "Erro de controlador"
 
 #: ControllerEngine#4
 msgid "A control you just used is not working properly."
-msgstr ""
-"O controlador que você acabo de usar não está funcionando corretamente."
+msgstr "O controlador utilizado não está a funcionar corretamente."
 
 #: ControllerEngine#5
 msgid ""
@@ -408,8 +412,8 @@ msgid ""
 "erratic behavior</li><li>Try to recover by resetting your "
 "controller</li></ul></html>"
 msgstr ""
-"<html>(O código do Script necessita de ser corrigido.)<br>Por agora, "
-"pode:<ul><li> Ignorar este erro nesta sessão, mas poderá experimentar um "
+"<html>(O código do script tem que ser corrigido.)<br>Por agora, "
+"pode:<ul><li> Ignorar este erro nesta sessão e sujeitar-se a um "
 "comportamento errático.</li><li>Tente a recuperação reiniciando o seu "
 "controlador.</li></ul></html>"
 
@@ -428,11 +432,11 @@ msgid ""
 "The below box is under construction and will remain empty in this version of "
 "Mixxx."
 msgstr ""
-"O quadro abaixo está em construção e ficará vazio nesta versão do Mixxx"
+"A caixa abaixo está em desenvolvimento estará vazia nesta versão do Mixxx."
 
 #: ControllerMappingDlg#4
 msgid "Controls"
-msgstr "Controles"
+msgstr "Controlos"
 
 #: ControllerMappingDlg#5
 msgctxt "ControllerMappingDlg#5"
@@ -442,15 +446,15 @@ msgstr "Adicionar"
 #: ControllerMappingDlg#6
 msgctxt "ControllerMappingDlg#6"
 msgid "Remove"
-msgstr "Remove"
+msgstr "Remover"
 
 #: ControllerMappingDlg#7
 msgid "Learning Wizard"
-msgstr "ASSISTENTE de Aprendizagem"
+msgstr "Assistente"
 
 #: ControllerMappingDlg#8
 msgid "Clear all"
-msgstr "Apagar tudo"
+msgstr "Limpar tudo"
 
 #: ControllerMappingDlg#9
 msgctxt "ControllerMappingDlg#9"
@@ -467,7 +471,7 @@ msgstr "Limpar tudo"
 
 #: CrateFeature#1
 msgid "New Crate"
-msgstr "Caixa nova"
+msgstr "Nova caixa"
 
 #: CrateFeature#2
 msgctxt "CrateFeature#2"
@@ -477,7 +481,7 @@ msgstr "Remover"
 #: CrateFeature#3
 msgctxt "CrateFeature#3"
 msgid "Rename"
-msgstr "Renomear"
+msgstr "Mudar nome"
 
 #: CrateFeature#4
 msgctxt "CrateFeature#4"
@@ -487,12 +491,12 @@ msgstr "Bloquear"
 #: CrateFeature#5
 msgctxt "CrateFeature#5"
 msgid "_copy"
-msgstr ""
+msgstr "_copiar"
 
 #: CrateFeature#6
 msgctxt "CrateFeature#6"
 msgid "Import Playlist"
-msgstr "Importar Playlist"
+msgstr "Importar lista de reprodução"
 
 #: CrateFeature#7
 msgid "Crates"
@@ -508,7 +512,7 @@ msgstr "Exportar caixa"
 
 #: CrateFeature#10
 msgid "Duplicate Crate"
-msgstr ""
+msgstr "Duplicar caixa"
 
 #: CrateFeature#11
 msgctxt "CrateFeature#11"
@@ -521,24 +525,24 @@ msgstr "Nome da caixa:"
 
 #: CrateFeature#13
 msgid "An unknown error occurred while creating crate: "
-msgstr "Ocorreu um erro desconhecido durante a criação da caixa: "
+msgstr "Ocorreu um erro desconhecido ao criar a caixa: "
 
 #: CrateFeature#14
 msgid "Rename Crate"
-msgstr "Renomear Caixa"
+msgstr "Mudar nome da caixa"
 
 #: CrateFeature#15
 msgid "New crate name:"
-msgstr "Novo nome da caixa:"
+msgstr "Nome da caixa:"
 
 #: CrateFeature#16
 msgid "Renaming Crate Failed"
-msgstr "Falha AO renomear a Caixa"
+msgstr "Falha ao mudar o nome da caixa"
 
 #: CrateFeature#17
 msgctxt "CrateFeature#17"
 msgid "Playlist Files (*.m3u *.m3u8 *.pls *.csv)"
-msgstr ""
+msgstr "Listas de reprodução (*.m3u *.m3u8 *.pls *.csv)"
 
 #: CrateFeature#18
 msgctxt "CrateFeature#18"
@@ -546,37 +550,38 @@ msgid ""
 "M3U Playlist (*.m3u);;M3U8 Playlist (*.m3u8);;PLS Playlist (*.pls);;Text CSV "
 "(*.csv);;Readable Text (*.txt)"
 msgstr ""
+"Lista M3U (*.m3u);;Lista M3U8 (*.m3u8);;Lista PLS (*.pls);;Texto CSV "
+"(*.csv);;Texto (*.txt)"
 
 #: CrateFeature#19
 msgid ""
 "Crates are a great way to help organize the music you want to DJ with."
 msgstr ""
-"Grades são uma ótima maneira para ajudar a organizar a música que você quer "
-"DJ com."
+"As caixas são a melhor forma de organizar as faixas que pretende guardar."
 
 #: CrateFeature#20
 msgid ""
 "Make a crate for your next gig, for your favorite electrohouse tracks, or "
 "for your most requested songs."
 msgstr ""
-"Faça uma caixa para o seu próximo show, por suas faixas favoritas "
-"electrohouse, ou para suas músicas mais pedidas."
+"Crie uma caixa para o seu espetáculo, com as suas faixas preferidas ou com "
+"as faixas mais pedidas."
 
 #: CrateFeature#21
 msgid "Crates let you organize your music however you'd like!"
-msgstr "Caixas deixam você organizar a sua música, como você prefira!"
+msgstr "As caixas permitem-lhe organizar as músicas ao seu gosto."
 
 #: CrateFeature#22
 msgid "Create new crate"
-msgstr "Criar caixa nova"
+msgstr "Criar caixa"
 
 #: CrateFeature#23
 msgid "A crate cannot have a blank name."
-msgstr "Uma caixa não pode ter um nome vazio"
+msgstr "Não pode criar uma caixa sem nome."
 
 #: CrateFeature#24
 msgid "Creating Crate Failed"
-msgstr "Falha ao criar a caixa."
+msgstr "Falha ao criar caixa"
 
 #: CrateFeature#25
 msgid "A crate by that name already exists."
@@ -588,7 +593,7 @@ msgstr "Sobre o Mixxx"
 
 #: DlgAboutDlg#2
 msgid "<a href=\"http://mixxx.org/\">Official Website</a>"
-msgstr "<a href=\"http://mixxx.org/\">Página web oficial</a>"
+msgstr "<a href=\"http://mixxx.org/\">Página web</a>"
 
 #: DlgAutoDJ#1
 msgid "Auto-DJ"
@@ -596,39 +601,39 @@ msgstr "Auto DJ"
 
 #: DlgAutoDJ#2
 msgid "One deck must be stopped to enable Auto-DJ mode."
-msgstr "Um leitor tem de estar parado para activar o modo Auto DJ"
+msgstr "Tem que parar um deck para ativar o modo automático."
 
 #: DlgAutoDJ#3
 msgid "Disable Auto DJ"
-msgstr "Desactivar Auto DJ"
+msgstr "Desativar Auto DJ"
 
 #: DlgAutoDJ#4
 msgid "Shuffle the content of the Auto DJ playlist."
-msgstr "Tornar aleatório o conteúdo da Playlist Auto DJ"
+msgstr "Conteúdo aleatório na lista de reprodução Auto DJ"
 
 #: DlgAutoDJ#5
 msgid "Shuffle"
-msgstr "Aleatória"
+msgstr "Aleatório"
 
 #: DlgAutoDJ#6
 msgid "Skip the next track in the Auto DJ playlist."
-msgstr "Ir para próxima faixa na lista Auto DJ."
+msgstr "Avançar para a faixa seguinte da lista de reprodução AUto DJ."
 
 #: DlgAutoDJ#7
 msgid "Skip Track"
-msgstr "Próxima Faixa"
+msgstr "Faixa seguinte"
 
 #: DlgAutoDJ#8
 msgid "Trigger the transition to the next track."
-msgstr "Accionar a transição para a próxima faixa"
+msgstr "Ativar a transição para a faixa seguinte"
 
 #: DlgAutoDJ#9
 msgid "Fade Now"
-msgstr "Atenuar agora"
+msgstr "Sobrepor agora"
 
 #: DlgAutoDJ#10
 msgid "Determines the duration of the transition."
-msgstr "Determina a duração da transição"
+msgstr "Determina a duração da transição."
 
 #: DlgAutoDJ#11
 msgid "Seconds"
@@ -636,24 +641,24 @@ msgstr "Segundos"
 
 #: DlgAutoDJ#12
 msgid "sec."
-msgstr "seg"
+msgstr "seg."
 
 #: DlgAutoDJ#13
 msgid "Turn Auto DJ on or off."
-msgstr "Activa/desactiva o Auto DJ"
+msgstr "Ativa/desativa o Auto DJ"
 
 #: DlgAutoDJ#14
 msgid "Enable Auto DJ"
-msgstr "Activar Auto DJ"
+msgstr "Ativar Auto DJ"
 
 #: DlgAutoDJ#15
 msgctxt "DlgAutoDJ#15"
 msgid "Manage"
-msgstr "Gerenciar"
+msgstr "Gerir"
 
 #: DlgBeatsDlg#1
 msgid "Beat Detection Settings"
-msgstr "Definições da detecção de batidas"
+msgstr "Definições da deteção de batida"
 
 #: DlgBeatsDlg#2
 msgid ""
@@ -662,26 +667,30 @@ msgid ""
 "automatically shows a beat-grid for them, and allows you to synchronize "
 "tracks using their beat information."
 msgstr ""
+"Se a opção de deteção de batidas estiver ativa, o Mixxx deteta as bpm das "
+"suas faixas e mostra \n"
+"automaticamente uma grelha para as mesmas, permitindo-lhe sincronizar as "
+"faixas através desta informação."
 
 #: DlgBeatsDlg#3
 msgid "Enable BPM and Beat Detection"
-msgstr "Activar BPM e a Detecção de Batidas"
+msgstr "Ativar BPM e deteção de batidas"
 
 #: DlgBeatsDlg#4
 msgid "Choose Analyser"
-msgstr "Escolher o Analisador"
+msgstr "Escolha o analisador"
 
 #: DlgBeatsDlg#5
 msgid "Beat Analyser:"
-msgstr "Analizador de Batidas:"
+msgstr "Analisador de batidas:"
 
 #: DlgBeatsDlg#6
 msgid "Choose between different algorithms to detect beats."
-msgstr "Escolha de entre algoritmos diferentes para detectar batidas"
+msgstr "Escolha entre os diferentes algoritmos para detetar as batidas."
 
 #: DlgBeatsDlg#7
 msgid "Analyser Settings"
-msgstr "Definições do Analisador"
+msgstr "Definições do analisador"
 
 #: DlgBeatsDlg#8
 msgid ""
@@ -691,6 +700,11 @@ msgid ""
 "This can speed up beat detection on slower computers but may result in lower "
 "quality beatgrids."
 msgstr ""
+"Ativar deteção rápida de batidas.\n"
+"Se ativar esta opção, o Mixxx só analisa as BPM do primeiro minuto da "
+"faixa.\n"
+"Pode acelerar a deteção de batidas nos computadores lentos mas pode originar "
+"grelhas de menor qualidade."
 
 #: DlgBeatsDlg#9
 msgid ""
@@ -700,6 +714,11 @@ msgid ""
 "Often results in higher quality beatgrids, but will not do well on tracks "
 "that have tempo shifts."
 msgstr ""
+"Converter as BPM detetadas pelo analisador numa grelha fixa.\n"
+"Utilize esta opção caso as faixas tenham um batida constante (ex: música "
+"eletrónica)\n"
+"Pode resultar em grelhas de melhor qualidade, mas não funciona corretamente "
+"não faixas com alterações."
 
 #: DlgBeatsDlg#10
 msgid ""
@@ -712,25 +731,28 @@ msgid ""
 "e.g. from 3rd-party programs or Mixxx versions before 1.11.\n"
 "(Not checked: Analyse only, if no beats exist.)"
 msgstr ""
+"por exemplo: para outras aplicações ou versões Mixx <1.11.\n"
+"(Não ativa: apenas analisa se não existir BPM)"
 
 #: DlgBeatsDlg#12
 msgid ""
 "Re-analyse beats when settings change or beat detection data is outdated"
 msgstr ""
+"Reanalisar BPM ao alterar as definições ou caso os dados estejam "
+"desatualizados"
 
 #: DlgBeatsDlg#13
 msgid "Enable Fast Analysis (For slow computers, may be less accurate)"
 msgstr ""
-"Activar Analise Rápida (para computadores mais lentos, poderá ser menos "
-"preciso)"
+"Ativar análise rápida (para computadores lentos, mas com menor precisão)"
 
 #: DlgBeatsDlg#14
 msgid "Assume constant tempo (Recommended)"
-msgstr "Assumir tempo constante (recomendado)"
+msgstr "Assumir batida constante (recomendado)"
 
 #: DlgBeatsDlg#15
 msgid "Enable Offset Correction (Recommended)"
-msgstr "Activar Correcção Offset (recomendado)"
+msgstr "Ativar correção offset (recomendado)"
 
 #: DlgBeatsDlg#16
 msgctxt "DlgBeatsDlg#16"
@@ -748,7 +770,7 @@ msgstr "Máx:"
 #: DlgBeatsDlg#19
 msgctxt "DlgBeatsDlg#19"
 msgid "Reset to Defaults"
-msgstr "Repor as Predefinições"
+msgstr "Reiniciar definições"
 
 #: DlgBpmSchemeDlg#1
 msgid "BPM Scheme"
@@ -773,11 +795,11 @@ msgstr "Mín."
 
 #: DlgBpmSchemeDlg#6
 msgid "Analyze Entire Track"
-msgstr "Analisar a Faixa Inteira"
+msgstr "Analisar faixa integralmente"
 
 #: DlgControllerLearning#1
 msgid "Controller Learning Wizard"
-msgstr "Assistente de aprendizagem de controlador"
+msgstr "Assistente de controladores"
 
 #: DlgControllerLearning#2
 msgid ""
@@ -785,23 +807,23 @@ msgid ""
 "move a control on your controller to map it. Repeat this as many times as "
 "you wish. When you are finished mapping controls, click Done."
 msgstr ""
-"Clique um controlo no interface do Mixxx ou escolha um da lista. De seguida, "
-"accione um controlo no seu controlador para o associar. Repita esta operação "
-"tantas vezes quantas o deseje. Quando tiver terminado de associar os "
-"controlos, clique Terminado"
+"Clique em qualquer controlo da interface do Mixxx ou escolha um da lista. De "
+"seguida, mova um controlo no seu controlador para o associar. Repita esta "
+"operação tantas vezes quanto necessário. Quando tiver terminado de associar "
+"os controlos, clique Terminado."
 
 #: DlgControllerLearning#3
 msgid "Done"
-msgstr "Concluído"
+msgstr "Terminado"
 
 #: DlgControllerLearning#4
 msgid "To map another control click a button or choose from the list."
 msgstr ""
-"Para associar outro controlo clique num botão ou escolha um da lista."
+"Para associar outro controlo, clique num botão ou escolha um da lista."
 
 #: DlgControllerLearning#5
 msgid "Choose Control"
-msgstr "Escolha o Controlo"
+msgstr "Escolha o controlo"
 
 #: DlgControllerLearning#6
 msgid "Deck %1"
@@ -814,11 +836,11 @@ msgstr "Sampler %1"
 
 #: DlgControllerLearning#8
 msgid "Reset to default"
-msgstr "Repor as predefinições"
+msgstr "Reiniciar definições"
 
 #: DlgControllerLearning#9
 msgid "Mixer"
-msgstr "Mixer"
+msgstr "Misturador"
 
 #: DlgControllerLearning#10
 msgctxt "DlgControllerLearning#10"
@@ -827,19 +849,19 @@ msgstr "Crossfader"
 
 #: DlgControllerLearning#11
 msgid "Master volume"
-msgstr "Volume mestre"
+msgstr "Volume principal"
 
 #: DlgControllerLearning#12
 msgid "Master balance"
-msgstr "Balance Principal"
+msgstr "Equilíbrio principal"
 
 #: DlgControllerLearning#13
 msgid "Headphone volume"
-msgstr "Volume dos Fones"
+msgstr "Volume do auscultador"
 
 #: DlgControllerLearning#14
 msgid "Headphone mix (pre/main)"
-msgstr "Mistura nos auscultadores (pré-escuta/geral)"
+msgstr "Headphone mix (pre/main)"
 
 #: DlgControllerLearning#15
 msgid "Transport"
@@ -847,43 +869,43 @@ msgstr "Transporte"
 
 #: DlgControllerLearning#16
 msgid "Strip-search through track"
-msgstr "Pesquisar nas pistas"
+msgstr "Pesquisar nas faixas"
 
 #: DlgControllerLearning#17
 msgid "Play button"
-msgstr "Tecla Play"
+msgstr "Botão Play"
 
 #: DlgControllerLearning#18
 msgid "Volume fader"
-msgstr "Fader Volume"
+msgstr "Volume do fader"
 
 #: DlgControllerLearning#19
 msgid "Fast rewind button"
-msgstr "Tecla de retrocesso rápido"
+msgstr "Botão de recuo rápido"
 
 #: DlgControllerLearning#20
 msgid "Fast forward button"
-msgstr "Botão de avanço rapido"
+msgstr "Botão de avanço rápido"
 
 #: DlgControllerLearning#21
 msgid "Jump to start of track"
-msgstr "Saltar para o inicio da faixa"
+msgstr "Ir para o início da faixa"
 
 #: DlgControllerLearning#22
 msgid "Jump to end of track"
-msgstr "Saltar para o fim da faixa"
+msgstr "Ir para o fim da faixa"
 
 #: DlgControllerLearning#23
 msgid "Play reverse button"
-msgstr "Tecla de leitura invertida"
+msgstr "Botão de reprodução inversa"
 
 #: DlgControllerLearning#24
 msgid "Gain knob"
-msgstr "Controlo de Ganho"
+msgstr "Controlo de ganho"
 
 #: DlgControllerLearning#25
 msgid "Headphone listen button"
-msgstr "Botão de audição dos fones"
+msgstr "Botão de audição dos auscultadores"
 
 #: DlgControllerLearning#26
 msgid "Toggle repeat mode"
@@ -891,11 +913,11 @@ msgstr "Alternar modo de repetição"
 
 #: DlgControllerLearning#27
 msgid "Eject track"
-msgstr "Ejectar a faixa"
+msgstr "Ejetar faixa"
 
 #: DlgControllerLearning#28
 msgid "Mix orientation (e.g. left, right, center)"
-msgstr "Orientação da Mistura (ex.: esquerda, direita, centro)"
+msgstr "Orientação da mistura (ex.: esquerda, direita, centro)"
 
 #: DlgControllerLearning#29
 msgid "BPM and Sync"
@@ -911,7 +933,7 @@ msgstr "Ajustar grelha de batida"
 
 #: DlgControllerLearning#32
 msgid "Toggle quantize mode"
-msgstr "Activar/desactivar o modo de quantificação"
+msgstr "Alternar modo de quantificação"
 
 #: DlgControllerLearning#33
 msgid "Beat sync (tempo and phase)"
@@ -919,55 +941,55 @@ msgstr "Sincrinização da batida (tempo e fase)"
 
 #: DlgControllerLearning#34
 msgid "Beat sync (tempo only)"
-msgstr "Syncro do ritmo (apenas tempo)"
+msgstr "Sincronização de ritmo (tempo)"
 
 #: DlgControllerLearning#35
 msgid "Beat sync (phase only)"
-msgstr "Sincronização de Batida (só fase)"
+msgstr "Sincronização de batida (fase)"
 
 #: DlgControllerLearning#36
 msgid "Pitch and Rate"
-msgstr "Altura e Velocidade"
+msgstr "Pitch e rate"
 
 #: DlgControllerLearning#37
 msgid "Toggle keylock mode"
-msgstr "Activar/desactivar o modo de bloqueio"
+msgstr "Alternar modo de bloqueio"
 
 #: DlgControllerLearning#38
 msgid "Pitch control slider"
-msgstr "Cursor de controlo de altura"
+msgstr "Cursor de controlo de pitch"
 
 #: DlgControllerLearning#39
 msgid "Adjust rate up (fine)"
-msgstr "Ajustar o aumento da velocidade (preciso)"
+msgstr "Aumentar velocidade (preciso)"
 
 #: DlgControllerLearning#40
 msgid "Adjust rate down (fine)"
-msgstr "Ajustar a diminuição da velocidade (preciso)"
+msgstr "Diminuir velocidade (preciso)"
 
 #: DlgControllerLearning#41
 msgid "Pitch-bend rate up (fine)"
-msgstr "Desvio da velocidade - aumento (preciso)"
+msgstr "Aumentar pitch-bend (preciso)"
 
 #: DlgControllerLearning#42
 msgid "Adjust rate up (coarse)"
-msgstr "Ajustar o aumento da velocidade (grosseiro)"
+msgstr "Aumentar velocidade (grosseiro)"
 
 #: DlgControllerLearning#43
 msgid "Adjust rate down (coarse)"
-msgstr "Ajustar diminuição da velocidade (grosseiro)"
+msgstr "Diminuir velocidade (grosseiro)"
 
 #: DlgControllerLearning#44
 msgid "Pitch-bend rate up (coarse)"
-msgstr "Desvio da velocidade - aumento (grosseiro)"
+msgstr "Aumentar pitch-bend (grosseiro)"
 
 #: DlgControllerLearning#45
 msgid "Pitch-bend rate down (coarse)"
-msgstr "Desvio da velocidade - diminuição (grosseiro)"
+msgstr "Diminuir pitch-bend rate down (grosseiro)"
 
 #: DlgControllerLearning#46
 msgid "Pitch-bend rate down (fine)"
-msgstr "Desvio da velocidade - diminuição (preciso)"
+msgstr "Diminuir pitch-bend (preciso)"
 
 #: DlgControllerLearning#47
 msgctxt "DlgControllerLearning#47"
@@ -976,53 +998,52 @@ msgstr "Equalizadores"
 
 #: DlgControllerLearning#48
 msgid "High EQ knob"
-msgstr "Botão dos Agudos"
+msgstr "Botão dos agudos"
 
 #: DlgControllerLearning#49
 msgid "Mid EQ knob"
-msgstr "Botão dos Médios"
+msgstr "Botão dos médios"
 
 #: DlgControllerLearning#50
 msgid "Low EQ knob"
-msgstr "Botão dos Baixos"
+msgstr "Botão de graves"
 
 #: DlgControllerLearning#51
 msgid "High EQ kill"
-msgstr "Supressão dos Agudos"
+msgstr "Supressão de agudos"
 
 #: DlgControllerLearning#52
 msgid "Mid EQ kill"
-msgstr "Supressão dos Médios"
+msgstr "Supressão de médios"
 
 #: DlgControllerLearning#53
 msgid "Low EQ kill"
-msgstr "Supressão dos Baixos"
+msgstr "Supressão de graves"
 
 #: DlgControllerLearning#54
 msgctxt "DlgControllerLearning#54"
 msgid "Vinyl Control"
-msgstr "Controlo Vinilo"
+msgstr "Controlo do vinil"
 
 #: DlgControllerLearning#55
 msgid "Toggle vinyl-control (ON/OFF)"
-msgstr "Activar/desactivar o controlo vinilo"
+msgstr "Alternar controlo do vinil (ligar/desligar)"
 
 #: DlgControllerLearning#56
 msgid "Toggle vinyl-control cueing mode (OFF/ONE/HOT)"
-msgstr ""
-"Activar/desactivar o modo de marcação do controlo vinilo (OFF/UM/HOT)"
+msgstr "Alternar modo de marcação do vinil (OFF/ONE/HOT)"
 
 #: DlgControllerLearning#57
 msgid "Toggle vinyl-control mode (ABS/REL/CONST)"
-msgstr "Activar/desactivar o modo de controlo vinilo (ABS/REL/CONST)"
+msgstr "Alternar modo de controlo do vinil (ABS/REL/CONST)"
 
 #: DlgControllerLearning#58
 msgid "Cue button"
-msgstr "Tecla de marca"
+msgstr "Botão de marca"
 
 #: DlgControllerLearning#59
 msgid "Set cue point"
-msgstr "Definir o ponto de marcação"
+msgstr "Definir ponto de marcação"
 
 #: DlgControllerLearning#60
 msgid "Go to cue point and stop"
@@ -1034,7 +1055,7 @@ msgstr "Definir ou ir para o marcador %1"
 
 #: DlgControllerLearning#62
 msgid "Clear hotcue %1"
-msgstr "Apagar o marcador %1"
+msgstr "Limpar marcador %1"
 
 #: DlgControllerLearning#63
 msgid "Jump to hotcue %1"
@@ -1046,27 +1067,27 @@ msgstr "Ir para o marcador %1 e parar"
 
 #: DlgControllerLearning#65
 msgid "Looping"
-msgstr "Looping"
+msgstr "Ciclo"
 
 #: DlgControllerLearning#66
 msgid "Loop In button"
-msgstr "Tecla de entrada em Loop"
+msgstr "Botão de entrada de ciclo"
 
 #: DlgControllerLearning#67
 msgid "Loop Out button"
-msgstr "Botão de saída de Loop"
+msgstr "Botão de saída de ciclo"
 
 #: DlgControllerLearning#68
 msgid "Reloop / Exit button"
-msgstr "Botão de Reloop / Saída"
+msgstr "Botão de reloop/saída"
 
 #: DlgControllerLearning#69
 msgid "Halve the current loop's length"
-msgstr "Reduzir a metade o comprimento do Loop corrente"
+msgstr "Reduzir a metade a duração do ciclo atual"
 
 #: DlgControllerLearning#70
 msgid "Double the current loop's length"
-msgstr "Duplicar o comprimento do Loop corrente"
+msgstr "Duplicar a duração do ciclo atual"
 
 #: DlgControllerLearning#71
 msgid "Toggle slip mode"
@@ -1074,12 +1095,12 @@ msgstr "Alterar modo de deslizamento"
 
 #: DlgControllerLearning#72
 msgid "Preview Deck %1"
-msgstr ""
+msgstr "Antevisão do leitor %1"
 
 #: DlgControllerLearning#73
 msgid "Single deck mode - Toggle vinyl control to next deck"
 msgstr ""
-"Modo de Deck único - Alternar o controlo do Vinyl para o próximo Deck"
+"Modo de leitor único - Alternar controlo de vinil para o leitor seguinte"
 
 #: DlgControllerLearning#74
 msgid "Cues"
@@ -1087,27 +1108,27 @@ msgstr "Marcas"
 
 #: DlgControllerLearning#75
 msgid "Hotcues"
-msgstr ""
+msgstr "Marcações"
 
 #: DlgControllerLearning#76
 msgid "Hotcue %1"
-msgstr "Pistas Quentes %1"
+msgstr "Marca %1"
 
 #: DlgControllerLearning#77
 msgid "Loop Exit button"
-msgstr ""
+msgstr "Botão de saída de ciclo"
 
 #: DlgControllerLearning#78
 msgid "Beat-Looping"
-msgstr "Looping de tempos"
+msgstr "Ciclo de batida"
 
 #: DlgControllerLearning#79
 msgid "Create %1-beat loop"
-msgstr "Criar um loop com %1 tempos"
+msgstr "Criar ciclo com %1 batida"
 
 #: DlgControllerLearning#80
 msgid "Create temporary %1-beat loop roll"
-msgstr "Criar temporariamente %1 -beat loop roll"
+msgstr "Criar ciclo temporário com %1 batida"
 
 #: DlgControllerLearning#81
 msgid "1/32th"
@@ -1128,27 +1149,31 @@ msgstr "1/4"
 #: DlgControllerLearning#85
 msgctxt "DlgControllerLearning#85"
 msgid "Library"
-msgstr "Biblioteca"
+msgstr "Coleção"
 
 #: DlgControllerLearning#86
 msgid "Expand/collapse the selected view (library, playlist..)"
-msgstr "Expandir/minimizar a vista selecionada (biblioteca, playlist..)"
+msgstr ""
+"Expandir/recolher a visualização selecionada (biblioteca, lista de "
+"reprodução...)"
 
 #: DlgControllerLearning#87
 msgid "Switch to the next view (library, playlist..)"
-msgstr "Passar à próxima vista (biblioteca, playlist...)"
+msgstr ""
+"Trocar para a visualização seguinte (coleção, lista de reprodução...)"
 
 #: DlgControllerLearning#88
 msgid "Switch to the previous view (library, playlist..)"
-msgstr "Passar para a vista precedente (biblioteca, playlist...)"
+msgstr ""
+"Trocar para a visualização anterior (coleção, lista de reprodução...)"
 
 #: DlgControllerLearning#89
 msgid "Scroll to next track in library/playlist"
-msgstr "Rolar para a próxima faixa na biblioteca/playlist"
+msgstr "Ir para a faixa seguinte da coleção ou lista de reprodução"
 
 #: DlgControllerLearning#90
 msgid "Scroll to previous track in library/playlist"
-msgstr "Rolar para a faixa precedente na biblioteca/playlist"
+msgstr "Ir para a faixa anterior da coleção ou lista de reprodução"
 
 #: DlgControllerLearning#91
 msgid "Load selected track into first stopped deck"
@@ -2580,15 +2605,15 @@ msgstr ""
 msgid "20 ms"
 msgstr ""
 
-#: DlgPrefSoundDlg#6
+#: DlgPrefSoundDlg#3
 msgid "Buffer Underflow Count"
 msgstr "Contagem insuficiente no tampão"
 
-#: DlgPrefSoundDlg#7
+#: DlgPrefSoundDlg#4
 msgid "0"
 msgstr "0"
 
-#: DlgPrefSoundDlg#8
+#: DlgPrefSoundDlg#5
 msgid "Latency Tips"
 msgstr "Dicas sobre a Latência"
 
@@ -2611,7 +2636,7 @@ msgctxt "DlgPrefSoundDlg#11"
 msgid "Input"
 msgstr ""
 
-#: DlgPrefSoundDlg#12
+#: DlgPrefSoundDlg#9
 msgid "Query Devices"
 msgstr "Consultar dispositivos"
 
@@ -6787,34 +6812,6 @@ msgstr "(GL)"
 
 #~ msgid "Select All"
 #~ msgstr "Seleccionar Todas"
-
-#~ msgid "MixxxControl not found"
-#~ msgstr "MixxxControl não encontrado"
-
-#~ msgid ""
-#~ "* Check to see that the MixxxControl name is spelled correctly in the "
-#~ "mapping file (.xml)\n"
-#~ msgstr ""
-#~ "* Verifique que o nome do MixxxControl está escrito correctamente no "
-#~ "ficheiro de associação (.xml)\n"
-
-#~ msgid ""
-#~ "The MIDI output message 0x%1 0x%2 will not be bound.\n"
-#~ "(Click Show Details for hints.)"
-#~ msgstr ""
-#~ "A mensagem de saída MIDI 0x%1 0x%2 não será destinada.\n"
-#~ "(Clique em Mostrar Detalhes para sugestões.)"
-
-#~ msgid "The MixxxControl '%1, %2' specified in the loaded mapping is invalid."
-#~ msgstr ""
-#~ "O MixxxControlo '%1, %2' especificado na associação carregada é inválido."
-
-#~ msgid ""
-#~ "* Make sure the MixxxControl you're trying to use actually exists. Visit "
-#~ "this wiki page for a complete list:"
-#~ msgstr ""
-#~ "* Assegure-se que o MixxxControl que está a tentar usar existe realmente. "
-#~ "Consulte esta página do wiki para uma lista completa:"
 
 #~ msgid ""
 #~ "<ul>\n"

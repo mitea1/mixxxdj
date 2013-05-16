@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: mixxx\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-05-09 15:12+0200\n"
-"PO-Revision-Date: 2013-05-01 19:48+0000\n"
-"Last-Translator: Constantine Mousafiris <Unknown>\n"
+"PO-Revision-Date: 2013-05-15 16:38+0000\n"
+"Last-Translator: Dimitris Soras <dimsoras@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-05-10 05:13+0000\n"
-"X-Generator: Launchpad (build 16598)\n"
+"X-Launchpad-Export-Date: 2013-05-16 05:10+0000\n"
+"X-Generator: Launchpad (build 16626)\n"
 
 #: AutoDJFeature#1
 msgctxt "AutoDJFeature#1"
 msgid "Auto DJ"
-msgstr "Αυτόματου DJ"
+msgstr "Αυτόματος DJ"
 
 #: BaseExternalLibraryFeature#1
 msgctxt "BaseExternalLibraryFeature#1"
@@ -40,7 +40,7 @@ msgstr "Εισαγωγή Λίστας Αναπαραγωγής"
 #: BaseExternalLibraryFeature#4
 msgctxt "BaseExternalLibraryFeature#4"
 msgid "Playlist Creation Failed"
-msgstr "Η Δημιουργία Λίστας Απέτυχε"
+msgstr "Η Δημιουργία Λίστας Αναπαραγωγής Απέτυχε"
 
 #: BaseExternalLibraryFeature#5
 msgctxt "BaseExternalLibraryFeature#5"
@@ -2586,15 +2586,15 @@ msgstr ""
 msgid "20 ms"
 msgstr ""
 
-#: DlgPrefSoundDlg#6
+#: DlgPrefSoundDlg#3
 msgid "Buffer Underflow Count"
 msgstr ""
 
-#: DlgPrefSoundDlg#7
+#: DlgPrefSoundDlg#4
 msgid "0"
 msgstr ""
 
-#: DlgPrefSoundDlg#8
+#: DlgPrefSoundDlg#5
 msgid "Latency Tips"
 msgstr "Τρικ Καθυστέρησης"
 
@@ -2617,7 +2617,7 @@ msgctxt "DlgPrefSoundDlg#11"
 msgid "Input"
 msgstr ""
 
-#: DlgPrefSoundDlg#12
+#: DlgPrefSoundDlg#9
 msgid "Query Devices"
 msgstr "Εντοπισμός Συσκευών"
 
